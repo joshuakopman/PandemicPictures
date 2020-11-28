@@ -14,7 +14,7 @@ class NomineeProvider {
     }
 
     writeMoviesToDisk(payload){
-       fs.writeFileSync('./mocks/movies.json', JSON.stringify(payload), null, 4);
+       fs.writeFileSync('./mocks/movies.json', JSON.stringify(payload, null, 4));
     }
 
     async fetchNomineeMarkup(){
