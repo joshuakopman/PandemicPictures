@@ -21,9 +21,8 @@ main {
 }
 
 .year-container {
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: flex-start;
   align-content: space-between;
 }
@@ -34,21 +33,79 @@ main {
 
 .movie-container {
   flex: 0 0 auto;
-  margin: 0 10px 10px 0;
-  width: 23%;
-  padding: 5px;
+  margin: 0 20px 30px 0;
+  width: 28%;
+  padding: 20px;
   background: #fff;
-  box-shadow: 4px 6px 12px #f4797e33;
+  box-shadow: 4px 6px 12px #bf868833;
 }
 
 .movie-poster {
-  height: 150px;
+  width: 100%;
+  height: auto;
 }
 
-.movie-poster-container {
+.movie-title {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  font-size:18px;
+}
 
+.movie-poster-comtainer {
+  display: inline-block;
+  width: 28%;
+  vertical-align: top;
+  margin-right: 20px;
 }
 
 .movie-content-container {
-  background:blue;
+  display: inline-block;
+  width: 65%;
+  vertical-align: top;
+}
+
+.imdb-container {
+  display:block;
+  color: #8C8989;
+  margin-bottom: 25px;
+}
+
+.imdb-star {
+}
+
+.imdb-rating {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.user-container {
+   display: flex;
+ flex-wrap: no-wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  font-size: 22px;
+  color: #8C8989;
+  vertical-align:middle;
+}
+
+.user-name {
+  width: 60px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.user-check {
+  margin-right: 15px;
+}
+
+.user-smile {
+  margin-right: 5px;
+}
+
+.user-frown {
+  margin-right: 15px;
 }

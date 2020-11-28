@@ -9,12 +9,21 @@
                <img class="movie-poster" src="/assets/poster-placeholder.jpg" />
         </div>
           <div class="movie-content-container">
-              <h3 class="movie-title" index="{{@index}}">{{this.Name}}</h3>
+              <h3 class="movie-title" index="{{@index}}">{{this.Name}} </h3>
+               <div class="imdb-container">
+                  <span class="imdb-star">&#x2605;</span> 
+                 <span class="imdb-rating">8.6</span> 
+              </div>
 
               {{#each this.Viewers}}
                   <div class="user-container">
-                    <div>{{this.Name}}</div>
-                    <input type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
+                      <div class="user-info user-name">{{this.Name}}</div>
+                      <div class="user-info user-check">&#x2713;</div>
+                      <div class="user-info user-smile">&#x2639;</div>
+                      <div class="user-info user-frown">&#x263A;</div>
+                      <div class="user-info user-skip">&#x2718;</div>   
+
+                   {{!--  <input type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}> --}}
                  </div>
               {{/each}}
             </div>
