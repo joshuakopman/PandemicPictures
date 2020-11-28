@@ -5,10 +5,10 @@
 <div class="year-container">
    <div class="movie-container">
     {{#each this.Movies}}
-      <h3 class="movie-title">{{this.Name}}</h3>
+      <h3 class="movie-title" index="{{@index}}">{{this.Name}}</h3>
         {{#each this.Viewers}}
-        <div class="user-name">{{this.Name}}
-          <input type="checkbox" disabled="true" {{#if this.HasSeen}}checked{{/if}}>
+        <div >{{this.Name}}
+          <input type="checkbox" {{#if this.HasSeen}}checked{{/if}}>
         </div>
       {{/each}}
     {{/each}}

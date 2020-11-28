@@ -1,4 +1,4 @@
-function random(obj){
+function random(obj) {
 	var unseenMovies = [];
 	var seenMovies = [];
 	var allMoviesWeighted = [];
@@ -46,7 +46,23 @@ document.addEventListener('DOMContentLoaded', function () {
   	.then(data => {
   		console.log(data);
   		localStorage.setItem('movies', JSON.stringify(data));
-  	});
+  	});	
+
+  	var checkBoxes = document.querySelectorAll('input[type=checkbox]');
+  	var moviesLS = JSON.parse(localStorage.getItem('movies'));
+  	for (const checkBox of checkBoxes) {
+	  checkBox.addEventListener('click', function(e) {
+	  	var yIndex = e.currentTarget.parentNode.parentNode.previousElementSibling.getAttribute('index');
+	  	var mIndex = e.currentTarget.parentNode.parentNode.querySelector('h4').getAttribute('index');
+	  	moviesLS.allNominees[yIndex].Movies[mIndex].Viewers.find(x => x.Name == e.currentTarget.parentNode.innerText.trim()).HasSeen = e.currentTarget.checked;
+	  	localStorage.setItem('movies', JSON.stringify(moviesLS));
+	  });
+
+}
+
 });
+
+
+
 
 
