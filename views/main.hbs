@@ -5,15 +5,19 @@
    
       {{#each this.Movies}}
         <div class="movie-container">
-          <h3 class="movie-title" index="{{@index}}">{{this.Name}}</h3>
+          <div class="movie-poster-comtainer">
+               <img class="movie-poster" src="/assets/poster-placeholder.jpg" />
+        </div>
+          <div class="movie-content-container">
+              <h3 class="movie-title" index="{{@index}}">{{this.Name}}</h3>
 
-          {{#each this.Viewers}}
-              <div class="user-container">
-                <div>{{this.Name}}</div>
-                <input type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
-             </div>
-          {{/each}}
-
+              {{#each this.Viewers}}
+                  <div class="user-container">
+                    <div>{{this.Name}}</div>
+                    <input type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
+                 </div>
+              {{/each}}
+            </div>
          </div>  
       {{/each}}
 
