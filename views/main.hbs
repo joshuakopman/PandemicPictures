@@ -1,18 +1,21 @@
 {{#each allNominees}}
 
-<h2 class="heading-year" index="{{@index}}" data-object="year">{{this.Year}}</h2>
-
 <div class="year-container">
-   <div class="movie-container">
-    {{#each this.Movies}}
-      <h3 class="movie-title" index="{{@index}}">{{this.Name}}</h3>
-        {{#each this.Viewers}}
-        <div >{{this.Name}}
-          <input type="checkbox" {{#if this.HasSeen}}checked{{/if}}>
-        </div>
+  <h2 class="year-heading" index="{{@index}}" data-object="year">{{this.Year}}</h2>
+   
+      {{#each this.Movies}}
+        <div class="movie-container">
+          <h3 class="movie-title" index="{{@index}}">{{this.Name}}</h3>
+
+          {{#each this.Viewers}}
+              <div class="user-container">
+                <div>{{this.Name}}</div>
+                <input type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
+             </div>
+          {{/each}}
+
+         </div>  
       {{/each}}
-    {{/each}}
-    </div>
 
 </div>
 
