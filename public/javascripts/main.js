@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	fetch('/getMockObjectForStorage')
 	.then(response => response.json())
   	.then(data => {
-  		console.log(data);
   		localStorage.setItem('movies', JSON.stringify(data));
   	});	
 
@@ -52,14 +51,30 @@ document.addEventListener('DOMContentLoaded', function () {
   	var moviesLS = JSON.parse(localStorage.getItem('movies'));
   	for (const checkBox of checkBoxes) {
 	  checkBox.addEventListener('click', function(e) {
-	  	var yIndex = e.currentTarget.parentNode.parentNode.previousElementSibling.getAttribute('index');
-	  	var mIndex = e.currentTarget.parentNode.parentNode.querySelector('h4').getAttribute('index');
-	  	moviesLS.allNominees[yIndex].Movies[mIndex].Viewers.find(x => x.Name == e.currentTarget.parentNode.innerText.trim()).HasSeen = e.currentTarget.checked;
+	  	var yIndex = e.currentTarget.getAttribute('year-index');
+	  	var mIndex = e.currentTarget.getAttribute('movie-index');
+	  	var personWhoHasSeen = e.currentTarget.parentNode.innerText.trim();
+	  	moviesLS[yIndex].Movies[mIndex].Viewers.find(x => x.Name == personWhoHasSeen).HasSeen = e.currentTarget.checked;
 	  	localStorage.setItem('movies', JSON.stringify(moviesLS));
 	  });
+	}
 
-}
+	setInterval(function() {
+		//write localStorage to file
+		postData(url = '/writeToDiskFromStorage', data = localStorage.getItem('movies'));
+	},10000);
 
+	async function postData(url = '', data = {}) {
+	  const response = await fetch(url, {
+	    method: 'POST', 
+	    cache: 'no-cache', 
+	    headers: {
+	      'Content-Type': 'application/json'
+	    },
+	    body: data
+	  });
+	  return response.json();
+	}
 });
 
 
