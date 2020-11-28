@@ -1,0 +1,19 @@
+<button id="randomBtn" onclick="random({{json allNominees}})">Pick Random Movie!</button>
+
+<div id="chosenMovie"></div>
+<div class="accordion">
+{{#each allNominees}}
+  <div class="accordion-title">{{this.Year}}</div>
+   <div class="accordion-content">
+    {{#each this.Movies}}
+      <h4>{{this.Name}}</h2>
+        {{#each this.Viewers}}
+        <div >{{this.Name}}
+          <input type="checkbox" disabled="true"  {{#if this.HasSeen}}checked{{/if}}>
+        </div>
+        <br/>
+      {{/each}}
+    {{/each}}
+    </div>
+{{/each}}
+</div>
