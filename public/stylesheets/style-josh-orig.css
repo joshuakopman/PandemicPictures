@@ -1,0 +1,56 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.accordion{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  float: left;
+}
+
+.accordion-title {
+  background-color: #999;
+  color: white;
+  width: 100%;
+  float: left;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor:pointer;
+}
+
+.accordion-content {
+  display: none;
+  border: 1px solid #999;
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+
+input[type=checkbox] {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 27px;
+  background-color:red;
+}
+
+input[type=checkbox]:after {
+  content: " ";
+  background-color: #9FFF9D;
+  display: inline-block;
+  visibility: visible;
+}
+
+input[type=checkbox]:checked:after {
+  content: "\2714";
+}
