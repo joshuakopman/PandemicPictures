@@ -17,20 +17,38 @@ header {
 
 main {
   padding: 50px;
-}
-
-.heading-year {
-  display: block;
+  background: #f3f2ef;
 }
 
 .year-container {
-  display: flex;
+   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+
+.year-heading {
+  flex-basis: 100%;
 }
 
 .movie-container {
-  width: 200px;
-  height: auto;
-  margin: 10px;
+  flex: 0 0 auto;
+  margin: 0 10px 10px 0;
+  width: 23%;
   padding: 5px;
+  background: #fff;
+  box-shadow: 4px 6px 12px #f4797e33;
+}
+
+.movie-poster {
+  height: 150px;
+}
+
+.movie-poster-container {
+
+}
+
+.movie-content-container {
+  background:blue;
 }
