@@ -2,7 +2,6 @@ function random(obj){
 	var unseenMovies = [];
 	var seenMovies = [];
 	var allMoviesWeighted = [];
-	console.log(obj);
 	obj.forEach((o)=> {
 		var unseen = o.Movies.filter(m => m.Viewers[0].HasSeen == false && m.Viewers[1].HasSeen == false).map(m => m.Name);
 		if(unseen.length > 0) {
@@ -28,14 +27,26 @@ function random(obj){
 	document.querySelector('#chosenMovie').innerHTML = name[0];
 }
 
-const years = document.querySelectorAll('.accordion-title')
-for (const year of years) {
-  year.addEventListener('click', function(e) {
-  	var moviesForYear =  e.currentTarget.nextElementSibling;
-    if(moviesForYear.style.display == '') {
-	    moviesForYear.style.display = 'block';
-	} else {
-		moviesForYear.style.display = '';
+
+document.addEventListener('DOMContentLoaded', function () {
+    const years = document.querySelectorAll('.accordion-title')
+	for (const year of years) {
+	  year.addEventListener('click', function(e) {
+	  	var moviesForYear =  e.currentTarget.nextElementSibling;
+	    if(moviesForYear.style.display == '') {
+		    moviesForYear.style.display = 'block';
+		} else {
+			moviesForYear.style.display = '';
+		}
+	  })
 	}
-  })
-}
+
+	fetch('/getMockObjectForStorage')
+	.then(response => response.json())
+  	.then(data => {
+  		console.log(data);
+  		localStorage.setItem('movies', JSON.stringify(data));
+  	});
+});
+
+

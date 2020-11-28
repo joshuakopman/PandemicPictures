@@ -41,12 +41,16 @@ class NomineeProvider {
                                     'Name' : nominee.includes('(') ? nominee.substring(0,nominee.indexOf('(')-1) : nominee,
                                     'Viewers':[
                                          {
-                                              "Name": "Josh",
-                                              "HasSeen": true
+                                              "Name" : "Josh",
+                                              "HasSeen" : true,
+                                              "Rating" : "Up",
+                                              "Skip" : false
                                         },
                                         {
-                                              "Name": "Alicia",
-                                              "HasSeen": false
+                                              "Name" : "Alicia",
+                                              "HasSeen" : false,
+                                              "Rating" : "Down",
+                                              "Skip" : false
                                         }
                                     ]
                                 }

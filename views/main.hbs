@@ -3,7 +3,7 @@
 <div id="chosenMovie"></div>
 <div class="accordion">
 {{#each allNominees}}
-  <div class="accordion-title">{{this.Year}}</div>
+  <div class="accordion-title" index="{{@index}}">{{this.Year}}</div>
    <div class="accordion-content">
     {{#each this.Movies}}
       <h4>{{this.Name}}</h2>

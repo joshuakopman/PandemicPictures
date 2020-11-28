@@ -23,6 +23,13 @@ app.get('/mock-movies', function(req, res, next) {
     });
 });
 
+
+app.get('/getMockObjectForStorage', function(req, res, next) {
+    new NomineeProvider().fetchNomineeMarkup().then((allNominees)=>{
+        res.json({'allNominees' : allNominees});
+    });
+});
+
 app.get('/disk-movies', function(req, res, next) {
     var allNominees = new NomineeProvider().readMoviesFromDisk();
     res.render('main', {layout : 'index','allNominees': allNominees});
