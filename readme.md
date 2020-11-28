@@ -1,4 +1,4 @@
-# Foobar
+# Pandemic Pictures
 
 Pandemic Pictures is an application for Josh and Alicia to track the Best Picture noms they've seen in order to stave off insanity during COVID winter.
 
