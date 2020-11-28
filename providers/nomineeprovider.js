@@ -7,10 +7,14 @@ class NomineeProvider {
 
     }
 
-    readMoviesFromDisk(){
+    readMoviesFromDisk() {
        let raw = fs.readFileSync('./mocks/movies.json');
        let json = JSON.parse(raw);
        return json;
+    }
+
+    writeMoviesToDisk(payload){
+       fs.writeFileSync('./mocks/movies.json', JSON.stringify(payload), null, 4);
     }
 
     async fetchNomineeMarkup(){
