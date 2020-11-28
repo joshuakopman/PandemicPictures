@@ -41,6 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	  })
 	}
 
+	fetch('/getIMDBMetadata')
+	.then(response => response.json())
+  	.then(data => {
+  		console.log(data);
+  	});	
+
+
 	fetch('/getMockObjectForStorage')
 	.then(response => response.json())
   	.then(data => {
