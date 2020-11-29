@@ -27,20 +27,19 @@
 	document.querySelector('#chosenMovie').innerHTML = name[0];
 }*/
 
+async function postData(url = '', data = {}) {
+  const response = await fetch(url, {
+    method: 'POST', 
+    cache: 'no-cache', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  });
+  return response.json();
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    const years = document.querySelectorAll('.accordion-title')
-	for (const year of years) {
-	  year.addEventListener('click', function(e) {
-	  	var moviesForYear =  e.currentTarget.nextElementSibling;
-	    if(moviesForYear.style.display == '') {
-		    moviesForYear.style.display = 'block';
-		} else {
-			moviesForYear.style.display = '';
-		}
-	  })
-	}
-
+function fetchDataFromAPI() {
 	fetch('/getIMDBForStorage')
 	.then(response => response.json())
   	.then(data => {
@@ -57,13 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
   		}
   	});	
 
-
 	fetch('/getMoviesForStorage')
 	.then(response => response.json())
   	.then(data => {
   		localStorage.setItem('movies', JSON.stringify(data));
   	});	
+}
 
+function handleSeenCheckboxes(){
   	var checkBoxes = document.querySelectorAll('input[type=checkbox]');
   	var moviesLS = JSON.parse(localStorage.getItem('movies'));
   	for (const checkBox of checkBoxes) {
@@ -75,23 +75,18 @@ document.addEventListener('DOMContentLoaded', function () {
 	  	localStorage.setItem('movies', JSON.stringify(moviesLS));
 	  });
 	}
+}
 
+function pollLocalStorage(){
 	setInterval(function() {
-		//write localStorage to file
 		postData(url = '/writeMoviesToDiskFromStorage', data = localStorage.getItem('movies'));
 	},10000);
+}
 
-	async function postData(url = '', data = {}) {
-	  const response = await fetch(url, {
-	    method: 'POST', 
-	    cache: 'no-cache', 
-	    headers: {
-	      'Content-Type': 'application/json'
-	    },
-	    body: data
-	  });
-	  return response.json();
-	}
+document.addEventListener('DOMContentLoaded', function () {
+	fetchDataFromAPI();
+	handleSeenCheckboxes();
+	pollLocalStorage();
 });
 
 

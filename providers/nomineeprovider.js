@@ -16,7 +16,7 @@ class NomineeProvider {
     writeMoviesToDisk(payload){
        fs.writeFileSync('./mocks/movies.json', JSON.stringify(payload, null, 4));
     }
-/* 
+
     async fetchNomineeMarkup(){
          let response = await got('https://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture');
          let allNoms = this.parseNominees(response.body);
@@ -66,7 +66,7 @@ class NomineeProvider {
         }
         allNominees.push(nomineeObj);
         return allNominees;
-    }*/
+    }
 }
 
 module.exports.NomineeProvider = NomineeProvider;
