@@ -70,7 +70,9 @@ function handleSeenCheckboxes(){
 	  checkBox.addEventListener('click', function(e) {
 	  	var yIndex = e.currentTarget.getAttribute('year-index');
 	  	var mIndex = e.currentTarget.getAttribute('movie-index');
-	  	var personWhoHasSeen = e.currentTarget.parentNode.innerText.trim();
+	  	console.log(moviesLS[yIndex].Movies[mIndex].Viewers);
+	  	var personWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
+	  	console.log(personWhoHasSeen);
 	  	moviesLS[yIndex].Movies[mIndex].Viewers.find(x => x.Name == personWhoHasSeen).HasSeen = e.currentTarget.checked;
 	  	localStorage.setItem('movies', JSON.stringify(moviesLS));
 	  });
