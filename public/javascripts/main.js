@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
   	.then(data => {
   		for(const movie of data){
   			document.querySelector('img[data-object="'+movie.Title+'-poster"]').src = movie.ImageUrl;
+  			document.querySelector('span[data-object="'+movie.Title+'-rating"]').innerHTML = movie.Rating;
   		}
   	});	
 
