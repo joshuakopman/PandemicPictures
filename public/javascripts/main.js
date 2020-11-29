@@ -27,19 +27,24 @@
 	document.querySelector('#chosenMovie').innerHTML = name[0];
 }*/
 
+async function postData(url = '', data = {}) {
+  const response = await fetch(url, {
+    method: 'POST', 
+    cache: 'no-cache', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  });
+  return response.json();
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    const years = document.querySelectorAll('.accordion-title')
-	for (const year of years) {
-	  year.addEventListener('click', function(e) {
-	  	var moviesForYear =  e.currentTarget.nextElementSibling;
-	    if(moviesForYear.style.display == '') {
-		    moviesForYear.style.display = 'block';
-		} else {
-			moviesForYear.style.display = '';
-		}
-	  })
-	}
+function fetchDataFromAPI() {
+	fetch('/getMoviesForStorage')
+	.then(response => response.json())
+  	.then(data => {
+  		localStorage.setItem('movies', JSON.stringify(data));
+  	});	
 
 	fetch('/getIMDBForStorage')
 	.then(response => response.json())
@@ -47,51 +52,43 @@ document.addEventListener('DOMContentLoaded', function () {
   		for(const movie of data){
   			document.querySelector('img[data-object="'+movie.Title+'-poster"]').src = movie.ImageUrl;
   			document.querySelector('span[data-object="'+movie.Title+'-rating"]').innerHTML = movie.Rating;
-  			document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
+  			/*document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
   			document.querySelector('span[data-object="'+movie.Title+'-runtime"]').innerHTML = movie.Runtime;
   			document.querySelector('span[data-object="'+movie.Title+'-genre"]').innerHTML = movie.Genre;
   			document.querySelector('span[data-object="'+movie.Title+'-rating"]').innerHTML = movie.Rating;
   			document.querySelector('span[data-object="'+movie.Title+'-actors"]').innerHTML = movie.Actors;
   			document.querySelector('span[data-object="'+movie.Title+'-plot"]').innerHTML = movie.Plot;
-  			document.querySelector('span[data-object="'+movie.Title+'-imdbID"]').innerHTML = movie.ImdbID;
+  			document.querySelector('span[data-object="'+movie.Title+'-imdbID"]').innerHTML = movie.ImdbID;*/
   		}
   	});	
 
+}
 
-	fetch('/getMoviesForStorage')
-	.then(response => response.json())
-  	.then(data => {
-  		localStorage.setItem('movies', JSON.stringify(data));
-  	});	
-
+function handleSeenCheckboxes(){
   	var checkBoxes = document.querySelectorAll('input[type=checkbox]');
   	var moviesLS = JSON.parse(localStorage.getItem('movies'));
   	for (const checkBox of checkBoxes) {
 	  checkBox.addEventListener('click', function(e) {
 	  	var yIndex = e.currentTarget.getAttribute('year-index');
 	  	var mIndex = e.currentTarget.getAttribute('movie-index');
-	  	var personWhoHasSeen = e.currentTarget.parentNode.innerText.trim();
+	  	var personWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
 	  	moviesLS[yIndex].Movies[mIndex].Viewers.find(x => x.Name == personWhoHasSeen).HasSeen = e.currentTarget.checked;
 	  	localStorage.setItem('movies', JSON.stringify(moviesLS));
 	  });
 	}
+}
 
+function pollLocalStorage(){
+	var self = this;
 	setInterval(function() {
-		//write localStorage to file
-		postData(url = '/writeMoviesToDiskFromStorage', data = localStorage.getItem('movies'));
+		self.postData(url = '/writeMoviesToDiskFromStorage', data = localStorage.getItem('movies'));
 	},10000);
+}
 
-	async function postData(url = '', data = {}) {
-	  const response = await fetch(url, {
-	    method: 'POST', 
-	    cache: 'no-cache', 
-	    headers: {
-	      'Content-Type': 'application/json'
-	    },
-	    body: data
-	  });
-	  return response.json();
-	}
+document.addEventListener('DOMContentLoaded', function () {
+	fetchDataFromAPI();
+	handleSeenCheckboxes();
+	pollLocalStorage();
 });
 
 
