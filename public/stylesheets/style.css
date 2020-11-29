@@ -88,19 +88,22 @@ main {
 
 .user-info {
   font-size: 22px;
-  color: #8c898982;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 .user-name {
-  width: 60px;
+  width: 70px;
   font-size: 16px;
   line-height: 28px;
   color: #8C8989;
 }
 
 .user-check {
-  margin-right: 15px;
+  margin-right: 20px;
+}
+
+.check-label {
+  margin-top: -13px;
 }
 
 .user-smile {
@@ -108,5 +111,85 @@ main {
 }
 
 .user-frown {
-  margin-right: 15px;
+  margin-right: 20px;
+}
+
+.skip-label {
+  margin-top: -31px;
+}
+
+.checkbox-custom, .radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.checkbox-custom-label, .radio-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .check-label:before {
+    content: "\2713";
+    color: #4cf0ca;
+    font-size: 22px;
+}
+
+.checkbox-custom:checked + .skip-label:before {
+    content: "\261E";
+    color: #F04C53;
+    font-size: 3s0px;
+}
+
+.checkbox-custom + .check-label:before {
+    content: "\2713";
+    color: #8c898982;
+}
+
+.checkbox-custom + .skip-label:before {
+    content: "\261E";
+    color: #8c898982;
+    font-size: 30px;
+}
+
+.radio-custom + .radio-custom-label:before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.radio-custom + .smile-label:before {
+    content: "\263A";
+    color: #8c898982;
+}
+
+.radio-custom + .frown-label:before {
+    content: "\2639";
+    color: #8c898982;
+}
+
+.radio-custom:checked + .smile-label:before {
+    content: "\263A"; 
+    color: #f0c54c;
+    font-size: 22px;
+}
+
+.radio-custom:checked + .frown-label:before {
+    content: "\2639"; 
+    color: #f0c54c;
+    font-size: 22px;
 }
