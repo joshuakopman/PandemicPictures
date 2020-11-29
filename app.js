@@ -42,7 +42,7 @@ app.get('/getIMDBForStorage', function(req, res, next) {
 /*
 Get Fresh IMDB metadata from API
 */
-app.get('/getIMDBMetadata', async (req, res, next) => {
+app.get('/admin/getIMDBMetadata', async (req, res, next) => {
 	var movieTitles = allNominees.map(y => y.Movies.map(z => z.Name));
 	var flattedMovies = [].concat.apply([],movieTitles);
 
