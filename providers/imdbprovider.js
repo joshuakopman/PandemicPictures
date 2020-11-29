@@ -21,6 +21,13 @@ class IMDBProvider {
               movieTmp.Title = movie;
               movieTmp.Rating = movieMetaData.Rating;
               movieTmp.ImageUrl = movieMetaData.Poster;
+              movieTmp.Runtime = movieMetaData.Runtime;
+              movieTmp.Genre = movieMetaData.Genre;
+              movieTmp.Director = movieMetaData.Director;
+              movieTmp.Actors = movieMetaData.Actors;
+              movieTmp.Plot = movieMetaData.Plot;
+              movieTmp.ImdbID = movieMetaData.imdbID;
+
           moviesDict.push(movieTmp);
       }
       fs.writeFileSync('./mocks/imdb.json', JSON.stringify(moviesDict, null, 4));
