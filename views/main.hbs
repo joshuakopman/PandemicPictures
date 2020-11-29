@@ -6,7 +6,7 @@
       {{#each this.Movies}}
         <div class="movie-container">
           <div class="movie-poster-comtainer">
-               <img class="movie-poster" src="/assets/poster-placeholder.jpg" />
+               <img class="movie-poster" data-object="{{this.Name}}-poster" src="/assets/poster-placeholder.jpg" />
         </div>
           <div class="movie-content-container">
               <h3 class="movie-title" index="{{@index}}">{{this.Name}} </h3>
