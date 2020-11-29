@@ -53,7 +53,7 @@ main {
 
 .movie-poster-comtainer {
   display: inline-block;
-  width: 28%;
+  width: 25%;
   vertical-align: top;
   margin-right: 20px;
 }
@@ -88,7 +88,7 @@ main {
 
 .user-info {
   font-size: 22px;
-  color: #8C8989;
+  color: #8c898982;
   vertical-align:middle;
 }
 
@@ -96,6 +96,7 @@ main {
   width: 60px;
   font-size: 16px;
   line-height: 28px;
+  color: #8C8989;
 }
 
 .user-check {
