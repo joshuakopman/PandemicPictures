@@ -26,7 +26,7 @@ class IMDBProvider {
               movieTmp.Director = movieMetaData.Director;
               movieTmp.Actors = movieMetaData.Actors;
               movieTmp.Plot = movieMetaData.Plot;
-              movieTmp.ImdbID = movieMetaData.ImdbID;
+              movieTmp.ImdbID = movieMetaData.imdbID;
 
           moviesDict.push(movieTmp);
       }

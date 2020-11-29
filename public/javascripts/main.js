@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
   		for(const movie of data){
   			document.querySelector('img[data-object="'+movie.Title+'-poster"]').src = movie.ImageUrl;
   			document.querySelector('span[data-object="'+movie.Title+'-rating"]').innerHTML = movie.Rating;
+  			document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
+  			document.querySelector('span[data-object="'+movie.Title+'-runtime"]').innerHTML = movie.Runtime;
+  			document.querySelector('span[data-object="'+movie.Title+'-genre"]').innerHTML = movie.Genre;
+  			document.querySelector('span[data-object="'+movie.Title+'-rating"]').innerHTML = movie.Rating;
+  			document.querySelector('span[data-object="'+movie.Title+'-actors"]').innerHTML = movie.Actors;
+  			document.querySelector('span[data-object="'+movie.Title+'-plot"]').innerHTML = movie.Plot;
+  			document.querySelector('span[data-object="'+movie.Title+'-imdbID"]').innerHTML = movie.ImdbID;
   		}
   	});	
 
