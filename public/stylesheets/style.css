@@ -13,6 +13,54 @@ header {
   background: #F04C53;
   color: #fff;
   padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.h1 {
+
+}
+
+header.totals-container {
+}
+
+.totals-container > div {
+  display: inline-block;
+  color: #000;
+  margin-right: 20px;
+  font-weight: 700;
+}
+
+.totals-user span {
+  padding: 10px;
+  border: 1px solid #000;
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.picker {
+      background-image: linear-gradient(to top left,#ffa944,#c3185f);
+    color: #fff;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 700;
+    border: 0;
+    border-radius: 8px;
+    white-space: nowrap;
+    padding: 1rem 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+    transition: .4s;
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.picker:hover {
+  background-image: none;
+  background: #c3185f;
 }
 
 main {
