@@ -1,4 +1,4 @@
-function random(obj) {
+/*function random(obj) {
 	var unseenMovies = [];
 	var seenMovies = [];
 	var allMoviesWeighted = [];
@@ -25,7 +25,7 @@ function random(obj) {
 	var name = allMoviesWeighted.sort(() => Math.random() - 0.5);
 
 	document.querySelector('#chosenMovie').innerHTML = name[0];
-}
+}*/
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -41,14 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	  })
 	}
 
-	fetch('/getIMDBMetadata')
+	fetch('/getIMDBForStorage')
 	.then(response => response.json())
   	.then(data => {
-  		console.log(data);
+  		for(const movie of data){
+  			document.querySelector('img[data-object="'+movie.Title+'-poster"]').src = movie.ImageUrl;
+  		}
   	});	
 
 
-	fetch('/getMockObjectForStorage')
+	fetch('/getMoviesForStorage')
 	.then(response => response.json())
   	.then(data => {
   		localStorage.setItem('movies', JSON.stringify(data));
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	setInterval(function() {
 		//write localStorage to file
-		postData(url = '/writeToDiskFromStorage', data = localStorage.getItem('movies'));
+		postData(url = '/writeMoviesToDiskFromStorage', data = localStorage.getItem('movies'));
 	},10000);
 
 	async function postData(url = '', data = {}) {

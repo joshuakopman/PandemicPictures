@@ -6,6 +6,12 @@ class IMDBProvider {
     constructor() {
 
     }
+    
+    readRatingsFromDisk() {
+       let raw = fs.readFileSync('./mocks/imdb.json');
+       let json = JSON.parse(raw);
+       return json;
+    }
 
     async getIMDBMetadata(allMovies) {
       let moviesDict = [];
@@ -14,9 +20,10 @@ class IMDBProvider {
           var movieTmp = {};
               movieTmp.Title = movie;
               movieTmp.Rating = movieMetaData.Rating;
+              movieTmp.ImageUrl = movieMetaData.Poster;
           moviesDict.push(movieTmp);
       }
-      fs.writeFileSync('./mocks/imdbRatings.json', JSON.stringify(moviesDict, null, 4));
+      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(moviesDict, null, 4));
       return moviesDict;
     }
 
