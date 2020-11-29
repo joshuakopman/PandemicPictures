@@ -40,6 +40,12 @@ async function postData(url = '', data = {}) {
 }
 
 function fetchDataFromAPI() {
+	fetch('/getMoviesForStorage')
+	.then(response => response.json())
+  	.then(data => {
+  		localStorage.setItem('movies', JSON.stringify(data));
+  	});	
+
 	fetch('/getIMDBForStorage')
 	.then(response => response.json())
   	.then(data => {
@@ -56,11 +62,6 @@ function fetchDataFromAPI() {
   		}
   	});	
 
-	fetch('/getMoviesForStorage')
-	.then(response => response.json())
-  	.then(data => {
-  		localStorage.setItem('movies', JSON.stringify(data));
-  	});	
 }
 
 function handleSeenCheckboxes(){
@@ -70,9 +71,7 @@ function handleSeenCheckboxes(){
 	  checkBox.addEventListener('click', function(e) {
 	  	var yIndex = e.currentTarget.getAttribute('year-index');
 	  	var mIndex = e.currentTarget.getAttribute('movie-index');
-	  	console.log(moviesLS[yIndex].Movies[mIndex].Viewers);
 	  	var personWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
-	  	console.log(personWhoHasSeen);
 	  	moviesLS[yIndex].Movies[mIndex].Viewers.find(x => x.Name == personWhoHasSeen).HasSeen = e.currentTarget.checked;
 	  	localStorage.setItem('movies', JSON.stringify(moviesLS));
 	  });
@@ -80,8 +79,9 @@ function handleSeenCheckboxes(){
 }
 
 function pollLocalStorage(){
+	var self = this;
 	setInterval(function() {
-		postData(url = '/writeMoviesToDiskFromStorage', data = localStorage.getItem('movies'));
+		self.postData(url = '/writeMoviesToDiskFromStorage', data = localStorage.getItem('movies'));
 	},10000);
 }
 

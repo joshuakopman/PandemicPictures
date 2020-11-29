@@ -10,7 +10,6 @@ const jsonParser = bodyParser.json();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
-const allNominees = NomNomProvider.readMoviesFromDisk();
 const allMetadata = imdbProvider.readRatingsFromDisk();
 
 
@@ -20,11 +19,11 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'))
 
 app.get('/', function(req, res, next) {
-    res.render('main', {layout : 'index','allNominees': allNominees});
+    res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
 });
 
 app.get('/getMoviesForStorage', function(req, res, next) {
-    res.json(allNominees);
+    res.json(NomNomProvider.readMoviesFromDisk());
 });
 
 app.post('/writeMoviesToDiskFromStorage',jsonParser, function(req, res, next) {
@@ -43,11 +42,10 @@ app.get('/getIMDBForStorage', function(req, res, next) {
 Get Fresh IMDB metadata from API
 */
 app.get('/admin/getIMDBMetadata', async (req, res, next) => {
-	var movieTitles = allNominees.map(y => y.Movies.map(z => z.Name));
+	var movieTitles = NomNomProvider.readMoviesFromDisk().map(y => y.Movies.map(z => z.Name));
 	var flattedMovies = [].concat.apply([],movieTitles);
 
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
-    console.log(allMetadata);
     res.json(allMetadata);
 });
 
