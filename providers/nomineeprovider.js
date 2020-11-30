@@ -12,7 +12,11 @@ class NomineeProvider {
       var self = this;
       console.log('reading movies');
       fs.readFile('./mocks/movies.json', (err, result) => {
-        console.log('read movies');
+         console.log('read movies');
+           if(err) {
+                console.log('movie file read error: '+ err);
+                return {};
+            }
            let json =  JSON.parse(result);
            self.fileReadCallback(json);        
       });
