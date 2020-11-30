@@ -6,6 +6,7 @@ class UIHandler {
 
     init() {
         var self = this;
+        
         this.socket.onmessage = function(event) {
             fetch('/getMovies')
             .then(response => response.json())

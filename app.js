@@ -11,7 +11,7 @@ const jsonParser = bodyParser.json();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
-const allMetadata = imdbProvider.readRatingsFromDisk();
+const allMetadata = imdbProvider.readRatingsFromDisk()
 const wsServer = new ws.Server({ noServer: true });
 
 app.engine('hbs', handlebars.engine);
@@ -20,22 +20,18 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'))
 
 app.get('/', (req, res, next) => {
-	console.log('initial page load');
-	NomNomProvider.readMoviesFromDisk(function(movies) {
-    	res.render('main', {layout : 'index','allNominees': movies});
-	});
+	var movies = NomNomProvider.readMoviesFromDisk();
+  console.log(movies);
+  res.render('main', {layout : 'index','allNominees': movies});
 });
 
 app.get('/getMovies', (req, res, next)  => {
-	console.log('getting movies from disk');
-    NomNomProvider.readMoviesFromDisk(function(movies){
-    	console.log('got movies from disk');
-    	res.json(movies);
-    });
+    var movies = NomNomProvider.readMoviesFromDisk();
+    res.json(movies);
 });
 
 app.post('/writeMoviesToDiskFromStorage',jsonParser, function(req, res, next) {
-    NomNomProvider.writeMoviesToDisk(req.body);
+  NomNomProvider.writeMoviesToDisk(req.body);
 	wsServer.clients.forEach(function each(client) {
       if (client.readyState === ws.OPEN) {
           client.send('JSONUpdated');

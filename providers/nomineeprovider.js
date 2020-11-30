@@ -4,22 +4,12 @@ const fs = require("fs");
 
 class NomineeProvider {
     constructor() {
-      this.fileReadCallback = {};
     }
 
     readMoviesFromDisk(callback) {
-      this.fileReadCallback = callback;
-      var self = this;
-      console.log('reading movies');
-      fs.readFile('./mocks/movies.json', (err, result) => {
-         console.log('read movies');
-           if(err) {
-                console.log('movie file read error: '+ err);
-                return {};
-            }
-           let json =  JSON.parse(result);
-           self.fileReadCallback(json);        
-      });
+      let raw = fs.readFileSync('./mocks/movies.json');
+      let json = JSON.parse(raw);
+      return json;
     }
 
     writeMoviesToDisk(payload){

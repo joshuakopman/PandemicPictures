@@ -4,10 +4,12 @@ class DataHandler {
     }
 
     fetchMovieDataFromAPI() {
-        return new Promise((resolve, reject) => {            
+        return new Promise((resolve, reject) => {   
+        console.log('promise');         
             fetch('/getMovies')
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                resolve(data);
             })
         });
@@ -16,14 +18,18 @@ class DataHandler {
     fetchIMDBDataFromAPIOrLocalStorage() {     
         return new Promise((resolve, reject) => {   
             if(!localStorage.getItem('imdb')) {
+                console.log('imdb aint in store');
                 fetch('/getIMDBForStorage')
                 .then(response => response.json())
                 .then(data => 
                 {
+                    console.log('ratings');
+                    console.log(data);
                     localStorage.setItem('imdb', JSON.stringify(data));
                     resolve(data);
                 });
             } else {
+                console.log('imdbbb')
                 resolve(JSON.parse(localStorage.getItem('imdb')));
             }
         });
