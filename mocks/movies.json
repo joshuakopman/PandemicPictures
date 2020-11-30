@@ -6,13 +6,13 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -23,7 +23,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
@@ -40,7 +40,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
@@ -102,7 +102,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -119,7 +119,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -169,13 +169,13 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -192,7 +192,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -220,7 +220,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
@@ -513,7 +513,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -982,7 +982,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -1016,7 +1016,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -1033,7 +1033,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }

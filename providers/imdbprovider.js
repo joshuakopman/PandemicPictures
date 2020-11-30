@@ -17,7 +17,7 @@ class IMDBProvider {
       for (var movie of allMovies) {
           var movieMetaData = await this.fetchOMDBAPIInfo(movie);
           var movieTmp = {};
-              movieTmp.Title = movie;
+              movieTmp.Title = movie.Name;
               movieTmp.Rating = movieMetaData.Rating;
               movieTmp.ImageUrl = movieMetaData.Poster;
               movieTmp.Runtime = movieMetaData.Runtime;
@@ -36,8 +36,14 @@ class IMDBProvider {
     async fetchOMDBAPIInfo(movie) {
       var resp = '';
       try {
-       resp =  await fetch('http://www.omdbapi.com?apikey=1096e53f&t=' + movie);
+       resp =  await fetch('http://www.omdbapi.com?apikey=1096e53f&t=' + movie.Name+"&y="+movie.Year);
        resp = await resp.json();
+       if(resp.Response == "False"){
+         console.log('trying adjacent year: '+ (parseInt(movie.Year)-1).toString()+" for: "+movie.Name);
+         var prevYear = (parseInt(movie.Year)-1).toString();
+         resp =  await fetch('http://www.omdbapi.com?apikey=1096e53f&t=' + movie.Name+"&y=" + prevYear);
+         resp = await resp.json();
+       }
       }catch {
         console.log('error');
       }
