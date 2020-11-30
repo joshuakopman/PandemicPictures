@@ -23,7 +23,7 @@ app.get('/', function(req, res, next) {
     res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
 });
 
-app.get('/getMoviesForStorage', function(req, res, next) {
+app.get('/getMovies', function(req, res, next) {
     res.json(NomNomProvider.readMoviesFromDisk());
 });
 
@@ -47,8 +47,8 @@ app.get('/getIMDBForStorage', function(req, res, next) {
 Get Fresh IMDB metadata from API
 */
 app.get('/admin/getIMDBMetadata', async (req, res, next) => {
-	var movieTitles = NomNomProvider.readMoviesFromDisk().map(y => y.Movies.map(z => z.Name));
-	var flattedMovies = [].concat.apply([],movieTitles);
+	var moviesFormatted= NomNomProvider.readMoviesFromDisk().map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
+	var flattedMovies = [].concat.apply([],moviesFormatted);
 
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
     res.json(allMetadata);

@@ -3,16 +3,12 @@ class DataHandler {
     constructor() {
     }
 
-    fetchMovieDataFromAPIOrLocalStorage() {
-        return new Promise((resolve, reject) => {
-            var self = this;
-            
-            fetch('/getMoviesForStorage')
+    fetchMovieDataFromAPI() {
+        return new Promise((resolve, reject) => {            
+            fetch('/getMovies')
             .then(response => response.json())
             .then(data => {
-               localStorage.setItem('movies', JSON.stringify(data));
-             resolve(localStorage.getItem('movies'));
-               //this.uiHandler.addHasSeenCheckboxListener(localStorage.getItem('movies'));
+               resolve(data);
             })
         });
     }
@@ -23,11 +19,10 @@ class DataHandler {
                 fetch('/getIMDBForStorage')
                 .then(response => response.json())
                 .then(data => 
-                        {
-                            localStorage.setItem('imdb', JSON.stringify(data));
-                            resolve(data);
-                        }
-                );
+                {
+                    localStorage.setItem('imdb', JSON.stringify(data));
+                    resolve(data);
+                });
             } else {
                 resolve(JSON.parse(localStorage.getItem('imdb')));
             }
@@ -40,7 +35,7 @@ async postData(url = '', data = {}) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: data
+        body: JSON.stringify(data)
       });
 
       return response.json();

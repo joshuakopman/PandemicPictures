@@ -7,35 +7,31 @@ class UIHandler {
     init() {
         var self = this;
         this.socket.onmessage = function(event) {
-            console.log('JSON File Updated; refreshing checkboxes!');
-            fetch('/getMoviesForStorage')
+            fetch('/getMovies')
             .then(response => response.json())
             .then(data => {
-               localStorage.setItem('movies', JSON.stringify(data));
                self.updateHasSeenCheckboxes(data);
             })
         };
 
-        this.dataHandler.fetchMovieDataFromAPIOrLocalStorage().then(movieData=>{
+        this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
            self.addHasSeenCheckboxListener(movieData);
         });
 
-        this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData=>{
+        this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
             self.bindIMDBDataToElements(imdbData);
         });
     }
 
     addHasSeenCheckboxListener(movies) {
         var checkBoxes = document.querySelectorAll('input[type=checkbox]');
-        var moviesLS = JSON.parse(movies);
         for (const checkBox of checkBoxes) {
           checkBox.addEventListener('click', (e) => {
             var yearIndex = e.currentTarget.getAttribute('year-index');
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
-            moviesLS[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
-            localStorage.setItem('movies', JSON.stringify(moviesLS));
-            this.dataHandler.postData('/writeMoviesToDiskFromStorage', localStorage.getItem('movies'));
+            movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
+            this.dataHandler.postData('/writeMoviesToDiskFromStorage', movies);
           });
         }
     }
@@ -54,7 +50,6 @@ class UIHandler {
     }
 
     updateHasSeenCheckboxes(allNomYears){
-        console.log('updating');
         for(const nomYear of allNomYears){
              for (const movie of nomYear.Movies){
                 var movieName = movie.Name;
