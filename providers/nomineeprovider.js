@@ -4,17 +4,26 @@ const fs = require("fs");
 
 class NomineeProvider {
     constructor() {
-
+      this.fileReadCallback = {};
     }
 
-    readMoviesFromDisk() {
-       let raw = fs.readFileSync('./mocks/movies.json');
-       let json = JSON.parse(raw);
-       return json;
+    readMoviesFromDisk(callback) {
+      this.fileReadCallback = callback;
+      var self = this;
+      console.log('reading movies');
+      fs.readFile('./mocks/movies.json', (err, result) => {
+        console.log('read movies');
+           let json =  JSON.parse(result);
+           self.fileReadCallback(json);        
+      });
     }
 
     writeMoviesToDisk(payload){
-       fs.writeFileSync('./mocks/movies.json', JSON.stringify(payload, null, 4));
+      console.log('writing movies');
+       fs.writeFile('./mocks/movies.json', JSON.stringify(payload, null, 4), (err, result) => {
+          console.log('wrote movies');
+          if(err) console.log('error', err);
+        });
     }
 
     async fetchNomineeMarkup(){

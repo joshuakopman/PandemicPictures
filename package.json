@@ -15,7 +15,6 @@
     "http-errors": "~1.6.3",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
-    "ws": "*",
-    "memwatch":"*"
-  }
+    "ws": "*"
+   }
 }

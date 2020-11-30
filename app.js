@@ -19,12 +19,19 @@ app.set('view engine', 'hbs');
 
 app.use(express.static('public'))
 
-app.get('/', function(req, res, next) {
-    res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
+app.get('/', (req, res, next) => {
+	console.log('initial page load');
+	NomNomProvider.readMoviesFromDisk(function(movies) {
+    	res.render('main', {layout : 'index','allNominees': movies});
+	});
 });
 
-app.get('/getMovies', function(req, res, next) {
-    res.json(NomNomProvider.readMoviesFromDisk());
+app.get('/getMovies', (req, res, next)  => {
+	console.log('getting movies from disk');
+    NomNomProvider.readMoviesFromDisk(function(movies){
+    	console.log('got movies from disk');
+    	res.json(movies);
+    });
 });
 
 app.post('/writeMoviesToDiskFromStorage',jsonParser, function(req, res, next) {
