@@ -20,22 +20,19 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'))
 
 app.get('/', (req, res, next) => {
-	var movies = NomNomProvider.readMoviesFromDisk();
-  console.log(movies);
-  res.render('main', {layout : 'index','allNominees': movies});
+    res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
 });
 
 app.get('/getMovies', (req, res, next)  => {
-    var movies = NomNomProvider.readMoviesFromDisk();
-    res.json(movies);
+    res.json(NomNomProvider.readMoviesFromDisk());
 });
 
 app.post('/writeMoviesToDiskFromStorage',jsonParser, function(req, res, next) {
-  NomNomProvider.writeMoviesToDisk(req.body);
-	wsServer.clients.forEach(function each(client) {
-      if (client.readyState === ws.OPEN) {
-          client.send('JSONUpdated');
-      }
+    NomNomProvider.writeMoviesToDisk(req.body);
+    wsServer.clients.forEach(function each(client) {
+        if (client.readyState === ws.OPEN) {
+            client.send('JSONUpdated');
+        }
     });    
 });
 
@@ -50,9 +47,8 @@ app.get('/getIMDBForStorage', function(req, res, next) {
 Get Fresh IMDB metadata from API
 */
 app.get('/admin/getIMDBMetadata', async (req, res, next) => {
-	var moviesFormatted= NomNomProvider.readMoviesFromDisk().map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
-	var flattedMovies = [].concat.apply([],moviesFormatted);
-
+    var moviesFormatted= NomNomProvider.readMoviesFromDisk().map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
+    var flattedMovies = [].concat.apply([],moviesFormatted);
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
     res.json(allMetadata);
 });
@@ -60,7 +56,7 @@ app.get('/admin/getIMDBMetadata', async (req, res, next) => {
 
 const server = app.listen(3000);
 server.on('upgrade', (request, socket, head) => {
-  wsServer.handleUpgrade(request, socket, head, socket => {
-    wsServer.emit('connection', socket, request);
-  });
+    wsServer.handleUpgrade(request, socket, head, socket => {
+        wsServer.emit('connection', socket, request);
+    });
 });

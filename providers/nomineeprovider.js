@@ -13,9 +13,7 @@ class NomineeProvider {
     }
 
     writeMoviesToDisk(payload){
-      console.log('writing movies');
        fs.writeFile('./mocks/movies.json', JSON.stringify(payload, null, 4), (err, result) => {
-          console.log('wrote movies');
           if(err) console.log('error', err);
         });
     }
