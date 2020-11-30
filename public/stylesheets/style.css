@@ -32,7 +32,7 @@ header h1 {
 }
 
 .sticky + main {
-  padding-top: 105px;
+  padding-top: 94px;
 }
 
 .sticky h1 {
@@ -148,17 +148,16 @@ main {
 .fa-youtube {
   position: absolute;
   background: white;
-  color: #F04C53;
+  color: #f04c53b8;
   border-radius: 0 50% 0 0;
   font-size: 18px;
   padding: 6px 8px;
   bottom: -1px;
   left: -9px;
-  opacity: 0.8;
 }
 
 .fa-youtube:hover {
-  opacity: 1;
+  color: #F04C53;
 }
 
 .movie-content-container {
