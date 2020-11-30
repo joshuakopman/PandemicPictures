@@ -82,10 +82,14 @@ main {
 .movie-container {
   flex: 0 0 auto;
   margin: 0 20px 30px 0;
-  width: 28%;
+  width: 28.5%;
   padding: 20px;
   background: #fff;
   box-shadow: 4px 6px 12px #bf868833;
+}
+
+.movie-container:nth-of-type(3) {
+  margin-right: 0;
 }
 
 .movie-poster {
@@ -146,26 +150,6 @@ main {
   color: #8C8989;
 }
 
-.user-check {
-  margin-right: 20px;
-}
-
-.check-label {
-  margin-top: -13px;
-}
-
-.user-smile {
-  margin-right: 5px;
-}
-
-.user-frown {
-  margin-right: 20px;
-}
-
-.skip-label {
-  margin-top: -31px;
-}
-
 .checkbox-custom, .radio-custom {
     opacity: 0;
     position: absolute;   
@@ -179,65 +163,76 @@ main {
 
 .checkbox-custom-label, .radio-custom-label {
     position: relative;
+    font-family: 'fontawesome';
+    color: #e6e6e3;
+    opacity: 0.7;
 }
 
-.checkbox-custom + .checkbox-custom-label:before {
-    display: inline-block;
-    vertical-align: middle;
-    width: 20px;
-    height: 20px;
-    text-align: center;
+.checkbox-custom-label:hover, .radio-custom-label:hover {
+  opacity: 1;
 }
 
-.checkbox-custom:checked + .check-label:before {
-    content: "\2713";
-    color: #4cf0ca;
-    font-size: 22px;
-}
-
-.checkbox-custom:checked + .skip-label:before {
-    content: "\261E";
-    color: #F04C53;
-    font-size: 3s0px;
-}
-
-.checkbox-custom + .check-label:before {
-    content: "\2713";
-    color: #8c898982;
-}
-
-.checkbox-custom + .skip-label:before {
-    content: "\261E";
-    color: #8c898982;
-    font-size: 30px;
-}
-
+.checkbox-custom + .checkbox-custom-label:before, 
 .radio-custom + .radio-custom-label:before {
     display: inline-block;
     vertical-align: middle;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     text-align: center;
 }
 
-.radio-custom + .smile-label:before {
-    content: "\263A";
-    color: #8c898982;
+.user-check {
+  margin-right: 20px;
 }
 
-.radio-custom + .frown-label:before {
-    content: "\2639";
-    color: #8c898982;
+.check-label {
+}
+
+.checkbox-custom + .check-label:before {
+    content: "\f070";
+}
+
+.checkbox-custom:checked + .check-label:before {
+    content: "\f06e";
+    color: #63dcc1;
+}
+
+.user-smile {
+  margin-right: 5px;
+}
+
+.radio-custom + .smile-label:before {
+    content: "\f164";
 }
 
 .radio-custom:checked + .smile-label:before {
-    content: "\263A"; 
-    color: #f0c54c;
-    font-size: 22px;
+    content: "\f164"; 
+    color: #4c7ef0;
+}
+
+.user-frown {
+  margin-right: 20px;
+}
+
+.radio-custom + .frown-label:before {
+    content: "\f165";
 }
 
 .radio-custom:checked + .frown-label:before {
-    content: "\2639"; 
-    color: #f0c54c;
-    font-size: 22px;
+    content: "\f165"; 
+    color: #4c7ef0;
+}
+
+.skip-label {
+ 
+}
+
+.checkbox-custom + .skip-label:before {
+    content: "\f03d";
+
+}
+
+.checkbox-custom:checked + .skip-label:before {
+    content: "\f4e2";
+    color: #38364e;
 }

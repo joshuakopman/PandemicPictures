@@ -12,7 +12,7 @@
               <h3 class="movie-title" index="{{@index}}">{{this.Name}} </h3>
                <div class="imdb-container">
                   <span class="imdb-star">&#x2605;</span> 
-                 <span class="imdb-rating" data-object="{{this.Name}}-rating">8.6</span> 
+                 <span class="imdb-rating" data-object="{{this.Name}}-rating"></span> 
               </div>
 
               {{#each this.Viewers}}
@@ -24,11 +24,11 @@
                         </div>
                       <div class="user-info user-smile">
                             <input id="radio-1" class="radio-custom" name="radio-group" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
-                             <label for="radio-1" class="smile-label"></label>
+                             <label for="radio-1" class="radio-custom-label smile-label"></label>
                       </div>
                       <div class="user-info user-frown">
                            <input id="radio-2" class="radio-custom" name="radio-group" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
-                             <label for="radio-2" class="frown-label"></label>
+                             <label for="radio-2" class="radio-custom-label frown-label"></label>
                       </div>
                       <div class="user-info user-skip">
                             <input id="checkbox-skip-{{../this.Name}}-{{this.Name}}" class="checkbox-custom" name="checkbox-skip-{{../this.Name}}-{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
