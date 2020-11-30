@@ -29,7 +29,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -46,7 +46,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -68,7 +68,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Down",
                         "Skip": false
                     }
@@ -85,7 +85,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Down",
                         "Skip": false
                     }
