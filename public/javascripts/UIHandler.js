@@ -55,7 +55,6 @@ class UIHandler {
                 var movieName = movie.Name;
                 for(const viewer of movie.Viewers){
                     try{
-                        console.log("input[name='"+'checkbox-seen-' + movieName + '-' + viewer.Name+"'] changed to: "+viewer.HasSeen);
                         document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + viewer.Name+"']").checked = viewer.HasSeen;
                     }catch{
                         console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');

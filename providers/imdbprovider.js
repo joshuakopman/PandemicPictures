@@ -7,9 +7,12 @@ class IMDBProvider {
     }
     
     readRatingsFromDisk() {
-       let raw = fs.readFileSync('./mocks/imdb.json');
-       let json = JSON.parse(raw);
-       return json;
+      console.log('reading imdb');
+       fs.readFile('./mocks/imdb.json',(err, result) => {
+            console.log('read imdb');
+           let json = JSON.parse(result);
+           return json;        
+      });
     }
 
     async getIMDBMetadata(allMovies) {
