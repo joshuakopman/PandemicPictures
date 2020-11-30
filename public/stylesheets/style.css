@@ -108,6 +108,18 @@ main {
   width: 25%;
   vertical-align: top;
   margin-right: 20px;
+  position: relative;
+}
+
+.fa-youtube {
+  position: absolute;
+  background: white;
+  color: #F04C53;
+  border-radius: 0 50% 0 0;
+  font-size: 18px;
+  padding: 6px 8px;
+  bottom: -1px;
+  left: -9px;
 }
 
 .movie-content-container {
