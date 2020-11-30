@@ -13,16 +13,46 @@ header {
   background: #F04C53;
   color: #fff;
   padding: 10px 50px;
+  transition: all 0.1s;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header.h1 {
-
+header h1 {
+   min-width: 259px;
 }
 
-header.totals-container {
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: all 0.1s;
+  box-shadow: 4px 6px 12px #bf868833;
+}
+
+.sticky + main {
+  padding-top: 94px;
+}
+
+.sticky h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.totals-container {
+   min-width: 236px;
+}
+
+.sticky .picker {
+  font-size: 1em;
+  padding: .5rem 1rem;
+}
+
+.sticky .totals-user span {
+  padding: 5px;
+  background: #000;
+  color: #fff;
 }
 
 .totals-container > div {
@@ -40,6 +70,11 @@ header.totals-container {
   font-size: 18px;
 }
 
+.button-container {
+  min-width: 168px;
+  padding-right: 20px;
+}
+
 .picker {
       background-image: linear-gradient(to top left,#ffa944,#c3185f);
     color: #fff;
@@ -52,7 +87,6 @@ header.totals-container {
     padding: 1rem 1.5rem;
     line-height: 1.4;
     text-align: center;
-    transition: .4s;
     position: relative;
     text-decoration: none;
     font-size: 20px;
@@ -114,12 +148,16 @@ main {
 .fa-youtube {
   position: absolute;
   background: white;
-  color: #F04C53;
+  color: #f04c53b8;
   border-radius: 0 50% 0 0;
   font-size: 18px;
   padding: 6px 8px;
   bottom: -1px;
   left: -9px;
+}
+
+.fa-youtube:hover {
+  color: #F04C53;
 }
 
 .movie-content-container {
