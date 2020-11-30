@@ -12,7 +12,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }
