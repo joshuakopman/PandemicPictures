@@ -19,6 +19,7 @@ class UIHandler {
         });
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
+            console.log(imdbData);
             self.bindIMDBDataToElements(imdbData);
         });
     }
