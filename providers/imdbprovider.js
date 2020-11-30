@@ -9,6 +9,7 @@ class IMDBProvider {
     readRatingsFromDisk() {
        let raw = fs.readFileSync('./mocks/imdb.json');
        let json = JSON.parse(raw);
+       console.log(json[2]);
        return json;
     }
 
@@ -34,18 +35,27 @@ class IMDBProvider {
     }
 
     async fetchOMDBAPIInfo(movie) {
-      var resp = '';
+      var resp = {};
+
       try {
-       resp =  await fetch('http://www.omdbapi.com?apikey=1096e53f&t=' + movie.Name+"&y="+movie.Year);
+       var prevYear = (parseInt(movie.Year)-1).toString();
+       resp =  await fetch('http://www.omdbapi.com?apikey=fa8c70e4&t=' + this.sanitizeMovieName(movie.Name)+"&y="+prevYear);
        resp = await resp.json();
-       if(resp.Response == "False"){
-         console.log('trying adjacent year: '+ (parseInt(movie.Year)-1).toString()+" for: "+movie.Name);
-         var prevYear = (parseInt(movie.Year)-1).toString();
-         resp =  await fetch('http://www.omdbapi.com?apikey=1096e53f&t=' + movie.Name+"&y=" + prevYear);
+      }catch(e) {
+        console.log('Error: Couldnt find movie '+ movie.Name +' in year '+ prevYear);
+      }
+
+      try{
+       if(resp.Response == "False") {
+         console.log('Error: Couldnt find movie '+ movie.Name +' in year '+ prevYear);
+         resp =  await fetch('http://www.omdbapi.com?apikey=9891fdba&t=' + this.sanitizeMovieName(movie.Name)+"&y=" + movie.Year);
          resp = await resp.json();
+         if(resp.Response == "False") {
+            console.log('Error 2: Couldnt find movie '+ movie.Name +' in year '+ movie.Year);
+         }
        }
       }catch {
-        console.log('error');
+        console.log('Error: Couldnt find movie '+ movie.Name +' at all');
       }
 
       try {
@@ -55,6 +65,10 @@ class IMDBProvider {
         resp.Rating = 'N/A';
       }
       return resp;
+    }
+
+    sanitizeMovieName(str){
+      return encodeURIComponent(str).split('%20').join('+');
     }
 }
 
