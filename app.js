@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const ws = require('ws');
 const exphbs = require('express-handlebars');
 const { NomineeProvider } = require('./providers/nomineeProvider.js');
 const { IMDBProvider } = require('./providers/imdbprovider.js');
@@ -11,7 +12,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
 const allMetadata = imdbProvider.readRatingsFromDisk();
-
+const wsServer = new ws.Server({ noServer: true });
 
 app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
@@ -28,7 +29,11 @@ app.get('/getMoviesForStorage', function(req, res, next) {
 
 app.post('/writeMoviesToDiskFromStorage',jsonParser, function(req, res, next) {
     NomNomProvider.writeMoviesToDisk(req.body);
-    res.sendStatus(200);
+	wsServer.clients.forEach(function each(client) {
+      if (client.readyState === ws.OPEN) {
+          client.send('JSONUpdated');
+      }
+    });    
 });
 
 /*
@@ -50,5 +55,9 @@ app.get('/admin/getIMDBMetadata', async (req, res, next) => {
 });
 
 
-
-app.listen(port, () => console.log(`App listening to port ${port}`));
+const server = app.listen(3000);
+server.on('upgrade', (request, socket, head) => {
+  wsServer.handleUpgrade(request, socket, head, socket => {
+    wsServer.emit('connection', socket, request);
+  });
+});

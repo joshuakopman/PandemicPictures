@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var uiHandler = new UIHandler();
-    var dataHandler = new DataHandler(uiHandler);
-    
-    dataHandler.fetchDataFromAPIOrLocalStorage();
-    dataHandler.pushToLocalStorage();
-    uiHandler.updateHasSeenCheckboxes();
+    const ws = new WebSocket('ws://localhost:3000');
+    ws.onopen = function() {
+      var dataHandler = new DataHandler();
+      var uiHandler = new UIHandler(dataHandler,ws);
+      uiHandler.init();
+    };
 });
 
 /*function random(obj) {

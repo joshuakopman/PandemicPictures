@@ -19,8 +19,8 @@
                   <div class="user-container">
                       <div class="user-info user-name">{{this.Name}}</div>
                       <div class="user-info user-check"> 
-                        <input id="checkbox-{{../this.Name}}-{{this.Name}}-1" class="checkbox-custom" name="checkbox-{{../this.Name}}-{{this.Name}}-1" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
-                             <label for="checkbox-{{../this.Name}}-{{this.Name}}-1" class="checkbox-custom-label check-label"></label>
+                        <input id="checkbox-seen-{{../this.Name}}-{{this.Name}}" class="checkbox-custom" name="checkbox-seen-{{../this.Name}}-{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
+                             <label for="checkbox-seen-{{../this.Name}}-{{this.Name}}" class="checkbox-custom-label check-label"></label>
                         </div>
                       <div class="user-info user-smile">
                             <input id="radio-1" class="radio-custom" name="radio-group" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
@@ -31,8 +31,8 @@
                              <label for="radio-2" class="frown-label"></label>
                       </div>
                       <div class="user-info user-skip">
-                            <input id="checkbox-{{../this.Name}}-{{this.Name}}-2" class="checkbox-custom" name="checkbox-{{../this.Name}}-{{this.Name}}-2" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
-                            <label for="checkbox-{{../this.Name}}-{{this.Name}}-2" class="checkbox-custom-label skip-label"></label>
+                            <input id="checkbox-skip-{{../this.Name}}-{{this.Name}}" class="checkbox-custom" name="checkbox-skip-{{../this.Name}}-{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
+                            <label for="checkbox-skip-{{../this.Name}}-{{this.Name}}" class="checkbox-custom-label skip-label"></label>
                       </div>  
                  </div>
               {{/each}}
