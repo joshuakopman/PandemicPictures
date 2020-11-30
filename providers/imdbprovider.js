@@ -9,7 +9,6 @@ class IMDBProvider {
     readRatingsFromDisk() {
        let raw = fs.readFileSync('./mocks/imdb.json');
        let json = JSON.parse(raw);
-       console.log(json[2]);
        return json;
     }
 

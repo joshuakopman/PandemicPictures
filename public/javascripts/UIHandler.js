@@ -19,13 +19,12 @@ class UIHandler {
         });
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
-            console.log(imdbData);
             self.bindIMDBDataToElements(imdbData);
         });
     }
 
     addHasSeenCheckboxListener(movies) {
-        var checkBoxes = document.querySelectorAll('input[type=checkbox]');
+        var checkBoxes = document.querySelectorAll('input[name*="checkbox-seen"]');
         for (const checkBox of checkBoxes) {
           checkBox.addEventListener('click', (e) => {
             var yearIndex = e.currentTarget.getAttribute('year-index');
@@ -56,6 +55,7 @@ class UIHandler {
                 var movieName = movie.Name;
                 for(const viewer of movie.Viewers){
                     try{
+                        console.log("input[name='"+'checkbox-seen-' + movieName + '-' + viewer.Name+"'] changed to: "+viewer.HasSeen);
                         document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + viewer.Name+"']").checked = viewer.HasSeen;
                     }catch{
                         console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
