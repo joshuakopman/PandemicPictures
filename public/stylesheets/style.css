@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   padding: 0;
   margin: 0;
+  color: #231F20;
 }
 
 a {
@@ -288,4 +289,20 @@ main {
 .checkbox-custom:checked + .skip-label:before {
     content: "\f4e2";
     color: #38364e;
+}
+
+footer {
+  background: #FBD2D4;
+  color: #F04C53;
+  text-align: center;
+  font-size: 16px;
+  padding: 50px 50px 70px 50px;
+}
+
+footer a {
+  color: #c3185f;
+}
+
+.fa-github {
+  color: #231F20;
 }
