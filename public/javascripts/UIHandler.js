@@ -10,11 +10,9 @@ class UIHandler {
         var self = this;
 
         this.socket.onmessage = (event) => {
-            fetch('/getMovies')
-            .then(response => response.json())
-            .then(data => {
-               self.updateHasSeenCheckboxes(data);
-            })
+            this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+               self.updateHasSeenCheckboxes(movieData);
+            });
         };
 
         this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
