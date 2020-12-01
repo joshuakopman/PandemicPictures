@@ -66,7 +66,7 @@ class IMDBProvider {
       return resp;
     }
 
-    sanitizeMovieName(str){
+    sanitizeMovieName(str) {
       return encodeURIComponent(str).split('%20').join('+');
     }
 }

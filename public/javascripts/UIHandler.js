@@ -5,11 +5,11 @@ class UIHandler {
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
     }
-
+    
     init() {
         var self = this;
 
-        this.socket.onmessage = function(event) {
+        this.socket.onmessage = (event) => {
             fetch('/getMovies')
             .then(response => response.json())
             .then(data => {
@@ -61,14 +61,14 @@ class UIHandler {
         })
     }
 
-    updateHasSeenCheckboxes(allNomYears){
-        for(const nomYear of allNomYears){
-             for (const movie of nomYear.Movies){
+    updateHasSeenCheckboxes(allNomYears) {
+        for(const nomYear of allNomYears) {
+             for (const movie of nomYear.Movies) {
                 var movieName = movie.Name;
-                for(const viewer of movie.Viewers){
-                    try{
+                for(const viewer of movie.Viewers) {
+                    try {
                         document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + viewer.Name+"']").checked = viewer.HasSeen;
-                    }catch{
+                    }catch {
                         console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
                     }
                 }

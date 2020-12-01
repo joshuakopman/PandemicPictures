@@ -4,10 +4,8 @@ Pandemic Pictures is an application for Josh and Alicia to track the Best Pictur
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
+```
+npm i && node app.js
 ```
 
 ## Usage
@@ -20,6 +18,3 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## Hi
-Test

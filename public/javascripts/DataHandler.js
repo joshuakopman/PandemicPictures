@@ -5,7 +5,6 @@ class DataHandler {
 
     fetchMovieDataFromAPI() {
         return new Promise((resolve, reject) => {   
-        console.log('promise');         
             fetch('/getMovies')
             .then(response => response.json())
             .then(data => {

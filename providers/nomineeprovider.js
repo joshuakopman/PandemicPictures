@@ -4,6 +4,7 @@ const fs = require("fs");
 
 class NomineeProvider {
     constructor() {
+    
     }
 
     readMoviesFromDisk(callback) {
@@ -12,13 +13,13 @@ class NomineeProvider {
       return json;
     }
 
-    writeMoviesToDisk(payload){
+    writeMoviesToDisk(payload) {
        fs.writeFile('./mocks/movies.json', JSON.stringify(payload, null, 4), (err, result) => {
           if(err) console.log('error', err);
         });
     }
 
-    async fetchNomineeMarkup(){
+    async fetchNomineeMarkup() {
          let response = await got('https://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture');
          let allNoms = this.parseNominees(response.body);
          return allNoms;
