@@ -24,6 +24,11 @@ header h1 {
    min-width: 259px;
 }
 
+header h1 a {
+  text-decoration: none;
+  color: white;
+}
+
 .sticky {
   position: sticky;
   top: 0;

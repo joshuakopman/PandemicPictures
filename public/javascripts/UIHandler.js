@@ -5,7 +5,7 @@ class UIHandler {
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
     }
-    
+
     init() {
         var self = this;
 
