@@ -2,11 +2,13 @@ class UIHandler {
     constructor(DataHandler,ws) {
         this.socket = ws;
         this.dataHandler = DataHandler;
+        this.header = document.getElementById("header");
+        this.sticky = this.header.offsetTop;
     }
 
     init() {
         var self = this;
-        
+
         this.socket.onmessage = function(event) {
             fetch('/getMovies')
             .then(response => response.json())
@@ -22,6 +24,14 @@ class UIHandler {
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
             self.bindIMDBDataToElements(imdbData);
         });
+
+        window.onscroll = () => {
+          if (window.pageYOffset > this.sticky) {
+            this.header.classList.add("sticky");
+          } else {
+            this.header.classList.remove("sticky");
+          }
+        };
     }
 
     addHasSeenCheckboxListener(movies) {
