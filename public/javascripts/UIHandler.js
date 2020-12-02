@@ -47,15 +47,16 @@ class UIHandler {
 
     bindIMDBDataToElements(data) {
         data.forEach(movie => {
-                document.querySelector('img[data-object="'+movie.Title+'-poster"]').src = movie.ImageUrl;
-                document.querySelector('span[data-object="'+movie.Title+'-rating"]').innerHTML = movie.Rating;
+                console.log('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]');
+                document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
+                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
                 /* document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
                 document.querySelector('span[data-object="'+movie.Title+'-runtime"]').innerHTML = movie.Runtime;
                 document.querySelector('span[data-object="'+movie.Title+'-genre"]').innerHTML = movie.Genre;
                 document.querySelector('span[data-object="'+movie.Title+'-actors"]').innerHTML = movie.Actors;
                 document.querySelector('span[data-object="'+movie.Title+'-plot"]').innerHTML = movie.Plot;
                */ 
-                document.querySelector('img[data-object="'+movie.Title+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
+                document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
         })
     }
 

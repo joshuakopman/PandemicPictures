@@ -13,6 +13,7 @@ const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
 const allMetadata = imdbProvider.readRatingsFromDisk()
 const wsServer = new ws.Server({ noServer: true });
+const fs = require("fs");
 
 app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
@@ -43,6 +44,9 @@ app.get('/getIMDBForStorage', function(req, res, next) {
     res.json(allMetadata);
 });
 
+
+
+
 /*
 Get Fresh IMDB metadata from API
 */
@@ -52,7 +56,23 @@ app.get('/admin/getIMDBMetadata', async (req, res, next) => {
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
     res.json(allMetadata);
 });
+/*
+app.get('/admin/addYearsToJSON', async (req, res, next) => {
+    var moviesFormatted= NomNomProvider.readMoviesFromDisk().map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
+    var flattedMovies = [].concat.apply([],moviesFormatted);
+    
+    let raw = fs.readFileSync('./mocks/imdb.json');
+    let json = JSON.parse(raw);
+    var index = 0;
 
+    for(var imdbListing of json) {
+        imdbListing.OscarYear = flattedMovies[index].Year;
+        index++;
+      }
+      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(json, null, 4));
+    //res.json(allMetadata);
+});
+*/
 
 const server = app.listen(3000);
 server.on('upgrade', (request, socket, head) => {

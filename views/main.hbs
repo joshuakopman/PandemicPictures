@@ -6,16 +6,16 @@
       {{#each this.Movies}}
         <div class="movie-container">
           <div class="movie-poster-comtainer">
-              <a href="https://imdb.com/{{this.ImdbID}}" target="_blank"> <img class="movie-poster" data-object="{{this.Name}}-poster" src="/assets/poster-placeholder.jpg" /></a>
+              <a href="https://imdb.com/{{this.ImdbID}}" target="_blank"> <img class="movie-poster" data-object="{{this.Name}}-{{../this.Year}}-poster" src="/assets/poster-placeholder.jpg" /></a>
 
-              <a href="https://www.youtube.com/results?search_query={{this.Name}}+{{this.Year}}+trailer" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.youtube.com/results?search_query={{this.Name}}+{{../this.Year}}+trailer" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
 
           <div class="movie-content-container">
               <h3 class="movie-title" index="{{@index}}">{{this.Name}} </h3>
                <div class="imdb-container">
                   <span class="imdb-star">&#x2605;</span> 
-                 <span class="imdb-rating" data-object="{{this.Name}}-rating"></span> 
+                 <span class="imdb-rating" data-object="{{this.Name}}-{{../this.Year}}-rating"></span> 
               </div>
 
               {{#each this.Viewers}}
