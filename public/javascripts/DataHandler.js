@@ -30,16 +30,22 @@ class DataHandler {
     }
 
     async postData(url = '', data = {}) {
-        const response = await fetch(url, {
-            method: 'POST', 
-            cache: 'no-cache', 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+        try{
+            const response = await fetch(url, {
+                method: 'POST', 
+                cache: 'no-cache', 
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
-      return response.json();
+          let jsonResp = await response.json();
+          
+          return jsonResp;
+        } catch(e) {
+            return e;
+        }
     }
 
 }

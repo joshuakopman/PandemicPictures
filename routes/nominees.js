@@ -7,13 +7,15 @@ router.get('/', (req, res, next)  => {
     res.json(NomNomProvider.readMoviesFromDisk());
 });
 
-router.post('/write', function(req, res, next) {
+router.post('/', function(req, res, next) {
     NomNomProvider.writeMoviesToDisk(req.body);
     req.writeConfig.wsServer.clients.forEach(function each(client) {
         if (client.readyState === req.writeConfig.ws.OPEN) {
             client.send('JSONUpdated');
         }
-    });    
+    });  
+
+    return res.status(200).send();
 });
 
 

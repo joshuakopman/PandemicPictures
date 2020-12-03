@@ -40,7 +40,7 @@ class UIHandler {
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
-            this.dataHandler.postData('/movies/write', movies);
+            this.dataHandler.postData('/movies', movies);
           });
         }
     }
