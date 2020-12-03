@@ -39,6 +39,8 @@ class UIHandler {
             var yearIndex = e.currentTarget.getAttribute('year-index');
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
+            console.log(yearIndex);
+            console.log(movieIndex);
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
             this.dataHandler.postData('/movies', movies);
           });
@@ -69,7 +71,7 @@ class UIHandler {
                 var movieName = movie.Name;
                 for(const viewer of movie.Viewers) {
                     try {
-                        document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + viewer.Name+"']").checked = viewer.HasSeen;
+                        document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.HasSeen;
                     }catch {
                         console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
                     }

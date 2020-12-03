@@ -4137,7 +4137,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
@@ -4694,7 +4694,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
@@ -9840,7 +9840,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
@@ -9964,7 +9964,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": "Up",
                         "Skip": false
                     },
