@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const compression = require('compression')
 
 const ws = require('ws');
 const wsServer = new ws.Server({ noServer: true });
@@ -17,6 +18,7 @@ const adminRouter = require('./routes/admin');
 const { NomineeProvider } = require('./providers/nomineeProvider.js');
 const NomNomProvider = new NomineeProvider();
 
+app.use(compression())
 app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
 app.use(express.static('public'))
