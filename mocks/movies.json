@@ -23,13 +23,13 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Up",
                         "Skip": false
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": "Down",
                         "Skip": false
                     }

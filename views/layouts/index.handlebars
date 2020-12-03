@@ -15,8 +15,9 @@
       <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
 
       <div class="totals-container">
-        <div class="totals-user" data-object="{{allNominees.Counts.0.Name}}">{{allNominees.Counts.0.Name}} <span>{{allNominees.Counts.0.MyCount}}</span></div>
-        <div class="totals-user"data-object="{{allNominees.Counts.1.Name}}">{{allNominees.Counts.1.Name}} <span>{{allNominees.Counts.1.MyCount}}</span></div>
+        {{#each allNominees.Counts}}
+            <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
+        {{/each}}
       </div>
 
       <div class="button-container"><a class="picker" href="#">Pick a Movie</a></div>
