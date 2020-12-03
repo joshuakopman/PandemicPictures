@@ -29,19 +29,27 @@ class IMDBProvider {
 
           moviesDict.push(movieTmp);
       }
-      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(moviesDict, null, 4));
+      fs.writeFileSync('./mocks/imdbFinal.json', JSON.stringify(moviesDict, null, 4));
       return moviesDict;
     }
-
+    
+    async fetchOMDBAPIInfoByID(id) {
+      if(id) {
+       var resp =  await fetch('http://www.omdbapi.com?apikey=782e8a6f'+'&i='+id);
+       resp = await resp.json();
+       return resp;
+     }
+    };
+    
     async fetchOMDBAPIInfo(movie) {
       var resp = {};
 
       try {
        var prevYear = (parseInt(movie.Year)-1).toString();
-       resp =  await fetch('http://www.omdbapi.com?apikey=782e8a6f&t=' + this.sanitizeMovieName(movie.Name)+"&y="+prevYear);
+       resp =  await fetch('http://www.omdbapi.com?apikey=782e8a6f'+'&t=' + this.sanitizeMovieName(movie.Name) + "&y=" + prevYear);
        resp = await resp.json();
       }catch(e) {
-        console.log('Exception: Couldnt fetch movie '+ movie.Name +' in year '+ prevYear + '| message: ' + e);
+        console.log('Exception: Couldnt fetch movie '+ movie.Name +' for year '+ prevYear + '| message: ' + e);
       }
 
       var imdbRating = "N/A";
@@ -49,26 +57,26 @@ class IMDBProvider {
         imdbRating = resp.Ratings.find(x => x.Source == 'Internet Movie Database').Value.replace('/10','');
       }
        catch(e) {
-        console.log('Exception: Couldnt find movie rating for '+ movie.Name + '| message: ' +  e);
+        console.log('Exception: Couldnt find IMDB Rating for '+ movie.Name + '| message: ' +  e);
       }
       try {
        if(resp.Response == "False" || resp.Poster == "N/A" || resp.Runtime == "N/A" || resp.Genre.includes('Short') || imdbRating== "N/A" || parseFloat(imdbRating) <= 6.2) {
-         console.log('RetryError: Couldnt find movie '+ movie.Name +' in year '+ prevYear);
-         resp =  await fetch('http://www.omdbapi.com?apikey=2e35e374&t=' + this.sanitizeMovieName(movie.Name)+"&y=" + movie.Year);
+         console.log('RetryError: Couldnt find movie '+ movie.Name +' for year '+ prevYear + ': Now trying the following year');
+         resp =  await fetch('http://www.omdbapi.com?apikey=2e35e374'+'&t=' + this.sanitizeMovieName(movie.Name)+"&y=" + movie.Year);
          resp = await resp.json();
          if(resp.Response == "False") {
-            console.log('Error 2: Couldnt find movie '+ movie.Name +' in year '+ movie.Year);
+            console.log('RetryError: Couldnt find movie '+ movie.Name +' in year '+ movie.Year + ' either');
          }else {
             try {
               imdbRating = resp.Ratings.find(x => x.Source == 'Internet Movie Database').Value.replace('/10','');
             }
              catch (e) {
-              console.log('Retry Error: Couldnt find movie rating for '+ movie.Name + '| message: ' + e);
+              console.log('RetryException: Couldnt find movie rating for '+ movie.Name + '| message: ' + e);
             }
          }
        }
       }catch(e) {
-        console.log('Error: Couldnt fetch movie at all for '+ movie.Name + '| message : ' + e);
+        console.log('RetryException: Couldnt fetch movie at all for '+ movie.Name + '| message : ' + e);
       }
 
       resp.Rating = imdbRating;
