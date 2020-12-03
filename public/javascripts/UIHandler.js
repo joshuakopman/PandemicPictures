@@ -11,7 +11,7 @@ class UIHandler {
 
         this.socket.onmessage = (event) => {
             this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
-               self.updateHasSeenCheckboxes(movieData.MoviesList);
+               self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
 
@@ -59,8 +59,12 @@ class UIHandler {
         })
     }
 
-    updateHasSeenCheckboxes(allNomYears) {
-        for(const nomYear of allNomYears) {
+    updateHasSeenCheckboxesAndCounts(allNomYears) {
+        for(const count of allNomYears.Counts) {
+            document.querySelector('div[data-object="' + count.Name + '"] span').innerHTML = count.MyCount; 
+        }
+
+        for(const nomYear of allNomYears.MoviesList) {
              for (const movie of nomYear.Movies) {
                 var movieName = movie.Name;
                 for(const viewer of movie.Viewers) {
