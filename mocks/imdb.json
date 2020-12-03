@@ -85,7 +85,7 @@
     },
     {
         "Title": "The Patriot",
-        "Rating": "N/A",
+        "Rating": "",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjgwNDU1MWMtOTg0NC00NTIwLTg5NGYtYThmYWRjYzFjYTk1XkEyXkFqcGdeQXVyMjUxODE0MDY@._V1_SX300.jpg",
         "Runtime": "113 min",
         "Genre": "Drama, History, Thriller",
@@ -182,7 +182,7 @@
     {
         "Title": "The Front Page",
         "Rating": "6.7",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjM4NDIwNjc3NV5BMl5BanBnXkFtZTgwODMyMzM0MzE@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTQzODg2MDQtMmM5Ni00YjBjLWFlMTAtOGRhZTQwNzJhZTViXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_UX182_CR0,0,182,268_AL_.jpg",
         "Runtime": "101 min",
         "Genre": "Comedy",
         "Director": "Lewis Milestone",
@@ -901,7 +901,14 @@
     },
     {
         "Title": "In Old Chicago",
-        "Rating": "N/A",
+        "Rating": "6.9",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZjMyMTU4M2YtZWVmOS00MmYwLTljYWItN2UwMjFjNTBmZmYzXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
+        "Runtime": "95 min",
+        "Genre": "Action, Drama, Musical, Romance",
+        "Director": "Henry King",
+        "Actors": "Tyrone Power, Alice Faye, Don Ameche, Alice Brady",
+        "Plot": "The O'Leary brothers -- honest Jack and roguish Dion -- become powerful figures, and eventually rivals, in Chicago on the eve of its Great Fire.",
+        "ImdbID": "tt0029047",
         "OscarYear": 1937
     },
     {
@@ -3274,7 +3281,7 @@
         "OscarYear": 1970
     },
     {
-        "Title": "MASH",
+        "Title": "M*A*S*H",
         "Rating": "7.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjNjM2NlN2MtOWYyOS00NmY5LThhYjMtMDc1Y2U4OTU4MDNjXkEyXkFqcGdeQXVyMjMwNDgzNjc@._V1_SX300.jpg",
         "Runtime": "116 min",
@@ -6263,14 +6270,14 @@
     },
     {
         "Title": "Brooklyn",
-        "Rating": "6.4",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BY2FiNGY4Y2UtNjZmMC00ZjQ1LWI0NmUtOWU3ODdkYTg0MDg2XkEyXkFqcGdeQXVyNjQ4MDkyNzY@._V1_SX300.jpg",
-        "Runtime": "83 min",
-        "Genre": "Drama, Music, Musical",
-        "Director": "Pascal Tessaud",
-        "Actors": "Kt Gorique, Rafal Uchiwa, Jalil Naciri, Liliane Rovère",
-        "Plot": "A young girl runs away from Switzerland. She arrives in Paris to take her chance into Hip Hop music.",
-        "ImdbID": "tt3184798",
+        "Rating": "7.5",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzE4MDk5NzEyOV5BMl5BanBnXkFtZTgwNDM4NDA3NjE@._V1_SX300.jpg",
+        "Runtime": "117 min",
+        "Genre": "Drama, Romance",
+        "Director": "John Crowley",
+        "Actors": "Saoirse Ronan, Hugh Gormley, Brid Brennan, Maeve McGrath",
+        "Plot": "An Irish immigrant lands in 1950s Brooklyn, where she quickly falls into a romance with a local. When her past catches up with her, however, she must choose between two countries and the lives that exist within.",
+        "ImdbID": "tt2381111",
         "OscarYear": 2015
     },
     {
