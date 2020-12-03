@@ -29,7 +29,7 @@ class IMDBProvider {
 
           moviesDict.push(movieTmp);
       }
-      fs.writeFileSync('./mocks/imdbTestFinal.json', JSON.stringify(moviesDict, null, 4));
+      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(moviesDict, null, 4));
       return moviesDict;
     }
 
@@ -41,36 +41,36 @@ class IMDBProvider {
        resp =  await fetch('http://www.omdbapi.com?apikey=782e8a6f&t=' + this.sanitizeMovieName(movie.Name)+"&y="+prevYear);
        resp = await resp.json();
       }catch(e) {
-        console.log('Error: Couldnt find movie '+ movie.Name +' in year '+ prevYear);
+        console.log('Exception: Couldnt fetch movie '+ movie.Name +' in year '+ prevYear + '| message: ' + e);
       }
 
       var imdbRating = "N/A";
       try {
         imdbRating = resp.Ratings.find(x => x.Source == 'Internet Movie Database').Value.replace('/10','');
       }
-       catch {
-        console.log('Error: Couldnt find movie rating for '+ movie.Name);
+       catch(e) {
+        console.log('Exception: Couldnt find movie rating for '+ movie.Name + '| message: ' +  e);
       }
-      try{
-       if(resp.Response == "False" || resp.Poster == "N/A" || resp.Runtime == "N/A" || imdbRating== "N/A" || parseFloat(imdbRating) <= 6.2) {
-         console.log('Error: Couldnt find movie '+ movie.Name +' in year '+ prevYear);
+      try {
+       if(resp.Response == "False" || resp.Poster == "N/A" || resp.Runtime == "N/A" || resp.Genre.includes('Short') || imdbRating== "N/A" || parseFloat(imdbRating) <= 6.2) {
+         console.log('RetryError: Couldnt find movie '+ movie.Name +' in year '+ prevYear);
          resp =  await fetch('http://www.omdbapi.com?apikey=2e35e374&t=' + this.sanitizeMovieName(movie.Name)+"&y=" + movie.Year);
          resp = await resp.json();
          if(resp.Response == "False") {
             console.log('Error 2: Couldnt find movie '+ movie.Name +' in year '+ movie.Year);
-         }else{
+         }else {
             try {
               imdbRating = resp.Ratings.find(x => x.Source == 'Internet Movie Database').Value.replace('/10','');
             }
-             catch {
-              console.log('Error 2: Couldnt find movie rating for '+ movie.Name);
+             catch (e) {
+              console.log('Retry Error: Couldnt find movie rating for '+ movie.Name + '| message: ' + e);
             }
          }
        }
-      }catch {
-        console.log('Error: Couldnt find movie at all for '+ movie.Name);
+      }catch(e) {
+        console.log('Error: Couldnt fetch movie at all for '+ movie.Name + '| message : ' + e);
       }
-      
+
       resp.Rating = imdbRating;
 
       return resp;

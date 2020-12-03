@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require("fs");
 const router = express.Router();
 const { NomineeProvider } = require('../providers/nomineeProvider.js');
 const { IMDBProvider } = require('../providers/imdbProvider.js');
@@ -12,6 +13,20 @@ router.get('/getIMDBMetadata', async (req, res, next) => {
     var flattedMovies = [].concat.apply([],moviesFormatted);
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
     res.json(allMetadata);
+});
+
+router.get('/addYearsToJSON', async (req, res, next) => {
+    var moviesFormatted= NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
+    var flattedMovies = [].concat.apply([],moviesFormatted);
+    
+    let raw = fs.readFileSync('./mocks/imdbTestFinal.json');
+    let json = JSON.parse(raw);
+    var index = 0;
+    for(var imdbListing of json) {
+        imdbListing.OscarYear = flattedMovies[index].Year;
+        index++;
+      }
+      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(json, null, 4));
 });
 
 module.exports = router;
