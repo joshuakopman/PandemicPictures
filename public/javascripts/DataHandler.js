@@ -5,7 +5,7 @@ class DataHandler {
 
     fetchMovieDataFromAPI() {
         return new Promise((resolve, reject) => {   
-            fetch('/getMovies')
+            fetch('/movies')
             .then(response => response.json())
             .then(data => {
                resolve(data);
@@ -16,7 +16,7 @@ class DataHandler {
     fetchIMDBDataFromAPIOrLocalStorage() {     
         return new Promise((resolve, reject) => {   
             if(!localStorage.getItem('imdb')) {
-                fetch('/getIMDBForStorage')
+                fetch('/imdb')
                 .then(response => response.json())
                 .then(data => 
                 {
