@@ -49,6 +49,7 @@ class UIHandler {
 
     bindIMDBDataToElements(data) {
         data.forEach(movie => {
+            try{
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
                 /* document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
@@ -58,6 +59,9 @@ class UIHandler {
                 document.querySelector('span[data-object="'+movie.Title+'-plot"]').innerHTML = movie.Plot;
                */ 
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
+            }catch{
+                console.log('missing HTML element for: '+movie.Title);
+            }
         })
     }
 

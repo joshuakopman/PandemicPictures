@@ -34,8 +34,8 @@
                              <label for="radio-2" class="radio-custom-label frown-label"></label>
                       </div>
                       <div class="user-info user-skip">
-                            <input id="checkbox-skip-{{../this.Name}}-{{this.Name}}" class="checkbox-custom" name="checkbox-skip-{{../this.Name}}-{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
-                            <label for="checkbox-skip-{{../this.Name}}-{{this.Name}}" class="checkbox-custom-label skip-label"></label>
+                            <input id="checkbox-skip-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="checkbox-custom" name="checkbox-skip-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSkip}}checked{{/if}}>
+                            <label for="checkbox-skip-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="checkbox-custom-label skip-label"></label>
                       </div>  
                  </div>
               {{/each}}

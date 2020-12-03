@@ -7,7 +7,7 @@ class NomineeProvider {
     
     }
 
-    readMoviesFromDisk(callback) {
+    readMoviesFromDisk() {
       let raw = fs.readFileSync('./mocks/movies.json');
       var resp = {};
       let json = JSON.parse(raw);

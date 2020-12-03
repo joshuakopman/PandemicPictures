@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const compression = require('compression')
+const fs = require("fs");
 
 const ws = require('ws');
 const wsServer = new ws.Server({ noServer: true });
@@ -38,6 +39,22 @@ app.use('/movies', function (req, res, next) {
 
 app.use('/imdb',imdbRouter);
 app.use('/admin', adminRouter);
+
+
+app.get('/admin/addYearsToJSON', async (req, res, next) => {
+    var moviesFormatted= NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
+    var flattedMovies = [].concat.apply([],moviesFormatted);
+    
+    let raw = fs.readFileSync('./mocks/imdbTestFinal.json');
+    let json = JSON.parse(raw);
+    var index = 0;
+    for(var imdbListing of json) {
+        imdbListing.OscarYear = flattedMovies[index].Year;
+        index++;
+      }
+      fs.writeFileSync('./mocks/imdbTestFinal.json', JSON.stringify(json, null, 4));
+    //res.json(allMetadata);
+});
 
 const server = app.listen(3000);
 server.on('upgrade', (request, socket, head) => {
