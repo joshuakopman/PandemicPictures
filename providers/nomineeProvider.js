@@ -9,8 +9,23 @@ class NomineeProvider {
 
     readMoviesFromDisk(callback) {
       let raw = fs.readFileSync('./mocks/movies.json');
+      var resp = {};
       let json = JSON.parse(raw);
-      return json;
+      resp.MoviesList = json;
+      resp.Counts = []
+      resp.Counts.push(this.getMoviesWatchedCount(json, "Josh"));
+      resp.Counts.push(this.getMoviesWatchedCount(json, "Alicia"));
+
+      return resp;
+    }
+
+    getMoviesWatchedCount(movies,name) {
+        var viewers = movies.map(y => y.Movies.map(z => z.Viewers));
+        var flatViewers = [].concat.apply([],viewers);
+        var flatterViewers = [].concat.apply([],flatViewers);
+        var count = flatterViewers.filter(z => z.Name == name && z.HasSeen == true).length;                         
+        
+        return { "Name" : name, "MyCount" : count };
     }
 
     writeMoviesToDisk(payload) {

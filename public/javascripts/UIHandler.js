@@ -11,12 +11,12 @@ class UIHandler {
 
         this.socket.onmessage = (event) => {
             this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
-               self.updateHasSeenCheckboxes(movieData);
+               self.updateHasSeenCheckboxes(movieData.MoviesList);
             });
         };
 
         this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
-           self.addHasSeenCheckboxListener(movieData);
+           self.addHasSeenCheckboxListener(movieData.MoviesList);
         });
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
@@ -47,7 +47,6 @@ class UIHandler {
 
     bindIMDBDataToElements(data) {
         data.forEach(movie => {
-                console.log('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]');
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
                 /* document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
