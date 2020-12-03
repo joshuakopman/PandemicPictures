@@ -60,7 +60,7 @@ class IMDBProvider {
         console.log('Exception: Couldnt find IMDB Rating for '+ movie.Name + '| message: ' +  e);
       }
       try {
-       if(resp.Response == "False" || resp.Poster == "N/A" || resp.Runtime == "N/A" || resp.Genre.includes('Short') || imdbRating== "N/A" || parseFloat(imdbRating) <= 6.2) {
+       if(resp.Response == "False" || resp.Poster == "N/A" || resp.Rating == "N/A" || resp.Runtime == "N/A" || resp.Genre.includes('Short') || imdbRating== "N/A" || parseFloat(imdbRating) <= 6.2) {
          console.log('RetryError: Couldnt find movie '+ movie.Name +' for year '+ prevYear + ': Now trying the following year');
          resp =  await fetch('http://www.omdbapi.com?apikey=2e35e374'+'&t=' + this.sanitizeMovieName(movie.Name)+"&y=" + movie.Year);
          resp = await resp.json();

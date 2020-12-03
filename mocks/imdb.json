@@ -3274,8 +3274,15 @@
         "OscarYear": 1970
     },
     {
-        "Title": "M*A*S*H",
-        "Rating": "N/A",
+        "Title": "MASH",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjNjM2NlN2MtOWYyOS00NmY5LThhYjMtMDc1Y2U4OTU4MDNjXkEyXkFqcGdeQXVyMjMwNDgzNjc@._V1_SX300.jpg",
+        "Runtime": "116 min",
+        "Genre": "Comedy, Drama, War",
+        "Director": "Robert Altman",
+        "Actors": "Donald Sutherland, Elliott Gould, Tom Skerritt, Sally Kellerman",
+        "Plot": "The staff of a Korean War field hospital use humor and high jinks to keep their sanity in the face of the horror of war.",
+        "ImdbID": "tt0066026",
         "OscarYear": 1970
     },
     {
@@ -3423,8 +3430,15 @@
         "OscarYear": 1973
     },
     {
-        "Title": "Cries and Whispers",
-        "Rating": "N/A",
+        "Title": "Cries & Whispers",
+        "Rating": "8.1",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTg3NzYzOTEtNmE2Ni00M2EyLWJhMjctNjMyMTk4ZTViOGUzXkEyXkFqcGdeQXVyNzQxNDExNTU@._V1_SX300.jpg",
+        "Runtime": "91 min",
+        "Genre": "Drama",
+        "Director": "Ingmar Bergman",
+        "Actors": "Harriet Andersson, Kari Sylwan, Ingrid Thulin, Liv Ullmann",
+        "Plot": "When a woman dying of cancer in early twentieth-century Sweden is visited by her two sisters, long-repressed feelings between the siblings rise to the surface.",
+        "ImdbID": "tt0069467",
         "OscarYear": 1973
     },
     {
@@ -6116,7 +6130,7 @@
         "OscarYear": 2013
     },
     {
-        "Title": "Birdman or (The Unexpected Virtue of Ignorance",
+        "Title": "Birdman or (The Unexpected Virtue of Ignorance)",
         "Rating": "7.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BODAzNDMxMzAxOV5BMl5BanBnXkFtZTgwMDMxMjA4MjE@._V1_SX300.jpg",
         "Runtime": "119 min",
