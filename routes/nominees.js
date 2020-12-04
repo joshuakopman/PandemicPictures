@@ -7,7 +7,7 @@ router.get('/', (req, res, next)  => {
     res.json(NomNomProvider.readMoviesFromDisk());
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', (req, res, next) => {
     NomNomProvider.writeMoviesToDisk(req.body);
     req.writeConfig.wsServer.clients.forEach(function each(client) {
         if (client.readyState === req.writeConfig.ws.OPEN) {

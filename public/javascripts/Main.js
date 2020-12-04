@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ws = new WebSocket('ws://localhost:3000');
+    const ws = new WebSocket('ws://'+location.host);
     ws.onopen = function() {
       var dataHandler = new DataHandler();
       var uiHandler = new UIHandler(dataHandler,ws);

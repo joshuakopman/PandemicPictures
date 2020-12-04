@@ -39,8 +39,6 @@ class UIHandler {
             var yearIndex = e.currentTarget.getAttribute('year-index');
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
-            console.log(yearIndex);
-            console.log(movieIndex);
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
             this.dataHandler.postData('/movies', movies);
           });
@@ -49,7 +47,7 @@ class UIHandler {
 
     bindIMDBDataToElements(data) {
         data.forEach(movie => {
-            try{
+            try {
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
                 /* document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
@@ -59,7 +57,7 @@ class UIHandler {
                 document.querySelector('span[data-object="'+movie.Title+'-plot"]').innerHTML = movie.Plot;
                */ 
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
-            }catch{
+            }catch {
                 console.log('missing HTML element for: '+movie.Title);
             }
         })
