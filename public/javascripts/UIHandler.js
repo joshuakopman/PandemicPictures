@@ -4,6 +4,7 @@ class UIHandler {
         this.dataHandler = DataHandler;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
+        this.fetchedImdbData = {};
     }
 
     init() {
@@ -20,18 +21,19 @@ class UIHandler {
                self.addHasSeenCheckboxListener(movieData.MoviesList);
             });
         }else {
-            var checkBoxes = document.querySelectorAll('input[type=checkbox]');
-            [].forEach.call(checkBoxes, (checkBox) => {
+            [].forEach.call(document.querySelectorAll('input[type=checkbox]'), (checkBox) => {
                 checkBox.setAttribute("disabled", "true");
             });
-            var radios = document.querySelectorAll('input[type=radio]');
-            [].forEach.call(radios, (radio) => {
+
+            [].forEach.call(document.querySelectorAll('input[type=radio]'), (radio) => {
                 radio.setAttribute("disabled", "true");
             });
+
             document.body.classList.add("read-only");
         }
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
+            self.fetchedImdbData = imdbData;
             self.bindIMDBDataToElements(imdbData);
         });
 
@@ -43,22 +45,30 @@ class UIHandler {
           }
         };
 
-        this.setChevron();
+        this.setChevronClickListeners(self.fetchedImdbData);
     }
 
-    setChevron() {
-         var acc = document.getElementsByClassName("chevron");
+    setChevronClickListeners(imdb) {
+         var chevrons = document.getElementsByClassName("chevron");
                 var i;
-            for (i = 0; i < acc.length; i++) {
-              acc[i].addEventListener("click", function(e) {
+            for (i = 0; i < chevrons.length; i++) {
+              chevrons[i].addEventListener("click", function(e) {
                 e.currentTarget.classList.toggle("chevron-active");
-                var panel = e.currentTarget.parentNode.parentNode.querySelector(".panel");
+                var grandParentNode =  e.currentTarget.parentNode.parentNode;
+                var panel = grandParentNode.querySelector(".panel");
                     if (panel.style.display === "block") {
                       panel.style.display = "none";
                     } else {
+                        var movie = imdbData.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year");
+                        console.log(movie);
+                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-director"]').innerHTML = movie.Director;
+                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-runtime"]').innerHTML = movie.Runtime;
+                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-genre"]').innerHTML = movie.Genre;
+                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-actors"]').innerHTML = movie.Actors;
+                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-plot"]').innerHTML = movie.Plot;
                       panel.style.display = "block";
                     }
-                var moviePosterContainer = e.currentTarget.parentNode.parentNode.querySelector(".movie-poster-container");
+                var moviePosterContainer = grandParentNode.querySelector(".movie-poster-container");
                     if (moviePosterContainer.style.zIndex === "999") {
                       moviePosterContainer.style.zIndex = "inherit";
                     } else {
@@ -86,11 +96,6 @@ class UIHandler {
             try {
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
-                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-director"]').innerHTML = movie.Director;
-                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-runtime"]').innerHTML = movie.Runtime;
-                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-genre"]').innerHTML = movie.Genre;
-                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-actors"]').innerHTML = movie.Actors;
-                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-plot"]').innerHTML = movie.Plot;
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
             }catch {
                 console.log('missing HTML element for: '+movie.Title);
