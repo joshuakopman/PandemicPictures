@@ -229,7 +229,7 @@ main {
     display: none;
     overflow: hidden;
     line-height: 1.3;
-    border-bottom: 10px solid #f3f2ef;
+    box-shadow: 7px 14px 12px #c1b9b954;
     background: white;
     padding: 10px;
     margin-bottom: 25px;
