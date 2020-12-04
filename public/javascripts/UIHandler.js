@@ -15,9 +15,16 @@ class UIHandler {
             });
         };
 
-        this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
-           self.addHasSeenCheckboxListener(movieData.MoviesList);
-        });
+        if(window.location.href.includes('edit')) {
+            this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+               self.addHasSeenCheckboxListener(movieData.MoviesList);
+            });
+        }else {
+            var checkBoxes = document.querySelectorAll('input[type=checkbox]');
+            [].forEach.call(checkBoxes, (checkBox) => {
+                checkBox.setAttribute("disabled", "true");
+            });
+        }
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
             self.bindIMDBDataToElements(imdbData);

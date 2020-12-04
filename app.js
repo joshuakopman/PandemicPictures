@@ -24,7 +24,12 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
+
 app.get('/', (req, res, next) => {
+    res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
+});
+
+app.get('/edit', (req, res, next) => {
     res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
 });
 
