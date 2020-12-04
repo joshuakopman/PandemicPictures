@@ -5,13 +5,21 @@
    
       {{#each this.Movies}}
         <div class="movie-container">
-          <div class="movie-poster-comtainer">
+          <div class="movie-poster-container">
               <a href="https://imdb.com/{{this.ImdbID}}" target="_blank"> <img class="movie-poster" data-object="{{this.Name}}-{{../this.Year}}-poster" loading="lazy" /></a>
 
               <a href="https://www.youtube.com/results?search_query={{this.Name}}+{{../this.Year}}+trailer" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
 
+         <div class="panel">
+                 <p class="movie-details-line"><span class="movie-detail-span" data-object="{{this.Name}}-{{../this.Year}}-runtime"></span> | <span class="movie-detail-span" data-object="{{this.Name}}-{{../this.Year}}-genre"></span></p>
+                <p class="movie-details-line"><span class="movie-detail-span" data-object="{{this.Name}}-{{../this.Year}}-plot"></span></p>
+                <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span" data-object="{{this.Name}}-{{../this.Year}}-director"></span></p>
+                <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span" data-object="{{this.Name}}-{{../this.Year}}-actors"></span></p>
+              </div>
+
           <div class="movie-content-container">
+              <div class="chevron"></div>
               <h3 class="movie-title" index="{{@index}}">{{this.Name}} </h3>
                <div class="imdb-container">
                   <span class="imdb-star">&#x2605;</span> 

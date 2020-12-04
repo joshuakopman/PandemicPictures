@@ -30,6 +30,30 @@ class UIHandler {
             this.header.classList.remove("sticky");
           }
         };
+
+        this.functionthing();
+    }
+
+    functionthing() {
+         var acc = document.getElementsByClassName("chevron");
+                var i;
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function(e) {
+                e.currentTarget.classList.toggle("chevron-active");
+                var panel = e.currentTarget.parentNode.parentNode.querySelector(".panel");
+                if (panel.style.display === "block") {
+                  panel.style.display = "none";
+                } else {
+                  panel.style.display = "block";
+                }
+                var moviePosterContainer = e.currentTarget.parentNode.parentNode.querySelector(".movie-poster-container");
+                if (moviePosterContainer.style.zIndex === "999") {
+                  moviePosterContainer.style.zIndex = "inherit";
+                } else {
+                  moviePosterContainer.style.zIndex = "999";
+                }
+            });
+        }
     }
 
     addHasSeenCheckboxListener(movies) {
@@ -52,12 +76,11 @@ class UIHandler {
             try{
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
-                /* document.querySelector('span[data-object="'+movie.Title+'-director"]').innerHTML = movie.Director;
-                document.querySelector('span[data-object="'+movie.Title+'-runtime"]').innerHTML = movie.Runtime;
-                document.querySelector('span[data-object="'+movie.Title+'-genre"]').innerHTML = movie.Genre;
-                document.querySelector('span[data-object="'+movie.Title+'-actors"]').innerHTML = movie.Actors;
-                document.querySelector('span[data-object="'+movie.Title+'-plot"]').innerHTML = movie.Plot;
-               */ 
+                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-director"]').innerHTML = movie.Director;
+                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-runtime"]').innerHTML = movie.Runtime;
+                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-genre"]').innerHTML = movie.Genre;
+                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-actors"]').innerHTML = movie.Actors;
+                document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-plot"]').innerHTML = movie.Plot;
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
             }catch{
                 console.log('missing HTML element for: '+movie.Title);
