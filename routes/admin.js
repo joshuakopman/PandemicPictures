@@ -3,6 +3,7 @@ const fs = require("fs");
 const router = express.Router();
 const { NomineeProvider } = require('../providers/nomineeProvider.js');
 const { IMDBProvider } = require('../providers/imdbProvider.js');
+const basicAuth = require('express-basic-auth')
 
 const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
@@ -44,4 +45,16 @@ router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
       fs.writeFileSync('./mocks/imdb.json', JSON.stringify(currentMoviesArray, null, 4));
 
 });
+
+router.get('/edit', basicAuth(
+    {
+        users: { 
+        'admin': 'galleryWall' 
+        },
+        challenge: true
+    }), (req, res, next) => {
+        res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()
+    });
+});
+
 module.exports = router;

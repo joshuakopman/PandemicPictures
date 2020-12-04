@@ -29,10 +29,6 @@ app.get('/', (req, res, next) => {
     res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
 });
 
-app.get('/edit', (req, res, next) => {
-    res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
-});
-
 app.use('/movies', (req, res, next) => {
     req.writeConfig = {
         wsServer: wsServer,
