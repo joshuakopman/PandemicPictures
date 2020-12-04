@@ -24,6 +24,11 @@ class UIHandler {
             [].forEach.call(checkBoxes, (checkBox) => {
                 checkBox.setAttribute("disabled", "true");
             });
+            var radios = document.querySelectorAll('input[type=radio]');
+            [].forEach.call(radios, (radio) => {
+                radio.setAttribute("disabled", "true");
+            });
+            document.body.classList.add("read-only");
         }
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
@@ -38,27 +43,27 @@ class UIHandler {
           }
         };
 
-        this.functionthing();
+        this.setChevron();
     }
 
-    functionthing() {
+    setChevron() {
          var acc = document.getElementsByClassName("chevron");
                 var i;
             for (i = 0; i < acc.length; i++) {
               acc[i].addEventListener("click", function(e) {
                 e.currentTarget.classList.toggle("chevron-active");
                 var panel = e.currentTarget.parentNode.parentNode.querySelector(".panel");
-                if (panel.style.display === "block") {
-                  panel.style.display = "none";
-                } else {
-                  panel.style.display = "block";
-                }
+                    if (panel.style.display === "block") {
+                      panel.style.display = "none";
+                    } else {
+                      panel.style.display = "block";
+                    }
                 var moviePosterContainer = e.currentTarget.parentNode.parentNode.querySelector(".movie-poster-container");
-                if (moviePosterContainer.style.zIndex === "999") {
-                  moviePosterContainer.style.zIndex = "inherit";
-                } else {
-                  moviePosterContainer.style.zIndex = "999";
-                }
+                    if (moviePosterContainer.style.zIndex === "999") {
+                      moviePosterContainer.style.zIndex = "inherit";
+                    } else {
+                      moviePosterContainer.style.zIndex = "999";
+                    }
             });
         }
     }

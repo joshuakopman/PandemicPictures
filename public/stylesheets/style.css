@@ -196,7 +196,7 @@ main {
   align-content: space-between;
 }
 
-.movie-content-container > div:nth-of-type(5) {
+.movie-content-container > div:nth-of-type(3) {
   margin-bottom: 10px;
 }
 
@@ -270,6 +270,10 @@ main {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
+}
+
+.read-only .checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    cursor: default;
 }
 
 .checkbox-custom-label, .radio-custom-label {
