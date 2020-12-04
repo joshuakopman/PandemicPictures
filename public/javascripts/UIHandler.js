@@ -4,7 +4,6 @@ class UIHandler {
         this.dataHandler = DataHandler;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
-        this.fetchedImdbData = {};
     }
 
     init() {
@@ -33,8 +32,8 @@ class UIHandler {
         }
 
         this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
-            self.fetchedImdbData = imdbData;
             self.bindIMDBDataToElements(imdbData);
+            self.setChevronClickListeners(imdbData);
         });
 
         window.onscroll = () => {
@@ -44,8 +43,6 @@ class UIHandler {
             this.header.classList.remove("sticky");
           }
         };
-
-        this.setChevronClickListeners(self.fetchedImdbData);
     }
 
     setChevronClickListeners(imdb) {
@@ -59,13 +56,12 @@ class UIHandler {
                     if (panel.style.display === "block") {
                       panel.style.display = "none";
                     } else {
-                        var movie = imdbData.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year");
-                        console.log(movie);
-                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-director"]').innerHTML = movie.Director;
-                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-runtime"]').innerHTML = movie.Runtime;
-                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-genre"]').innerHTML = movie.Genre;
-                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-actors"]').innerHTML = movie.Actors;
-                        document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-plot"]').innerHTML = movie.Plot;
+                      var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
+                      document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-director"]').innerHTML = movie.Director;
+                      document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-runtime"]').innerHTML = movie.Runtime;
+                      document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-genre"]').innerHTML = movie.Genre;
+                      document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-actors"]').innerHTML = movie.Actors;
+                      document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-plot"]').innerHTML = movie.Plot;
                       panel.style.display = "block";
                     }
                 var moviePosterContainer = grandParentNode.querySelector(".movie-poster-container");
