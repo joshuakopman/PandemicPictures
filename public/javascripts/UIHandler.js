@@ -56,6 +56,12 @@ class UIHandler {
                     if (panel.style.display === "block") {
                       panel.style.display = "none";
                     } else {
+
+                      var template = document.getElementById('panel-template').innerHTML;
+                      var renderPanel = Handlebars.compile(template);
+                      var panelData = { name : e.currentTarget.getAttribute("Movie"), year : e.currentTarget.getAttribute("Year") };
+                      panel.innerHTML = renderPanel(panelData);
+
                       var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
                       document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-director"]').innerHTML = movie.Director;
                       document.querySelector('span[data-object="'+e.currentTarget.getAttribute("Movie")+'-'+e.currentTarget.getAttribute("Year")+'-runtime"]').innerHTML = movie.Runtime;
