@@ -34,11 +34,11 @@
                              <label for="checkbox-seen-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="checkbox-custom-label check-label"></label>
                         </div>
                       <div class="user-info user-smile">
-                            <input id="radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="radio-custom" name="radio-group-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.Rating}}checked{{/if}}>
+                            <input id="radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="radio-custom" name="radio-group-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#when this.Rating 'eq' true}}checked{{/when}}>
                              <label for="radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="radio-custom-label smile-label"></label>
                       </div>
                       <div class="user-info user-frown">
-                           <input id="radio-2-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="radio-custom" name="radio-group-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#unless this.Rating}}checked{{/unless}}>
+                           <input id="radio-2-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="radio-custom" name="radio-group-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#when this.Rating 'eq' false}}checked{{/when}}>
                              <label for="radio-2-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}" class="radio-custom-label frown-label"></label>
                       </div>
                       <div class="user-info user-skip">

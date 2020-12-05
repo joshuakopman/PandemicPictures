@@ -137,9 +137,9 @@ class UIHandler {
                     try {
                         document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.HasSeen;
                         document.querySelector("input[name='"+'checkbox-skip-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.Skip;
-                        if(viewer.Rating){
+                        if(viewer.Rating == true){
                             document.querySelector("input[id='"+'radio-1-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = true;
-                        }else {
+                        }else if(viewer.Rating == false){
                             document.querySelector("input[id='"+'radio-2-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = true;
                         }
                     }catch {
