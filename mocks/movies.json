@@ -1699,8 +1699,8 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
-                        "Rating": null,
+                        "HasSeen": true,
+                        "Rating": true,
                         "Skip": false
                     }
                 ]
@@ -1733,8 +1733,8 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
-                        "Rating": null,
+                        "HasSeen": true,
+                        "Rating": true,
                         "Skip": false
                     }
                 ]
@@ -2297,7 +2297,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     }
@@ -2832,7 +2832,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     }
@@ -3080,7 +3080,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": null,
                         "Skip": false
                     }
