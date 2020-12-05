@@ -17,7 +17,7 @@ class UIHandler {
 
         if(window.location.href.includes('edit')) {
             this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
-               self.addHasSeenCheckboxListener(movieData.MoviesList);
+               self.addHasSeenAndSkipCheckboxListener(movieData.MoviesList);
             });
         }else {
             [].forEach.call(document.querySelectorAll('input[type=checkbox]'), (checkBox) => {
@@ -74,7 +74,7 @@ class UIHandler {
         }
     }
 
-    addHasSeenCheckboxListener(movies) {
+    addHasSeenAndSkipCheckboxListener(movies) {
         var checkBoxes = document.querySelectorAll('input[name*="checkbox-seen"]');
         for (const checkBox of checkBoxes) {
           checkBox.addEventListener('click', (e) => {
@@ -82,6 +82,17 @@ class UIHandler {
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
+            this.dataHandler.postData('/movies', movies);
+          });
+        }
+
+        var skips = document.querySelectorAll('input[name*="checkbox-skip"]');
+        for (const skip of skips) {
+          skip.addEventListener('click', (e) => {
+            var yearIndex = e.currentTarget.getAttribute('year-index');
+            var movieIndex = e.currentTarget.getAttribute('movie-index');
+            var nameOfPersonWhoHasSkipped = e.currentTarget.parentNode.parentNode.innerText.trim();
+            movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSkipped).Skip = e.currentTarget.checked;
             this.dataHandler.postData('/movies', movies);
           });
         }
@@ -110,6 +121,7 @@ class UIHandler {
                 for(const viewer of movie.Viewers) {
                     try {
                         document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.HasSeen;
+                        document.querySelector("input[name='"+'checkbox-skip-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.Skip;
                     }catch {
                         console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
                     }
