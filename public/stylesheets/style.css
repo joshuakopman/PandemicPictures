@@ -215,21 +215,21 @@ main {
 
 .chevron:after {
   font-family: 'fontawesome';
-  content: "\f077";
+  content: "\f078";
   font-size: 22px;
   color: #F4797E;
-    padding: 10px;
 }
 
 .chevron-active:after {
-  content: "\f078";
+  content: "\f077";
+  color: #F04C53;
 }
 
 .panel {
     display: none;
     overflow: hidden;
     line-height: 1.3;
-    box-shadow: 7px 14px 12px #c1b9b954;
+    box-shadow: 0px 12px 10px #e94a528c;
     background: white;
     padding: 10px;
     margin-bottom: 25px;
@@ -237,17 +237,25 @@ main {
     z-index: 9;
     position: absolute;
     top: 77px;
-    padding-left: 130px;
+    padding-left: 135px;
+    padding-right: 20px;
     left: 0;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, #ffffff 0%, #e94a52 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #ffffff 0%, #e94a52 100%);
+    border-image: linear-gradient(to bottom, #ffffff 0%, #e94a52 100%);
+    border-image-slice: 1;
+    border-top: 0;
 }
 
-.movie-details-open > p:first-of-type {
-  color: #8C8989;
+.panel > p:first-of-type {
+  color: #8c8989;
 }
 
 .movie-detail-label {
-  margin-right: 10px;
+  font-weight: 700;
 }
+
 
 .user-info {
   font-size: 22px;
@@ -272,7 +280,7 @@ main {
     cursor: pointer;
 }
 
-.read-only .checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+.read-only .checkbox-custom, .read-only .checkbox-custom-label, .radio-custom, .read-only .radio-custom-label {
     cursor: default;
 }
 
