@@ -17,7 +17,7 @@ class UIHandler {
 
         if(window.location.href.includes('edit')) {
             this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
-               self.addHasSeenCheckboxListener(movieData.MoviesList);
+               self.addInputListeners(movieData.MoviesList);
             });
         }else {
             [].forEach.call(document.querySelectorAll('input[type=checkbox]'), (checkBox) => {
@@ -74,7 +74,7 @@ class UIHandler {
         }
     }
 
-    addHasSeenCheckboxListener(movies) {
+    addInputListeners(movies) {
         var checkBoxes = document.querySelectorAll('input[name*="checkbox-seen"]');
         for (const checkBox of checkBoxes) {
           checkBox.addEventListener('click', (e) => {
@@ -82,6 +82,32 @@ class UIHandler {
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
+            this.dataHandler.postData('/movies', movies);
+          });
+        }
+
+        var skips = document.querySelectorAll('input[name*="checkbox-skip"]');
+        for (const skip of skips) {
+          skip.addEventListener('click', (e) => {
+            var yearIndex = e.currentTarget.getAttribute('year-index');
+            var movieIndex = e.currentTarget.getAttribute('movie-index');
+            var nameOfPersonWhoHasSkipped = e.currentTarget.parentNode.parentNode.innerText.trim();
+            movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSkipped).Skip = e.currentTarget.checked;
+            this.dataHandler.postData('/movies', movies);
+          });
+        }
+
+        var likes = document.querySelectorAll('input[name*="radio-group"]');
+        for (const like of likes) {
+          like.addEventListener('click', (e) => {
+            var yearIndex = e.currentTarget.getAttribute('year-index');
+            var movieIndex = e.currentTarget.getAttribute('movie-index');
+            var nameOfPersonWhoHasRated = e.currentTarget.parentNode.parentNode.innerText.trim();
+            if(e.currentTarget.id.includes("radio-2")) {
+                movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = false;
+            }else{
+                movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = true;
+            }
             this.dataHandler.postData('/movies', movies);
           });
         }
@@ -107,9 +133,15 @@ class UIHandler {
         for(const nomYear of allNomYears.MoviesList) {
              for (const movie of nomYear.Movies) {
                 var movieName = movie.Name;
-                for(const viewer of movie.Viewers) {
+                for(const viewer of movie.Viewers) { //radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}
                     try {
                         document.querySelector("input[name='"+'checkbox-seen-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.HasSeen;
+                        document.querySelector("input[name='"+'checkbox-skip-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = viewer.Skip;
+                        if(viewer.Rating == true){
+                            document.querySelector("input[id='"+'radio-1-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = true;
+                        }else if(viewer.Rating == false){
+                            document.querySelector("input[id='"+'radio-2-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = true;
+                        }
                     }catch {
                         console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
                     }
