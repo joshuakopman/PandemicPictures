@@ -130,13 +130,18 @@ class UIHandler {
     }
 
     bindIMDBDataToElements(data) {
+        var year = '';
         data.forEach(movie => {
             try {
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
-            }catch {
-                console.log('missing HTML element for: '+movie.Title);
+                if(movie.OscarYear != year) {
+                    document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').parentNode.parentNode.parentNode.querySelector('h3').innerText += " 🏆";
+                    year = movie.OscarYear;
+                }
+            }catch(e) {
+                console.log('missing HTML element for: '+movie.Title + " | exception: " + e);
             }
         })
     }
