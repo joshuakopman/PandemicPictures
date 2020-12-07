@@ -137,7 +137,10 @@ class UIHandler {
                 document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').innerHTML = movie.Rating;
                 document.querySelector('img[data-object="'+movie.Title+'-'+movie.OscarYear+'-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID; 
                 if(movie.OscarYear != year) {
-                    document.querySelector('span[data-object="'+movie.Title+'-'+movie.OscarYear+'-rating"]').parentNode.parentNode.parentNode.querySelector('h3').innerText += " 🏆";
+                    var movieTitleElement = document.querySelector('div[movie="'+movie.Title+'"][year="'+movie.OscarYear+'"]').nextElementSibling;
+                    if(movieTitleElement.getAttribute('index') == "0") {
+                        movieTitleElement.innerText += " 🏆";
+                    }
                     year = movie.OscarYear;
                 }
             }catch(e) {
