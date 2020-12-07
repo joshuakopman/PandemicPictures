@@ -182,6 +182,7 @@ class UIHandler {
         chosenMovieElement.style.border = "thick solid #F4797E";
         chosenMovieElement.scrollIntoView();
         window.scrollBy(0, -100);
+        return chosenMovieElement;
     }
 
 }
