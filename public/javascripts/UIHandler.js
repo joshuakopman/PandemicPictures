@@ -4,6 +4,7 @@ class UIHandler {
         this.dataHandler = DataHandler;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
+        this.chosenMovieElement = null;
     }
 
     init() {
@@ -43,13 +44,24 @@ class UIHandler {
             this.header.classList.remove("sticky");
           }
         };
+
+        this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+            document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
+                console.log('clicked1');
+                if(self.chosenMovieElement) {
+                   self.chosenMovieElement.style.border = "none";
+                }
+                self.chosenMovieElement = self.randomlySelectMovie(movieData);
+                setTimeout(() =>  self.chosenMovieElement.scrollIntoView(), 0);
+            });
+        });
     }
 
     setChevronClickListeners(imdb) {
          var chevrons = document.getElementsByClassName("chevron");
                 var i;
             for (i = 0; i < chevrons.length; i++) {
-              chevrons[i].addEventListener("click", function(e) {
+              chevrons[i].addEventListener("click", (e) => {
                 e.currentTarget.classList.toggle("chevron-active");
                 var grandParentNode =  e.currentTarget.parentNode.parentNode;
                 var panel = grandParentNode.querySelector(".panel");
@@ -156,4 +168,21 @@ class UIHandler {
            
         }
     }
+
+    randomlySelectMovie(allMovies) {
+        var moviesToChooseFrom = [];
+        var modernMovies = allMovies.MoviesList.filter(m => m.Year > 1970);
+        modernMovies.forEach((moviesInYear)=> {
+            var modernUnseenMovies = moviesInYear.Movies.filter(m => m.Viewers[0].HasSeen == false || m.Viewers[1].HasSeen == false);
+            var modernUnseenMoviesNotSkipped = modernUnseenMovies.filter(m => m.Viewers[0].Skip == false && m.Viewers[1].Skip == false);
+            moviesToChooseFrom = moviesToChooseFrom.concat(modernUnseenMoviesNotSkipped);
+
+        });
+        var randomMovie = moviesToChooseFrom.sort(() => Math.random() - 0.5)[0];
+
+        var chosenMovieElement = document.querySelector("div[movie='"+randomMovie.Name.replace(/'/g, "\\'")+"']").parentNode.parentNode;
+        chosenMovieElement.style.border = "thick solid #F4797E";
+        return chosenMovieElement;
+    }
+
 }
