@@ -4,6 +4,7 @@ class UIHandler {
         this.dataHandler = DataHandler;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
+        this.chosenMovieElement = null;
     }
 
     init() {
