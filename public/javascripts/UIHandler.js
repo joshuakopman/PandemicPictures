@@ -4,7 +4,6 @@ class UIHandler {
         this.dataHandler = DataHandler;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
-        this.chosenMovieElement = null;
     }
 
     init() {
@@ -51,10 +50,6 @@ class UIHandler {
                    self.chosenMovieElement.style.border = "none";
                 }
                 self.chosenMovieElement = self.randomlySelectMovie(movieData);
-                setTimeout(() =>  {
-                    self.chosenMovieElement.scrollIntoView();
-                    window.scrollBy(0, -100);
-                }, 0);
             });
         });
     }
@@ -184,7 +179,8 @@ class UIHandler {
 
         var chosenMovieElement = document.querySelector("div[movie='"+randomMovie.Name.replace(/'/g, "\\'")+"']").parentNode.parentNode;
         chosenMovieElement.style.border = "thick solid #F4797E";
-        return chosenMovieElement;
+        chosenMovieElement.scrollIntoView();
+        window.scrollBy(0, -100);
     }
 
 }
