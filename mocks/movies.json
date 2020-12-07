@@ -5003,13 +5003,13 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     }
@@ -5346,7 +5346,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": null,
                         "Skip": false
                     },
@@ -5560,7 +5560,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": null,
                         "Skip": false
                     },
@@ -8960,7 +8960,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     },
