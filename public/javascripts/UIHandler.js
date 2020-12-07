@@ -47,12 +47,14 @@ class UIHandler {
 
         this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
             document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
-                console.log('clicked1');
                 if(self.chosenMovieElement) {
                    self.chosenMovieElement.style.border = "none";
                 }
                 self.chosenMovieElement = self.randomlySelectMovie(movieData);
-                setTimeout(() =>  self.chosenMovieElement.scrollIntoView(), 0);
+                setTimeout(() =>  {
+                    self.chosenMovieElement.scrollIntoView();
+                    window.scrollBy(0, -100);
+                }, 0);
             });
         });
     }
