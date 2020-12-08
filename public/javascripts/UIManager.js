@@ -1,7 +1,6 @@
 class UIManager {
-    constructor(DataHandler,UIEventListenerManager,ws) {
+    constructor(UIEventListenerManager,ws) {
         this.socket = ws;
-        this.dataHandler = DataHandler;
         this.uiEventListenerManager = UIEventListenerManager;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
@@ -11,12 +10,12 @@ class UIManager {
         var self = this;
 
         this.socket.onmessage = (event) => {
-            this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+            self.uiEventListenerManager.getDataHandler().fetchMovieDataFromAPI().then(movieData => {
                self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
 
-        this.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+        this.uiEventListenerManager.getDataHandler().fetchMovieDataFromAPI().then(movieData => {
             self.uiEventListenerManager.addRandomMovieClickListener(movieData);
             
             if(window.location.href.includes('edit')) {
@@ -34,7 +33,7 @@ class UIManager {
             }
         });
 
-        this.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
+        this.uiEventListenerManager.getDataHandler().fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
             self.bindIMDBDataToMovies(imdbData);
             self.uiEventListenerManager.addChevronClickListeners(imdbData);
         });

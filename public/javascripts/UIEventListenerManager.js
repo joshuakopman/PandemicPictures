@@ -93,4 +93,8 @@ class UIEventListenerManager {
         });
     }
 
+    getDataHandler() {
+      return this.dataHandler;
+    }
+
 }
