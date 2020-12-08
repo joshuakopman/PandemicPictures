@@ -79,15 +79,7 @@ header h1 a {
      position: absolute;
      text-align: center;
      font-size: 16px !important;
-     background: #D6A533;
-     background: -webkit-gradient(linear, left top, left bottom, from(#D6A533), to(#AB892B));
-     background: -webkit-linear-gradient(top, #D6A533, #AB892B);
-     background: -moz-linear-gradient(top, #D6A533, #AB892B);
-     background: -ms-linear-gradient(top, #D6A533, #AB892B);
-     background: -o-linear-gradient(top, #D6A533, #AB892B);
-     background-image: -ms-linear-gradient(top, #D6A533 0%, #AB892B 100%);
-     -webkit-box-shadow: rgba(0,0,0,0.3) 0 0 0;
-     -moz-box-shadow: rgba(0,0,0,0.3) 0 0 0;
+     background: #ffa944;
      box-shadow: rgba(0,0,0,0.3) 0 0 0;
      font-family: 'Helvetica Neue',Helvetica, sans-serif;
 }
@@ -104,18 +96,18 @@ header h1 a {
      position: absolute;
      display: block;
      bottom: -1em;
-     border: 1.5em solid #D1AC32;
+     border: 1em solid #c2663a;
      z-index: -1;
 }
 
 .ribbon:before {
-     left: -2em;
+     left: -1.5em;
      border-right-width: 1.5em;
      border-left-color: transparent;
 }
 
 .ribbon:after {
-     right: -2em;
+     right: -1.5em;
      border-left-width: 1.5em;
      border-right-color: transparent;
 }
@@ -187,7 +179,7 @@ header h1 a {
 .sticky-totals-container {
   display: none;
   padding-bottom: 10px;
-  min-width: 236px;
+  margin-left: -50px;
 }
 
 .sticky .sticky-totals-container {
@@ -287,7 +279,7 @@ header h1 a {
 
 main {
   padding: 50px;
-  padding-top: 120px;
+  padding-top: 140px;
   background: #f3f2ef;
 }
 
@@ -340,6 +332,7 @@ h2 {
 .trophy:after {
   content: '🏆';
   font-size: 14px;
+  padding-left: 2px;
 }
 
 .movie-poster-container {
