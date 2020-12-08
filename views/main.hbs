@@ -1,7 +1,7 @@
 {{#each allNominees.MoviesList}}
 
 <div class="year-container">
-  <h2 id="{{this.Year}}" class="year-heading" index="{{@index}}" data-object="year">{{inc this.Year "+" 1}}</h2>
+  <h2 id="{{inc this.Year "+" 1}}" class="year-heading" index="{{@index}}" data-object="year">{{inc this.Year "+" 1}}</h2>
    
       {{#each this.Movies}}
         <div class="movie-container">
