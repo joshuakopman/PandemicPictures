@@ -12,10 +12,11 @@ class NomineeProvider {
       var resp = {};
       let json = JSON.parse(raw);
       resp.MoviesList = json;
+      resp.TotalMovies =[].concat.apply([],json.map(x => x.Movies.map(y => y.Name))).length;
       resp.Counts = []
       resp.Counts.push(this.getMoviesWatchedCount(json, "Josh"));
       resp.Counts.push(this.getMoviesWatchedCount(json, "Alicia"));
-
+    
       return resp;
     }
 
