@@ -84,10 +84,10 @@ class UIEventListenerManager {
        var self = this;
        document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
             if(self.chosenMovieElement) {
-               self.chosenMovieElement.style.border = "none";
+               self.chosenMovieElement.classList.remove("chosen-one");
             }
             self.chosenMovieElement  = self.uiHelper.randomlySelectMovie(movieData);
-            self.chosenMovieElement.style.border = "thick solid #F4797E";
+            self.chosenMovieElement.classList.add("chosen-one");
           self.chosenMovieElement.scrollIntoView();
           window.scrollBy(0, -100);
         });
