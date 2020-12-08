@@ -1,6 +1,6 @@
-const { JSDOM } = require('jsdom');
-const got = require("got");
-const fs = require("fs");
+import JSDOM  from 'jsdom';
+import got from "got";
+import { readFileSync, writeFile } from "fs";
 
 class NomineeProvider {
     constructor() {
@@ -8,7 +8,7 @@ class NomineeProvider {
     }
 
     readMoviesFromDisk() {
-      let raw = fs.readFileSync('./mocks/movies.json');
+      let raw = readFileSync('./mocks/movies.json');
       var resp = {};
       let json = JSON.parse(raw);
       resp.MoviesList = json;
@@ -29,7 +29,7 @@ class NomineeProvider {
     }
 
     writeMoviesToDisk(payload) {
-       fs.writeFile('./mocks/movies.json', JSON.stringify(payload, null, 4), (err, result) => {
+       writeFile('./mocks/movies.json', JSON.stringify(payload, null, 4), (err, result) => {
           if(err) console.log('error', err);
         });
     }
@@ -86,4 +86,5 @@ class NomineeProvider {
     }
 }
 
-module.exports.NomineeProvider = NomineeProvider;
+const _NomineeProvider = NomineeProvider;
+export { _NomineeProvider as NomineeProvider };

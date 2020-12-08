@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import { IMDBProvider } from '../providers/imdbProvider.js';
+
 const router = express.Router();
-const { IMDBProvider } = require('../providers/imdbProvider.js');
 const imdbProvider = new IMDBProvider();
 const allMetadata = imdbProvider.readRatingsFromDisk();
 
@@ -9,4 +10,4 @@ router.get('/', (req, res, next) => {
 });
 
 
-module.exports = router;
+export default router;

@@ -1,9 +1,9 @@
 class UIEventListenerManager {
 
     constructor(dataHandler,UIHelper) {
-    	this.dataHandler = dataHandler;
-    	this.uiHelper = UIHelper;
-    	this.chosenMovieElement = null;
+      this.dataHandler = dataHandler;
+      this.uiHelper = UIHelper;
+      this.chosenMovieElement = null;
     }
 
     addChevronClickListeners(imdb) {
@@ -81,15 +81,15 @@ class UIEventListenerManager {
     }
 
     addRandomMovieClickListener(movieData) {
-    	 var self = this;
-	     document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
+       var self = this;
+       document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
             if(self.chosenMovieElement) {
                self.chosenMovieElement.style.border = "none";
             }
             self.chosenMovieElement  = self.uiHelper.randomlySelectMovie(movieData);
             self.chosenMovieElement.style.border = "thick solid #F4797E";
-	        self.chosenMovieElement.scrollIntoView();
-	        window.scrollBy(0, -100);
+          self.chosenMovieElement.scrollIntoView();
+          window.scrollBy(0, -100);
         });
     }
 

@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import { NomineeProvider } from '../providers/nomineeProvider.js';
+
 const router = express.Router();
-const { NomineeProvider } = require('../providers/nomineeProvider.js');
 const NomNomProvider = new NomineeProvider();
 
 router.get('/', (req, res, next)  => {
@@ -19,4 +20,4 @@ router.post('/', (req, res, next) => {
 });
 
 
-module.exports = router;
+export default router;

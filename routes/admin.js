@@ -1,10 +1,10 @@
-const express = require('express');
-const fs = require("fs");
-const router = express.Router();
-const { NomineeProvider } = require('../providers/nomineeProvider.js');
-const { IMDBProvider } = require('../providers/imdbProvider.js');
-const basicAuth = require('express-basic-auth')
+import express from 'express';
+import { readFileSync, writeFileSync } from "fs";
+import { NomineeProvider } from '../providers/nomineeProvider.js';
+import { IMDBProvider } from '../providers/imdbProvider.js';
+import basicAuth from 'express-basic-auth';
 
+const router = express.Router();
 const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
 
@@ -19,14 +19,14 @@ router.get('/addYearsToJSON', async (req, res, next) => {
     var moviesFormatted= NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
     var flattedMovies = [].concat.apply([],moviesFormatted);
     
-    let raw = fs.readFileSync('./mocks/imdb.json');
+    let raw = readFileSync('./mocks/imdb.json');
     let json = JSON.parse(raw);
     var index = 0;
     for(var imdbListing of json) {
         imdbListing.OscarYear = flattedMovies[index].Year;
         index++;
       }
-      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(json, null, 4));
+      writeFileSync('./mocks/imdb.json', JSON.stringify(json, null, 4));
 });
 
 router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
@@ -42,7 +42,7 @@ router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
         }
     }
 
-      fs.writeFileSync('./mocks/imdb.json', JSON.stringify(currentMoviesArray, null, 4));
+      writeFileSync('./mocks/imdb.json', JSON.stringify(currentMoviesArray, null, 4));
 
 });
 
@@ -57,4 +57,4 @@ router.get('/edit', basicAuth(
     });
 });
 
-module.exports = router;
+export default router;

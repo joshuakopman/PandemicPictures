@@ -1,5 +1,5 @@
-const fetch = require("node-fetch");
-const fs = require("fs");
+import fetch from "node-fetch";
+import { readFileSync, writeFileSync } from "fs";
 
 class IMDBProvider {
     constructor() {
@@ -7,7 +7,7 @@ class IMDBProvider {
     }
     
     readRatingsFromDisk() {
-      let raw = fs.readFileSync('./mocks/imdb.json');
+      let raw = readFileSync('./mocks/imdb.json');
       let json = JSON.parse(raw);
       return json;
     }
@@ -29,13 +29,13 @@ class IMDBProvider {
 
           moviesDict.push(movieTmp);
       }
-      fs.writeFileSync('./mocks/imdbFinal.json', JSON.stringify(moviesDict, null, 4));
+      writeFileSync('./mocks/imdbFinal.json', JSON.stringify(moviesDict, null, 4));
       return moviesDict;
     }
     
     async fetchOMDBAPIInfoByID(id) {
       if(id) {
-       var resp =  await fetch('http://www.omdbapi.com?apikey=782e8a6f'+'&i='+id);
+       var resp =  await fetch(`http://www.omdbapi.com?apikey=782e8a6f&i=${id}`);
        resp = await resp.json();
        return resp;
      }
@@ -46,7 +46,7 @@ class IMDBProvider {
 
       try {
        var prevYear = (parseInt(movie.Year)-1).toString();
-       resp =  await fetch('http://www.omdbapi.com?apikey=782e8a6f'+'&t=' + this.sanitizeMovieName(movie.Name) + "&y=" + prevYear);
+       resp =  await fetch(`http://www.omdbapi.com?apikey=782e8a6f&t=${this.sanitizeMovieName(movie.Name)}&y=${prevYear}`);
        resp = await resp.json();
       }catch(e) {
         console.log('Exception: Couldnt fetch movie '+ movie.Name +' for year '+ prevYear + '| message: ' + e);
@@ -62,7 +62,7 @@ class IMDBProvider {
       try {
        if(resp.Response == "False" || resp.Awards == "N/A" || resp.Rated == "N/A" || resp.Runtime == "N/A" || resp.Genre.includes('Short') || imdbRating== "N/A" || parseFloat(imdbRating) <= 6.2) {
          console.log('RetryError: Couldnt find movie '+ movie.Name +' for year '+ prevYear + ': Now trying the following year');
-         resp =  await fetch('http://www.omdbapi.com?apikey=2e35e374'+'&t=' + this.sanitizeMovieName(movie.Name)+"&y=" + movie.Year);
+         resp =  await fetch(`http://www.omdbapi.com?apikey=2e35e374&t=${this.sanitizeMovieName(movie.Name)}&y=${movie.Year}`);
          resp = await resp.json();
          if(resp.Response == "False") {
             console.log('RetryError: Couldnt find movie '+ movie.Name +' in year '+ movie.Year + ' either');
@@ -89,4 +89,5 @@ class IMDBProvider {
     }
 }
 
-module.exports.IMDBProvider = IMDBProvider;
+const _IMDBProvider = IMDBProvider;
+export { _IMDBProvider as IMDBProvider };
