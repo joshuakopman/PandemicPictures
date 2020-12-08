@@ -10,12 +10,12 @@ class UIManager {
         var self = this;
 
         this.socket.onmessage = (event) => {
-            self.uiEventListenerManager.getDataHandler().fetchMovieDataFromAPI().then(movieData => {
+            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
                self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
 
-        this.uiEventListenerManager.getDataHandler().fetchMovieDataFromAPI().then(movieData => {
+        this.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
             self.uiEventListenerManager.addRandomMovieClickListener(movieData);
             
             if(window.location.href.includes('edit')) {
@@ -33,7 +33,7 @@ class UIManager {
             }
         });
 
-        this.uiEventListenerManager.getDataHandler().fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
+        this.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
             self.bindIMDBDataToMovies(imdbData);
             self.uiEventListenerManager.addChevronClickListeners(imdbData);
         });

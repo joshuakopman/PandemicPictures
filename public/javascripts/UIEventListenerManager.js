@@ -1,7 +1,7 @@
 class UIEventListenerManager {
 
     constructor(dataHandler,UIHelper) {
-      this.dataHandler = dataHandler;
+      this.myDataHandler = dataHandler;
       this.uiHelper = UIHelper;
       this.chosenMovieElement = null;
     }
@@ -49,7 +49,7 @@ class UIEventListenerManager {
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
-            this.dataHandler.postData('/movies', movies);
+            this.myDataHandler.postData('/movies', movies);
           });
         }
 
@@ -60,7 +60,7 @@ class UIEventListenerManager {
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSkipped = e.currentTarget.parentNode.parentNode.innerText.trim();
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSkipped).Skip = e.currentTarget.checked;
-            this.dataHandler.postData('/movies', movies);
+            this.myDataHandler.postData('/movies', movies);
           });
         }
 
@@ -75,7 +75,7 @@ class UIEventListenerManager {
             }else{
                 movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = true;
             }
-            this.dataHandler.postData('/movies', movies);
+            this.myDataHandler.postData('/movies', movies);
           });
         }
     }
@@ -93,8 +93,9 @@ class UIEventListenerManager {
         });
     }
 
-    getDataHandler() {
-      return this.dataHandler;
+    get dataHandler() {
+      return this.myDataHandler;
     }
+
 
 }
