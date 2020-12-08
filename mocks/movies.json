@@ -3616,7 +3616,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -4876,7 +4876,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -5005,7 +5005,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -5326,7 +5326,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -5528,7 +5528,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -6552,7 +6552,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -6715,7 +6715,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -7092,7 +7092,7 @@
                         "Name": "Josh",
                         "HasSeen": false,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -7649,7 +7649,7 @@
                         "Name": "Josh",
                         "HasSeen": false,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -7692,7 +7692,7 @@
                     },
                     {
                         "Name": "Alicia",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     }
@@ -7739,7 +7739,7 @@
                         "Name": "Josh",
                         "HasSeen": false,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -7778,7 +7778,7 @@
                         "Name": "Josh",
                         "HasSeen": false,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8335,7 +8335,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8454,7 +8454,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8527,7 +8527,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8595,7 +8595,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8612,7 +8612,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8753,7 +8753,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8787,7 +8787,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -9142,7 +9142,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -9176,7 +9176,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -9385,7 +9385,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -9774,7 +9774,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -9823,7 +9823,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": true,
+                        "HasSeen": false,
                         "Rating": null,
                         "Skip": false
                     },
