@@ -17,6 +17,10 @@
     <link rel="icon" type="image/png" href="/assets/favicon.png">
   </head>
   <body>
+    <div id="responsive">
+      <p>Get a bigger screen!</p>
+    </div>
+    
     <header id="header">
       <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
 
@@ -30,6 +34,7 @@
              {{#each allNominees.Counts}}
             <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span class="movies-count">{{this.MyCount}}</span></div>
         {{/each}}
+          <div class="total-amount">of<br/>563</div>
         </div>
        
       </div>
