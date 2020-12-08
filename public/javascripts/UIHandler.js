@@ -139,7 +139,8 @@ class UIHandler {
                 if(movie.OscarYear != year) {
                     var movieTitleElement = document.querySelector('div[movie="'+movie.Title+'"][year="'+movie.OscarYear+'"]').nextElementSibling;
                     if(movieTitleElement.getAttribute('index') == "0") {
-                        movieTitleElement.innerText += " 🏆";
+                       // movieTitleElement.innerText += " 🏆";
+                       movieTitleElement.classList.add("trophy");
                     }
                     year = movie.OscarYear;
                 }

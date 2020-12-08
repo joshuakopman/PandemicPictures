@@ -21,8 +21,22 @@
       <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
 
       <div class="totals-container">
+       <div class="ribbon-container">
+          <div class="ribbon">
+<div class="ribbon-content"><p><b>Oscars Best Picture Nominees</b></p></div>
+</div>
+          </div>
+        <div class="totals-ribbon-box">
+             {{#each allNominees.Counts}}
+            <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span class="movies-count">{{this.MyCount}}</span></div>
+        {{/each}}
+        </div>
+       
+      </div>
+
+      <div class="sticky-totals-container">
         {{#each allNominees.Counts}}
-            <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
+            <div class="sticky-totals-user" data-object="{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
         {{/each}}
       </div>
 
@@ -43,17 +57,20 @@
       </div>
 
     </header>
+  
     <main>
     {{{body}}}
   </main>
-    <footer>
-      <p>Made with &#127801;  in NYC</p>
-      <p> by <i class="fab fa-github"></i> <a href="https://github.com/joshuakopman" target="_blank">joshuakopman</a> &amp; <i class="fab fa-github"></i> <a href="https://github.com/aliciahurst" target="_blank">aliciahurst</a> </p>
 
+       <footer class="footer">
+      <p style="font-weight:700">Made with &#127801; &nbsp; in NYC</p>
+      <p> by&nbsp; <i class="fab fa-github"></i> <a href="https://github.com/joshuakopman" target="_blank">joshuakopman</a> &amp; <i class="fab fa-github"></i> <a href="https://github.com/aliciahurst" target="_blank">aliciahurst</a> </p>
     </footer>
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
     <script src="/javascripts/UIHandler.js"></script>
     <script src="/javascripts/DataHandler.js"></script>
     <script src="/javascripts/Main.js"></script>
+
   </body>
 </html>
