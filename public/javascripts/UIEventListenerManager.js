@@ -89,7 +89,7 @@ class UIEventListenerManager {
             self.chosenMovieElement  = self.uiHelper.randomlySelectMovie(movieData);
             self.chosenMovieElement.classList.add("chosen-one");
           self.chosenMovieElement.scrollIntoView();
-          window.scrollBy(0, -100);
+          window.scrollBy(0, -200);
         });
     }
 
