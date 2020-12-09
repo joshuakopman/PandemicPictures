@@ -12,7 +12,7 @@ class NomineeProvider {
       var resp = {};
       let json = JSON.parse(raw);
       resp.MoviesList = json;
-      resp.TotalMovies =[].concat.apply([],json.map(x => x.Movies.map(y => y.Name))).length;
+      resp.TotalMovies = [].concat.apply([],json.map(x => x.Movies.map(y => y.Name))).length;
       resp.Counts = []
       resp.Counts.push(this.getMoviesWatchedCount(json, "Josh"));
       resp.Counts.push(this.getMoviesWatchedCount(json, "Alicia"));
@@ -30,9 +30,15 @@ class NomineeProvider {
     }
 
     writeMoviesToDisk(payload) {
+       //updates server data store JSON for movie ratings; not under source control
        writeFile('./mocks/movies.json', JSON.stringify(payload, null, 4), (err, result) => {
           if(err) console.log('error', err);
         });
+
+        //update a copy of movie ratings JSON for local development; under source control
+        writeFile('./movies_local.json', JSON.stringify(payload, null, 4), (err, result) => {
+            if(err) console.log('error', err);
+          });
     }
 
     async fetchNomineeMarkup() {
