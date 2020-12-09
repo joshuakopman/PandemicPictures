@@ -1,5 +1,6 @@
 import express from 'express';
 import compression from 'compression';
+import Ddos from 'ddos';
 import ws from 'ws';
 import bodyParser from "body-parser";
 import exphbs from 'express-handlebars';
@@ -14,8 +15,10 @@ const port = 3000;
 const NomNomProvider = new NomineeProvider();
 const wsServer = new ws.Server({ noServer: true });
 const handlebars = hbsHelpers(exphbs);
+const ddos = new Ddos({burst:10, limit:15, maxexpiry:300})
 
-app.use(compression())
+app.use(compression());
+app.use(ddos.express);
 app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
 app.use(express.static('public'))
