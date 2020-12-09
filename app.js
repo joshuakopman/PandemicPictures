@@ -29,8 +29,6 @@ app.get('/', (req, res, next) => {
 });
 
 app.use('/movies', (req, res, next) => {
-    console.log('remote addr: '+req.connection.remoteAddress);
-
     req.writeConfig = {
         wsServer: wsServer,
         ws: ws
