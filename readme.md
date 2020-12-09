@@ -4,8 +4,15 @@ Pandemic Pictures is an application for Josh and Alicia to track the Best Pictur
 
 ## Installation
 
+For local development: ```npm i && npm run start:local```
+
+For local development with watch via nodemon: ```npm i && npm run start:local:watch```
+
+In production, use ```npm start``` or build & run via included Dockerfile in project root:
+
 ```
-npm i && node app.js
+docker build -t pandemicpictures .
+docker run -d -p 80:3000 -p 3000:3000  -v /path/to/movieRatingsDataStore/movies.json:/mocks/movies.json pandemicpictures
 ```
 
 ## Usage
