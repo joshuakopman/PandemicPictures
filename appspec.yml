@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/aws-code-pandemic-pictures
+    destination: /home/ec2-user/aws-code-pandemic-pictures
 permissions:
   - object: /
     pattern: "**"
