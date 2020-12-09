@@ -16,5 +16,10 @@
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
     "ws": "^7.4.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "start:local": "cp ./movies_local.json ./mocks/movies.json && node app.js",
+    "start:local:watch": "cp ./movies_local.json ./mocks/movies.json && nodemon app.js"
   }
 }
