@@ -15,7 +15,7 @@ const port = 3000;
 const NomNomProvider = new NomineeProvider();
 const wsServer = new ws.Server({ noServer: true });
 const handlebars = hbsHelpers(exphbs);
-const ddos = new Ddos({burst:3, limit:4, maxexpiry:300, trustProxy: false, includeUserAgent: false, testmode: true})
+const ddos = new Ddos({burst:4, limit:24, maxexpiry:300, trustProxy: false, includeUserAgent: false})
 
 app.use(compression());
 app.use(ddos.express);
