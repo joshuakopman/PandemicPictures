@@ -29,6 +29,9 @@ app.get('/', (req, res, next) => {
 });
 
 app.use('/movies', (req, res, next) => {
+    console.log('xforwardedIP: '+req.headers["x-forwarded-for"]); 
+    console.log('remote addr: '+req.connection.remoteAddress);
+
     req.writeConfig = {
         wsServer: wsServer,
         ws: ws
