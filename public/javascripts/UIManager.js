@@ -10,12 +10,28 @@ class UIManager {
         var self = this;
 
         this.socket.onmessage = (event) => {
-            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(30,0).then(movieData => {
                self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
 
-        this.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+        this.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(30,0).then(movieData => {
+
+            var ratingsTemplate = document.getElementById('ratings-template').innerHTML;
+            var renderRatings = Handlebars.compile(ratingsTemplate);
+            console.log(movieData.MoviesList);
+            document.getElementsByTagName('main')[0].innerHTML = renderRatings({
+                moviesList : movieData.MoviesList
+            });
+
+            document.getElementsByTagName('main')[0].style.display = "block";
+            document.getElementsByTagName('footer')[0].style.display='block';
+
+            self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage(30,0).then(imdbData => {
+                self.bindIMDBDataToMovies(imdbData);
+                self.uiEventListenerManager.addChevronClickListeners(imdbData);
+            });
+
             self.uiEventListenerManager.addRandomMovieClickListener(movieData);
             
             if(window.location.href.includes('edit')) {
@@ -33,10 +49,6 @@ class UIManager {
             }
         });
 
-        this.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
-            self.bindIMDBDataToMovies(imdbData);
-            self.uiEventListenerManager.addChevronClickListeners(imdbData);
-        });
 
         window.onscroll = () => {
           if (window.pageYOffset > this.sticky) {

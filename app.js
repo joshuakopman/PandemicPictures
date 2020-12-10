@@ -15,7 +15,7 @@ const port = 3000;
 const NomNomProvider = new NomineeProvider();
 const wsServer = new ws.Server({ noServer: true });
 const handlebars = hbsHelpers(exphbs);
-const ddos = new Ddos({burst:4, limit:24, maxexpiry:300, trustProxy: false, includeUserAgent: false})
+const ddos = new Ddos({burst:50, limit:500, maxexpiry:300, trustProxy: false, includeUserAgent: false})
 
 app.use(compression());
 app.use(ddos.express);
@@ -25,7 +25,9 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 
 app.get('/', (req, res, next) => {
-    res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()});
+    var movies = NomNomProvider.readMoviesFromDisk();
+    movies.MoviesList = [];
+    res.render('main', {layout : 'index','allNominees': movies});
 });
 
 app.use('/movies', (req, res, next) => {

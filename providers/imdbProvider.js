@@ -6,9 +6,14 @@ class IMDBProvider {
 
     }
     
-    readRatingsFromDisk() {
+    readRatingsFromDisk(limit,skip) {
       let raw = readFileSync('./mocks/imdb.json');
       let json = JSON.parse(raw);
+
+      if(limit && skip) {
+        json  = json.slice(skip,skip+limit);
+      }
+
       return json;
     }
 
