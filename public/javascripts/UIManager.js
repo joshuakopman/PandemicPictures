@@ -5,7 +5,7 @@ class UIManager {
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
         this.initialSkip = 0;
-        this.initialLimit = 2;
+        this.initialLimit = 6;
         this.ratingsTemplate = document.getElementById('ratings-template');
     }
 
@@ -24,9 +24,12 @@ class UIManager {
         };
         
         this.compileTemplatesAndBindElementData();
+
         window.requestIdleCallback(() => {
-            self.initialLimit = 95;
-            self.compileTemplatesAndBindElementData(true);
+            setTimeout(() => {
+                self.initialLimit = 95;
+                self.compileTemplatesAndBindElementData(true);
+            },250);
         });
 
         window.addEventListener('scroll', () => {
@@ -92,7 +95,7 @@ class UIManager {
                     year = movie.OscarYear;
                 }
             }catch(e) {
-                console.log('missing HTML element for: '+movie.Title + " | exception: " + e);
+               // console.log('missing HTML element for: '+movie.Title + " | exception: " + e);
             }
         })
     }
@@ -115,7 +118,7 @@ class UIManager {
                             document.querySelector("input[id='"+'radio-2-' + movieName + '-' + nomYear.Year + '-' + viewer.Name+"']").checked = true;
                         }
                     }catch {
-                        console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
+                        //console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
                     }
                 }
              }
