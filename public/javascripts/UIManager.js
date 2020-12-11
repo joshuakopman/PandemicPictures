@@ -23,8 +23,9 @@ class UIManager {
             });
         };
         
-        this.compileTemplatesAndBindElementData().then(() => {
-            self.initialLimit = 95; 
+        this.compileTemplatesAndBindElementData();
+        window.requestIdleCallback(() => {
+            self.initialLimit = 95;
             self.compileTemplatesAndBindElementData(true);
         });
 
@@ -37,17 +38,19 @@ class UIManager {
         }, false);
     }
 
-    async compileTemplatesAndBindElementData(allMoviesLoaded) {
+    compileTemplatesAndBindElementData(allMoviesLoaded) {
         var self = this;
-        await self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit,self.initialSkip).then(movieData => {
+
+        self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit,self.initialSkip).then(movieData => {
             var ratingsTemplate = this.ratingsTemplate.innerHTML;
             var renderRatings = Handlebars.compile(ratingsTemplate);
+
             document.getElementsByTagName('main')[0].innerHTML = renderRatings({
                 moviesList : movieData.MoviesList
             });
 
             document.getElementsByTagName('main')[0].style.display = "block";
-            document.getElementsByTagName('footer')[0].style.display='block';
+            document.getElementsByTagName('footer')[0].style.display = 'block';
 
             self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
                 self.bindIMDBDataToMovies(imdbData);
