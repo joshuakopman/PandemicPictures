@@ -92,4 +92,10 @@
     <script src="/javascripts/Main.js"></script>
 
   </body>
+  <template id="panel-template" style="display:none">
+  <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-runtime"></span> | <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
+  <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
+  <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-director"></span></p>
+  <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-actors"></span></p>
+  </template>
 </html>

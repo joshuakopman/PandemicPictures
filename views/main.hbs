@@ -1,14 +1,7 @@
-<template id="panel-template" style="display:none">
-  <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-runtime"></span> | <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
-  <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
-  <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-director"></span></p>
-  <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-actors"></span></p>
-</template>
-
 <template id="ratings-template">
 \{{#each moviesList}}
 <div class="year-container">
-  <h2 id="{{inc this.Year "+" 1}}" class="year-heading" index="\{{@index}}" data-object="year">{{inc this.Year "+" 1}}</h2>
+  <h2 id="\{{inc this.Year '+' 1}}" class="year-heading" index="\{{@index}}" data-object="year">\{{inc this.Year "+" 1}}</h2>
       \{{#each this.Movies}}
         <div class="movie-container">
           <div class="movie-poster-container">
@@ -30,19 +23,19 @@
                   <div class="user-container">
                       <div class="user-info user-name">\{{this.Name}}</div>
                       <div class="user-info user-check"> 
-                        <input id="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom" name="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.HasSeen}}checked{{/if}}>
+                        <input id="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom" name="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="checkbox" movie-index="\{{@../index}}" year-index="\{{@../../index}}" {{#if this.HasSeen}}checked {{/if}}>
                              <label for="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom-label check-label"></label>
                         </div>
                       <div class="user-info user-smile">
-                            <input id="radio-1-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="radio-custom" name="radio-group-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#when this.Rating 'eq' true}}checked{{/when}}>
+                            <input id="radio-1-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="radio-custom" name="radio-group-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="radio" movie-index="\{{@../index}}" year-index="\{{@../../index}}" {{#when this.Rating 'eq' true}}checked {{/when}}>
                              <label for="radio-1-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="radio-custom-label smile-label"></label>
                       </div>
                       <div class="user-info user-frown">
-                           <input id="radio-2-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="radio-custom" name="radio-group-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="radio" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#when this.Rating 'eq' false}}checked{{/when}}>
+                           <input id="radio-2-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="radio-custom" name="radio-group-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="radio" movie-index="\{{@../index}}" year-index="\{{@../../index}}" {{#when this.Rating 'eq' false}}checked {{/when}}>
                              <label for="radio-2-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="radio-custom-label frown-label"></label>
                       </div>
                       <div class="user-info user-skip">
-                            <input id="checkbox-skip-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom" name="checkbox-skip-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="checkbox" movie-index="{{@../index}}" year-index="{{@../../index}}" {{#if this.Skip}}checked{{/if}}>
+                            <input id="checkbox-skip-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom" name="checkbox-skip-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="checkbox" movie-index="\{{@../index}}" year-index="\{{@../../index}}" {{#if this.Skip}}checked {{/if}}>
                             <label for="checkbox-skip-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom-label skip-label"></label>
                       </div>  
                  </div>

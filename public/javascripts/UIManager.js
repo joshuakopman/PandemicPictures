@@ -4,22 +4,44 @@ class UIManager {
         this.uiEventListenerManager = UIEventListenerManager;
         this.header = document.getElementById("header");
         this.sticky = this.header.offsetTop;
+        this.initialSkip = 0;
+        this.initialLimit = 2;
+        this.ratingsTemplate = document.getElementById('ratings-template');
     }
 
     initializeView() {
         var self = this;
 
+        Handlebars.registerHelper("inc", function(value, options)
+        {
+            return parseInt(value) + 1;
+        });
+
         this.socket.onmessage = (event) => {
-            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(30,0).then(movieData => {
+            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit,self.initialSkip).then(movieData => {
                self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
+        
+        this.compileTemplatesAndBindElementData().then(() => {
+            self.initialLimit = 90; 
+            self.compileTemplatesAndBindElementData(true);
+        });
 
-        this.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(30,0).then(movieData => {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > this.sticky) {
+                this.header.classList.add("sticky");
+              } else {
+                this.header.classList.remove("sticky");
+            }
+        }, false);
+    }
 
-            var ratingsTemplate = document.getElementById('ratings-template').innerHTML;
+    async compileTemplatesAndBindElementData(allMoviesLoaded) {
+        var self = this;
+        await self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit,self.initialSkip).then(movieData => {
+            var ratingsTemplate = this.ratingsTemplate.innerHTML;
             var renderRatings = Handlebars.compile(ratingsTemplate);
-            console.log(movieData.MoviesList);
             document.getElementsByTagName('main')[0].innerHTML = renderRatings({
                 moviesList : movieData.MoviesList
             });
@@ -27,13 +49,15 @@ class UIManager {
             document.getElementsByTagName('main')[0].style.display = "block";
             document.getElementsByTagName('footer')[0].style.display='block';
 
-            self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage(30,0).then(imdbData => {
+            self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
                 self.bindIMDBDataToMovies(imdbData);
                 self.uiEventListenerManager.addChevronClickListeners(imdbData);
             });
 
-            self.uiEventListenerManager.addRandomMovieClickListener(movieData);
-            
+            if(allMoviesLoaded) {
+                self.uiEventListenerManager.addRandomMovieClickListener(movieData);
+            }
+
             if(window.location.href.includes('edit')) {
                    self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
             }else {
@@ -48,17 +72,7 @@ class UIManager {
                 document.body.classList.add("read-only");
             }
         });
-
-
-        window.onscroll = () => {
-          if (window.pageYOffset > this.sticky) {
-            this.header.classList.add("sticky");
-          } else {
-            this.header.classList.remove("sticky");
-          }
-        };
     }
-
     bindIMDBDataToMovies(data) {
         var year = '';
         data.forEach(movie => {

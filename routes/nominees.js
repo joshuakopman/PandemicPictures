@@ -5,7 +5,6 @@ const router = express.Router();
 const NomNomProvider = new NomineeProvider();
 
 router.get('/', (req, res, next)  => {
-    console.log(req.query);
     res.json(NomNomProvider.readMoviesFromDisk(req.query.limit,req.query.skip));
 });
 

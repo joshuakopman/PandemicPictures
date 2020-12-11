@@ -8,7 +8,6 @@ class NomineeProvider {
     }
 
     readMoviesFromDisk(limit,skip) {
-        console.log(limit+ " "+skip);
       let raw = readFileSync('./mocks/movies.json');
       var resp = {};
       let json = JSON.parse(raw);

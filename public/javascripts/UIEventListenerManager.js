@@ -48,6 +48,7 @@ class UIEventListenerManager {
             var yearIndex = e.currentTarget.getAttribute('year-index');
             var movieIndex = e.currentTarget.getAttribute('movie-index');
             var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
+            console.log('year'+yearIndex);
             movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
             this.myDataHandler.postData('/movies', movies);
           });
