@@ -51,7 +51,7 @@ class UIManager {
             document.getElementsByTagName('main')[0].innerHTML = renderRatings({
                 moviesList : movieData.MoviesList
             });
-
+            document.getElementById('ajaxLoader').style.display = 'none';
             document.getElementsByTagName('main')[0].style.display = "block";
             document.getElementsByTagName('footer')[0].style.display = 'block';
 

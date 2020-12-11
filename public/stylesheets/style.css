@@ -575,3 +575,8 @@ footer a {
     z-index: 99999;
   }
 }
+
+#ajaxLoader{
+  margin: 0px auto;
+  display: block;
+}
