@@ -7,11 +7,15 @@ class NomineeProvider {
     
     }
 
-    readMoviesFromDisk() {
+    readMoviesFromDisk(limit,skip) {
       let raw = readFileSync('./mocks/movies.json');
       var resp = {};
       let json = JSON.parse(raw);
-      resp.MoviesList = json;
+      if(limit && skip) {
+        resp.MoviesList = json.slice(skip,skip+limit);
+      }else {
+        resp.MoviesList = json;
+      }
       resp.TotalMovies = [].concat.apply([],json.map(x => x.Movies.map(y => y.Name))).length;
       resp.Counts = []
       resp.Counts.push(this.getMoviesWatchedCount(json, "Josh"));

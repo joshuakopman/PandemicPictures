@@ -3,9 +3,20 @@ class DataHandler {
     constructor() {
     }
 
-    fetchMovieDataFromAPI() {
+    fetchMovieDataFromAPI(limit,skip) {
+        console.log('fetching limit'+limit);
+        var url = "/movies";
+
+        if(limit != null) {
+            url += "?limit=" + limit;
+        }
+
+        if(skip != null) {
+            url += "&skip=" + skip;
+        }
+
         return new Promise((resolve, reject) => {   
-            fetch('/movies')
+            fetch(url)
             .then(response => response.json())
             .then(data => {
                resolve(data);
@@ -13,10 +24,20 @@ class DataHandler {
         });
     }
 
-    fetchIMDBDataFromAPIOrLocalStorage() {     
+    fetchIMDBDataFromAPIOrLocalStorage(limit,skip) {   
+        var url = "/imdb";
+
+        if(limit != null) {
+            url += "?limit=" + limit;
+        }
+
+        if(skip != null) {
+            url += "&skip=" + skip;
+        }
+
         return new Promise((resolve, reject) => {   
             if(!localStorage.getItem('imdb')) {
-                fetch('/imdb')
+                fetch(url)
                 .then(response => response.json())
                 .then(data => 
                 {
