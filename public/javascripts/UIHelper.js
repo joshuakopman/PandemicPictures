@@ -17,7 +17,6 @@ class UIHelper {
             }
         });
         var randomMovieYear = moviesToChooseFrom.sort(() => Math.random() - 0.5)[0];
-        console.log(randomMovieYear);
         var randomMovieTitle = randomMovieYear.Titles.sort(() => Math.random() - 0.5)[0];
         var chosenMovieElement = document.querySelector("div[movie='"+randomMovieTitle.Name.replace(/'/g, "\\'")+"'][year='"+ randomMovieYear.Year +"']").parentNode.parentNode;
         return chosenMovieElement;

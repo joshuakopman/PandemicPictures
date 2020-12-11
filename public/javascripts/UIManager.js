@@ -12,19 +12,19 @@ class UIManager {
     initializeView() {
         var self = this;
 
-        Handlebars.registerHelper("inc", function(value, options)
+        Handlebars.registerHelper("inc", (value, options) =>
         {
             return parseInt(value) + 1;
         });
 
         this.socket.onmessage = (event) => {
-            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit,self.initialSkip).then(movieData => {
+            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
                self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
         
         this.compileTemplatesAndBindElementData().then(() => {
-            self.initialLimit = 90; 
+            self.initialLimit = 95; 
             self.compileTemplatesAndBindElementData(true);
         });
 
@@ -51,28 +51,29 @@ class UIManager {
 
             self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
                 self.bindIMDBDataToMovies(imdbData);
-                self.uiEventListenerManager.addChevronClickListeners(imdbData);
+                self.updateHasSeenCheckboxesAndCounts(movieData);
+                if(allMoviesLoaded) {
+                    self.uiEventListenerManager.addRandomMovieClickListener(movieData);
+                    self.uiEventListenerManager.addChevronClickListeners(imdbData);
+                    if(window.location.href.includes('edit')) {
+                        self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
+                    }else {
+                     [].forEach.call(document.querySelectorAll('input[type=checkbox]'), (checkBox) => {
+                         checkBox.setAttribute("disabled", "true");
+                     });
+     
+                     [].forEach.call(document.querySelectorAll('input[type=radio]'), (radio) => {
+                         radio.setAttribute("disabled", "true");
+                     });
+     
+                     document.body.classList.add("read-only");
+                 }
+                }
+
             });
-
-            if(allMoviesLoaded) {
-                self.uiEventListenerManager.addRandomMovieClickListener(movieData);
-            }
-
-            if(window.location.href.includes('edit')) {
-                   self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
-            }else {
-                [].forEach.call(document.querySelectorAll('input[type=checkbox]'), (checkBox) => {
-                    checkBox.setAttribute("disabled", "true");
-                });
-
-                [].forEach.call(document.querySelectorAll('input[type=radio]'), (radio) => {
-                    radio.setAttribute("disabled", "true");
-                });
-
-                document.body.classList.add("read-only");
-            }
         });
     }
+
     bindIMDBDataToMovies(data) {
         var year = '';
         data.forEach(movie => {
