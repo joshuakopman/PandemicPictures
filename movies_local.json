@@ -4516,7 +4516,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",

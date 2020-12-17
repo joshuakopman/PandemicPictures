@@ -9,52 +9,53 @@ const NomNomProvider = new NomineeProvider();
 const imdbProvider = new IMDBProvider();
 
 router.get('/getIMDBMetadata', async (req, res, next) => {
-    var moviesFormatted = NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
-    var flattedMovies = [].concat.apply([],moviesFormatted);
+    var moviesFormatted = NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year, "Name": z.Name } }));
+    var flattedMovies = [].concat.apply([], moviesFormatted);
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
     res.json(allMetadata);
 });
 
 router.get('/addYearsToJSON', async (req, res, next) => {
-    var moviesFormatted= NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year,"Name" : z.Name} } ));
-    var flattedMovies = [].concat.apply([],moviesFormatted);
-    
+    var moviesFormatted = NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year, "Name": z.Name } }));
+    var flattedMovies = [].concat.apply([], moviesFormatted);
+
     let raw = readFileSync('./mocks/imdb.json');
     let json = JSON.parse(raw);
     var index = 0;
-    for(var imdbListing of json) {
+    for (var imdbListing of json) {
         imdbListing.OscarYear = flattedMovies[index].Year;
         index++;
-      }
-      writeFileSync('./mocks/imdb.json', JSON.stringify(json, null, 4));
+    }
+    writeFileSync('./mocks/imdb.json', JSON.stringify(json, null, 4));
 });
 
 router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
     const currentMoviesArray = imdbProvider.readRatingsFromDisk();
 
-    for(var currentMovie of currentMoviesArray) {
+    for (var currentMovie of currentMoviesArray) {
         var updatedIMDBInfoForMovie = imdbProvider.fetchOMDBAPIInfoByID(currentMovie.ImdbID);
         try {
-            currentMoviesArray.find(x => x.ImdbID == updatedIMDBInfoForMovie.imdbID).Rating = updatedIMDBInfoForMovie.Ratings.find(y => y.Source == 'Internet Movie Database').Value.replace('/10','');
+            currentMoviesArray.find(x => x.ImdbID == updatedIMDBInfoForMovie.imdbID).Rating = updatedIMDBInfoForMovie.Ratings.find(y => y.Source == 'Internet Movie Database').Value.replace('/10', '');
         }
         catch {
-            console.log("No IMDB rating retrieved for: "+ currentMovie.Title);
+            console.log("No IMDB rating retrieved for: " + currentMovie.Title);
         }
     }
 
-      writeFileSync('./mocks/imdb.json', JSON.stringify(currentMoviesArray, null, 4));
+    writeFileSync('./mocks/imdb.json', JSON.stringify(currentMoviesArray, null, 4));
 
 });
 
 router.get('/edit', basicAuth(
     {
-        users: { 
-        'admin': 'galleryWall' 
+        users: {
+            'admin': 'galleryWall'
         },
         challenge: true
     }), (req, res, next) => {
-        res.render('main', {layout : 'index','allNominees': NomNomProvider.readMoviesFromDisk()
+        res.render('main', {
+            layout: 'index', 'allNominees': NomNomProvider.readMoviesFromDisk()
+        });
     });
-});
 
 export default router;

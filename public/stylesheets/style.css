@@ -277,6 +277,7 @@ main {
   padding: 50px;
   padding-top: 140px;
   background: #f3f2ef;
+  display: none;
 }
 
 h2 {
