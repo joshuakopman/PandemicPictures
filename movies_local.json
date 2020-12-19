@@ -3075,7 +3075,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -3654,7 +3654,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -3834,7 +3834,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -3907,7 +3907,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -4301,7 +4301,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -4516,7 +4516,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -4588,7 +4588,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -4717,7 +4717,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -4841,7 +4841,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -4875,7 +4875,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": true
                     },
                     {
@@ -4914,7 +4914,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -4987,7 +4987,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5077,7 +5077,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5167,7 +5167,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5184,7 +5184,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5201,7 +5201,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5291,7 +5291,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5308,7 +5308,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5325,7 +5325,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": true
                     },
                     {
@@ -5398,7 +5398,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5415,7 +5415,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5437,7 +5437,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5527,7 +5527,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": false,
                         "Skip": true
                     },
                     {
@@ -5617,7 +5617,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5651,7 +5651,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5741,7 +5741,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -5938,7 +5938,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6191,7 +6191,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6281,7 +6281,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6478,7 +6478,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6675,7 +6675,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6697,7 +6697,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6821,7 +6821,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6855,7 +6855,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6894,7 +6894,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -6967,7 +6967,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7001,7 +7001,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7035,7 +7035,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7164,7 +7164,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7181,7 +7181,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7254,7 +7254,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7417,7 +7417,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7468,7 +7468,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7485,7 +7485,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7597,7 +7597,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7631,7 +7631,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7704,7 +7704,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7755,7 +7755,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7828,7 +7828,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7935,7 +7935,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -7957,7 +7957,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8047,7 +8047,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8064,7 +8064,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8098,7 +8098,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8137,7 +8137,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8172,7 +8172,7 @@
                         "Name": "Josh",
                         "HasSeen": true,
                         "Rating": null,
-                        "Skip": false
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -8205,7 +8205,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8227,7 +8227,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8244,7 +8244,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8295,7 +8295,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8317,7 +8317,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8402,7 +8402,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8436,7 +8436,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8470,7 +8470,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8577,7 +8577,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8594,7 +8594,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": false,
                         "Skip": true
                     },
                     {
@@ -8825,7 +8825,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8876,7 +8876,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8944,7 +8944,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -8983,7 +8983,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9068,7 +9068,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9085,7 +9085,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9119,7 +9119,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9175,7 +9175,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": false,
                         "Skip": true
                     },
                     {
@@ -9192,7 +9192,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9384,7 +9384,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": false,
                         "Skip": true
                     },
                     {
@@ -9423,7 +9423,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9440,7 +9440,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9559,7 +9559,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9581,7 +9581,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9632,7 +9632,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9649,7 +9649,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9666,7 +9666,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9717,7 +9717,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9773,7 +9773,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": false,
                         "Skip": true
                     },
                     {
@@ -9807,7 +9807,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9880,7 +9880,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9914,7 +9914,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9931,7 +9931,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9948,7 +9948,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -9982,8 +9982,8 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
-                        "Skip": false
+                        "Rating": false,
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",
@@ -9999,7 +9999,7 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
+                        "Rating": true,
                         "Skip": false
                     },
                     {
@@ -10016,8 +10016,8 @@
                     {
                         "Name": "Josh",
                         "HasSeen": true,
-                        "Rating": null,
-                        "Skip": false
+                        "Rating": true,
+                        "Skip": true
                     },
                     {
                         "Name": "Alicia",

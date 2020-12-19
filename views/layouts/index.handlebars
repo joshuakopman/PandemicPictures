@@ -1,83 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
-    <title>Pandemic Pictures</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta property="og:title" content="Pandemic Pictures" />
-    <meta property="og:description" content="Pandemic Pictures is an application for Josh and Alicia to track the Best Picture noms they've seen in order to stave off insanity during COVID winter." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.pandemicpictures.info" />
-    <meta property="og:image" content="http://www.pandemicpictures.info/assets/favicon.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,600" />
-    <script src="https://kit.fontawesome.com/7f9603f1e6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
-  </head>
-  <body>
-    <div id="responsive">
-      <p>Get a bigger screen!</p>
-    </div>
-    
-    <header id="header">
-      <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
 
-      <div class="totals-container">
-       <div class="ribbon-container">
-          <div class="ribbon">
-<div class="ribbon-content"><p><b>Oscars Best Picture Nominees</b></p></div>
-</div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Pandemic Pictures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- Search Engine -->
+  <meta name="description"
+    content="Pandemic Pictures is an application for Josh and Alicia to track the Best Picture noms they've seen in order to stave off insanity during COVID winter.">
+  <meta name="image" content="http://www.pandemicpictures.info/assets/favicon.png">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="Pandemic Pictures">
+  <meta itemprop="description"
+    content="Pandemic Pictures is an application for Josh and Alicia to track the Best Picture noms they've seen in order to stave off insanity during COVID winter.">
+  <meta itemprop="image" content="http://www.pandemicpictures.info/assets/favicon.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pandemic Pictures">
+  <meta name="twitter:description"
+    content="Pandemic Pictures is an application for Josh and Alicia to track the Best Picture noms they've seen in order to stave off insanity during COVID winter." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pandemic Pictures" />
+  <meta property="og:description"
+    content="Pandemic Pictures is an application for Josh and Alicia to track the Best Picture noms they've seen in order to stave off insanity during COVID winter." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.pandemicpictures.info" />
+  <meta property="og:image" content="http://www.pandemicpictures.info/assets/favicon.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,600" />
+  <script src="https://kit.fontawesome.com/7f9603f1e6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+</head>
+
+<body>
+  <div id="responsive">
+    <p>Get a bigger screen!</p>
+  </div>
+
+  <header id="header">
+    <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
+
+    <div class="totals-container">
+      <div class="ribbon-container">
+        <div class="ribbon">
+          <div class="ribbon-content">
+            <p><b>Oscars Best Picture Nominees</b></p>
           </div>
-        <div class="totals-ribbon-box">
-             {{#each allNominees.Counts}}
-            <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span class="movies-count">{{this.MyCount}}</span></div>
-        {{/each}}
-          <div class="total-amount">of<br/>{{this.allNominees.TotalMovies}}</div>
         </div>
-       
       </div>
-
-      <div class="sticky-totals-container">
+      <div class="totals-ribbon-box">
         {{#each allNominees.Counts}}
-            <div class="sticky-totals-user" data-object="{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
+        <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span
+            class="movies-count">{{this.MyCount}}</span></div>
         {{/each}}
+        <div class="total-amount">of<br />{{this.allNominees.TotalMovies}}</div>
       </div>
 
-      <div class="button-container"><a class="picker" id="moviePickerButton">Pick a Movie</a></div>
+    </div>
 
-      <div class="year-anchors">
-        <span>Jump to decade:</span>
-        <a href="#1929">30s</a> &bull;
-        <a href="#1940">40s</a> &bull;
-        <a href="#1950">50s</a> &bull;
-        <a href="#1960">60s</a> &bull;
-        <a href="#1970">70s</a> &bull;
-        <a href="#1980">80s</a> &bull;
-        <a href="#1990">90s</a> &bull;
-        <a href="#2000">00s</a> &bull;
-        <a href="#2010">10s</a> &bull;
-        <a href="#2020">20s</a>
-      </div>
+    <div class="sticky-totals-container">
+      {{#each allNominees.Counts}}
+      <div class="sticky-totals-user" data-object="{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
+      {{/each}}
+    </div>
 
-    </header>
-  
-    <main>
+    <div class="button-container"><a class="picker" id="moviePickerButton">Pick a Movie</a></div>
+
+    <div class="year-anchors">
+      <span>Jump to decade:</span>
+      <a href="#1929">30s</a> &bull;
+      <a href="#1940">40s</a> &bull;
+      <a href="#1950">50s</a> &bull;
+      <a href="#1960">60s</a> &bull;
+      <a href="#1970">70s</a> &bull;
+      <a href="#1980">80s</a> &bull;
+      <a href="#1990">90s</a> &bull;
+      <a href="#2000">00s</a> &bull;
+      <a href="#2010">10s</a> &bull;
+      <a href="#2020">20s</a>
+    </div>
+
+  </header>
+  <img id="ajaxLoader" src="assets/Ajax-loader.gif" />
+  <main>
     {{{body}}}
   </main>
 
-       <footer class="footer">
-      <p style="font-weight:700">Made with &#127801; &nbsp; in NYC</p>
-      <p> by&nbsp; <i class="fab fa-github"></i> <a href="https://github.com/joshuakopman" target="_blank">joshuakopman</a> &amp; <i class="fab fa-github"></i> <a href="https://github.com/aliciahurst" target="_blank">aliciahurst</a> </p>
-    </footer>
+  <footer class="footer">
+    <p style="font-weight:700">Made with &#127801; &nbsp; in NYC</p>
+    <p> by&nbsp; <i class="fab fa-github"></i> <a href="https://github.com/joshuakopman"
+        target="_blank">joshuakopman</a> &amp; <i class="fab fa-github"></i> <a href="https://github.com/aliciahurst"
+        target="_blank">aliciahurst</a> </p>
+  </footer>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
-    <script src="/javascripts/UIHelper.js"></script>
-    <script src="/javascripts/UIEventListenerManager.js"></script>
-    <script src="/javascripts/UIManager.js"></script>
-    <script src="/javascripts/DataHandler.js"></script>
-    <script src="/javascripts/Main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+  <script src="/javascripts/UIHelper.js"></script>
+  <script src="/javascripts/UIEventListenerManager.js"></script>
+  <script src="/javascripts/UIManager.js"></script>
+  <script src="/javascripts/DataHandler.js"></script>
+  <script src="/javascripts/Main.js"></script>
 
-  </body>
+</body>
+<template id="panel-template" style="display:none">
+  <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-runtime"></span> |
+    <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
+  <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
+  <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span"
+      data-object="\{{name}}-\{{year}}-director"></span></p>
+  <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span"
+      data-object="\{{name}}-\{{year}}-actors"></span></p>
+</template>
+
 </html>
