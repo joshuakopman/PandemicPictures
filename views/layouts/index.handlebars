@@ -84,8 +84,9 @@
 
   </header>
   <img id="ajaxLoader" src="assets/Ajax-loader.gif" />
-  <button class="filter">Filter</button>
-  <nav id="filters">
+  <button class="filter">Filter <i class="fas fa-sort-amount-down"></i></button>
+  <nav id="filters" class="filters-closed">
+    <button id="close-filters">X</button>
     <p>Filters</p>
       <p>Seen by</p>
         <input type="radio" name=""><label>Josh</label>
@@ -106,6 +107,8 @@
     Max     <input type="range" min="1920" max="2010" class="slider" step="10" id="myRange"> <span id="demo"></span>
       <p>Winners only</p>
         <input type="checkbox"> Yes
+        <button id="" class="">Clear</button>
+        <button id="" class="">Apply</button>
   </nav>
   <main>
 
