@@ -4,15 +4,15 @@ class UIHelper {
     }
      randomlySelectMovie(allMovies) {
         var moviesToChooseFrom = [];
-        var modernMovies = allMovies.MoviesList.filter(m => m.Year > 1970);
-        modernMovies.forEach((moviesInYear)=> {
-            var modernUnseenMovies = moviesInYear.Movies.filter(m => m.Viewers[0].HasSeen == false || m.Viewers[1].HasSeen == false);
-            var modernUnseenMoviesNotSkipped = modernUnseenMovies.filter(m => m.Viewers[0].Skip == false && m.Viewers[1].Skip == false);
+      //  var modernMovies = allMovies.MoviesList.filter(m => m.Year > 1970);
+      allMovies.MoviesList.forEach((moviesInYear)=> {
+          //  var modernUnseenMovies = moviesInYear.Movies.filter(m => m.Viewers[0].HasSeen == false || m.Viewers[1].HasSeen == false);
+            var modernUnseenMoviesNotSkipped = moviesInYear.Movies.filter(m => m.Viewers[0].Skip == false && m.Viewers[1].Skip == false);
             if(modernUnseenMoviesNotSkipped.length > 0){
-            moviesToChooseFrom.push(
+                moviesToChooseFrom.push(
                 {
-                    "Titles":modernUnseenMoviesNotSkipped,
-                    "Year":moviesInYear.Year
+                    "Titles" : modernUnseenMoviesNotSkipped,
+                    "Year" : moviesInYear.Year
                 });
             }
         });
