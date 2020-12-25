@@ -2,7 +2,7 @@ class UIHelper {
     constructor(){
         
     }
-     randomlySelectMovie(allMovies) {
+    randomlySelectMovie(allMovies) {
         var moviesToChooseFrom = [];
       //  var modernMovies = allMovies.MoviesList.filter(m => m.Year > 1970);
       allMovies.MoviesList.forEach((moviesInYear)=> {
@@ -20,6 +20,11 @@ class UIHelper {
         var randomMovieTitle = randomMovieYear.Titles.sort(() => Math.random() - 0.5)[0];
         var chosenMovieElement = document.querySelector("div[movie='"+randomMovieTitle.Name.replace(/'/g, "\\'")+"'][year='"+ randomMovieYear.Year +"']").parentNode.parentNode;
         return chosenMovieElement;
+    }
+
+    readFiltersAndRandomize() {
+       var allMovieElements = [...document.querySelectorAll('.movie-container')];
+       return allMovieElements.sort(() => Math.random() - 0.5)[0];
     }
 
 }   

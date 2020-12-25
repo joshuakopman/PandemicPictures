@@ -86,7 +86,7 @@ class UIEventListenerManager {
       if (self.chosenMovieElement) {
         self.chosenMovieElement.classList.remove("chosen-one");
       }
-      self.chosenMovieElement = self.uiHelper.randomlySelectMovie(movieData);
+      self.chosenMovieElement = self.uiHelper.randomlySelectMovie(movieData); //.randomlySelectMovieByFilters();
       self.chosenMovieElement.classList.add("chosen-one");
       self.chosenMovieElement.scrollIntoView();
       window.scrollBy(0, -200);
