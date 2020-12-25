@@ -313,6 +313,8 @@ h2 {
 .chosen-one {
   border: 3px solid #F4797E;
 }
+
+
 .movie-container:nth-of-type(3) {
   margin-right: 0;
 }
@@ -426,6 +428,14 @@ h2 {
     top: 90px;
     padding: 0 20px 10px 135px;
     left: 0;
+    width: 61.57%;
+    margin-left: -3px;
+    border: 3px solid white;
+}
+
+.chosen-one .panel {
+   border: 3px solid #ea6671;
+   border-top: 0;
 }
 
 .panel > p:first-of-type {
@@ -557,25 +567,9 @@ footer a {
 }
 
 @media only screen and (max-width: 1220px) {
-  body {
-    max-height: 100vh;
-    overflow: hidden;
-  }
 
-  #responsive {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height:100vh;
-    width: 100%;
-    background: #ef7a7f;
-    text-align: center;
-    padding-top: 20px;
-    font-weight: 700;
-    z-index: 99999;
-  }
 }
+
 
 #ajaxLoader{
   margin: 0px auto;
