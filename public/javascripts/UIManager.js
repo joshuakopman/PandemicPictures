@@ -110,7 +110,6 @@ class UIManager {
                 var movieName = movie.Name;
                 for (const viewer of movie.Viewers) { //radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}
                     try {
-                        console.log(movieName);
                         document.querySelector("input[name='" + 'checkbox-seen-' + movieName.replace(/'/g,"\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.HasSeen;
                         document.querySelector("input[name='" + 'checkbox-skip-' + movieName.replace(/'/g,"\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.Skip;
                         if (viewer.Rating == true) {
