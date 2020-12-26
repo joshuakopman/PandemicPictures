@@ -75,7 +75,7 @@ class UIManager {
 
                         document.body.classList.add("read-only");
                     }
-                    if(window.location.hash) {
+                    if (window.location.hash) {
                         document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
                     }
                 }
@@ -113,12 +113,12 @@ class UIManager {
                 var movieName = movie.Name;
                 for (const viewer of movie.Viewers) { //radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}
                     try {
-                        document.querySelector("input[name='" + 'checkbox-seen-' + movieName.replace(/'/g,"\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.HasSeen;
-                        document.querySelector("input[name='" + 'checkbox-skip-' + movieName.replace(/'/g,"\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.Skip;
+                        document.querySelector("input[name='" + 'checkbox-seen-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.HasSeen;
+                        document.querySelector("input[name='" + 'checkbox-skip-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.Skip;
                         if (viewer.Rating == true) {
-                            document.querySelector("input[id='" + 'radio-1-' + movieName.replace(/'/g,"\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = true;
+                            document.querySelector("input[id='" + 'radio-1-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = true;
                         } else if (viewer.Rating == false) {
-                            document.querySelector("input[id='" + 'radio-2-' + movieName.replace(/'/g,"\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = true;
+                            document.querySelector("input[id='" + 'radio-2-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = true;
                         }
                     } catch {
                         //console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');

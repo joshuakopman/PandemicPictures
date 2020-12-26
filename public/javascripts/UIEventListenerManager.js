@@ -95,20 +95,20 @@ class UIEventListenerManager {
 
   bindFilterClickListener() {
     var self = this;
-    document.querySelector('#btnApplyFilters').addEventListener("click",(e) => {
-          self.chosenMovieElement = self.uiHelper.randomlySelectMovieByFilters(
-            document.querySelector('input[name="seenByFilter"]:checked')?.value,
-            document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-            null,
-            null,
-            null,
-            document.querySelector('input[id="winnersOnly"]:checked')?.value,
-          );
-          document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
-          self.chosenMovieElement.filteredElements.forEach(x => x.parentNode.parentNode.style.display = 'block');
-          self.chosenMovieElement.chosenElement.parentNode.parentNode.classList.add("chosen-one");
-          self.chosenMovieElement.chosenElement.scrollIntoView();
-          window.scrollBy(0, -200);
+    document.querySelector('#btnApplyFilters').addEventListener("click", (e) => {
+      self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
+        document.querySelector('input[name="seenByFilter"]:checked')?.value,
+        document.querySelector('input[name="skippedByFilter"]:checked')?.value,
+        null,
+        null,
+        null,
+        document.querySelector('input[id="winnersOnly"]:checked')?.value,
+      );
+      document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
+      self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+      self.filtered.randomlyChosenMovie.parentNode.parentNode.classList.add("chosen-one");
+      self.filtered.randomlyChosenMovie.scrollIntoView();
+      window.scrollBy(0, -200);
     });
   }
 

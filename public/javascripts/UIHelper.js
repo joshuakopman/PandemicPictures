@@ -22,7 +22,7 @@ class UIHelper {
         return chosenMovieElement;
     }
 
-    randomlySelectMovieByFilters(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, decade, winnersOnly) {
+    filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, decade, winnersOnly) {
         var allUserElements = [...document.querySelectorAll('.user-container')];
         var bothUserNames = ["Alicia", "Josh"];
 
@@ -34,34 +34,37 @@ class UIHelper {
             if (seenbyUserName == "Both") {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        &&  x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            } else if(seenbyUserName == "Neither") {
+                        && x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+            } else if (seenbyUserName == "Neither") {
                 allUserElements = allUserElements.filter(
                     x => !x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        &&  !x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+                        && !x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
             }
-            else{
+            else {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(seenbyUserName));
             }
-            
+
         }
 
         if (skippedByUserName) {
             if (skippedByUserName == "Both") {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        &&  x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            } else if (skippedByUserName == "Neither")  {
+                        && x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+            } else if (skippedByUserName == "Neither") {
                 allUserElements = allUserElements.filter(
                     x => !x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        &&  !x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+                        && !x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
             } else {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(skippedByUserName));
             }
         }
-        return {"filteredElements":allUserElements,"chosenElement":allUserElements.sort(() => Math.random() - 0.5)[0]};
+        return {
+            "moviesList": allUserElements,
+            "randomlyChosenMovie": allUserElements.sort(() => Math.random() - 0.5)[0]
+        };
     }
 
 }   
