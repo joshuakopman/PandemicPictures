@@ -93,9 +93,25 @@ class UIEventListenerManager {
     });
   }
 
+  bindFilters() {
+    var self = this;
+    document.querySelector('#btnApplyFilters').addEventListener("click",(e) => {
+          self.chosenMovieElement = self.uiHelper.randomlySelectMovieByFilters(
+            document.querySelector('input[name="seenByFilter"]:checked')?.value,
+            document.querySelector('input[name="skippedByFilter"]:checked')?.value,
+            null,
+            null,
+            null,
+            document.querySelector('input[id="winnersOnly"]:checked')?.value,
+          );
+          self.chosenMovieElement.parentNode.parentNode.classList.add("chosen-one");
+          self.chosenMovieElement.scrollIntoView();
+          window.scrollBy(0, -200);
+    });
+  }
+
   get dataHandler() {
     return this.myDataHandler;
   }
-
 
 }

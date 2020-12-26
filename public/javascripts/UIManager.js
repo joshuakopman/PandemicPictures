@@ -38,6 +38,8 @@ class UIManager {
                 this.header.classList.remove("sticky");
             }
         }, false);
+
+        this.uiEventListenerManager.bindFilters();
     }
 
     compileTemplatesAndBindElementData(allMoviesLoaded) {
