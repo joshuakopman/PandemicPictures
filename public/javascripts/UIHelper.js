@@ -52,8 +52,8 @@ class UIHelper {
         } else if (userName == "Neither") {
             userName = bothUserNames;
             allElements = allElements.filter(
-                x => !x.querySelector('input[name*=\"'+inputTypeName+'\":checked')?.getAttribute("name").includes(bothUserNames[0])
-                    && !x.parentNode.querySelector('input[name*=\"'+inputTypeName+'\":checked')?.getAttribute("name").includes(bothUserNames[1]));
+                x => !x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[0])
+                    && !x.parentNode.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
         } else {
             allElements = allElements.filter(
                 x => x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(userName));

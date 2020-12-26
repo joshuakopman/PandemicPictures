@@ -95,7 +95,8 @@ class UIEventListenerManager {
 
   bindFilterClickListener() {
     var self = this;
-    document.querySelector('#btnApplyFilters').addEventListener("click", (e) => {
+    var filters = [...document.querySelector('nav#filters').childNodes].filter(x => x.tagName == 'INPUT')
+    filters.forEach(x => x.addEventListener("click", (e) => {
       self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
         document.querySelector('input[name="seenByFilter"]:checked')?.value,
         document.querySelector('input[name="skippedByFilter"]:checked')?.value,
@@ -109,7 +110,7 @@ class UIEventListenerManager {
       self.filtered.randomlyChosenMovie.parentNode.parentNode.classList.add("chosen-one");
       self.filtered.randomlyChosenMovie.scrollIntoView();
       window.scrollBy(0, -200);
-    });
+    }));
   }
 
   get dataHandler() {
