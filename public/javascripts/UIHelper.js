@@ -24,47 +24,42 @@ class UIHelper {
 
     filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, decade, winnersOnly) {
         var allUserElements = [...document.querySelectorAll('.user-container')];
-        var bothUserNames = ["Alicia", "Josh"];
 
         if (winnersOnly) {
             allUserElements = allUserElements.filter(x => x.parentNode.querySelector('h3').classList.contains('trophy'));
         }
 
         if (seenbyUserName) {
-            if (seenbyUserName == "Both") {
-                allUserElements = allUserElements.filter(
-                    x => x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        && x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            } else if (seenbyUserName == "Neither") {
-                allUserElements = allUserElements.filter(
-                    x => !x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        && !x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            }
-            else {
-                allUserElements = allUserElements.filter(
-                    x => x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(seenbyUserName));
-            }
-
+            allUserElements = this.filterByRadioButtons(allUserElements, "seen", seenbyUserName);
         }
 
         if (skippedByUserName) {
-            if (skippedByUserName == "Both") {
-                allUserElements = allUserElements.filter(
-                    x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        && x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            } else if (skippedByUserName == "Neither") {
-                allUserElements = allUserElements.filter(
-                    x => !x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                        && !x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            } else {
-                allUserElements = allUserElements.filter(
-                    x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(skippedByUserName));
-            }
+            allUserElements = this.filterByRadioButtons(allUserElements, "skip", skippedByUserName);
         }
         return {
             "moviesList": allUserElements,
             "randomlyChosenMovie": allUserElements.sort(() => Math.random() - 0.5)[0]
         };
+    }
+
+    filterByRadioButtons(allElements, inputTypeName, userName) {
+        var bothUserNames = ["Alicia", "Josh"];
+        
+        if (userName == "Both") {
+            allElements = allElements.filter(
+                x => x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[0])
+                    && x.parentNode.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+        } else if (userName == "Neither") {
+            userName = bothUserNames;
+            allElements = allElements.filter(
+                x => !x.querySelector('input[name*=\"'+inputTypeName+'\":checked')?.getAttribute("name").includes(bothUserNames[0])
+                    && !x.parentNode.querySelector('input[name*=\"'+inputTypeName+'\":checked')?.getAttribute("name").includes(bothUserNames[1]));
+        } else {
+            allElements = allElements.filter(
+                x => x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(userName));
+        }
+
+        return allElements;
     }
 
 }   
