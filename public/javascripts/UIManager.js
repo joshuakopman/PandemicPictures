@@ -39,7 +39,7 @@ class UIManager {
             }
         }, false);
 
-        this.uiEventListenerManager.bindFilters();
+        self.uiEventListenerManager.bindFilterClickListener();
     }
 
     compileTemplatesAndBindElementData(allMoviesLoaded) {

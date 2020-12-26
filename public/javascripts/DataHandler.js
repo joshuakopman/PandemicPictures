@@ -4,7 +4,6 @@ class DataHandler {
     }
 
     fetchMovieDataFromAPI(limit, skip) {
-        console.log('fetching limit' + limit);
         var url = "/movies";
 
         if (limit != null) {

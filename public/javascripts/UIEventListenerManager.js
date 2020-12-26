@@ -93,7 +93,7 @@ class UIEventListenerManager {
     });
   }
 
-  bindFilters() {
+  bindFilterClickListener() {
     var self = this;
     document.querySelector('#btnApplyFilters').addEventListener("click",(e) => {
           self.chosenMovieElement = self.uiHelper.randomlySelectMovieByFilters(
