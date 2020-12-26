@@ -104,8 +104,10 @@ class UIEventListenerManager {
             null,
             document.querySelector('input[id="winnersOnly"]:checked')?.value,
           );
-          self.chosenMovieElement.parentNode.parentNode.classList.add("chosen-one");
-          self.chosenMovieElement.scrollIntoView();
+          document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
+          self.chosenMovieElement.filteredElements.forEach(x => x.parentNode.parentNode.style.display = 'block');
+          self.chosenMovieElement.chosenElement.parentNode.parentNode.classList.add("chosen-one");
+          self.chosenMovieElement.chosenElement.scrollIntoView();
           window.scrollBy(0, -200);
     });
   }

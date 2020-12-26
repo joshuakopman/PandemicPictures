@@ -61,7 +61,7 @@ class UIHelper {
                     x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(skippedByUserName));
             }
         }
-        return allUserElements.sort(() => Math.random() - 0.5)[0];
+        return {"filteredElements":allUserElements,"chosenElement":allUserElements.sort(() => Math.random() - 0.5)[0]};
     }
 
 }   
