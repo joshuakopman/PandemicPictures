@@ -23,24 +23,39 @@ class UIHelper {
         };
     }
 
-    filterByRadioButtons(allElements, inputTypeName, userName) {
-        var bothUserNames = ["Alicia", "Josh"];
-        
+    filterByRadioButtons(allElements, inputTypeName, userName) {        
         if (userName == "Both") {
-            allElements = allElements.filter(
-                x => x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                    && x.parentNode.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+            allElements = allElements.filter(x => this.determineSelection(x,inputTypeName,userName,true,false));
         } else if (userName == "Neither") {
-            userName = bothUserNames;
-            allElements = allElements.filter(
-                x => !x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[0])
-                    && !x.parentNode.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+            allElements = allElements.filter(x => this.determineSelection(x,inputTypeName,userName,false,true));
+
         } else {
-            allElements = allElements.filter(
-                x => x.querySelector('input[name*=\"'+inputTypeName+'\"]:checked')?.getAttribute("name").includes(userName));
+            allElements = allElements.filter(x => this.determineSelection(x,inputTypeName,userName,false,false));
         }
 
         return allElements;
+    }
+
+    determineSelection(element,inputTypeName,userName,isBoth,isNeither) {
+        var include = false;
+        
+        if(isNeither) {
+            return [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length == 0;
+        }
+
+        if(isBoth) {
+            return [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length == 2;
+        }
+        
+        if(isBoth == false && isNeither == false) {
+            element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`).forEach( x => {
+                    if(x.getAttribute("name").includes(userName)){
+                        include = true;
+                    }
+            })
+        } 
+        
+        return include;
     }
 
 }   
