@@ -107,9 +107,9 @@ class UIEventListenerManager {
       );
       document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
       self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
-      self.filtered.randomlyChosenMovie.parentNode.parentNode.classList.add("chosen-one");
-      self.filtered.randomlyChosenMovie.scrollIntoView();
-      window.scrollBy(0, -200);
+    //  self.filtered.randomlyChosenMovie.parentNode.parentNode.classList.add("chosen-one");
+      //self.filtered.randomlyChosenMovie.scrollIntoView();
+     // window.scrollBy(0, -200);
     }));
   }
 
