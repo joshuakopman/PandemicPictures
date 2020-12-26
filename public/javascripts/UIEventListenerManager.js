@@ -83,10 +83,18 @@ class UIEventListenerManager {
   addRandomMovieClickListener(movieData) {
     var self = this;
     document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
+      self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
+        document.querySelector('input[name="seenByFilter"]:checked')?.value,
+        document.querySelector('input[name="skippedByFilter"]:checked')?.value,
+        null,
+        null,
+        null,
+        document.querySelector('input[id="winnersOnly"]:checked')?.value,
+      );
       if (self.chosenMovieElement) {
         self.chosenMovieElement.classList.remove("chosen-one");
       }
-      self.chosenMovieElement = self.uiHelper.randomlySelectMovie(movieData); //.randomlySelectMovieByFilters();
+      self.chosenMovieElement = self.filtered.randomlyChosenMovie.parentNode.parentNode;
       self.chosenMovieElement.classList.add("chosen-one");
       self.chosenMovieElement.scrollIntoView();
       window.scrollBy(0, -200);
@@ -107,9 +115,6 @@ class UIEventListenerManager {
       );
       document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
       self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
-    //  self.filtered.randomlyChosenMovie.parentNode.parentNode.classList.add("chosen-one");
-      //self.filtered.randomlyChosenMovie.scrollIntoView();
-     // window.scrollBy(0, -200);
     }));
   }
 
