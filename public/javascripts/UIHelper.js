@@ -35,7 +35,12 @@ class UIHelper {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[0])
                         &&  x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
-            } else{
+            } else if(seenbyUserName == "Neither") {
+                allUserElements = allUserElements.filter(
+                    x => !x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[0])
+                        &&  !x.parentNode.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+            }
+            else{
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="seen"]:checked')?.getAttribute("name").includes(seenbyUserName));
             }
@@ -47,6 +52,10 @@ class UIHelper {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[0])
                         &&  x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
+            } else if (skippedByUserName == "Neither")  {
+                allUserElements = allUserElements.filter(
+                    x => !x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[0])
+                        &&  !x.parentNode.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(bothUserNames[1]));
             } else {
                 allUserElements = allUserElements.filter(
                     x => x.querySelector('input[name*="skip"]:checked')?.getAttribute("name").includes(skippedByUserName));
