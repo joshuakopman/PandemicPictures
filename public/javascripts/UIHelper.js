@@ -17,6 +17,7 @@ class UIHelper {
         if (skippedByUserName) {
             allUserElements = this.filterByRadioButtons(allUserElements, "skip", skippedByUserName);
         }
+
         return {
             "moviesList": allUserElements,
             "randomlyChosenMovie": allUserElements.sort(() => Math.random() - 0.5)[0]
@@ -38,18 +39,19 @@ class UIHelper {
 
     determineSelection(element,inputTypeName,userName,isBoth,isNeither) {
         var include = false;
+        var numberOfPeopleWhoHaveSeen = [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length;
         
         if(isNeither) {
-            return [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length == 0;
+            return numberOfPeopleWhoHaveSeen == 0;
         }
 
         if(isBoth) {
-            return [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length == 2;
+            return numberOfPeopleWhoHaveSeen == 2;
         }
-        
+
         if(isBoth == false && isNeither == false) {
             element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`).forEach( x => {
-                    if(x.getAttribute("name").includes(userName)){
+                    if(x.getAttribute("name").includes(userName) && numberOfPeopleWhoHaveSeen == 1){
                         include = true;
                     }
             })
