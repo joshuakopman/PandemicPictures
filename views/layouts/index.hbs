@@ -85,28 +85,7 @@
   </header>
   <img id="ajaxLoader" src="assets/Ajax-loader.gif" />
   <button class="filter">Filter</button>
-  <nav id="filters">
-    <p>Filters</p>
-      <p>Seen by</p>
-        <input type="radio" name=""><label>Josh</label>
-        <input type="radio" name=""><label>Alicia</label>
-        <input type="radio" name=""><label>Both</label>
-        <input type="radio" name=""><label>Neither</label>
-      <p>Skipped by</p>
-        <input type="radio" name=""><label>Josh</label>
-        <input type="radio" name=""><label>Alicia</label>
-        <input type="radio" name=""><label>Both</label>
-        <input type="radio" name=""><label>Neither</label>
-      <p>IMDb rating</p>
-         <input type="range" min="1" max="10" class="slider" id="myRange"> <span id="demo"></span>
-      <p>Max duration</p>
-       <input type="range" min="60" max="250" class="slider" id="myRange"> <span id="demo"></span>
-      <p>Decade</p>
-      Min    <input type="range" min="1920" max="2010" class="slider" step="10" id="myRange"> <span id="demo"></span>
-    Max     <input type="range" min="1920" max="2010" class="slider" step="10" id="myRange"> <span id="demo"></span>
-      <p>Winners only</p>
-        <input type="checkbox"> Yes
-  </nav>
+  {{> filters }}
   <main>
 
     {{{body}}}

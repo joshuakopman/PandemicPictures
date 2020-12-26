@@ -4,7 +4,7 @@ import Ddos from 'ddos';
 import ws from 'ws';
 import bodyParser from "body-parser";
 import exphbs from 'express-handlebars';
-import { default as hbsHelpers } from './helpers/hbsHelpers.js';
+import hbsHelpers from './helpers/hbsHelpers.js';
 import imdbRouter from './routes/imdb.js';
 import nomineessRouter from './routes/nominees.js';
 import adminRouter from './routes/admin.js';
@@ -14,15 +14,20 @@ const app = express();
 const port = 3000;
 const NomNomProvider = new NomineeProvider();
 const wsServer = new ws.Server({ noServer: true });
-const handlebars = hbsHelpers(exphbs);
 const ddos = new Ddos({ burst: 50, limit: 500, maxexpiry: 300, trustProxy: false, includeUserAgent: false })
 
 app.use(compression());
 app.use(ddos.express);
-app.engine('hbs', handlebars.engine);
+app.engine('hbs', exphbs(
+    { 
+        extname: '.hbs' ,  
+        helpers: hbsHelpers(exphbs).helpers 
+    }
+    ));
 app.set('view engine', 'hbs');
 app.use(express.static('public'))
 app.use(bodyParser.json())
+
 
 app.get('/', (req, res, next) => {
     var movies = NomNomProvider.readMoviesFromDisk();

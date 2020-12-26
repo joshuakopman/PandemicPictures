@@ -63,18 +63,19 @@ class UIManager {
                     if (window.location.href.includes('edit')) {
                         self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
                     } else {
-                        [].forEach.call(document.querySelectorAll('input[type=checkbox]'), (checkBox) => {
+                        [].forEach.call(document.querySelector('main').querySelectorAll('input[type=checkbox]'), (checkBox) => {
                             checkBox.setAttribute("disabled", "true");
                         });
 
-                        [].forEach.call(document.querySelectorAll('input[type=radio]'), (radio) => {
+                        [].forEach.call(document.querySelector('main').querySelectorAll('input[type=radio]'), (radio) => {
                             radio.setAttribute("disabled", "true");
                         });
 
                         document.body.classList.add("read-only");
                     }
-                    console.log(window.location.hash);
-                    document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
+                    if(window.location.hash) {
+                        document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
+                    }
                 }
             });
         });

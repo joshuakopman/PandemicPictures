@@ -1,4 +1,4 @@
-function hbsHelpers(hbs) {
+export default function hbsHelpers(hbs) {
   return hbs.create({
     helpers: {
       inc: function (value, options) {
@@ -27,4 +27,3 @@ function hbsHelpers(hbs) {
   });
 }
 
-export default hbsHelpers;
