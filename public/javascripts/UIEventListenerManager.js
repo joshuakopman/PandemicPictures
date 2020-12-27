@@ -7,6 +7,16 @@ class UIEventListenerManager {
   }
 
   addChevronClickListeners(imdb) {
+    var chevron = document.querySelector("#filterChevron");
+    chevron.addEventListener("click", (e) => {
+      e.currentTarget.classList.toggle("chevron-active");
+      if (document.querySelector("#filtersPanel").style.display === "none") {
+        document.querySelector("#filtersPanel").style.display = "block";
+      }else {
+        document.querySelector("#filtersPanel").style.display = 'none';
+      }
+    });
+
     var chevrons = document.getElementsByClassName("chevron");
     var i;
     for (i = 0; i < chevrons.length; i++) {

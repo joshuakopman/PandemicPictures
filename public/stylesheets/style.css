@@ -416,6 +416,10 @@ h2 {
   color: #F04C53;
 }
 
+#filtersPanel{
+  display: none;
+}
+
 .panel {
     display: none;
     overflow: hidden;
