@@ -275,7 +275,7 @@ header h1 a {
 
 main {
   padding: 50px;
-  padding-top: 140px;
+  margin-top: 75px;
   background: #f3f2ef;
   display: none;
 }
