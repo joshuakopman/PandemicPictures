@@ -116,7 +116,7 @@ class UIEventListenerManager {
 
   bindFilterClickListener() {
     var self = this;
-    var filters = [...document.querySelector('nav#filters').childNodes].filter(x => x.tagName == 'INPUT')
+    var filters = [...document.querySelector('#filtersPanel').childNodes].filter(x => x.tagName == 'INPUT');
     filters.forEach(x => x.addEventListener("click", (e) => {
       self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
         document.querySelector('input[name="seenByFilter"]:checked')?.value,
