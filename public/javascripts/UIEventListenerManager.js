@@ -138,10 +138,11 @@ class UIEventListenerManager {
       document.querySelector('#maxSlider')?.value,
       document.querySelector('input[id="winnersOnly"]:checked')?.value,
     );
+    
     document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
 
-    [...document.querySelectorAll('.year-container')].filter(x => x.querySelectorAll('.movie-container[style*="block"]').length == 0).forEach(y => y.style.display = 'none');
+    [...document.querySelectorAll('.year-container')].filter(x => x.querySelectorAll('.movie-container[style*="block"]').length == 0 && x.children[0].getAttribute("id").substring(x.children[0].getAttribute("id").length - 1) != "0").forEach(y => y.style.display = 'none');
     [...document.querySelectorAll('.year-container')].filter(x => x.querySelectorAll('.movie-container[style*="block"]').length > 0).forEach(y => y.style.display = 'flex');
   }
   
