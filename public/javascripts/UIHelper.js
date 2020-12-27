@@ -18,6 +18,15 @@ class UIHelper {
             allUserElements = this.filterByRadioButtons(allUserElements, "skip", skippedByUserName);
         }
 
+        if (minIMDBRating) {
+            console.log(minIMDBRating);
+            allUserElements = allUserElements.filter(x => parseFloat(x.parentNode.parentNode.querySelector("span[data-object*='rating']").innerHTML) >= minIMDBRating);
+        }
+
+        if (maxDuration) {
+            allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.querySelector("span[data-object*='runtime']").innerHTML.replace(' min','')) <= maxDuration);
+        }
+
         return {
             "moviesList": allUserElements,
             "randomlyChosenMovie": allUserElements.sort(() => Math.random() - 0.5)[0]
@@ -41,14 +50,16 @@ class UIHelper {
         var include = false;
         var numberOfPeopleWhoHaveSeen = [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length;
         
+        //show only movies no one has seen
         if(isNeither) {
             return numberOfPeopleWhoHaveSeen == 0;
         }
-
+        //show only movies both of us have seen
         if(isBoth) {
             return numberOfPeopleWhoHaveSeen == 2;
         }
 
+        //show only movies Alicia has seen XOR show only movies Josh has seen
         if(isBoth == false && isNeither == false) {
             element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`).forEach( x => {
                     if(x.getAttribute("name").includes(userName) && numberOfPeopleWhoHaveSeen == 1){
@@ -56,6 +67,10 @@ class UIHelper {
                     }
             })
         } 
+
+        //missing:
+        //show all movies Josh has seen, regardless of if Alicia has seen or not
+        //show all movies Alicia has seen, regardless of if Josh has seen or not
         
         return include;
     }

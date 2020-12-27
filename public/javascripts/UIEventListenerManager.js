@@ -99,7 +99,7 @@ class UIEventListenerManager {
       self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
         document.querySelector('input[name="seenByFilter"]:checked')?.value,
         document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-        null,
+        document.querySelector('#imdbSlider')?.value,
         null,
         null,
         document.querySelector('input[id="winnersOnly"]:checked')?.value,
@@ -121,7 +121,7 @@ class UIEventListenerManager {
       self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
         document.querySelector('input[name="seenByFilter"]:checked')?.value,
         document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-        null,
+        document.querySelector('#imdbSlider')?.value,
         null,
         null,
         document.querySelector('input[id="winnersOnly"]:checked')?.value,
@@ -129,6 +129,21 @@ class UIEventListenerManager {
       document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
       self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
     }));
+
+    document.querySelector('#durationSlider').addEventListener("change", (e) => {
+      self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
+        document.querySelector('input[name="seenByFilter"]:checked')?.value,
+        document.querySelector('input[name="skippedByFilter"]:checked')?.value,
+        document.querySelector('#imdbSlider')?.value,
+        null,
+        null,
+        document.querySelector('input[id="winnersOnly"]:checked')?.value,
+      );
+      document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
+      self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+    });
+
+
   }
 
   get dataHandler() {
