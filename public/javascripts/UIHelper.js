@@ -3,9 +3,9 @@ class UIHelper {
 
     }
 
-    filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, decade, winnersOnly) {
+    filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, minDecade, maxDecade, winnersOnly) {
         var allUserElements = [...document.querySelectorAll('.user-container')];
-        
+
         if (winnersOnly) {
             allUserElements = allUserElements.filter(x => x.parentNode.querySelector('h3').classList.contains('trophy'));
         }
@@ -24,6 +24,14 @@ class UIHelper {
 
         if (maxDuration) {
             allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.querySelector("span[data-object*='runtime']").innerHTML.replace(' min', '')) <= maxDuration);
+        }
+
+        if (minDecade) {
+            allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.parentNode.querySelector("h2").id) >= minDecade);
+        }
+
+        if (maxDecade) {
+            allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.parentNode.querySelector("h2").id) <= maxDecade);
         }
 
         return {

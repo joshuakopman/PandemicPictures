@@ -97,18 +97,19 @@ class UIEventListenerManager {
   addRandomMovieClickListener(movieData) {
     var self = this;
     document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
-      self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
+      var filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
         document.querySelector('input[name="seenByFilter"]:checked')?.value,
         document.querySelector('input[name="skippedByFilter"]:checked')?.value,
         document.querySelector('#imdbSlider')?.value,
         null,
-        null,
+        document.querySelector('#minSlider')?.value,
+        document.querySelector('#maxSlider')?.value,
         document.querySelector('input[id="winnersOnly"]:checked')?.value,
       );
       if (self.chosenMovieElement) {
         self.chosenMovieElement.classList.remove("chosen-one");
       }
-      self.chosenMovieElement = self.filtered.randomlyChosenMovie.parentNode.parentNode;
+      self.chosenMovieElement = filtered.randomlyChosenMovie.parentNode.parentNode;
       self.chosenMovieElement.classList.add("chosen-one");
       self.chosenMovieElement.scrollIntoView();
       window.scrollBy(0, -200);
@@ -119,33 +120,28 @@ class UIEventListenerManager {
     var self = this;
     var filters = [...document.querySelector('#filtersPanel').childNodes].filter(x => x.tagName == 'INPUT');
     filters.forEach(x => x.addEventListener("click", (e) => {
-      self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
-        document.querySelector('input[name="seenByFilter"]:checked')?.value,
-        document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-        document.querySelector('#imdbSlider')?.value,
-        null,
-        null,
-        document.querySelector('input[id="winnersOnly"]:checked')?.value,
-      );
-      document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
-      self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+      self.applyFilters();
     }));
 
     document.querySelector('#durationSlider').addEventListener("change", (e) => {
-      self.filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
-        document.querySelector('input[name="seenByFilter"]:checked')?.value,
-        document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-        document.querySelector('#imdbSlider')?.value,
-        null,
-        null,
-        document.querySelector('input[id="winnersOnly"]:checked')?.value,
-      );
-      document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
-      self.filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+      self.applyFilters();
     });
-
-
   }
+
+  applyFilters() {
+    var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
+      document.querySelector('input[name="seenByFilter"]:checked')?.value,
+      document.querySelector('input[name="skippedByFilter"]:checked')?.value,
+      document.querySelector('#imdbSlider')?.value,
+      null,
+      document.querySelector('#minSlider')?.value,
+      document.querySelector('#maxSlider')?.value,
+      document.querySelector('input[id="winnersOnly"]:checked')?.value,
+    );
+    document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
+    filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+  }
+  
 
   get dataHandler() {
     return this.myDataHandler;
