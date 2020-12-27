@@ -251,7 +251,7 @@ header h1 a {
 }
 
 .picker {
-      background-image: linear-gradient(to top left,#ffa944,#c3185f);
+    background-image: linear-gradient(to top left,#ffa944,#c3185f);
     color: #fff;
     display: inline-block;
     font-family: inherit;
@@ -416,7 +416,12 @@ h2 {
   color: #F04C53;
 }
 
-#filtersPanel{
+#filterChevron {
+  display: inline;
+  float: inherit;
+}
+
+#filtersPanel {
   display: none;
 }
 

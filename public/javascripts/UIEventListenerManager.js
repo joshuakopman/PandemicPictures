@@ -9,8 +9,7 @@ class UIEventListenerManager {
   addChevronClickListeners(imdb) {
     var chevron = document.querySelector("#filterChevron");
     chevron.addEventListener("click", (e) => {
-      e.currentTarget.classList.toggle("chevron-active");
-      if (document.querySelector("#filtersPanel").style.display === "none") {
+      if (document.querySelector("#filtersPanel").style.display != "block") {
         document.querySelector("#filtersPanel").style.display = "block";
       }else {
         document.querySelector("#filtersPanel").style.display = 'none';
@@ -24,29 +23,33 @@ class UIEventListenerManager {
         e.currentTarget.classList.toggle("chevron-active");
         var grandParentNode = e.currentTarget.parentNode.parentNode;
         var panel = grandParentNode.querySelector(".panel");
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
+        if(panel) {
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
 
-          var template = document.getElementById('panel-template').innerHTML;
-          var renderPanel = Handlebars.compile(template);
-          var panelData = { name: e.currentTarget.getAttribute("Movie"), year: e.currentTarget.getAttribute("Year") };
-          panel.innerHTML = renderPanel(panelData);
+            var template = document.getElementById('panel-template').innerHTML;
+            var renderPanel = Handlebars.compile(template);
+            var panelData = { name: e.currentTarget.getAttribute("Movie"), year: e.currentTarget.getAttribute("Year") };
+            panel.innerHTML = renderPanel(panelData);
 
-          var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
-          document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-director"]').innerHTML = movie.Director;
-          document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-runtime"]').innerHTML = movie.Runtime;
-          document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-genre"]').innerHTML = movie.Genre;
-          document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-actors"]').innerHTML = movie.Actors;
-          document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-plot"]').innerHTML = movie.Plot;
-          panel.style.display = "block";
-        }
-        var moviePosterContainer = grandParentNode.querySelector(".movie-poster-container");
-        if (moviePosterContainer.style.zIndex === "999") {
-          moviePosterContainer.style.zIndex = "inherit";
-        } else {
-          moviePosterContainer.style.zIndex = "999";
-        }
+            var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
+            if(movie) { 
+              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-director"]').innerHTML = movie.Director;
+              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-runtime"]').innerHTML = movie.Runtime;
+              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-genre"]').innerHTML = movie.Genre;
+              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-actors"]').innerHTML = movie.Actors;
+              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-plot"]').innerHTML = movie.Plot;
+              panel.style.display = "block";
+            }
+          }
+          var moviePosterContainer = grandParentNode.querySelector(".movie-poster-container");
+          if (moviePosterContainer.style.zIndex === "999") {
+            moviePosterContainer.style.zIndex = "inherit";
+          } else {
+            moviePosterContainer.style.zIndex = "999";
+          }
+       }
       });
     }
   }
