@@ -429,6 +429,10 @@ h2 {
   display: none;
 }
 
+input[type='range'] {
+  width: 350px;
+}
+
 .panel {
     display: none;
     overflow: hidden;
