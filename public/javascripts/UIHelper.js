@@ -5,6 +5,8 @@ class UIHelper {
 
     filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, decade, winnersOnly) {
         var allUserElements = [...document.querySelectorAll('.user-container')];
+        
+        console.log(allUserElements);
 
         if (winnersOnly) {
             allUserElements = allUserElements.filter(x => x.parentNode.querySelector('h3').classList.contains('trophy'));
@@ -13,6 +15,7 @@ class UIHelper {
         if (seenbyUserName) {
             allUserElements = this.filterByRadioButtons(allUserElements, "seen", seenbyUserName);
         }
+        console.log(allUserElements);
 
         if (skippedByUserName) {
             allUserElements = this.filterByRadioButtons(allUserElements, "skip", skippedByUserName);
@@ -25,7 +28,7 @@ class UIHelper {
         if (maxDuration) {
             allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.querySelector("span[data-object*='runtime']").innerHTML.replace(' min', '')) <= maxDuration);
         }
-
+        console.log(allUserElements);
         return {
             "moviesList": allUserElements,
             "randomlyChosenMovie": allUserElements.sort(() => Math.random() - 0.5)[0]
