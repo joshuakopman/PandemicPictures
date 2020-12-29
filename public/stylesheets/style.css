@@ -317,7 +317,7 @@ h2 {
 
 
 .movie-container:nth-of-type(3) {
-  margin-right: 0;
+  /*margin-right: 0;*/
 }
 
 .movie-poster {
@@ -431,6 +431,8 @@ h2 {
 #filterChevron {
   display: block;
   width: auto;
+  float: none;
+  cursor: pointer;
 }
 
 #filtersPanel {
@@ -439,7 +441,7 @@ h2 {
     background: rgb(76, 73, 73);
     color: rgb(255, 255, 255);
     padding: 40px;
-    margin-top: 70px;
+    margin-top: 50px;
     flex-wrap: wrap;
     justify-content: space-around;
     display: none;
@@ -665,4 +667,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     text-transform: uppercase;
     padding: 10px;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.reset-button:focus {
+  outline: none;
 }
