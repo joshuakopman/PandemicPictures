@@ -431,6 +431,8 @@ h2 {
 #filterChevron {
   display: block;
   width: auto;
+  float: none;
+  cursor: pointer;
 }
 
 #filtersPanel {
@@ -439,7 +441,7 @@ h2 {
     background: rgb(76, 73, 73);
     color: rgb(255, 255, 255);
     padding: 40px;
-    margin-top: 70px;
+    margin-top: 50px;
     flex-wrap: wrap;
     justify-content: space-around;
     display: none;
