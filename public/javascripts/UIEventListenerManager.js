@@ -153,7 +153,7 @@ class UIEventListenerManager {
       document.querySelector("#clearFilters").value = clearFilterValue.substring(0,clearFilterValue.indexOf('(')-1);
     }
     if(!resetClicked){
-      document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length + " Matches )";
+      document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length / 2 + " Matches )";
     }
 
     var yearContainers = [...document.querySelectorAll('.year-container')];
