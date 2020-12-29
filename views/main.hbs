@@ -1,10 +1,10 @@
 <template id="ratings-template">
   \{{#each moviesList}}
-  <div class="year-container">
+  <div class="year-container" data-object="year-container">
     <h2 id="\{{inc this.Year '+' 1}}" class="year-heading" index="\{{@index}}" data-object="year">
       \{{inc this.Year "+" 1}}</h2>
     \{{#each this.Movies}}
-    <div class="movie-container">
+    <div class="movie-container" data-object="movie-container">
       <div class="movie-poster-container">
         <a href="https://imdb.com/\{{this.ImdbID}}" target="_blank"> <img class="movie-poster"
             data-object="\{{this.Name}}-\{{../Year}}-poster" loading="lazy" /></a>
