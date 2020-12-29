@@ -128,6 +128,8 @@ class UIEventListenerManager {
     });
 
     document.querySelector('#clearFilters').addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector("#filtersPanel").reset();
       self.applyFilters();
     });
   }
