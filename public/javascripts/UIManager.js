@@ -16,7 +16,7 @@ class UIManager {
             return parseInt(value) + 1;
         });
 
-        this.socket.onmessage = (event) => {
+        this.socket.onmessage = () => {
             self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
                 self.updateHasSeenCheckboxesAndCounts(movieData);
             });
