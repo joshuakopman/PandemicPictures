@@ -101,7 +101,7 @@ class UIEventListenerManager {
         document.querySelector('input[name="seenByFilter"]:checked')?.value,
         document.querySelector('input[name="skippedByFilter"]:checked')?.value,
         document.querySelector('#imdbSlider')?.value,
-        null,
+        document.querySelector('#durationSlider')?.value,
         document.querySelector('#minSlider')?.value,
         document.querySelector('#maxSlider')?.value,
         document.querySelector('input[id="winnersOnly"]:checked')?.value,
@@ -133,12 +133,12 @@ class UIEventListenerManager {
       document.querySelector('input[name="seenByFilter"]:checked')?.value,
       document.querySelector('input[name="skippedByFilter"]:checked')?.value,
       document.querySelector('#imdbSlider')?.value,
-      null,
+      document.querySelector('#durationSlider')?.value,
       document.querySelector('#minSlider')?.value,
       document.querySelector('#maxSlider')?.value,
       document.querySelector('input[id="winnersOnly"]:checked')?.value,
     );
-    
+
     document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
 
