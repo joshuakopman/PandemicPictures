@@ -130,11 +130,11 @@ class UIEventListenerManager {
     document.querySelector('#clearFilters').addEventListener("click", (e) => {
       e.preventDefault();
       document.querySelector("#filtersPanel").reset();
-      self.applyFilters();
+      self.applyFilters(true);
     });
   }
 
-  applyFilters() {
+  applyFilters(resetClicked = false) {
     var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
       document.querySelector('input[name="seenByFilter"]:checked')?.value,
       document.querySelector('input[name="skippedByFilter"]:checked')?.value,
@@ -147,7 +147,15 @@ class UIEventListenerManager {
 
     document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
-    
+    var clearFilterValue =  document.querySelector("#clearFilters").value;
+
+    if(clearFilterValue.includes("(")) {
+      document.querySelector("#clearFilters").value = clearFilterValue.substring(0,clearFilterValue.indexOf('(')-1);
+    }
+    if(!resetClicked){
+      document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length + " Matches )";
+    }
+
     var yearContainers = [...document.querySelectorAll('.year-container')];
     yearContainers.filter(x => x.querySelectorAll('.movie-container[style*="block"]').length == 0 && x.children[0].getAttribute("id").substring(x.children[0].getAttribute("id").length - 1) != "0").forEach(y => y.style.display = 'none');
     yearContainers.filter(x => x.querySelectorAll('.movie-container[style*="block"]').length > 0).forEach(y => y.style.display = 'flex');
