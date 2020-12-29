@@ -317,7 +317,7 @@ h2 {
 
 
 .movie-container:nth-of-type(3) {
-  margin-right: 0;
+  /*margin-right: 0;*/
 }
 
 .movie-poster {
