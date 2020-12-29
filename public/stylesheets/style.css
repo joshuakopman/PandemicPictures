@@ -664,4 +664,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     text-transform: uppercase;
     padding: 10px;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.reset-button:focus {
+  outline: none;
 }
