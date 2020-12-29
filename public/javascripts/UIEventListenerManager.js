@@ -9,7 +9,7 @@ class UIEventListenerManager {
   addChevronClickListeners(imdb) {
     var chevron = document.querySelector("#filterChevron");
     chevron.addEventListener("click", (e) => {
-      e.currentTarget.classList.toggle("chevron-active");
+      // e.currentTarget.classList.toggle("chevron-active");
       if (document.querySelector("#filtersPanel").style.display != "block") {
         document.querySelector("#filtersPanel").style.display = "block";
       } else {
