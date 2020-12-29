@@ -62,6 +62,9 @@ class UIManager {
                 if (allMoviesLoaded) {
                     self.uiEventListenerManager.addRandomMovieClickListener(movieData);
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
+                    
+                    document.querySelector('#filtersNav').style.display = 'block';
+
                     if (window.location.href.includes('edit')) {
                         self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
                     } else {
@@ -74,7 +77,6 @@ class UIManager {
                         });
 
                         document.body.classList.add("read-only");
-                        document.querySelector('#filtersNav').style.display = 'block';
                     }
                     if (window.location.hash) {
                         document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
