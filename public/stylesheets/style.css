@@ -426,6 +426,7 @@ h2 {
   margin-left: 10px;
   margin-bottom: 10px;
   padding: 50px 100px;
+  text-align: right;
 }
 
 #filterChevron {
@@ -619,7 +620,7 @@ footer a {
 }
 
 #filtersNav {
-  text-align: right;
+  display: inline-block;
   font-weight: 700;
   font-size: 18px;
 }
