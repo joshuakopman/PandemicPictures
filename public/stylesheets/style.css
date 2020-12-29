@@ -429,10 +429,13 @@ h2 {
 }
 
 #filterChevron {
-  display: block;
   width: auto;
   float: none;
   cursor: pointer;
+}
+
+#filtersNav {
+  display: none;
 }
 
 #filtersPanel {
