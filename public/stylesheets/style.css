@@ -448,11 +448,13 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     display: none;
+    border-radius: 4px;
 }
 
 .filter-item {
-  width: 30%;
-  margin-bottom: 20px;
+  width: 24%;
+    padding: 0 10px;
+    margin-bottom: 20px;
 }
 
 .filter-item p {
@@ -668,9 +670,20 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     background: #231F20;
     color: white;
     text-transform: uppercase;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 10px 15px;
+    margin-top: 20px;
     cursor: pointer;
+    opacity: 0.8;
+    border-radius: 8px;
+}
+
+.reset-button:hover {
+  opacity: 1;
+}
+
+.reset-button:active {
+  color: #000;
+  background: #fff;
 }
 
 .reset-button:focus {
