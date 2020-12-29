@@ -439,8 +439,7 @@ h2 {
 }
 
 #filtersPanel {
-  text-align: left;
-    display: flex;
+    text-align: left;
     background: rgb(76, 73, 73);
     color: rgb(255, 255, 255);
     padding: 40px;
