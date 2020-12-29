@@ -117,12 +117,17 @@ class UIEventListenerManager {
 
   bindFilterClickListener() {
     var self = this;
-    var filters = [...document.querySelector('#filtersPanel').childNodes].filter(x => x.tagName == 'INPUT');
+    var filters = [...document.querySelectorAll('.filter-item input')];
+
     filters.forEach(x => x.addEventListener("click", (e) => {
       self.applyFilters();
     }));
 
     document.querySelector('#durationSlider').addEventListener("change", (e) => {
+      self.applyFilters();
+    });
+
+    document.querySelector('#clearFilters').addEventListener("click", (e) => {
       self.applyFilters();
     });
   }
