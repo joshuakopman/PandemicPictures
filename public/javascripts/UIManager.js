@@ -89,6 +89,7 @@ class UIManager {
             try {
                 document.querySelector('img[data-object="' + movie.Title + '-' + movie.OscarYear + '-poster"]').src = movie.ImageUrl;
                 document.querySelector('span[data-object="' + movie.Title + '-' + movie.OscarYear + '-rating"]').innerHTML = movie.Rating;
+                document.querySelector('span[data-object="' + movie.Title + '-' + movie.OscarYear + '-runtime"]').innerHTML = movie.Runtime;
                 document.querySelector('img[data-object="' + movie.Title + '-' + movie.OscarYear + '-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID;
                 if (movie.OscarYear != year) {
                     var movieTitleElement = document.querySelector('div[movie="' + movie.Title + '"][year="' + movie.OscarYear + '"]').nextElementSibling;

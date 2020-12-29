@@ -37,7 +37,7 @@ class UIEventListenerManager {
             var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
             if (movie) {
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-director"]').innerHTML = movie.Director;
-              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-runtime"]').innerHTML = movie.Runtime;
+              // document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-runtime"]').innerHTML = movie.Runtime;
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-genre"]').innerHTML = movie.Genre;
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-actors"]').innerHTML = movie.Actors;
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-plot"]').innerHTML = movie.Plot;

@@ -327,7 +327,7 @@ h2 {
 }
 
 .movie-title {
-  margin: 0 60px 5px 0;
+  margin: 0 60px 7px 0;
   font-weight: bold;
   font-size:18px;
 }
@@ -446,7 +446,7 @@ input[type='range'] {
     top: 90px;
     padding: 0 20px 10px 135px;
     left: 0;
-    width: 61.57%;
+    width: 60.57%;
     margin-left: -3px;
     border: 3px solid white;
 }
