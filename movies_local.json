@@ -6,7 +6,7 @@
                 "Viewers": [
                     {
                         "Name": "Josh",
-                        "HasSeen": false,
+                        "HasSeen": true,
                         "Rating": null,
                         "Skip": false
                     },

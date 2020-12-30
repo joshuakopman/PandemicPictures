@@ -560,10 +560,10 @@ h2 {
 }
 
 
-.checkbox-custom + .check-label:hover:after,
-.checkbox-custom + .skip-label:hover:after,
-.radio-custom:checked + .smile-label:hover:after, 
-.radio-custom:checked + .frown-label:hover:after {
+.read-only .checkbox-custom + .check-label:hover:after,
+.read-only .checkbox-custom + .skip-label:hover:after,
+.read-only .radio-custom:checked + .smile-label:hover:after, 
+.read-only .radio-custom:checked + .frown-label:hover:after {
    color: #8c8989;
     letter-spacing: 0.25px;
     background: #fff;
@@ -579,27 +579,27 @@ h2 {
     white-space: nowrap;
 }
 
-.checkbox-custom:not(:checked) + .check-label:hover:after {
+.read-only .checkbox-custom:not(:checked) + .check-label:hover:after {
     content: "not seen";
 }
 
-.checkbox-custom:checked + .check-label:hover:after {
+.read-only .checkbox-custom:checked + .check-label:hover:after {
     content: "seen";
 }
 
-.radio-custom:checked + .smile-label:hover:after {
+.read-only .radio-custom:checked + .smile-label:hover:after {
   content: "liked";
 }
 
-.radio-custom:checked + .frown-label:hover:after {
+.read-only .radio-custom:checked + .frown-label:hover:after {
   content: "disliked";
 }
 
-.checkbox-custom:not(:checked) + .skip-label:hover:after {
+.read-only .checkbox-custom:not(:checked) + .skip-label:hover:after {
     content: "not skipped";
 }
 
-.checkbox-custom:checked + .skip-label:hover:after {
+.read-only .checkbox-custom:checked + .skip-label:hover:after {
     content: "skip in randomizer";
 }
 
