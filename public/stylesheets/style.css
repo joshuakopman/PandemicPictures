@@ -400,6 +400,10 @@ h2 {
   opacity: 0.8;
 }
 
+.chevron:focus {
+  outline: none;
+}
+
 .chevron:hover {
  cursor: pointer;
  opacity: 1;
@@ -555,6 +559,50 @@ h2 {
     color: #63dcc1;
 }
 
+
+.checkbox-custom + .check-label:hover:after,
+.checkbox-custom + .skip-label:hover:after,
+.radio-custom:checked + .smile-label:hover:after, 
+.radio-custom:checked + .frown-label:hover:after {
+   color: #8c8989;
+    letter-spacing: 0.25px;
+    background: #fff;
+    box-shadow: 1px 1px 4px #00000030;
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: -24px;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    left: -25%;
+    z-index: 99;
+    white-space: nowrap;
+}
+
+.checkbox-custom:not(:checked) + .check-label:hover:after {
+    content: "not seen";
+}
+
+.checkbox-custom:checked + .check-label:hover:after {
+    content: "seen";
+}
+
+.radio-custom:checked + .smile-label:hover:after {
+  content: "liked";
+}
+
+.radio-custom:checked + .frown-label:hover:after {
+  content: "disliked";
+}
+
+.checkbox-custom:not(:checked) + .skip-label:hover:after {
+    content: "not skipped";
+}
+
+.checkbox-custom:checked + .skip-label:hover:after {
+    content: "skip in randomizer";
+}
+
 .user-smile {
   margin-right: 5px;
 }
@@ -689,3 +737,4 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .reset-button:focus {
   outline: none;
 }
+

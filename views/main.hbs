@@ -18,7 +18,7 @@
         <div class="chevron" movie="\{{this.Name}}" year="\{{../this.Year}}" tabindex="0"></div>
         <h3 class="movie-title" index="\{{@index}}">\{{this.Name}} </h3>
         <div class="imdb-container">
-          <span class="imdb-star">&#x2605;</span>
+          <span class="imdb-star">{{!-- &#x2605; --}} <i class="far fa-star"></i></span>
           <span class="imdb-rating" data-object="\{{this.Name}}-\{{../this.Year}}-rating"></span> &nbsp; &nbsp;
           <span class="imdb-star"><i class="far fa-clock"></i></span>
          <span class="imdb-runtime" data-object="\{{this.Name}}-\{{../this.Year}}-runtime"></span> 
