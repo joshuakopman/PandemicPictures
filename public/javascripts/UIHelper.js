@@ -45,7 +45,6 @@ class UIHelper {
             allElements = allElements.filter(x => this.determineSelection(x, inputTypeName, userName, true, false));
         } else if (userName == "Neither") {
             allElements = allElements.filter(x => this.determineSelection(x, inputTypeName, userName, false, true));
-
         } else {
             allElements = allElements.filter(x => this.determineSelection(x, inputTypeName, userName, false, false));
         }

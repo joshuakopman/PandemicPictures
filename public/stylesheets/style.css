@@ -430,15 +430,17 @@ h2 {
 }
 
 #filterChevron {
-  display: block;
   width: auto;
   float: none;
   cursor: pointer;
 }
 
+#filtersNav {
+  display: none;
+}
+
 #filtersPanel {
-  text-align: left;
-    display: flex;
+    text-align: left;
     background: rgb(76, 73, 73);
     color: rgb(255, 255, 255);
     padding: 40px;

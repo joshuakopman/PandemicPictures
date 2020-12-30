@@ -16,7 +16,7 @@ class UIManager {
             return parseInt(value) + 1;
         });
 
-        this.socket.onmessage = (event) => {
+        this.socket.onmessage = () => {
             self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
                 self.updateHasSeenCheckboxesAndCounts(movieData);
             });
@@ -62,6 +62,9 @@ class UIManager {
                 if (allMoviesLoaded) {
                     self.uiEventListenerManager.addRandomMovieClickListener(movieData);
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
+                    
+                    document.querySelector('#filtersNav').style.display = 'block';
+
                     if (window.location.href.includes('edit')) {
                         self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
                     } else {

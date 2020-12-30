@@ -8,11 +8,12 @@ class UIEventListenerManager {
 
   addChevronClickListeners(imdb) {
     var chevron = document.querySelector("#filterChevron");
-    chevron.addEventListener("click", (e) => {
-      if (document.querySelector("#filtersPanel").style.display == "none") {
-        document.querySelector("#filtersPanel").style.display = "flex";
+    chevron.addEventListener("click", () => {
+      var filtersPanel = document.querySelector("#filtersPanel");
+      if (filtersPanel.style.display != 'flex') {
+        filtersPanel.style.display = "flex";
       } else {
-        document.querySelector("#filtersPanel").style.display = 'none';
+        filtersPanel.style.display = 'none';
       }
     });
 
@@ -36,7 +37,6 @@ class UIEventListenerManager {
             var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
             if (movie) {
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-director"]').innerHTML = movie.Director;
-              // document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-runtime"]').innerHTML = movie.Runtime;
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-genre"]').innerHTML = movie.Genre;
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-actors"]').innerHTML = movie.Actors;
               document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-plot"]').innerHTML = movie.Plot;
@@ -130,11 +130,11 @@ class UIEventListenerManager {
     document.querySelector('#clearFilters').addEventListener("click", (e) => {
       e.preventDefault();
       document.querySelector("#filtersPanel").reset();
-      self.applyFilters();
+      self.applyFilters(true);
     });
   }
 
-  applyFilters() {
+  applyFilters(resetClicked = false) {
     var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
       document.querySelector('input[name="seenByFilter"]:checked')?.value,
       document.querySelector('input[name="skippedByFilter"]:checked')?.value,
@@ -145,11 +145,20 @@ class UIEventListenerManager {
       document.querySelector('input[id="winnersOnly"]:checked')?.value,
     );
 
-    document.querySelectorAll('.movie-container').forEach(x => x.style.display = 'none');
+    document.querySelectorAll('div[data-object="movie-container"]').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+    var clearFilterValue =  document.querySelector("#clearFilters").value;
 
-    [...document.querySelectorAll('.year-container')].filter(x => x.querySelectorAll('.movie-container[style*="block"]').length == 0 && x.children[0].getAttribute("id").substring(x.children[0].getAttribute("id").length - 1) != "0").forEach(y => y.style.display = 'none');
-    [...document.querySelectorAll('.year-container')].filter(x => x.querySelectorAll('.movie-container[style*="block"]').length > 0).forEach(y => y.style.display = 'flex');
+    if(clearFilterValue.includes("(")) {
+      document.querySelector("#clearFilters").value = clearFilterValue.substring(0,clearFilterValue.indexOf('(')-1);
+    }
+    if(!resetClicked){
+      document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length / 2 + " Matches )";
+    }
+
+    var yearContainers = [...document.querySelectorAll('div[data-object="year-container"]')];
+    yearContainers.filter(x => x.querySelectorAll('div[data-object="movie-container"][style*="block"]').length == 0 && x.children[0].getAttribute("id").substring(x.children[0].getAttribute("id").length - 1) != "0").forEach(y => y.style.display = 'none');
+    yearContainers.filter(x => x.querySelectorAll('div[data-object="movie-container"][style*="block"]').length > 0).forEach(y => y.style.display = 'flex');
   }
   
 
