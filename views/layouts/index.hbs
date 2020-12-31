@@ -82,8 +82,8 @@
         <a href="#2020">20s</a>
 
         <div id="filtersNav">
-    <div id="filterChevron" class="chevron">Filters &nbsp;</div>
-  </div>
+          <div id="filterChevron" class="chevron">Filters &nbsp;</div>
+        </div>
       </div>
 
       {{> filters }}
@@ -111,13 +111,15 @@
 
     </body>
     <template id="panel-template" style="display:none">
-      <p class="movie-details-line">
-        <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
-        <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
-        <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span"
-          data-object="\{{name}}-\{{year}}-director"></span></p>
-          <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span"
-            data-object="\{{name}}-\{{year}}-actors"></span></p>
+      <div class="panel-inner">
+        <p class="movie-details-line">
+          <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
+          <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
+          <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span"
+            data-object="\{{name}}-\{{year}}-director"></span></p>
+            <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span"
+              data-object="\{{name}}-\{{year}}-actors"></span></p>
+            </div>
           </template>
 
           </html>
