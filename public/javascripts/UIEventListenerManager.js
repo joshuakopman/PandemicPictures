@@ -6,6 +6,30 @@ class UIEventListenerManager {
     this.chosenMovieElement = null;
   }
 
+  addAboutlickListener() {
+    var about = document.querySelector("#about-button");
+    about.addEventListener("click", () => {
+      var aboutContainer = document.querySelector("#about-box");
+      if (aboutContainer.style.display != 'block') {
+        filtersPanel.style.display = "block";
+      } else {
+        filtersPanel.style.display = 'none';
+      }
+    });
+  }
+
+  addAboutCloseListener() {
+    var about = document.querySelector(".about-close");
+    about.addEventListener("click", () => {
+      var aboutContainer = document.querySelector("#about-box");
+      if (aboutContainer.style.display != 'block') {
+        filtersPanel.style.display = "block";
+      } else {
+        filtersPanel.style.display = 'none';
+      }
+    });
+  }
+
   addChevronClickListeners(imdb) {
     var chevron = document.querySelector("#filterChevron");
     chevron.addEventListener("click", () => {

@@ -46,7 +46,7 @@
 <body>
 
   <header id="header">
-    <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
+    <h1 id="title"><a href="#">Pandemic Pictures</a></h1> 
 
     <div class="totals-container">
       <div class="ribbon-container">
@@ -96,36 +96,49 @@
 
     </header>
     <img id="ajaxLoader" src="/assets/Ajax-loader.gif" />
+    <button id="about-button" class="about-button">About</button>
+    <div id="about-box" class="about-container">
+      <div class="about-content">
+         <button class="about-close"><i class="fas fa-times"></i></button>
+        <div class="about-text">
+           <img src="/assets/thisisus.png" class="about-photo" />
+          <p>One chilly afternoon in November 2020, Josh declared, “Winter is coming,” despite never seeing the epic show Game of Thrones, and announced their pandemictime mission: to watch every Academy Award Best Picture nominee going all the way back to 1928. </p>
+          <p>They recorded what they’d seen on a checklist site, but there was no way to share the results with each other! “It’s okay, I’ll make a spreadsheet,” product manager Alicia said to console Josh, who was ugly crying in the fetal position at the prospect of his plan failing. “Or maybe an app?” Josh asked, ever the software development manager. Alicia instantly went heart eyes emoji. “Hahahha that’d be overdoing it, right? Right???”</p>
+          <p>The two were a bit out of their &#60;element&#62;, neither having coded in years, but their powers combined, they were a dream team and put together this very website in about a month. It not only tracks the movies they’ve seen, but also helps them choose a movie on any given night by narrowing down the search to what they’re in the mood for via filters.</p>
+            <p>How’s our driving? You should let us know in <a href="https://github.com/joshuakopman/PandemicPictures" target="_blank" style="color:#b1636b">github</a> or something.</p>
+          </div>
+        </div>
+      </div>
 
-    <main>
-      {{{body}}}
-    </main>
+      <main>
+        {{{body}}}
+      </main>
 
-    <footer class="footer">
-      <p style="font-weight:700">Made with <a href="https://github.com/joshuakopman/PandemicPictures" style="text-decoration:none">&#127801;</a> in NYC</p>
-      <p> by&nbsp; <i class="fab fa-github"></i> <a href="https://github.com/joshuakopman"
-        target="_blank">joshuakopman</a> &amp; <i class="fab fa-github"></i> <a href="https://github.com/aliciahurst"
-        target="_blank">aliciahurst</a> </p>
-      </footer>
+      <footer class="footer">
+        <p style="font-weight:700">Made with <a href="https://github.com/joshuakopman/PandemicPictures" style="text-decoration:none">&#127801;</a> in NYC</p>
+        <p> by&nbsp; <i class="fab fa-github"></i> <a href="https://github.com/joshuakopman"
+          target="_blank">joshuakopman</a> &amp; <i class="fab fa-github"></i> <a href="https://github.com/aliciahurst"
+          target="_blank">aliciahurst</a> </p>
+        </footer>
 
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
-      <script src="/javascripts/UIHelper.js"></script>
-      <script src="/javascripts/UIEventListenerManager.js"></script>
-      <script src="/javascripts/UIManager.js"></script>
-      <script src="/javascripts/DataHandler.js"></script>
-      <script src="/javascripts/Main.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+        <script src="/javascripts/UIHelper.js"></script>
+        <script src="/javascripts/UIEventListenerManager.js"></script>
+        <script src="/javascripts/UIManager.js"></script>
+        <script src="/javascripts/DataHandler.js"></script>
+        <script src="/javascripts/Main.js"></script>
 
-    </body>
-    <template id="panel-template" style="display:none">
-      <div class="panel-inner">
-        <p class="movie-details-line">
-          <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
-          <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
-          <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span"
-            data-object="\{{name}}-\{{year}}-director"></span></p>
-            <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span"
-              data-object="\{{name}}-\{{year}}-actors"></span></p>
-            </div>
-          </template>
+      </body>
+      <template id="panel-template" style="display:none">
+        <div class="panel-inner">
+          <p class="movie-details-line">
+            <span class="movie-detail-span" data-object="\{{name}}-\{{year}}-genre"></span></p>
+            <p class="movie-details-line"><span class="movie-detail-span" data-object="\{{name}}-\{{year}}-plot"></span></p>
+            <p class="movie-details-line"><span class="movie-detail-label">Directed by </span> <span class="movie-detail-span"
+              data-object="\{{name}}-\{{year}}-director"></span></p>
+              <p class="movie-details-line"><span class="movie-detail-label">Starring </span> <span class="movie-detail-span"
+                data-object="\{{name}}-\{{year}}-actors"></span></p>
+              </div>
+            </template>
 
-          </html>
+            </html>
