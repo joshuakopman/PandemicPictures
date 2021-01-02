@@ -24,14 +24,14 @@ class UIManager {
 
         this.compileTemplatesAndBindElementData();
 
-        if(window.requestIdleCallback){
+        if(window.requestIdleCallback) {
             window.requestIdleCallback(() => {
                 setTimeout(() => {
                     self.initialLimit = 95;
                     self.compileTemplatesAndBindElementData(true);
                 }, 250);
             });
-        } else{
+        } else {
             setTimeout(() => {
                 self.initialLimit = 95;
                 self.compileTemplatesAndBindElementData(true);

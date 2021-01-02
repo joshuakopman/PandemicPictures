@@ -33,12 +33,14 @@ router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
     const currentMoviesArray = imdbProvider.readRatingsFromDisk();
 
     for (var currentMovie of currentMoviesArray) {
-        var updatedIMDBInfoForMovie = imdbProvider.fetchOMDBAPIInfoByID(currentMovie.ImdbID);
+        var updatedIMDBInfoForMovie = await imdbProvider.fetchOMDBAPIInfoByID(currentMovie.ImdbID);
         try {
-            currentMoviesArray.find(x => x.ImdbID == updatedIMDBInfoForMovie.imdbID).Rating = updatedIMDBInfoForMovie.Ratings.find(y => y.Source == 'Internet Movie Database').Value.replace('/10', '');
+            currentMoviesArray.find(x => x.ImdbID == updatedIMDBInfoForMovie.imdbID).Rating
+             = 
+             updatedIMDBInfoForMovie.Ratings.find(y => y.Source == 'Internet Movie Database').Value.replace('/10', '');
         }
-        catch {
-            console.log("No IMDB rating retrieved for: " + currentMovie.Title);
+        catch (e) {
+            console.log("No IMDB rating retrieved for: " + currentMovie.Title + ' | '+e);
         }
     }
 
