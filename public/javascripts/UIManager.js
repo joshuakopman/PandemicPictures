@@ -70,7 +70,7 @@ class UIManager {
                     self.uiEventListenerManager.addRandomMovieClickListener(movieData);
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
                     
-                    document.querySelector('#filtersNav').style.display = 'inline-block';
+                    // document.querySelector('#filtersNav').style.display = 'block';
 
                     if (window.location.href.includes('edit')) {
                         self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);

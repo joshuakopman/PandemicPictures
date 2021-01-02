@@ -35,9 +35,6 @@
 </head>
 
 <body>
-  <div id="responsive">
-    <p>Get a bigger screen!</p>
-  </div>
 
   <header id="header">
     <h1 id="title"><a href="#">Pandemic Pictures</a></h1>
@@ -69,7 +66,7 @@
       <div class="button-container"><a class="picker" id="moviePickerButton">Pick a Movie</a></div>
 
       <div class="year-anchors">
-        <span>Jump to decade:</span>
+        <span class="year-jump">Jump to decade:</span>
         <a href="#1929">30s</a> &bull;
         <a href="#1940">40s</a> &bull;
         <a href="#1950">50s</a> &bull;
@@ -80,11 +77,11 @@
         <a href="#2000">00s</a> &bull;
         <a href="#2010">10s</a> &bull;
         <a href="#2020">20s</a>
+      </div>
 
-        <div id="filtersNav">
+      <div id="filtersNav">
           <div id="filterChevron" class="chevron">Filters &nbsp;</div>
         </div>
-      </div>
 
       {{> filters }}
 
