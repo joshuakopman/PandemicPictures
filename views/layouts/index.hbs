@@ -58,7 +58,7 @@
       </div>
       <div class="totals-ribbon-box">
         {{#each allNominees.Counts}}
-        <div class="totals-user" data-object="{{this.Name}}">{{this.Name}}<span
+        <div class="totals-user" data-object="totals-{{this.Name}}">{{this.Name}}<span
           class="movies-count">{{this.MyCount}}</span></div>
           {{/each}}
           <div class="total-amount">of<br />{{this.allNominees.TotalMovies}}</div>
@@ -68,7 +68,7 @@
 
       <div class="sticky-totals-container">
         {{#each allNominees.Counts}}
-        <div class="sticky-totals-user" data-object="{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
+        <div class="sticky-totals-user" data-object="sticky-{{this.Name}}">{{this.Name}}<span>{{this.MyCount}}</span></div>
         {{/each}}
       </div>
 
