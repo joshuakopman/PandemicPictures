@@ -16,7 +16,8 @@ a {
 }
 
 header {
-  background: #F04C53;
+  /*background: #F04C53;*/
+  background: linear-gradient(180deg, #F04C53 91px, rgba(255,255,255,0) 30%);;
   color: #fff;
   transition: all 0.1s;
   display: flex;
@@ -450,13 +451,12 @@ h2 {
 
 #filtersPanel {
   text-align: left;
-  background: rgb(76, 73, 73);
+  background: rgb(76 73 73 / 0.98);
   color: rgb(255, 255, 255);
   padding: 20px 5%;
   flex-wrap: wrap;
   justify-content: space-around;
   display: none;
-  border-radius: 4px;
 }
 
 .filter-item {
@@ -799,6 +799,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
   .filtersPanel {
     padding: 10px 2.5% 25px;
+    background: rgb(76 73 73 / 0.95);
   }
 
 
@@ -827,7 +828,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
       display: none;
     }
 
-    .year-anchor {
+    .year-anchors {
       flex-basis: 80%;
     }
     #filtersNav {
@@ -885,5 +886,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     }
     #filterChevron:after {
       color: #fff;
+    }
+
+    header {
+      background: linear-gradient(180deg, #F04C53 107px, rgba(255,255,255,0) 10%);
     }
   }
