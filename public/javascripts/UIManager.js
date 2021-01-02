@@ -24,19 +24,12 @@ class UIManager {
 
         this.compileTemplatesAndBindElementData();
 
-        if(window.requestIdleCallback) {
-            window.requestIdleCallback(() => {
-                setTimeout(() => {
-                    self.initialLimit = 95;
-                    self.compileTemplatesAndBindElementData(true);
-                }, 250);
-            });
-        } else {
+        window.requestIdleCallback(() => {
             setTimeout(() => {
                 self.initialLimit = 95;
                 self.compileTemplatesAndBindElementData(true);
             }, 250);
-        }
+        });
 
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > this.sticky) {
@@ -69,7 +62,7 @@ class UIManager {
                 if (allMoviesLoaded) {
                     self.uiEventListenerManager.addRandomMovieClickListener(movieData);
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
-                    
+
                     // document.querySelector('#filtersNav').style.display = 'block';
 
                     if (window.location.href.includes('edit')) {
@@ -116,7 +109,8 @@ class UIManager {
 
     updateHasSeenCheckboxesAndCounts(allNomYears) {
         for (const count of allNomYears.Counts) {
-            document.querySelector('div[data-object="' + count.Name + '"] span').innerHTML = count.MyCount;
+            document.querySelector('div[data-object="totals-' + count.Name + '"] span').innerHTML = count.MyCount;
+            document.querySelector('div[data-object="sticky-' + count.Name + '"] span').innerHTML = count.MyCount;
         }
 
         for (const nomYear of allNomYears.MoviesList) {
