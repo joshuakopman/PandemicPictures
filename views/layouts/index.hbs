@@ -32,6 +32,15 @@
   <script src="https://kit.fontawesome.com/7f9603f1e6.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
   <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-076Y8X459X"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-076Y8X459X');
+  </script>
 </head>
 
 <body>
@@ -80,8 +89,8 @@
       </div>
 
       <div id="filtersNav">
-          <div id="filterChevron" class="chevron">Filters &nbsp;</div>
-        </div>
+        <div id="filterChevron" class="chevron">Filters &nbsp;</div>
+      </div>
 
       {{> filters }}
 
