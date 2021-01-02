@@ -24,12 +24,19 @@ class UIManager {
 
         this.compileTemplatesAndBindElementData();
 
-        window.requestIdleCallback(() => {
+        if(window.requestIdleCallback){
+            window.requestIdleCallback(() => {
+                setTimeout(() => {
+                    self.initialLimit = 95;
+                    self.compileTemplatesAndBindElementData(true);
+                }, 250);
+            });
+        } else{
             setTimeout(() => {
                 self.initialLimit = 95;
                 self.compileTemplatesAndBindElementData(true);
             }, 250);
-        });
+        }
 
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > this.sticky) {
