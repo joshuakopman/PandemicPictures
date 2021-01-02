@@ -855,7 +855,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     .sticky .sticky-totals-container {
       order: 1;
       flex-basis: 50%;
-      margin: 0 0 5px 3%;
+      margin: 3px 0 5px 3%;
     }
 
     #filtersNav {
@@ -868,6 +868,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     .year-anchors {
       text-align: center;
       flex-basis: 100%;
+      padding: 10px 0;
     }
 
     .year-anchors a {
