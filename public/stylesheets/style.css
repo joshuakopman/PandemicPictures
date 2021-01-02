@@ -451,7 +451,7 @@ h2 {
   text-align: left;
   background: rgb(76, 73, 73);
   color: rgb(255, 255, 255);
-  padding: 20px;
+  padding: 20px 5%;
   flex-wrap: wrap;
   justify-content: space-around;
   display: none;
@@ -459,7 +459,6 @@ h2 {
 }
 
 .filter-item {
-  padding: 10px 5% 25px
       margin: 1%;
     width: 31.3%;
   margin-bottom: 20px;
@@ -468,6 +467,7 @@ h2 {
 .filter-item p {
   font-weight: 700;
   font-size: 16px;
+  margin-top: 0;
 }
 
 
@@ -798,7 +798,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 760px) {
   .totals-container {
     position: absolute;
     top: 113px;
