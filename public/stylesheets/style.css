@@ -815,3 +815,29 @@ main {
     margin-top: 200px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .year-container, .movie-container {
+    width: 100%;
+  }
+  .sticky-totals-container {
+    margin-left: 2.5%;
+  }
+  .button-container, .sticky h1 {
+    min-width: 0;
+  }
+  .sticky .year-anchors {
+    order: 2;
+  }
+  .sticky .sticky-totals-container {
+    order: 1;
+    margin: 5px auto 2px;
+  }
+  #filtersNav {
+    line-height: 1;
+    padding: 2px;
+    background: #fdf1f2bd;
+    padding-bottom: 4px;
+    border-radius: 2px;
+}
+}
