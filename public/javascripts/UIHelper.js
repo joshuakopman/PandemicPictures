@@ -3,35 +3,35 @@ class UIHelper {
 
     }
 
-    filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, minDecade, maxDecade, winnersOnly) {
+    filterMoviesBySearchCriteriaAndChooseRandomly(filterValues) {
         var allMovieElements = [...document.querySelectorAll('.movie-container')];
 
-        if (winnersOnly) {
+        if (filterValues.winnersOnlyFilter) {
             allMovieElements = allMovieElements.filter(x => x.querySelector('h3').classList.contains('trophy'));
         }
 
-        if (seenbyUserName) {
-            allMovieElements = this.filterByRadioButtons(allMovieElements, "seen", seenbyUserName);
+        if (filterValues.seenByFilter) {
+            allMovieElements = this.filterByRadioButtons(allMovieElements, "seen", filterValues.seenByFilter);
         }
 
-        if (skippedByUserName) {
-            allMovieElements = this.filterByRadioButtons(allMovieElements, "skip", skippedByUserName);
+        if (filterValues.skippedByFilter) {
+            allMovieElements = this.filterByRadioButtons(allMovieElements, "skip", filterValues.skippedByFilter);
         }
 
-        if (minIMDBRating) {
-            allMovieElements = allMovieElements.filter(x => parseFloat(x.querySelector("span[data-object*='rating']").innerHTML) >= minIMDBRating);
+        if (filterValues.imdbSliderFilter) {
+            allMovieElements = allMovieElements.filter(x => parseFloat(x.querySelector("span[data-object*='rating']").innerHTML) >= filterValues.imdbSliderFilter);
         }
 
-        if (maxDuration) {
-            allMovieElements = allMovieElements.filter(x => parseInt(x.querySelector("span[data-object*='runtime']").innerHTML.replace(' min', '')) <= maxDuration);
+        if (filterValues.durationSliderFilter) {
+            allMovieElements = allMovieElements.filter(x => parseInt(x.querySelector("span[data-object*='runtime']").innerHTML.replace(' min', '')) <= filterValues.durationSliderFilter);
         }
 
-        if (minDecade) {
-            allMovieElements = allMovieElements.filter(x => parseInt(x.parentNode.querySelector("h2").id) >= minDecade);
+        if (filterValues.minSliderFilter) {
+            allMovieElements = allMovieElements.filter(x => parseInt(x.parentNode.querySelector("h2").id) >= filterValues.minSliderFilter);
         }
 
-        if (maxDecade) {
-            allMovieElements = allMovieElements.filter(x => parseInt(x.parentNode.querySelector("h2").id) <= maxDecade);
+        if (filterValues.maxSliderFilter) {
+            allMovieElements = allMovieElements.filter(x => parseInt(x.parentNode.querySelector("h2").id) <= filterValues.maxSliderFilter);
         }
 
         return {

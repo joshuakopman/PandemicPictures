@@ -76,52 +76,39 @@ class UIEventListenerManager {
 
     for (const userContainer of userContainers) {
       userContainer.querySelector('input[name*="checkbox-seen"]').addEventListener('click', (e) => {
-        var yearIndex = e.currentTarget.getAttribute('year-index');
-        var movieIndex = e.currentTarget.getAttribute('movie-index');
-        var nameOfPersonWhoHasSeen = userContainer.querySelector('.user-name').innerText.trim();
-        movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
-        this.myDataHandler.postData('/movies', movies);
-      });
+        this.addInputClickListener(e, userContainer.querySelector('.user-name').innerText.trim(), "HasSeen", movies);
 
+      });
       userContainer.querySelector('input[name*="checkbox-skip"]').addEventListener('click', (e) => {
-        var yearIndex = e.currentTarget.getAttribute('year-index');
-        var movieIndex = e.currentTarget.getAttribute('movie-index');
-        var nameOfPersonWhoHasSkipped = userContainer.querySelector('.user-name').innerText.trim();
-        movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSkipped).Skip = e.currentTarget.checked;
-        this.myDataHandler.postData('/movies', movies);
+        this.addInputClickListener(e, userContainer.querySelector('.user-name').innerText.trim(), "Skip", movies);
       });
-
       var likes = userContainer.querySelectorAll('input[name*="radio-group"]');
       for (const like of likes) {
         like.addEventListener('click', (e) => {
-          var yearIndex = e.currentTarget.getAttribute('year-index');
-          var movieIndex = e.currentTarget.getAttribute('movie-index');
-          var nameOfPersonWhoHasRated = userContainer.querySelector('.user-name').innerText.trim();
-          var movieViewers = movies[yearIndex].Movies[movieIndex].Viewers;
-          if (e.currentTarget.id.includes("radio-2")) {
-            movieViewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = false;
-          } else {
-            movieViewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = true;
-          }
-          this.myDataHandler.postData('/movies', movies);
+          this.addInputClickListener(e, userContainer.querySelector('.user-name').innerText.trim(), "Rating", movies);
         });
       }
-
     }
+  }
+
+  addInputClickListener(e, nameOfPerson, value, movies) {
+    var movieViewers = movies[e.currentTarget.getAttribute('year-index')].Movies[e.currentTarget.getAttribute('movie-index')].Viewers;
+    if (value == "Rating") {
+      if (e.currentTarget.id.includes("radio-2")) {
+        movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = false;
+      } else {
+        movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = true;
+      }
+    } else {
+      movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = e.currentTarget.checked;
+    }
+    this.myDataHandler.postData('/movies', movies);
   }
 
   addRandomMovieClickListener() {
     var self = this;
     document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
-      var filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
-        document.querySelector('input[name="seenByFilter"]:checked')?.value,
-        document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-        document.querySelector('#imdbSlider')?.value,
-        document.querySelector('#durationSlider')?.value,
-        document.querySelector('#minSlider')?.value,
-        document.querySelector('#maxSlider')?.value,
-        document.querySelector('input[id="winnersOnly"]:checked')?.value,
-      );
+      var filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(this.getFiltersValues());
       if (self.chosenMovieElement) {
         self.chosenMovieElement.classList.remove("chosen-one");
       }
@@ -156,15 +143,7 @@ class UIEventListenerManager {
   }
 
   applyFilters(resetClicked = false) {
-    var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
-      document.querySelector('input[name="seenByFilter"]:checked')?.value,
-      document.querySelector('input[name="skippedByFilter"]:checked')?.value,
-      document.querySelector('#imdbSlider')?.value,
-      document.querySelector('#durationSlider')?.value,
-      document.querySelector('#minSlider')?.value,
-      document.querySelector('#maxSlider')?.value,
-      document.querySelector('input[id="winnersOnly"]:checked')?.value,
-    );
+    var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(this.getFiltersValues());
 
     document.querySelectorAll('div[data-object="movie-container"]').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.style.display = 'block');
@@ -182,6 +161,17 @@ class UIEventListenerManager {
     yearContainers.filter(x => x.querySelectorAll('div[data-object="movie-container"][style*="block"]').length > 0).forEach(y => y.style.display = 'flex');
   }
 
+  getFiltersValues() {
+    return {
+      seenByFilter: document.querySelector('input[name="seenByFilter"]:checked')?.value,
+      skippedByFilter: document.querySelector('input[name="skippedByFilter"]:checked')?.value,
+      imdbSliderFilter: document.querySelector('#imdbSlider')?.value,
+      durationSliderFilter: document.querySelector('#durationSlider')?.value,
+      minSliderFilter: document.querySelector('#minSlider')?.value,
+      maxSliderFilter: document.querySelector('#maxSlider')?.value,
+      winnersOnlyFilter: document.querySelector('input[id="winnersOnly"]:checked')?.value
+    }
+  }
 
   get dataHandler() {
     return this.myDataHandler;
