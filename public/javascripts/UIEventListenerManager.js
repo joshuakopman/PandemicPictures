@@ -39,7 +39,7 @@ class UIEventListenerManager {
 
     var movieContainers = [...document.querySelectorAll("div[data-object='movie-container']")];
     movieContainers.forEach(movieContainer => {
-      movieContainer.querySelector('.chevron').addEventListener("click", (e) => {
+      movieContainer.querySelector('div[data-object="chevron"]').addEventListener("click", (e) => {
         e.currentTarget.classList.toggle("chevron-active");
         var panel = movieContainer.querySelector('div[data-object="panel"]');
         if (panel) {
@@ -125,7 +125,7 @@ class UIEventListenerManager {
 
   bindFilterClickListener() {
     var self = this;
-    var filters = [...document.querySelectorAll('.filter-item input')];
+    var filters = [...document.querySelectorAll('div[data-object="filter-item"] input')];
 
     filters.forEach(x => x.addEventListener("click", (e) => {
       self.applyFilters();

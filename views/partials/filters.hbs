@@ -1,28 +1,28 @@
 <nav id="filters">
   <form id="filtersPanel">
-    <div class="filter-item">
+    <div class="filter-item" data-object="filter-item">
       <p>Seen by</p>
       <input type="radio" name="seenByFilter" value="Josh"><label>Josh</label>
       <input type="radio" name="seenByFilter" value="Alicia"><label>Alicia</label>
       <input type="radio" name="seenByFilter" value="Both"><label>Both</label>
       <input type="radio" name="seenByFilter" value="Neither"><label>Neither</label>
     </div>
-    <div class="filter-item">
+    <div class="filter-item" data-object="filter-item">
       <p>Skipped by</p>
       <input type="radio" name="skippedByFilter" value="Josh"><label>Josh</label>
       <input type="radio" name="skippedByFilter" value="Alicia"><label>Alicia</label>
       <input type="radio" name="skippedByFilter" value="Both"><label>Both</label>
       <input type="radio" name="skippedByFilter" value="Neither"><label>Neither</label>
     </div>
-    <div class="filter-item">
+    <div class="filter-item" data-object="filter-item">
       <p>Min IMDb rating</p>
       <input type="range" value="5.0" min="5.0" max="9.5" step=".1" class="slider" id="imdbSlider" oninput="this.nextElementSibling.value = this.value"> <output>5</output> 
     </div>
-    <div class="filter-item">
+    <div class="filter-item" data-object="filter-item">
       <p>Max duration</p>
       <input type="range" min="60" max="250" step="10" value="250" class="slider" id="durationSlider" oninput="this.nextElementSibling.value = this.value"> <output>250</output> 
     </div>
-    <div class="filter-item">
+    <div class="filter-item" data-object="filter-item">
       <p>Decade</p>
       Min &nbsp;
       <input type="range" value="1920" min="1920" max="2020" class="slider" step="10" id="minSlider" oninput="this.nextElementSibling.value = this.value"> <output>1920</output>s
@@ -30,7 +30,7 @@
       Max   
       <input type="range" value="2020" min="1920" max="2020" class="slider" step="10" id="maxSlider" oninput="this.nextElementSibling.value = this.value"> <output>2020</output>s
     </div>
-    <div class="filter-item">
+    <div class="filter-item" data-object="filter-item">
       <p>Winners</p>
       <input type="checkbox" id="winnersOnly" /> <label for="winnersOnly">Best Picture winners only</label> 
     </div>
