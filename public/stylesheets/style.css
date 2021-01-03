@@ -730,9 +730,10 @@ footer a {
 }
 
 #ajaxLoader{
-  margin: 0px auto;
+  margin: 100px auto;
   display: block;
-  width: 25%;
+  max-height: 100px;
+  padding-left: 50px;
 }
 
 header:not(.sticky) #filtersNav {
@@ -825,27 +826,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   }
 }
 
-
-@media only screen and (max-width: 912px) {
-  .year-container {
-    width: calc(407px + 2%);
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .movie-container {
-    width: 407px;
-  }
-
-  header:not(.sticky) .button-container {
-    display: none;
-  }
-
-  .totals-container {
-    margin-right: 100px;
-  }
-
-}
-
 @media only screen and (max-width: 968px) {
   .year-jump  {
     margin-left: 0;
@@ -869,6 +849,24 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   .about-content {
     margin: 0;
   }
+}
+
+@media only screen and (max-width: 912px) {
+  .year-container {
+    width: 100%;
+  }
+  .movie-container {
+    width: 48%;
+  }
+
+  header:not(.sticky) .button-container {
+    display: none;
+  }
+
+  .totals-container {
+    margin-right: 100px;
+  }
+
 }
 
   @media only screen and (max-width: 760px) {
@@ -961,12 +959,20 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     }
 
     .about-button {
-      box-shadow: 0;
-      background: transparent;
-      margin-left: 1%;
+     margin: 200px auto 0;
+    display: block;
+    text-align: center;
     }
 
     .about-photo { 
       margin-bottom: 80px;
+    }
+
+    #ajaxLoader{ 
+      margin-top: 200px;
+    }
+
+    main {
+      margin-top: 100px;
     }
   }
