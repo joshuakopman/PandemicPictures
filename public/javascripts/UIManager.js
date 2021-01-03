@@ -27,9 +27,9 @@ class UIManager {
 
         window.requestIdleCallback(() => {
             setTimeout(() => {
-                self.initialLimit = 95;
+                self.initialLimit = 92;
                 self.compileTemplatesAndBindElementData(true);
-            }, 250);
+            }, 500);
         });
 
         window.addEventListener('scroll', () => {
@@ -53,17 +53,17 @@ class UIManager {
                 moviesList: movieData.MoviesList
             });
 
-            document.getElementById('ajaxLoader').style.display = 'none';
-            document.getElementsByTagName('main')[0].style.display = "block";
-            document.getElementsByTagName('footer')[0].style.display = 'block';
-
             self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
                 self.bindIMDBDataToMovies(imdbData);
                 self.updateHasSeenCheckboxesAndCounts(movieData);
+
+                document.getElementById('ajaxLoader').style.display = 'none';
+                document.getElementsByTagName('main')[0].style.display = "block";
+                document.getElementsByTagName('footer')[0].style.display = 'block';
+
                 if (allMoviesLoaded) {
                     self.uiEventListenerManager.addRandomMovieClickListener();
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
-
                     if (window.location.href.includes('edit')) {
                         self.uiEventListenerManager.addInputClickListeners(movieData.MoviesList);
                     } else {
