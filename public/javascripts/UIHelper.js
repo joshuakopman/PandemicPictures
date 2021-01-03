@@ -4,39 +4,39 @@ class UIHelper {
     }
 
     filterMoviesBySearchCriteriaAndChooseRandomly(seenbyUserName, skippedByUserName, minIMDBRating, maxDuration, minDecade, maxDecade, winnersOnly) {
-        var allUserElements = [...document.querySelectorAll('.user-container')];
+        var allMovieElements = [...document.querySelectorAll('.movie-container')];
 
         if (winnersOnly) {
-            allUserElements = allUserElements.filter(x => x.parentNode.querySelector('h3').classList.contains('trophy'));
+            allMovieElements = allMovieElements.filter(x => x.querySelector('h3').classList.contains('trophy'));
         }
 
         if (seenbyUserName) {
-            allUserElements = this.filterByRadioButtons(allUserElements, "seen", seenbyUserName);
+            allMovieElements = this.filterByRadioButtons(allMovieElements, "seen", seenbyUserName);
         }
 
         if (skippedByUserName) {
-            allUserElements = this.filterByRadioButtons(allUserElements, "skip", skippedByUserName);
+            allMovieElements = this.filterByRadioButtons(allMovieElements, "skip", skippedByUserName);
         }
 
         if (minIMDBRating) {
-            allUserElements = allUserElements.filter(x => parseFloat(x.parentNode.parentNode.querySelector("span[data-object*='rating']").innerHTML) >= minIMDBRating);
+            allMovieElements = allMovieElements.filter(x => parseFloat(x.querySelector("span[data-object*='rating']").innerHTML) >= minIMDBRating);
         }
 
         if (maxDuration) {
-            allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.querySelector("span[data-object*='runtime']").innerHTML.replace(' min', '')) <= maxDuration);
+            allMovieElements = allMovieElements.filter(x => parseInt(x.querySelector("span[data-object*='runtime']").innerHTML.replace(' min', '')) <= maxDuration);
         }
 
         if (minDecade) {
-            allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.parentNode.querySelector("h2").id) >= minDecade);
+            allMovieElements = allMovieElements.filter(x => parseInt(x.parentNode.querySelector("h2").id) >= minDecade);
         }
 
         if (maxDecade) {
-            allUserElements = allUserElements.filter(x => parseInt(x.parentNode.parentNode.parentNode.querySelector("h2").id) <= maxDecade);
+            allMovieElements = allMovieElements.filter(x => parseInt(x.parentNode.querySelector("h2").id) <= maxDecade);
         }
 
         return {
-            "moviesList": allUserElements,
-            "randomlyChosenMovie": allUserElements.sort(() => Math.random() - 0.5)[0]
+            "moviesList": allMovieElements,
+            "randomlyChosenMovie": allMovieElements.sort(() => Math.random() - 0.5)[0]
         };
     }
 
@@ -54,7 +54,7 @@ class UIHelper {
 
     determineSelection(element, inputTypeName, userName, isBoth, isNeither) {
         var include = false;
-        var numberOfPeopleWhoHaveSeen = [...element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length;
+        var numberOfPeopleWhoHaveSeen = [...element.querySelectorAll(`input[name*="${inputTypeName}"]:checked`)].length;
 
         //show only movies no one has seen
         if (isNeither) {
@@ -67,7 +67,7 @@ class UIHelper {
 
         //show only movies Alicia has seen XOR show only movies Josh has seen
         if (isBoth == false && isNeither == false) {
-            element.parentNode.querySelectorAll(`input[name*="${inputTypeName}"]:checked`).forEach(x => {
+            element.querySelectorAll(`input[name*="${inputTypeName}"]:checked`).forEach(x => {
                 if (x.getAttribute("name").includes(userName) && numberOfPeopleWhoHaveSeen == 1) {
                     include = true;
                 }

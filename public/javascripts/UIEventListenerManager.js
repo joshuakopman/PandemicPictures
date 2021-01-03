@@ -7,24 +7,22 @@ class UIEventListenerManager {
   }
 
   addAboutListeners() {
-    var about = document.querySelector("#about-button");
-    about.addEventListener("click", (e) => {
-      var aboutContainer = document.querySelector("#about-box");
-      if (aboutContainer.style.display != 'block') {
-        aboutContainer.style.display = "block";
-      } else {
+    var aboutContainer = document.querySelector("#about-box");
+
+    document.querySelector("#about-button").addEventListener("click", () => {
+      aboutContainer.style.display = (aboutContainer.style.display != 'block') ?
+        aboutContainer.style.display = 'block' :
+        aboutContainer.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target == aboutContainer) {
         aboutContainer.style.display = 'none';
       }
     });
 
-    var aboutClose = document.querySelector(".about-close");
-    aboutClose.addEventListener("click", () => {
-      var aboutContainer = document.querySelector("#about-box");
-      if (aboutContainer.style.display != 'block') {
-        aboutContainer.style.display = "block";
-      } else {
-        aboutContainer.style.display = 'none';
-      }
+    document.querySelector(".about-close").addEventListener("click", () => {
+      aboutContainer.style.display = 'none';
     });
   }
 
@@ -39,33 +37,30 @@ class UIEventListenerManager {
       }
     });
 
-    var chevrons = document.querySelectorAll("main .chevron");
-    var i;
-    for (i = 0; i < chevrons.length; i++) {
-      chevrons[i].addEventListener("click", (e) => {
+    var movieContainers = [...document.querySelectorAll("div[data-object='movie-container']")];
+    movieContainers.forEach(movieContainer => {
+      movieContainer.querySelector('.chevron').addEventListener("click", (e) => {
         e.currentTarget.classList.toggle("chevron-active");
-        var grandParentNode = e.currentTarget.parentNode.parentNode;
-        var panel = grandParentNode.querySelector(".panel");
+        var panel = movieContainer.querySelector(".panel");
         if (panel) {
           if (panel.style.display === "block") {
             panel.style.display = "none";
           } else {
+            var currentElementMovie = e.currentTarget.getAttribute("Movie");
+            var currentElementYear = e.currentTarget.getAttribute("Year");
+            var renderPanel = Handlebars.compile(document.getElementById('panel-template').innerHTML);
+            panel.innerHTML = renderPanel({ name: currentElementMovie, year: currentElementYear });
 
-            var template = document.getElementById('panel-template').innerHTML;
-            var renderPanel = Handlebars.compile(template);
-            var panelData = { name: e.currentTarget.getAttribute("Movie"), year: e.currentTarget.getAttribute("Year") };
-            panel.innerHTML = renderPanel(panelData);
-
-            var movie = imdb.find(x => x.Title == e.currentTarget.getAttribute("Movie") && x.OscarYear == e.currentTarget.getAttribute("Year"));
-            if (movie) {
-              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-director"]').innerHTML = movie.Director;
-              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-genre"]').innerHTML = movie.Genre;
-              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-actors"]').innerHTML = movie.Actors;
-              document.querySelector('span[data-object="' + e.currentTarget.getAttribute("Movie") + '-' + e.currentTarget.getAttribute("Year") + '-plot"]').innerHTML = movie.Plot;
+            var matchingMovie = imdb.find(x => x.Title == currentElementMovie && x.OscarYear == currentElementYear);
+            if (matchingMovie) {
+              document.querySelector('span[data-object="' + currentElementMovie + '-' + currentElementYear + '-director"]').innerHTML = matchingMovie.Director;
+              document.querySelector('span[data-object="' + currentElementMovie + '-' + currentElementYear + '-genre"]').innerHTML = matchingMovie.Genre;
+              document.querySelector('span[data-object="' + currentElementMovie + '-' + currentElementYear + '-actors"]').innerHTML = matchingMovie.Actors;
+              document.querySelector('span[data-object="' + currentElementMovie + '-' + currentElementYear + '-plot"]').innerHTML = matchingMovie.Plot;
               panel.style.display = "block";
             }
           }
-          var moviePosterContainer = grandParentNode.querySelector(".movie-poster-container");
+          var moviePosterContainer = movieContainer.querySelector(".movie-poster-container");
           if (moviePosterContainer.style.zIndex === "999") {
             moviePosterContainer.style.zIndex = "inherit";
           } else {
@@ -73,45 +68,45 @@ class UIEventListenerManager {
           }
         }
       });
-    }
+    });
   }
 
   addInputClickListeners(movies) {
-    var checkBoxes = document.querySelectorAll('input[name*="checkbox-seen"]');
-    for (const checkBox of checkBoxes) {
-      checkBox.addEventListener('click', (e) => {
+    var userContainers = [...document.querySelectorAll(".user-container")];
+
+    for (const userContainer of userContainers) {
+      userContainer.querySelector('input[name*="checkbox-seen"]').addEventListener('click', (e) => {
         var yearIndex = e.currentTarget.getAttribute('year-index');
         var movieIndex = e.currentTarget.getAttribute('movie-index');
-        var nameOfPersonWhoHasSeen = e.currentTarget.parentNode.parentNode.innerText.trim();
+        var nameOfPersonWhoHasSeen = userContainer.querySelector('.user-name').innerText.trim();
         movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSeen).HasSeen = e.currentTarget.checked;
         this.myDataHandler.postData('/movies', movies);
       });
-    }
 
-    var skips = document.querySelectorAll('input[name*="checkbox-skip"]');
-    for (const skip of skips) {
-      skip.addEventListener('click', (e) => {
+      userContainer.querySelector('input[name*="checkbox-skip"]').addEventListener('click', (e) => {
         var yearIndex = e.currentTarget.getAttribute('year-index');
         var movieIndex = e.currentTarget.getAttribute('movie-index');
-        var nameOfPersonWhoHasSkipped = e.currentTarget.parentNode.parentNode.innerText.trim();
+        var nameOfPersonWhoHasSkipped = userContainer.querySelector('.user-name').innerText.trim();
         movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasSkipped).Skip = e.currentTarget.checked;
         this.myDataHandler.postData('/movies', movies);
       });
-    }
 
-    var likes = document.querySelectorAll('input[name*="radio-group"]');
-    for (const like of likes) {
-      like.addEventListener('click', (e) => {
-        var yearIndex = e.currentTarget.getAttribute('year-index');
-        var movieIndex = e.currentTarget.getAttribute('movie-index');
-        var nameOfPersonWhoHasRated = e.currentTarget.parentNode.parentNode.innerText.trim();
-        if (e.currentTarget.id.includes("radio-2")) {
-          movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = false;
-        } else {
-          movies[yearIndex].Movies[movieIndex].Viewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = true;
-        }
-        this.myDataHandler.postData('/movies', movies);
-      });
+      var likes = userContainer.querySelectorAll('input[name*="radio-group"]');
+      for (const like of likes) {
+        like.addEventListener('click', (e) => {
+          var yearIndex = e.currentTarget.getAttribute('year-index');
+          var movieIndex = e.currentTarget.getAttribute('movie-index');
+          var nameOfPersonWhoHasRated = userContainer.querySelector('.user-name').innerText.trim();
+          var movieViewers = movies[yearIndex].Movies[movieIndex].Viewers;
+          if (e.currentTarget.id.includes("radio-2")) {
+            movieViewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = false;
+          } else {
+            movieViewers.find((viewer) => viewer.Name == nameOfPersonWhoHasRated).Rating = true;
+          }
+          this.myDataHandler.postData('/movies', movies);
+        });
+      }
+
     }
   }
 
@@ -130,7 +125,7 @@ class UIEventListenerManager {
       if (self.chosenMovieElement) {
         self.chosenMovieElement.classList.remove("chosen-one");
       }
-      self.chosenMovieElement = filtered.randomlyChosenMovie.parentNode.parentNode;
+      self.chosenMovieElement = filtered.randomlyChosenMovie;
       self.chosenMovieElement.classList.add("chosen-one");
       self.chosenMovieElement.scrollIntoView();
       window.scrollBy(0, -200);
@@ -168,14 +163,14 @@ class UIEventListenerManager {
     );
 
     document.querySelectorAll('div[data-object="movie-container"]').forEach(x => x.style.display = 'none');
-    filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
+    filtered.moviesList.forEach(x => x.style.display = 'block');
     var clearFilterValue = document.querySelector("#clearFilters").value;
 
     if (clearFilterValue.includes("(")) {
       document.querySelector("#clearFilters").value = clearFilterValue.substring(0, clearFilterValue.indexOf('(') - 1);
     }
     if (!resetClicked) {
-      document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length / 2 + " Matches )";
+      document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length + " Matches )";
     }
 
     var yearContainers = [...document.querySelectorAll('div[data-object="year-container"]')];

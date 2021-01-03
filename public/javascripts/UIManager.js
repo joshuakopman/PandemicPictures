@@ -11,6 +11,7 @@ class UIManager {
 
     initializeView() {
         var self = this;
+        self.uiEventListenerManager.addAboutListeners();
 
         Handlebars.registerHelper("inc", (value, options) => {
             return parseInt(value) + 1;
@@ -40,19 +41,18 @@ class UIManager {
         }, false);
 
         self.uiEventListenerManager.bindFilterClickListener();
-        self.uiEventListenerManager.addAboutListeners();
     }
 
     compileTemplatesAndBindElementData(allMoviesLoaded) {
         var self = this;
 
         self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit, self.initialSkip).then(movieData => {
-            var ratingsTemplate = this.ratingsTemplate.innerHTML;
-            var renderRatings = Handlebars.compile(ratingsTemplate);
+            var renderRatings = Handlebars.compile(this.ratingsTemplate.innerHTML);
 
             document.getElementsByTagName('main')[0].innerHTML = renderRatings({
                 moviesList: movieData.MoviesList
             });
+
             document.getElementById('ajaxLoader').style.display = 'none';
             document.getElementsByTagName('main')[0].style.display = "block";
             document.getElementsByTagName('footer')[0].style.display = 'block';
@@ -91,17 +91,16 @@ class UIManager {
         var year = '';
         data.forEach(movie => {
             try {
-                document.querySelector('img[data-object="' + movie.Title + '-' + movie.OscarYear + '-poster"]').src = movie.ImageUrl;
+                var moviePosterElement = document.querySelector('img[data-object="' + movie.Title + '-' + movie.OscarYear + '-poster"]');
+                moviePosterElement.src = movie.ImageUrl;
+                moviePosterElement.closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID;
                 document.querySelector('span[data-object="' + movie.Title + '-' + movie.OscarYear + '-rating"]').innerHTML = movie.Rating;
                 document.querySelector('span[data-object="' + movie.Title + '-' + movie.OscarYear + '-runtime"]').innerHTML = movie.Runtime;
-                document.querySelector('img[data-object="' + movie.Title + '-' + movie.OscarYear + '-poster"]').closest('a').href = "https://www.imdb.com/title/" + movie.ImdbID;
-                if (movie.OscarYear != year) {
-                    var movieTitleElement = document.querySelector('div[movie="' + movie.Title + '"][year="' + movie.OscarYear + '"]').nextElementSibling;
-                    if (movieTitleElement.getAttribute('index') == "0") {
-                        movieTitleElement.classList.add("trophy");
-                    }
-                    year = movie.OscarYear;
+                var movieTitleElement = document.querySelector('div[movie="' + movie.Title + '"][year="' + movie.OscarYear + '"]').nextElementSibling;
+                if (movieTitleElement.getAttribute('index') == "0") {
+                    movieTitleElement.classList.add("trophy");
                 }
+
             } catch (e) {
                 // console.log('missing HTML element for: '+movie.Title + " | exception: " + e);
             }
@@ -117,7 +116,7 @@ class UIManager {
         for (const nomYear of allNomYears.MoviesList) {
             for (const movie of nomYear.Movies) {
                 var movieName = movie.Name;
-                for (const viewer of movie.Viewers) { //radio-1-{{../this.Name}}-{{../../this.Year}}-{{this.Name}}
+                for (const viewer of movie.Viewers) {
                     try {
                         document.querySelector("input[name='" + 'checkbox-seen-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.HasSeen;
                         document.querySelector("input[name='" + 'checkbox-skip-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = viewer.Skip;
