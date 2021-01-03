@@ -110,7 +110,7 @@ class UIEventListenerManager {
     }
   }
 
-  addRandomMovieClickListener(movieData) {
+  addRandomMovieClickListener() {
     var self = this;
     document.querySelector("#moviePickerButton").addEventListener("click", (e) => {
       var filtered = self.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(
@@ -128,7 +128,11 @@ class UIEventListenerManager {
       self.chosenMovieElement = filtered.randomlyChosenMovie;
       self.chosenMovieElement.classList.add("chosen-one");
       self.chosenMovieElement.scrollIntoView();
-      window.scrollBy(0, -200);
+      if (document.querySelector("#filtersPanel").style.display == "flex") {
+        window.scrollBy(0, -500);
+      } else {
+        window.scrollBy(0, -200);
+      }
     });
   }
 

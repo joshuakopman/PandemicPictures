@@ -61,7 +61,7 @@ class UIManager {
                 self.bindIMDBDataToMovies(imdbData);
                 self.updateHasSeenCheckboxesAndCounts(movieData);
                 if (allMoviesLoaded) {
-                    self.uiEventListenerManager.addRandomMovieClickListener(movieData);
+                    self.uiEventListenerManager.addRandomMovieClickListener();
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
 
                     // document.querySelector('#filtersNav').style.display = 'block';
