@@ -4,7 +4,7 @@ class UIHelper {
     }
 
     filterMoviesBySearchCriteriaAndChooseRandomly(filterValues) {
-        var allMovieElements = [...document.querySelectorAll('.movie-container')];
+        var allMovieElements = [...document.querySelectorAll('div[data-object="movie-container"]')];
 
         if (filterValues.winnersOnlyFilter) {
             allMovieElements = allMovieElements.filter(x => x.querySelector('h3').classList.contains('trophy'));

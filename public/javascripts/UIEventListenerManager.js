@@ -21,7 +21,7 @@ class UIEventListenerManager {
       }
     });
 
-    document.querySelector(".about-close").addEventListener("click", () => {
+    document.querySelector('button[data-object="about-close"]').addEventListener("click", () => {
       aboutContainer.style.display = 'none';
     });
   }
@@ -41,7 +41,7 @@ class UIEventListenerManager {
     movieContainers.forEach(movieContainer => {
       movieContainer.querySelector('.chevron').addEventListener("click", (e) => {
         e.currentTarget.classList.toggle("chevron-active");
-        var panel = movieContainer.querySelector(".panel");
+        var panel = movieContainer.querySelector('div[data-object="panel"]');
         if (panel) {
           if (panel.style.display === "block") {
             panel.style.display = "none";
@@ -60,7 +60,7 @@ class UIEventListenerManager {
               panel.style.display = "block";
             }
           }
-          var moviePosterContainer = movieContainer.querySelector(".movie-poster-container");
+          var moviePosterContainer = movieContainer.querySelector('div[data-object="movie-poster-container"]');
           if (moviePosterContainer.style.zIndex === "999") {
             moviePosterContainer.style.zIndex = "inherit";
           } else {
@@ -72,20 +72,20 @@ class UIEventListenerManager {
   }
 
   addInputClickListeners(movies) {
-    var userContainers = [...document.querySelectorAll(".user-container")];
+    var userContainers = [...document.querySelectorAll('div[data-object="user-container"]')];
 
     for (const userContainer of userContainers) {
       userContainer.querySelector('input[name*="checkbox-seen"]').addEventListener('click', (e) => {
-        this.addInputClickListener(e, userContainer.querySelector('.user-name').innerText.trim(), "HasSeen", movies);
+        this.addInputClickListener(e, userContainer.querySelector('div[data-object="user-name"]').innerText.trim(), "HasSeen", movies);
 
       });
       userContainer.querySelector('input[name*="checkbox-skip"]').addEventListener('click', (e) => {
-        this.addInputClickListener(e, userContainer.querySelector('.user-name').innerText.trim(), "Skip", movies);
+        this.addInputClickListener(e, userContainer.querySelector('div[data-object="user-name"]').innerText.trim(), "Skip", movies);
       });
       var likes = userContainer.querySelectorAll('input[name*="radio-group"]');
       for (const like of likes) {
         like.addEventListener('click', (e) => {
-          this.addInputClickListener(e, userContainer.querySelector('.user-name').innerText.trim(), "Rating", movies);
+          this.addInputClickListener(e, userContainer.querySelector('div[data-object="user-name"]').innerText.trim(), "Rating", movies);
         });
       }
     }

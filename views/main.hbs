@@ -5,14 +5,14 @@
       \{{inc this.Year "+" 1}}</h2>
     \{{#each this.Movies}}
     <div class="movie-container" data-object="movie-container">
-      <div class="movie-poster-container">
+      <div class="movie-poster-container"  data-object="movie-poster-container">
         <a href="https://imdb.com/\{{this.ImdbID}}" target="_blank"> <img class="movie-poster"
             data-object="\{{this.Name}}-\{{../Year}}-poster" loading="lazy" /></a>
         <a href="https://www.youtube.com/results?search_query=\{{this.Name}}+\{{../this.Year}}+trailer"
           target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
 
-      <div class="panel"> </div>
+      <div class="panel" data-object="panel"> </div>
 
       <div class="movie-content-container">
         <div class="chevron" movie="\{{this.Name}}" year="\{{../this.Year}}" tabindex="0"></div>
@@ -25,8 +25,8 @@
         </div>
 
         \{{#each this.Viewers}}
-        <div class="user-container">
-          <div class="user-info user-name">\{{this.Name}}</div>
+        <div class="user-container" data-object="user-container">
+          <div class="user-info user-name" data-object="user-name">\{{this.Name}}</div>
           <div class="user-info user-check">
             <input id="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" class="checkbox-custom"
               name="checkbox-seen-\{{../this.Name}}-\{{../../this.Year}}-\{{this.Name}}" type="checkbox"
