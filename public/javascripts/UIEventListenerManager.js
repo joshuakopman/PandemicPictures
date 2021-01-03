@@ -6,26 +6,24 @@ class UIEventListenerManager {
     this.chosenMovieElement = null;
   }
 
-  addAboutlickListener() {
+  addAboutListeners() {
     var about = document.querySelector("#about-button");
-    about.addEventListener("click", () => {
+    about.addEventListener("click", (e) => {
       var aboutContainer = document.querySelector("#about-box");
       if (aboutContainer.style.display != 'block') {
-        filtersPanel.style.display = "block";
+        aboutContainer.style.display = "block";
       } else {
-        filtersPanel.style.display = 'none';
+        aboutContainer.style.display = 'none';
       }
     });
-  }
 
-  addAboutCloseListener() {
-    var about = document.querySelector(".about-close");
-    about.addEventListener("click", () => {
+    var aboutClose = document.querySelector(".about-close");
+    aboutClose.addEventListener("click", () => {
       var aboutContainer = document.querySelector("#about-box");
       if (aboutContainer.style.display != 'block') {
-        filtersPanel.style.display = "block";
+        aboutContainer.style.display = "block";
       } else {
-        filtersPanel.style.display = 'none';
+        aboutContainer.style.display = 'none';
       }
     });
   }
@@ -171,12 +169,12 @@ class UIEventListenerManager {
 
     document.querySelectorAll('div[data-object="movie-container"]').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.parentNode.parentNode.style.display = 'block');
-    var clearFilterValue =  document.querySelector("#clearFilters").value;
+    var clearFilterValue = document.querySelector("#clearFilters").value;
 
-    if(clearFilterValue.includes("(")) {
-      document.querySelector("#clearFilters").value = clearFilterValue.substring(0,clearFilterValue.indexOf('(')-1);
+    if (clearFilterValue.includes("(")) {
+      document.querySelector("#clearFilters").value = clearFilterValue.substring(0, clearFilterValue.indexOf('(') - 1);
     }
-    if(!resetClicked){
+    if (!resetClicked) {
       document.querySelector("#clearFilters").value += " ( Showing " + filtered.moviesList.length / 2 + " Matches )";
     }
 
@@ -184,7 +182,7 @@ class UIEventListenerManager {
     yearContainers.filter(x => x.querySelectorAll('div[data-object="movie-container"][style*="block"]').length == 0 && x.children[0].getAttribute("id").substring(x.children[0].getAttribute("id").length - 1) != "0").forEach(y => y.style.display = 'none');
     yearContainers.filter(x => x.querySelectorAll('div[data-object="movie-container"][style*="block"]').length > 0).forEach(y => y.style.display = 'flex');
   }
-  
+
 
   get dataHandler() {
     return this.myDataHandler;

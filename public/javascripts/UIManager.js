@@ -40,6 +40,7 @@ class UIManager {
         }, false);
 
         self.uiEventListenerManager.bindFilterClickListener();
+        self.uiEventListenerManager.addAboutListeners();
     }
 
     compileTemplatesAndBindElementData(allMoviesLoaded) {
