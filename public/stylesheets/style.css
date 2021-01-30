@@ -960,7 +960,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
     .about-button {
      margin: 200px auto 0;
-    display: block;
+    display: none;
     text-align: center;
     }
 

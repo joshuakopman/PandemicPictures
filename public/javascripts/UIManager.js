@@ -60,7 +60,8 @@ class UIManager {
                 document.getElementById('ajaxLoader').style.display = 'none';
                 document.getElementsByTagName('main')[0].style.display = "block";
                 document.getElementsByTagName('footer')[0].style.display = 'block';
-
+                document.getElementById('about-button').style.display = 'block';
+                
                 if (allMoviesLoaded) {
                     self.uiEventListenerManager.addRandomMovieClickListener();
                     self.uiEventListenerManager.addChevronClickListeners(imdbData);
@@ -80,9 +81,19 @@ class UIManager {
                     if (window.location.hash) {
                         document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
                     }
+
+                    if(this.getCookie('filterCookie')) {
+                        self.uiEventListenerManager.setFilters(JSON.parse(this.getCookie('filterCookie')));
+                        self.uiEventListenerManager.applyFilters();
+                    }
                 }
             });
         });
+    }
+    getCookie = function (name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
     }
 
     bindIMDBDataToMovies(data) {

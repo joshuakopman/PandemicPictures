@@ -143,7 +143,10 @@ class UIEventListenerManager {
   }
 
   applyFilters(resetClicked = false) {
-    var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(this.getFiltersValues());
+    var filterValues = this.getFiltersValues();
+    document.cookie ="filterCookie=" + JSON.stringify(filterValues);
+    console.log(filterValues);
+    var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(filterValues);
 
     document.querySelectorAll('div[data-object="movie-container"]').forEach(x => x.style.display = 'none');
     filtered.moviesList.forEach(x => x.style.display = 'block');
@@ -171,6 +174,25 @@ class UIEventListenerManager {
       maxSliderFilter: document.querySelector('#maxSlider')?.value,
       winnersOnlyFilter: document.querySelector('input[id="winnersOnly"]:checked')?.value
     }
+  }
+
+  setFilters(filterCookie) {
+     [...document.querySelectorAll('input[name="seenByFilter"]')].find(x => x.value == filterCookie.seenByFilter).checked = true;
+     [...document.querySelectorAll('input[name="skippedByFilter"]')].find(x => x.value == filterCookie.skippedByFilter).checked = true;
+
+      document.querySelector('#imdbSlider').value = filterCookie.imdbSliderFilter;  
+      document.querySelector('#imdbSlider').nextElementSibling.value = filterCookie.imdbSliderFilter;
+
+      document.querySelector('#durationSlider').value= filterCookie.durationSliderFilter;
+      document.querySelector('#durationSlider').nextElementSibling.value = filterCookie.durationSliderFilter;
+
+      document.querySelector('#minSlider').value= filterCookie.minSliderFilter;
+      document.querySelector('#minSlider').nextElementSibling.value = filterCookie.minSliderFilter;
+
+      document.querySelector('#maxSlider').value= filterCookie.maxSliderFilter;
+      document.querySelector('#maxSlider').nextElementSibling.value = filterCookie.maxSliderFilter;
+
+      document.querySelector('input[id="winnersOnly"]').checked = filterCookie.winnersOnlyFilter;
   }
 
   get dataHandler() {
