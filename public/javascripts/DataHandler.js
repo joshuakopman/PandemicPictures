@@ -14,14 +14,15 @@ class DataHandler {
             url += "&skip=" + skip;
         }
 
-        if (userOne != null) {
-            url += "&userOne=" + userOne;
+        if (userOne != null && userTwo != null) {
+            if (url.includes('?')) {
+                url += "&userOne=" + userOne + "&userTwo=" + userTwo;
+            } else {
+                url += "?userOne=" + userOne + "&userTwo=" + userTwo;
+            }
         }
 
-        if (userTwo != null) {
-            url += "&userTwo=" + userTwo;
-        }
-    
+
         return new Promise((resolve, reject) => {
             fetch(url)
                 .then(response => response.json())
@@ -64,7 +65,7 @@ class DataHandler {
         if (new URLSearchParams(window.location.search).get('userTwo') != null) {
             url += "&userTwo=" + new URLSearchParams(window.location.search).get('userTwo');
         }
-        
+
         try {
             const response = await fetch(url, {
                 method: 'POST',
