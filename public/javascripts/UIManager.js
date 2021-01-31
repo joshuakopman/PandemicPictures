@@ -7,7 +7,7 @@ class UIManager {
         this.initialSkip = 0;
         this.initialLimit = 6;
         this.ratingsTemplate = document.getElementById('ratings-template');
-        this.UserOne = new URLSearchParams(window.location.search).get('userOne')  ?? 'Josh';
+        this.UserOne = new URLSearchParams(window.location.search).get('userOne') ?? 'Josh';
         this.UserTwo = new URLSearchParams(window.location.search).get('userTwo') ?? 'Alicia';
     }
 
