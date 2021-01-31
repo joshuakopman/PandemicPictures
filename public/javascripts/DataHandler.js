@@ -3,7 +3,7 @@ class DataHandler {
     constructor() {
     }
 
-    fetchMovieDataFromAPI(limit, skip) {
+    fetchMovieDataFromAPI(limit, skip, userOne, userTwo) {
         var url = "/movies";
 
         if (limit != null) {
@@ -14,6 +14,14 @@ class DataHandler {
             url += "&skip=" + skip;
         }
 
+        if (userOne != null) {
+            url += "&userOne=" + userOne;
+        }
+
+        if (userTwo != null) {
+            url += "&userTwo=" + userTwo;
+        }
+    
         return new Promise((resolve, reject) => {
             fetch(url)
                 .then(response => response.json())

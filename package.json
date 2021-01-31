@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "start:local": "cp ./movies_local.json ./mocks/movies.json && node app.js",
-    "start:local:watch": "cp ./movies_local.json ./mocks/movies.json && nodemon app.js"
+    "start:local": "cp ./movies_local.json ./mocks/movies_Josh_Alicia.json && node app.js",
+    "start:local:watch": "cp ./movies_local.json ./mocks/movies_Josh_Alicia.json && nodemon app.js"
   }
 }

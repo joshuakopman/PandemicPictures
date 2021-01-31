@@ -12,7 +12,6 @@ import { NomineeProvider } from './providers/nomineeProvider.js';
 
 const app = express();
 const port = 3000;
-const NomNomProvider = new NomineeProvider();
 const wsServer = new ws.Server({ noServer: true });
 const ddos = new Ddos({ burst: 50, limit: 500, maxexpiry: 300, trustProxy: false, includeUserAgent: false })
 
@@ -30,7 +29,7 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res, next) => {
-    var movies = NomNomProvider.readMoviesFromDisk();
+    var movies = new NomineeProvider(req.query.userOne, req.query.userTwo).readMoviesFromDisk();
     movies.MoviesList = [];
     res.render('main', { layout: 'index', 'allNominees': movies });
 });

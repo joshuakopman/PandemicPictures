@@ -7,6 +7,8 @@ class UIManager {
         this.initialSkip = 0;
         this.initialLimit = 6;
         this.ratingsTemplate = document.getElementById('ratings-template');
+        this.UserOne = new URLSearchParams(window.location.search).get('userOne')  ?? 'Josh';
+        this.UserTwo = new URLSearchParams(window.location.search).get('userTwo') ?? 'Alicia';
     }
 
     initializeView() {
@@ -18,10 +20,12 @@ class UIManager {
         });
 
         this.socket.onmessage = () => {
-            self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI().then(movieData => {
+                self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(null,null,self.UserOne,self.UserTwo).then(movieData => {
                 self.updateHasSeenCheckboxesAndCounts(movieData);
             });
         };
+
+        this.setFilterPanelNames();
 
         this.compileTemplatesAndBindElementData();
 
@@ -46,14 +50,15 @@ class UIManager {
     compileTemplatesAndBindElementData(allMoviesLoaded) {
         var self = this;
 
-        self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit, self.initialSkip).then(movieData => {
+        self.uiEventListenerManager.dataHandler.fetchMovieDataFromAPI(self.initialLimit, self.initialSkip, self.UserOne,self.UserTwo).then(movieData => {
+ 
             var renderRatings = Handlebars.compile(this.ratingsTemplate.innerHTML);
 
             document.getElementsByTagName('main')[0].innerHTML = renderRatings({
                 moviesList: movieData.MoviesList
             });
 
-            self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage().then(imdbData => {
+            self.uiEventListenerManager.dataHandler.fetchIMDBDataFromAPIOrLocalStorage(null,null,self.UserOne,self.UserTwo).then(imdbData => {
                 self.bindIMDBDataToMovies(imdbData);
                 self.updateHasSeenCheckboxesAndCounts(movieData);
 
@@ -140,5 +145,17 @@ class UIManager {
             }
 
         }
+    }
+
+    setFilterPanelNames() {
+        var radioButtonsInFilters = [...document.querySelectorAll("div[data-object='filter-item'] input[type=radio]")];
+        radioButtonsInFilters[0].nextElementSibling.innerHTML = this.UserOne;
+        radioButtonsInFilters[0].value = this.UserOne;
+        radioButtonsInFilters[1].nextElementSibling.innerHTML = this.UserTwo;
+        radioButtonsInFilters[1].value = this.UserTwo;
+        radioButtonsInFilters[4].nextElementSibling.innerHTML = this.UserOne;
+        radioButtonsInFilters[4].value = this.UserOne;
+        radioButtonsInFilters[5].nextElementSibling.innerHTML = this.UserTwo;
+        radioButtonsInFilters[5].value = this.UserTwo;
     }
 }

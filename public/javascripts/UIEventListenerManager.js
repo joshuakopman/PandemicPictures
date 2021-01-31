@@ -145,7 +145,6 @@ class UIEventListenerManager {
   applyFilters(resetClicked = false) {
     var filterValues = this.getFiltersValues();
     document.cookie ="filterCookie=" + JSON.stringify(filterValues);
-    console.log(filterValues);
     var filtered = this.uiHelper.filterMoviesBySearchCriteriaAndChooseRandomly(filterValues);
 
     document.querySelectorAll('div[data-object="movie-container"]').forEach(x => x.style.display = 'none');

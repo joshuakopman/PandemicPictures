@@ -2,14 +2,13 @@ import express from 'express';
 import { NomineeProvider } from '../providers/nomineeProvider.js';
 
 const router = express.Router();
-const NomNomProvider = new NomineeProvider();
 
 router.get('/', (req, res, next) => {
-    res.json(NomNomProvider.readMoviesFromDisk(req.query.limit, req.query.skip));
+    res.json(new NomineeProvider(req.query.userOne, req.query.userTwo).readMoviesFromDisk(req.query.limit, req.query.skip));
 });
 
 router.post('/', (req, res, next) => {
-    NomNomProvider.writeMoviesToDisk(req.body);
+    new NomineeProvider(req.query.userOne, req.query.userTwo).writeMoviesToDisk(req.body);
     req.writeConfig.wsServer.clients.forEach(function each(client) {
         if (client.readyState === req.writeConfig.ws.OPEN) {
             client.send('JSONUpdated');
