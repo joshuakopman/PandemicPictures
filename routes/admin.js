@@ -5,10 +5,10 @@ import { IMDBProvider } from '../providers/imdbProvider.js';
 import basicAuth from 'express-basic-auth';
 
 const router = express.Router();
-const NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
 const imdbProvider = new IMDBProvider();
 
 router.get('/getIMDBMetadata', async (req, res, next) => {
+    var NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
     var moviesFormatted = NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year, "Name": z.Name } }));
     var flattedMovies = [].concat.apply([], moviesFormatted);
     var allMetadata = await imdbProvider.getIMDBMetadata(flattedMovies);
@@ -16,6 +16,7 @@ router.get('/getIMDBMetadata', async (req, res, next) => {
 });
 
 router.get('/addYearsToJSON', async (req, res, next) => {
+    var NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
     var moviesFormatted = NomNomProvider.readMoviesFromDisk().MoviesList.map(y => y.Movies.map(z => { return { "Year": y.Year, "Name": z.Name } }));
     var flattedMovies = [].concat.apply([], moviesFormatted);
 
@@ -55,6 +56,7 @@ router.get('/edit', basicAuth(
         },
         challenge: true
     }), (req, res, next) => {
+        var NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
         res.render('main', {
             layout: 'index', 'allNominees': NomNomProvider.readMoviesFromDisk()
         });
