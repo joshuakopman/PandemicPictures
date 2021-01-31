@@ -5,7 +5,7 @@ import { IMDBProvider } from '../providers/imdbProvider.js';
 import basicAuth from 'express-basic-auth';
 
 const router = express.Router();
-const NomNomProvider = new NomineeProvider();
+const NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
 const imdbProvider = new IMDBProvider();
 
 router.get('/getIMDBMetadata', async (req, res, next) => {

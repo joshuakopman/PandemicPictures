@@ -57,6 +57,14 @@ class DataHandler {
     }
 
     async postData(url = '', data = {}) {
+        if (new URLSearchParams(window.location.search).get('userOne') != null) {
+            url += "?userOne=" + new URLSearchParams(window.location.search).get('userOne');
+        }
+
+        if (new URLSearchParams(window.location.search).get('userTwo') != null) {
+            url += "&userTwo=" + new URLSearchParams(window.location.search).get('userTwo');
+        }
+        
         try {
             const response = await fetch(url, {
                 method: 'POST',
