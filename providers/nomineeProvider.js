@@ -36,7 +36,6 @@ class NomineeProvider {
     }
 
     writeMoviesToDisk(payload) {
-        console.log('writing: '+this.filePath);
         //updates server data store JSON for movie ratings; not under source control
         writeFile(this.filePath, JSON.stringify(payload, null, 4), (err, result) => {
             if (err) console.log('error', err);

@@ -115,7 +115,6 @@ class UIManager {
                 }
 
             } catch (e) {
-                // console.log('missing HTML element for: '+movie.Title + " | exception: " + e);
             }
         })
     }
@@ -139,7 +138,6 @@ class UIManager {
                             document.querySelector("input[id='" + 'radio-2-' + movieName.replace(/'/g, "\\'") + '-' + nomYear.Year + '-' + viewer.Name + "']").checked = true;
                         }
                     } catch {
-                        //console.log('failed to update checkbox; selector was invalid (likely movie title with special characters');
                     }
                 }
             }
