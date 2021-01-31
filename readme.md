@@ -12,7 +12,7 @@ In production, use ```npm start``` or build & run via included Dockerfile in pro
 
 ```
 docker build -t pandemicpictures .
-docker run -d -p 80:3000 -p 3000:3000  -v /path/to/movieRatingsDataStore/movies.json:/mocks/movies.json pandemicpictures
+docker run -d -p 80:3000 -p 3000:3000  -v /path/to/movieRatingsDataStore/:/mocks/ pandemicpictures
 ```
 
 ## Usage
