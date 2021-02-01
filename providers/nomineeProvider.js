@@ -10,7 +10,13 @@ class NomineeProvider {
     }
 
     readMoviesFromDisk(limit, skip) {
-        let raw = readFileSync(this.filePath);
+        var raw = '';
+        try {
+            raw = readFileSync(this.filePath);
+        }
+        catch (e) {
+            return null;
+        }
         var resp = {};
         let json = JSON.parse(raw);
         if (limit && skip) {

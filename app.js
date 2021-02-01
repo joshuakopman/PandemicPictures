@@ -18,11 +18,11 @@ const ddos = new Ddos({ burst: 50, limit: 500, maxexpiry: 300, trustProxy: false
 app.use(compression());
 app.use(ddos.express);
 app.engine('hbs', exphbs(
-    { 
-        extname: '.hbs' ,  
-        helpers: hbsHelpers(exphbs).helpers 
+    {
+        extname: '.hbs',
+        helpers: hbsHelpers(exphbs).helpers
     }
-    ));
+));
 app.set('view engine', 'hbs');
 app.use(express.static('public'))
 app.use(bodyParser.json())
@@ -30,8 +30,12 @@ app.use(bodyParser.json())
 
 app.get('/', (req, res, next) => {
     var movies = new NomineeProvider(req.query.userOne, req.query.userTwo).readMoviesFromDisk();
-    movies.MoviesList = [];
-    res.render('main', { layout: 'index', 'allNominees': movies });
+    if (movies == null) {
+        res.render('main', { layout: 'error', message: req.query.userOne + ' and ' + req.query.userTwo + "!" });
+    } else {
+        movies.MoviesList = [];
+        res.render('main', { layout: 'index', 'allNominees': movies });
+    }
 });
 
 app.use('/movies', (req, res, next) => {
