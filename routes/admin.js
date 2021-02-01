@@ -37,11 +37,11 @@ router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
         var updatedIMDBInfoForMovie = await imdbProvider.fetchOMDBAPIInfoByID(currentMovie.ImdbID);
         try {
             currentMoviesArray.find(x => x.ImdbID == updatedIMDBInfoForMovie.imdbID).Rating
-             = 
-             updatedIMDBInfoForMovie.Ratings.find(y => y.Source == 'Internet Movie Database').Value.replace('/10', '');
+                =
+                updatedIMDBInfoForMovie.Ratings.find(y => y.Source == 'Internet Movie Database').Value.replace('/10', '');
         }
         catch (e) {
-            console.log("No IMDB rating retrieved for: " + currentMovie.Title + ' | '+e);
+            console.log("No IMDB rating retrieved for: " + currentMovie.Title + ' | ' + e);
         }
     }
 
@@ -52,14 +52,22 @@ router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
 router.get('/edit', basicAuth(
     {
         users: {
-            'admin': 'galleryWall'
+            'admin': 'galleryWall',
+            'Hillie': 'galleryWall',
+            'Neas': 'sunnyside',
+            'Joanne': 'parents',
+            'Steve': 'yosa'
         },
         challenge: true
     }), (req, res, next) => {
         var NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
-        res.render('main', {
-            layout: 'index', 'allNominees': NomNomProvider.readMoviesFromDisk()
-        });
+        if (NomNomProvider.authorizeUser(req)) {
+            res.render('main', {
+                layout: 'index', 'allNominees': NomNomProvider.readMoviesFromDisk()
+            });
+        } else {
+            res.send(401);
+        }
     });
 
 export default router;

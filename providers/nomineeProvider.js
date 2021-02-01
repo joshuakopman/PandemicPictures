@@ -103,6 +103,13 @@ class NomineeProvider {
         allNominees.push(nomineeObj);
         return allNominees;
     }
+    authorizeUser(req) {
+        if (req.url.includes(req.auth.user) || req.auth.user == 'admin') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 const _NomineeProvider = NomineeProvider;
