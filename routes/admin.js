@@ -53,10 +53,10 @@ router.get('/edit', basicAuth(
     {
         users: {
             'admin': 'galleryWall',
-            'Hillie': 'galleryWall',
+            'Hillie': 'montanaTurtles',
             'Neas': 'sunnyside',
             'Joanne': 'parents',
-            'Steve': 'yosa'
+            'Allie': 'pierogi'
         },
         challenge: true
     }), (req, res, next) => {

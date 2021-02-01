@@ -104,7 +104,7 @@ class NomineeProvider {
         return allNominees;
     }
     authorizeUser(req) {
-        if (req.url.includes(req.auth.user) || req.auth.user == 'admin') {
+        if (req.url.includes("userTwo=" + req.auth.user) || req.auth.user == 'admin') {
             return true;
         } else {
             return false;
