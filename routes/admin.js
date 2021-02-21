@@ -56,15 +56,21 @@ router.get('/edit', basicAuth(
             'Hillie': 'montanaTurtles',
             'Neas': 'sunnyside',
             'Joanne': 'parents',
-            'Allie': 'pierogi'
+            'Allie': 'pierogi',
+            '--' : 'password'
         },
         challenge: true
     }), (req, res, next) => {
         var NomNomProvider = new NomineeProvider(req.query.userOne, req.query.userTwo);
         if (NomNomProvider.authorizeUser(req)) {
-            res.render('main', {
-                layout: 'index', 'allNominees': NomNomProvider.readMoviesFromDisk()
-            });
+            var movies = NomNomProvider.readMoviesFromDisk();
+            if (movies != null) {
+                res.render('main', {
+                    layout: 'index', 'allNominees': movies
+                });
+            } else {
+                res.render('main', { layout: 'error', message: req.query.userOne + ' and ' + req.query.userTwo + "!" });
+            }
         } else {
             res.send(401);
         }
