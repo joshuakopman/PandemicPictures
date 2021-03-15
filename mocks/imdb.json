@@ -6754,5 +6754,101 @@
         "Plot": "A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.",
         "ImdbID": "tt7131622",
         "OscarYear": 2019
+    },
+    {
+        "Title": "The Father",
+        "Rating": "7.9",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGJhNWRiOWQtMjI4OS00ZjcxLTgwMTAtMzQ2ODkxY2JkOTVlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "97 min",
+        "Genre": "Drama",
+        "Director": "Florian Zeller",
+        "Actors": "Olivia Colman, Anthony Hopkins, Mark Gatiss, Olivia Williams",
+        "Plot": "A man refuses all assistance from his daughter as he ages. As he tries to make sense of his changing circumstances, he begins to doubt his loved ones, his own mind and even the fabric of his reality.",
+        "ImdbID": "tt10272386",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "Judas And The Black Messiah",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTYwNWNmM2UtNDhlOC00ZGQzLWI1MTMtMmZlMTFjM2Y1N2ZhXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
+        "Runtime": "126 min",
+        "Genre": "Biography, Drama, History",
+        "Director": "Shaka King",
+        "Actors": "Daniel Kaluuya, LaKeith Stanfield, Jesse Plemons, Dominique Fishback",
+        "Plot": "Bill O'Neal infiltrates the Black Panther Party per FBI Agent Mitchell and J. Edgar Hoover. As Party Chairman Fred Hampton ascends, falling for a fellow revolutionary en route, a battle wages for O'Neal's soul.",
+        "ImdbID": "tt9784798",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "Mank",
+        "Rating": "7.1",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZTllMjI0ZGYtM2FmZC00ZmY4LTlkNTYtZThlOWQ1OGQyZTA3XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+        "Runtime": "131 min",
+        "Genre": "Biography, Comedy, Drama",
+        "Director": "David Fincher",
+        "Actors": "Gary Oldman, Amanda Seyfried, Lily Collins, Tom Pelphrey",
+        "Plot": "1930's Hollywood is reevaluated through the eyes of scathing social critic and alcoholic screenwriter Herman J. Mankiewicz as he races to finish the screenplay of Citizen Kane (1941).",
+        "ImdbID": "tt10618286",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "Minari",
+        "Rating": "7.7",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNWEzOTNjNDgtZDhhYS00ODAxLWIzNGMtYjU3OGZhYmI3ZDU4XkEyXkFqcGdeQXVyMTAzNjk5MDI4._V1_SX300.jpg",
+        "Runtime": "115 min",
+        "Genre": "Drama",
+        "Director": "Lee Isaac Chung",
+        "Actors": "Alan S. Kim, Yeri Han, Noel Cho, Steven Yeun",
+        "Plot": "A Korean family starts a farm in 1980s Arkansas.",
+        "ImdbID": "tt10633456",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "Nomadland",
+        "Rating": "7.6",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDRiZWUxNmItNDU5Yy00ODNmLTk0M2ItZjQzZTA5OTJkZjkyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "108 min",
+        "Genre": "Drama",
+        "Director": "Chloé Zhao",
+        "Actors": "Frances McDormand, Gay DeForest, Patricia Grier, Linda May",
+        "Plot": "After losing everything in the Great Recession, a woman embarks on a journey through the American West, living as a van-dwelling modern-day nomad.",
+        "ImdbID": "tt9770150",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "Promising Young Woman",
+        "Rating": "7.5",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDViMzBiNGMtZTIyNS00NzI4LWE3NDMtNmM1NDk0NzBlMWRlXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
+        "Runtime": "113 min",
+        "Genre": "Crime, Drama, Thriller",
+        "Director": "Emerald Fennell",
+        "Actors": "Adam Brody, Ray Nicholson, Sam Richardson, Carey Mulligan",
+        "Plot": "A young woman, traumatized by a tragic event in her past, seeks out vengeance against those who crossed her path.",
+        "ImdbID": "tt9620292",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "Sound Of Metal",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNjcyYjg0M2ItMzMyZS00NmM1LTlhZDMtN2MxN2RhNWY4YTkwXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg",
+        "Runtime": "120 min",
+        "Genre": "Drama, Music",
+        "Director": "Darius Marder",
+        "Actors": "Riz Ahmed, Olivia Cooke, Paul Raci, Lauren Ridloff",
+        "Plot": "A heavy-metal drummer's life is thrown into freefall when he begins to lose his hearing.",
+        "ImdbID": "tt5363618",
+        "OscarYear": 2020
+    },
+    {
+        "Title": "The Trial Of The Chicago 7",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjYzOGE1MjUtODgyMy00ZDAxLTljYTgtNzk0Njg2YWQwMTZhXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+        "Runtime": "129 min",
+        "Genre": "Drama, History, Thriller",
+        "Director": "Aaron Sorkin",
+        "Actors": "Eddie Redmayne, Alex Sharp, Sacha Baron Cohen, Jeremy Strong",
+        "Plot": "The story of 7 people on trial stemming from various charges surrounding the uprising at the 1968 Democratic National Convention in Chicago, Illinois.",
+        "ImdbID": "tt1070874",
+        "OscarYear": 2020
     }
 ]

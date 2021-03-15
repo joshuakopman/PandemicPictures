@@ -44,15 +44,15 @@ class DataHandler {
         }
 
         return new Promise((resolve, reject) => {
-            if (!localStorage.getItem('imdb')) {
+            if (!localStorage.getItem('imdb2021')) {
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
-                        localStorage.setItem('imdb', JSON.stringify(data));
+                        localStorage.setItem('imdb2021', JSON.stringify(data));
                         resolve(data);
                     });
             } else {
-                resolve(JSON.parse(localStorage.getItem('imdb')));
+                resolve(JSON.parse(localStorage.getItem('imdb2021')));
             }
         });
     }
