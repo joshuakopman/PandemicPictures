@@ -19,7 +19,7 @@ class UIHelper {
         }
 
         if (filterValues.imdbSliderFilter) {
-            allMovieElements = allMovieElements.filter(x => parseFloat(x.querySelector("span[data-object*='rating']").innerHTML) >= filterValues.imdbSliderFilter);
+            allMovieElements = allMovieElements.filter(x => parseFloat(x.querySelector("span[data-object*='rating']").innerHTML) >= filterValues.imdbSliderFilter || isNaN(parseFloat(x.querySelector("span[data-object*='rating']").innerHTML)));
         }
 
         if (filterValues.durationSliderFilter) {
