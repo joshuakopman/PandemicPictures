@@ -31,7 +31,7 @@ class UIManager {
 
         window.requestIdleCallback(() => {
             setTimeout(() => {
-                self.initialLimit = 93;
+                self.initialLimit = 110;
                 self.compileTemplatesAndBindElementData(true);
             }, 500);
         });
