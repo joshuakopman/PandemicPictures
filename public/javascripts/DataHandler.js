@@ -44,15 +44,21 @@ class DataHandler {
         }
 
         return new Promise((resolve, reject) => {
-            if (!localStorage.getItem('imdb2021')) {
+            if(localStorage.getItem('imdb') || localStorage.getItem('imdb2021')|| localStorage.getItem('imdbUpdated')){
+                localStorage.removeItem('imdb');
+                localStorage.removeItem('imdb2021');
+                localStorage.removeItem('imdbUpdated');
+            }
+            
+            if (!localStorage.getItem('imdbUpdated2022')) {
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
-                        localStorage.setItem('imdb2021', JSON.stringify(data));
+                        localStorage.setItem('imdbUpdated2022', JSON.stringify(data));
                         resolve(data);
                     });
             } else {
-                resolve(JSON.parse(localStorage.getItem('imdb2021')));
+                resolve(JSON.parse(localStorage.getItem('imdbUpdated2022')));
             }
         });
     }

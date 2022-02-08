@@ -6756,6 +6756,18 @@
         "OscarYear": 2019
     },
     {
+        "Title": "Nomadland",
+        "Rating": "7.6",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDRiZWUxNmItNDU5Yy00ODNmLTk0M2ItZjQzZTA5OTJkZjkyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "108 min",
+        "Genre": "Drama",
+        "Director": "Chloé Zhao",
+        "Actors": "Frances McDormand, Gay DeForest, Patricia Grier, Linda May",
+        "Plot": "After losing everything in the Great Recession, a woman embarks on a journey through the American West, living as a van-dwelling modern-day nomad.",
+        "ImdbID": "tt9770150",
+        "OscarYear": 2020
+    },
+    {
         "Title": "The Father",
         "Rating": "7.9",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGJhNWRiOWQtMjI4OS00ZjcxLTgwMTAtMzQ2ODkxY2JkOTVlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
@@ -6804,18 +6816,6 @@
         "OscarYear": 2020
     },
     {
-        "Title": "Nomadland",
-        "Rating": "7.6",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDRiZWUxNmItNDU5Yy00ODNmLTk0M2ItZjQzZTA5OTJkZjkyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
-        "Runtime": "108 min",
-        "Genre": "Drama",
-        "Director": "Chloé Zhao",
-        "Actors": "Frances McDormand, Gay DeForest, Patricia Grier, Linda May",
-        "Plot": "After losing everything in the Great Recession, a woman embarks on a journey through the American West, living as a van-dwelling modern-day nomad.",
-        "ImdbID": "tt9770150",
-        "OscarYear": 2020
-    },
-    {
         "Title": "Promising Young Woman",
         "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDViMzBiNGMtZTIyNS00NzI4LWE3NDMtNmM1NDk0NzBlMWRlXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
@@ -6850,5 +6850,124 @@
         "Plot": "The story of 7 people on trial stemming from various charges surrounding the uprising at the 1968 Democratic National Convention in Chicago, Illinois.",
         "ImdbID": "tt1070874",
         "OscarYear": 2020
+    },
+    {
+        "Title": "Belfast",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BODMwYTYyY2ItOWQ5Yi00OTI1LTllYTQtYTdlNWM4YzJhYTM0XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
+        "Runtime": "98 min",
+        "Genre": "Biography, Drama, History",
+        "Director": "Kenneth Branagh",
+        "Actors": "Jude Hill, Lewis McAskie, Caitriona Balfe",
+        "Plot": "A young boy and his working-class Belfast family experience the tumultuous late 1960s.",
+        "ImdbID": "tt12789558",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "CODA",
+        "Rating": "8.1",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGNmMzJjMTItODA0OC00ZWM0LWJmMTctMDg3MzM2M2Y5NTIyXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+        "Runtime": "111 min",
+        "Genre": "Comedy, Drama, Music",
+        "Director": "Sian Heder",
+        "Actors": "Emilia Jones, Marlee Matlin, Troy Kotsur",
+        "Plot": "As a CODA (Child of Deaf Adults) Ruby is the only hearing person in her deaf family. When the family's fishing business is threatened, Ruby finds herself torn between pursuing her love of music by wanting to go to Berklee College of ",
+        "ImdbID": "tt10366460",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "Don't Look Up",
+        "Rating": "7.3",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNjZjNDE1NTYtYTgwZS00M2VmLWEyODktM2FlNjhiYTk3OGU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+        "Runtime": "138 min",
+        "Genre": "Comedy, Drama, Sci-Fi",
+        "Director": "Adam McKay",
+        "Actors": "Leonardo DiCaprio, Jennifer Lawrence, Meryl Streep",
+        "Plot": "Two low-level astronomers must go on a giant media tour to warn mankind of an approaching comet that will destroy planet Earth.",
+        "ImdbID": "tt11286314",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "Drive My Car",
+        "Rating": "7.9",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTQ0MmJiODMtOGQ5Ni00OTUzLWI0ODUtYjM1YTA1NTMzODc0XkEyXkFqcGdeQXVyODgzNDIwODA@._V1_SX300.jpg",
+        "Runtime": "179 min",
+        "Genre": "Drama",
+        "Director": "Ryûsuke Hamaguchi",
+        "Actors": "Hidetoshi Nishijima, Tôko Miura, Reika Kirishima",
+        "Plot": "After his wife's unexpected death, Yusuke Kafuku, a renowned stage actor and director, receives an offer to direct a production of Uncle Vanya in Hiroshima. There, he begins to face the haunting mysteries his wife left behind.",
+        "ImdbID": "tt14039582",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "Dune",
+        "Rating": "8.1",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "155 min",
+        "Genre": "Action, Adventure, Drama",
+        "Director": "Denis Villeneuve",
+        "Actors": "Timothée Chalamet, Rebecca Ferguson, Zendaya",
+        "Plot": "Feature adaptation of Frank Herbert's science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
+        "ImdbID": "tt1160419",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "King Richard",
+        "Rating": "7.6",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTcyNmY4ZGEtYmE4Zi00ZDViLTlmYzMtMmQ4ZTM4OWNmZjQxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "144 min",
+        "Genre": "Biography, Drama, Sport",
+        "Director": "Reinaldo Marcus Green",
+        "Actors": "Will Smith, Aunjanue Ellis, Jon Bernthal",
+        "Plot": "A look at how tennis superstars Venus and Serena Williams became who they are after the coaching from their father Richard Williams.",
+        "ImdbID": "tt9620288",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "Licorice Pizza",
+        "Rating": "8.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZTgxMWJkMzItMzg1YS00NDJiLTljYjctMTc2YzQzZDZjZDAyXkEyXkFqcGdeQXVyODQ2OTIzNDU@._V1_SX300.jpg",
+        "Runtime": "133 min",
+        "Genre": "Comedy, Drama, Romance",
+        "Director": "Paul Thomas Anderson",
+        "Actors": "Alana Haim, Cooper Hoffman, Sean Penn",
+        "Plot": "The story of Alana Kane and Gary Valentine growing up, running around and going through the treacherous navigation of first love in the San Fernando Valley, 1973.",
+        "ImdbID": "tt11271038",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "Nightmare Alley",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTI4NDhhNGEtZjQxZC00ZTRmLThmZTctOGJmY2ZlOTc0ZGY0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "150 min",
+        "Genre": "Crime, Drama, Thriller",
+        "Director": "Guillermo del Toro",
+        "Actors": "Bradley Cooper, Cate Blanchett, Toni Collette",
+        "Plot": "An ambitious carny with a talent for manipulating people with a few well-chosen words hooks up with a female psychiatrist who is even more dangerous than he is.",
+        "ImdbID": "tt7740496"
+    },
+    {
+        "Title": "The Power Of The Dog",
+        "Rating": "7.0",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGRhYjE2NWUtN2FkNy00NGI3LTkxYWMtMDk4Yjg5ZjI3MWI2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+        "Runtime": "126 min",
+        "Genre": "Drama, Romance, Western",
+        "Director": "Jane Campion",
+        "Actors": "Benedict Cumberbatch, Kirsten Dunst, Jesse Plemons",
+        "Plot": "Charismatic rancher Phil Burbank inspires fear and awe in those around him. When his brother brings home a new wife and her son, Phil torments them until he finds himself exposed to the possibility of love.",
+        "ImdbID": "tt10293406",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "West Side Story",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzQ5ZDZhZDItZTNmZi00MWQ0LWJlNDUtZTE4ZWJmODNlM2Y3XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg",
+        "Runtime": "156 min",
+        "Genre": "Crime, Drama, Musical",
+        "Director": "Steven Spielberg",
+        "Actors": "Ansel Elgort, Rachel Zegler, Ariana DeBose",
+        "Plot": "An adaptation of the 1957 musical, West Side Story explores forbidden love and the rivalry between the Jets and the Sharks, two teenage street gangs of different ethnic backgrounds.",
+        "ImdbID": "tt3581652",
+        "OscarYear": 2021
     }
 ]
