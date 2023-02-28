@@ -25,8 +25,8 @@ app.engine('hbs', exphbs(
 ));
 app.set('view engine', 'hbs');
 app.use(express.static('public'))
-app.use(bodyParser.json())
 app.use('/mocks', express.static('mocks'));
+app.use(bodyParser.json())
 
 
 app.get('/', (req, res, next) => {
