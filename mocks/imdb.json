@@ -6818,7 +6818,7 @@
     {
         "Title": "Promising Young Woman",
         "Rating": "7.5",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDViMzBiNGMtZTIyNS00NzI4LWE3NDMtNmM1NDk0NzBlMWRlXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTgzMzE4MGItZDgxYS00ZGEwLWE3YTctZWY3ZDAyMTk0ZGU4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
         "Runtime": "113 min",
         "Genre": "Crime, Drama, Thriller",
         "Director": "Emerald Fennell",
@@ -6852,18 +6852,6 @@
         "OscarYear": 2020
     },
     {
-        "Title": "Belfast",
-        "Rating": "7.4",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BODMwYTYyY2ItOWQ5Yi00OTI1LTllYTQtYTdlNWM4YzJhYTM0XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
-        "Runtime": "98 min",
-        "Genre": "Biography, Drama, History",
-        "Director": "Kenneth Branagh",
-        "Actors": "Jude Hill, Lewis McAskie, Caitriona Balfe",
-        "Plot": "A young boy and his working-class Belfast family experience the tumultuous late 1960s.",
-        "ImdbID": "tt12789558",
-        "OscarYear": 2021
-    },
-    {
         "Title": "CODA",
         "Rating": "8.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGNmMzJjMTItODA0OC00ZWM0LWJmMTctMDg3MzM2M2Y5NTIyXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
@@ -6873,6 +6861,18 @@
         "Actors": "Emilia Jones, Marlee Matlin, Troy Kotsur",
         "Plot": "As a CODA (Child of Deaf Adults) Ruby is the only hearing person in her deaf family. When the family's fishing business is threatened, Ruby finds herself torn between pursuing her love of music by wanting to go to Berklee College of ",
         "ImdbID": "tt10366460",
+        "OscarYear": 2021
+    },
+    {
+        "Title": "Belfast",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BODMwYTYyY2ItOWQ5Yi00OTI1LTllYTQtYTdlNWM4YzJhYTM0XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
+        "Runtime": "98 min",
+        "Genre": "Biography, Drama, History",
+        "Director": "Kenneth Branagh",
+        "Actors": "Jude Hill, Lewis McAskie, Caitriona Balfe",
+        "Plot": "A young boy and his working-class Belfast family experience the tumultuous late 1960s.",
+        "ImdbID": "tt12789558",
         "OscarYear": 2021
     },
     {
@@ -6890,7 +6890,7 @@
     {
         "Title": "Drive My Car",
         "Rating": "7.9",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTQ0MmJiODMtOGQ5Ni00OTUzLWI0ODUtYjM1YTA1NTMzODc0XkEyXkFqcGdeQXVyODgzNDIwODA@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BY2NkNDdmZTUtYWQ2MC00MjUyLTk1MGMtNWZiZjI3ZWMzNDYwXkEyXkFqcGdeQXVyNTY4ODAxODI@._V1_SX300.jpg",
         "Runtime": "179 min",
         "Genre": "Drama",
         "Director": "Ryûsuke Hamaguchi",
@@ -6944,7 +6944,8 @@
         "Director": "Guillermo del Toro",
         "Actors": "Bradley Cooper, Cate Blanchett, Toni Collette",
         "Plot": "An ambitious carny with a talent for manipulating people with a few well-chosen words hooks up with a female psychiatrist who is even more dangerous than he is.",
-        "ImdbID": "tt7740496"
+        "ImdbID": "tt7740496",
+        "OscarYear": 2021
     },
     {
         "Title": "The Power Of The Dog",
@@ -6969,5 +6970,125 @@
         "Plot": "An adaptation of the 1957 musical, West Side Story explores forbidden love and the rivalry between the Jets and the Sharks, two teenage street gangs of different ethnic backgrounds.",
         "ImdbID": "tt3581652",
         "OscarYear": 2021
+    },
+    {
+        "Title": "Everything Everywhere All At Once",
+        "Rating": "8.0",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_SX300.jpg",
+        "Runtime": "139 min",
+        "Genre": "Action, Adventure, Comedy",
+        "Director": "Dan Kwan, Daniel Scheinert",
+        "Actors": "Michelle Yeoh, Stephanie Hsu, Jamie Lee Curtis",
+        "Plot": "A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led.",
+        "ImdbID": "tt6710474",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "The Banshees Of Inisherin",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BM2NlZDI0ZDktNTg5OS00ZjQ1LWI4MDEtN2I0MDE5NWRiNzA4XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
+        "Runtime": "114 min",
+        "Genre": "Comedy, Drama",
+        "Director": "Martin McDonagh",
+        "Actors": "Colin Farrell, Brendan Gleeson, Kerry Condon",
+        "Plot": "Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them.",
+        "ImdbID": "tt11813216",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "The Fabelmans",
+        "Rating": "7.7",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGM1MzczNmQtMjBmYS00NTRhLWI0MzctNTFkZDc4OGUyODdjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg",
+        "Runtime": "151 min",
+        "Genre": "Drama",
+        "Director": "Steven Spielberg",
+        "Actors": "Michelle Williams, Gabriel LaBelle, Paul Dano",
+        "Plot": "Growing up in post-World War II era Arizona, young Sammy Fabelman aspires to become a filmmaker as he reaches adolescence, but soon discovers a shattering family secret and explores how the power of films can help him see the truth.",
+        "ImdbID": "tt14208870",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "Triangle Of Sadness",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDRiZjc0ZDMtMjhlYi00ZjAzLTg0MDQtZDI2NGEyYTBlN2M2XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
+        "Runtime": "147 min",
+        "Genre": "Comedy, Drama",
+        "Director": "Ruben Östlund",
+        "Actors": "Thobias Thorwid, Harris Dickinson, Charlbi Dean",
+        "Plot": "A fashion model celebrity couple join an eventful cruise for the super-rich.",
+        "ImdbID": "tt7322224",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "Top Gun: Maverick",
+        "Rating": "8.3",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg",
+        "Runtime": "130 min",
+        "Genre": "Action, Drama",
+        "Director": "Joseph Kosinski",
+        "Actors": "Tom Cruise, Jennifer Connelly, Miles Teller",
+        "Plot": "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to ...",
+        "ImdbID": "tt1745960",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "Women Talking",
+        "Rating": "7.5",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTZmMmQ4OWYtM2JmNC00NzY0LWJhODUtOTRmMWMyOTU4OWQ4XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg",
+        "Runtime": "104 min",
+        "Genre": "Drama",
+        "Director": "Sarah Polley",
+        "Actors": "Rooney Mara, Claire Foy, Jessie Buckley",
+        "Plot": "Do nothing. Stay and fight. Or leave. In 2010, the women of an isolated religious community grapple with reconciling a brutal reality with their faith.",
+        "ImdbID": "tt13669038",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "Elvis",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYzMzNTJjYmMtZTkxNS00MjI4LWI3YmQtOTQ4MDZjZDJlZjQyXkEyXkFqcGdeQXVyNjc0NzQzNTM@._V1_SX300.jpg",
+        "Runtime": "159 min",
+        "Genre": "Biography, Drama, Music",
+        "Director": "Baz Luhrmann",
+        "Actors": "Tom Hanks, Austin Butler, Olivia DeJonge",
+        "Plot": "The life of American music icon Elvis Presley, from his childhood to becoming a rock and movie star in the 1950s while maintaining a complex relationship with his manager, Colonel Tom Parker.",
+        "ImdbID": "tt3704428",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "Avatar: The Way Of Water",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_SX300.jpg",
+        "Runtime": "192 min",
+        "Genre": "Action, Adventure, Fantasy",
+        "Director": "James Cameron",
+        "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver",
+        "Plot": "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+        "ImdbID": "tt1630029",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "Tár",
+        "Rating": "7.6",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BM2I0ZDcyYzItMGEyNi00YWVhLTlmNTQtOWVlYjE1ZGVhNWM0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Runtime": "158 min",
+        "Genre": "Drama, Music",
+        "Director": "Todd Field",
+        "Actors": "Cate Blanchett, Noémie Merlant, Nina Hoss",
+        "Plot": "Set in the international world of Western classical music, the film centers on Lydia Tár, widely considered one of the greatest living composer-conductors and the very first female director of a major German orchestra.",
+        "ImdbID": "tt14444726",
+        "OscarYear": 2022
+    },
+    {
+        "Title": "All Quiet On The Western Front",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzM4ZDJhYjYtZGY5Ny00NTk0LWI4ZTYtNjczZDFiMGI2ZjEzXkEyXkFqcGdeQXVyNjc5NjEzNA@@._V1_SX300.jpg",
+        "Runtime": "148 min",
+        "Genre": "Action, Drama, War",
+        "Director": "Edward Berger",
+        "Actors": "Felix Kammerer, Albrecht Schuch, Aaron Hilmer",
+        "Plot": "A young German soldier's terrifying experiences and distress on the western front during World War I.",
+        "ImdbID": "tt1016150",
+        "OscarYear": 2022
     }
 ]
