@@ -10033,6 +10033,23 @@
     {
         "Movies": [
             {
+                "Name": "Nomadland",
+                "Viewers": [
+                    {
+                        "Name": "Josh",
+                        "HasSeen": false,
+                        "Rating": null,
+                        "Skip": false
+                    },
+                    {
+                        "Name": "Alicia",
+                        "HasSeen": false,
+                        "Rating": null,
+                        "Skip": false
+                    }
+                ]
+            },
+            {
                 "Name": "The Father",
                 "Viewers": [
                     {
@@ -10085,23 +10102,6 @@
             },
             {
                 "Name": "Minari",
-                "Viewers": [
-                    {
-                        "Name": "Josh",
-                        "HasSeen": false,
-                        "Rating": null,
-                        "Skip": false
-                    },
-                    {
-                        "Name": "Alicia",
-                        "HasSeen": false,
-                        "Rating": null,
-                        "Skip": false
-                    }
-                ]
-            },
-            {
-                "Name": "Nomadland",
                 "Viewers": [
                     {
                         "Name": "Josh",
