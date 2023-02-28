@@ -35,6 +35,7 @@ router.get('/refreshIMDBRatingsOnly', async (req, res, next) => {
 
     for (var currentMovie of currentMoviesArray) {
         var updatedIMDBInfoForMovie = await imdbProvider.fetchOMDBAPIInfoByID(currentMovie.ImdbID);
+        console.log(updatedIMDBInfoForMovie);
         try {
             currentMoviesArray.find(x => x.ImdbID == updatedIMDBInfoForMovie.imdbID).Rating
                 =

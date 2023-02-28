@@ -9,7 +9,6 @@ class IMDBProvider {
   readRatingsFromDisk(limit, skip) {
     let raw = readFileSync('./mocks/imdb.json');
     let json = JSON.parse(raw);
-
     if (limit && skip) {
       json = json.slice(skip, skip + limit);
     }
@@ -40,7 +39,7 @@ class IMDBProvider {
 
   async fetchOMDBAPIInfoByID(id) {
     if (id) {
-      var resp = await fetch(`http://www.omdbapi.com?apikey=782e8a6f&i=${id}`);
+      var resp = await fetch(`http://www.omdbapi.com?apikey=b56f1492&i=${id}`);
       resp = await resp.json();
       return resp;
     }
