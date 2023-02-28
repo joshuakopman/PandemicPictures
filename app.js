@@ -26,6 +26,7 @@ app.engine('hbs', exphbs(
 app.set('view engine', 'hbs');
 app.use(express.static('public'))
 app.use(bodyParser.json())
+app.use('/mocks', express.static('mocks'));
 
 
 app.get('/', (req, res, next) => {
@@ -48,6 +49,7 @@ app.use('/movies', (req, res, next) => {
 
 app.use('/imdb', imdbRouter);
 app.use('/admin', adminRouter);
+
 
 const server = app.listen(port);
 server.on('upgrade', (request, socket, head) => {
