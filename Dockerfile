@@ -8,4 +8,10 @@ RUN npm install
 
 COPY . /
 
+WORKDIR /pandemic
+
+CMD ["yarn build"]
+
+WORKDIR /
+
 CMD [ "node", "app.js" ]
