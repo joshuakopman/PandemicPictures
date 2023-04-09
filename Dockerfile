@@ -12,6 +12,8 @@ WORKDIR /pandemic
 
 CMD ["yarn build"]
 
+COPY . /pandemic
+
 WORKDIR /
 
 CMD [ "node", "app.js" ]

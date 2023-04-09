@@ -11,7 +11,7 @@ function App() {
 
   useEffect(
     () => {
-      fetch('http://localhost:3000/movies/reactMovies')
+      fetch(window.location.href + 'movies/reactMovies')
         .then(r => r.json())
         .then((r) => {
           setMovies(r);
