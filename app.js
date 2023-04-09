@@ -6,10 +6,16 @@ import bodyParser from "body-parser";
 import exphbs from 'express-handlebars';
 import hbsHelpers from './helpers/hbsHelpers.js';
 import imdbRouter from './routes/imdb.js';
-import nomineessRouter from './routes/nominees.js';
+import nomineesRouter from './routes/nominees.js';
 import adminRouter from './routes/admin.js';
+import dashboardRouter from './routes/dashboard.js';
 import { NomineeProvider } from './providers/nomineeProvider.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const app = express();
 const port = 3000;
 const wsServer = new ws.Server({ noServer: true });
@@ -24,10 +30,11 @@ app.engine('hbs', exphbs(
     }
 ));
 app.set('view engine', 'hbs');
-app.use(express.static('public'))
+app.use("/public", express.static('public'))
 app.use('/mocks', express.static('mocks'));
 app.use(bodyParser.json())
-
+app.use('/dashboard', dashboardRouter); // new react main app page
+app.use("/static", express.static(path.join(__dirname, 'pandemic/build/static'))); // new React static assets
 
 app.get('/', (req, res, next) => {
     var movies = new NomineeProvider(req.query.userOne, req.query.userTwo).readMoviesFromDisk();
@@ -45,7 +52,15 @@ app.use('/movies', (req, res, next) => {
         ws: ws
     };
     next();
-}, nomineessRouter);
+}, nomineesRouter);
+
+app.use('/reactMovies', (req, res, next) => {
+    req.writeConfig = {
+        wsServer: wsServer,
+        ws: ws
+    };
+    next();
+}, nomineesRouter);
 
 app.use('/imdb', imdbRouter);
 app.use('/admin', adminRouter);
