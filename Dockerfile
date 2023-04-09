@@ -3,7 +3,7 @@ FROM node:15.3.0
 ## Create React App Client
 WORKDIR /pandemic
 
-COPY ["package.json", "package-lock.json*", "./pandemic"]
+COPY ["package.json", "package-lock.json*", "./"]
 
 CMD ["yarn install"]
 
