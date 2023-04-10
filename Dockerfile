@@ -9,7 +9,7 @@ COPY ["./pandemic/package.json", "./pandemic/package-lock.json*", "./"]
 
 COPY ./pandemic ./ 
 
-RUN yarn build
+#RUN yarn build
 
 ##Node Server
 
