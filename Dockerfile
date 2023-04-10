@@ -7,12 +7,15 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
+RUN ls -al 
+
 RUN npm i
 
 ##copies pandemic folder to docker container current workdir (pandemic folder)
-COPY ./pandemic ./ 
+COPY ./pandemic ./pandemic 
 
-RUN ls -al ./node_modules/.bin
+RUN ls -al 
+
 
 RUN yarn run build
 
