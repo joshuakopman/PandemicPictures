@@ -28,12 +28,12 @@ function Header({ moviesResponse }) {
 
             <StickyCounts moviesResponse={moviesResponse}></StickyCounts>
 
-            <div class="button-container">
-                <a class="picker" id="moviePickerButton">Pick a Movie</a>
+            <div className="button-container">
+                <a className="picker" id="moviePickerButton">Pick a Movie</a>
             </div>
 
-            <div class="year-anchors">
-                <span class="year-jump">Jump to decade:</span>
+            <div className="year-anchors">
+                <span className="year-jump">Jump to decade:</span>
                 <a href="#1929">30s</a> &bull;
                 <a href="#1940">40s</a> &bull;
                 <a href="#1950">50s</a> &bull;
@@ -47,7 +47,7 @@ function Header({ moviesResponse }) {
             </div>
 
             <div id="filtersNav">
-                <div id="filterChevron" class="chevron">Filters &nbsp;</div>
+                <div id="filterChevron" className="chevron">Filters &nbsp;</div>
             </div>
 
             <filters></filters>

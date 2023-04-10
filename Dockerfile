@@ -3,9 +3,9 @@ FROM node:15.3.0
 ## Create React App Client
 WORKDIR /pandemic
 
-COPY package*.json ./
+COPY package.json ./
 
-RUN yarn install
+RUN npm i
 
 COPY ./pandemic /pandemic
 
