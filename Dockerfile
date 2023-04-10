@@ -9,6 +9,10 @@ RUN npm i
 
 COPY ./pandemic /pandemic
 
+run npm install -g create-react-app
+
+run npm i -g react-scripts 
+
 RUN yarn run build
 
 ##Node Server
