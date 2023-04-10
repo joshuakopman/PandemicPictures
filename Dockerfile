@@ -9,9 +9,8 @@ COPY package-lock.json ./
 
 RUN npm i
 
-COPY ./pandemic /pandemic
-
-run npm i -g react-scripts 
+##copies pandemic folder to docker container current workdir (pandemic folder)
+COPY ./pandemic ./ 
 
 RUN yarn run build
 
