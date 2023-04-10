@@ -3,18 +3,11 @@ FROM node:15.3.0
 ## Create React App Client
 WORKDIR /pandemic
 
-COPY ./pandemic/package.json ./
+COPY ["./pandemic/package.json", "./pandemic/package-lock.json*", "./"]
 
-COPY ./pandemic/package-lock.json ./
+RUN yarn install
 
-RUN ls -al 
-
-RUN npm i
-
-##copies pandemic folder to docker container current workdir (pandemic folder)
 COPY ./pandemic ./ 
-
-RUN ls -al 
 
 RUN yarn run build
 
