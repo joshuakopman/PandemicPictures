@@ -19,5 +19,5 @@ hooks:
       runas: ec2-user
   AfterInstall:
     - location: deployScripts/install.sh
-      timeout: 300
+      timeout: 500
       runas: ec2-user
