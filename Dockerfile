@@ -9,7 +9,7 @@ RUN npm i
 
 COPY ./pandemic ./ 
 
-RUN npm run build
+RUN yarn build
 
 ##Node Server
 

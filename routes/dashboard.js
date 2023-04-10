@@ -8,7 +8,6 @@ const __dirname = dirname(__filename);
 const router = express.Router();
 
 router.get('/', (req, res) => {
-//  res.send("dir: "+ __dirname +" | " + path.resolve(__dirname, '../pandemic/build', 'index.html'));
   res.sendFile(path.resolve(__dirname, '../pandemic/build', 'index.html'));
 });
 
