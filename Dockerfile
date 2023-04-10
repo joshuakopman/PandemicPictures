@@ -5,11 +5,11 @@ WORKDIR /pandemic
 
 COPY ["./pandemic/package.json", "./pandemic/package-lock.json*", "./"]
 
-RUN yarn install
+RUN npm i
 
 COPY ./pandemic ./ 
 
-RUN yarn run build
+RUN yarn build
 
 ##Node Server
 
