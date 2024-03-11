@@ -13,7 +13,7 @@
     },
     {
         "Title": "7th Heaven",
-        "Rating": "7.7",
+        "Rating": "7.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTk2MjUzMzk3OV5BMl5BanBnXkFtZTcwOTk1MjQxMw@@._V1_SX300.jpg",
         "Runtime": "110 min",
         "Genre": "Drama, Romance",
@@ -25,7 +25,7 @@
     },
     {
         "Title": "The Racket",
-        "Rating": "6.9",
+        "Rating": "6.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTk5Mzc0MDY2N15BMl5BanBnXkFtZTgwMTg4MjQ3NDE@._V1._CR21,21,288,461_SX89_AL_.jpg_V1_SX300.jpg",
         "Runtime": "84 min",
         "Genre": "Crime, Drama, Film-Noir",
@@ -97,7 +97,7 @@
     },
     {
         "Title": "All Quiet on the Western Front",
-        "Rating": "8.0",
+        "Rating": "8.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzg2MWQ4MDEtOGZlNi00MTg0LWIwMjQtYWY5NTQwYmUzMWNmXkEyXkFqcGdeQXVyMzg2MzE2OTE@._V1_SX300.jpg",
         "Runtime": "152 min",
         "Genre": "Drama, War",
@@ -133,7 +133,7 @@
     },
     {
         "Title": "The Divorcee",
-        "Rating": "6.8",
+        "Rating": "6.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTk5NzQzNjEwNV5BMl5BanBnXkFtZTgwNjA2NTAwMjE@._V1_SX300.jpg",
         "Runtime": "84 min",
         "Genre": "Romance, Drama",
@@ -145,7 +145,7 @@
     },
     {
         "Title": "The Love Parade",
-        "Rating": "7.1",
+        "Rating": "7.0",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDYyZDJlYTYtMjkwYS00MTM3LTkyNmUtOTZlZGUzMTUyMWE0XkEyXkFqcGdeQXVyNjA5MTAzODY@._V1_SX300.jpg",
         "Runtime": "107 min",
         "Genre": "Comedy, Musical, Romance",
@@ -169,7 +169,7 @@
     },
     {
         "Title": "East Lynne",
-        "Rating": "6.9",
+        "Rating": "5.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjlhYzMyMzEtN2I2Yy00OGE3LWI5ZjAtNDI4YzkzMGFhM2M3XkEyXkFqcGdeQXVyNDY1NzU5NjY@._V1_SX300.jpg",
         "Runtime": "102 min",
         "Genre": "Drama",
@@ -205,7 +205,7 @@
     },
     {
         "Title": "Trader Horn",
-        "Rating": "6.2",
+        "Rating": "6.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDY1YjcyZGQtZDU4Yi00NjZhLTk5YWUtNDQzNDk0YmIxOTA3XkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg",
         "Runtime": "122 min",
         "Genre": "Action, Adventure, Drama, Romance",
@@ -241,7 +241,7 @@
     },
     {
         "Title": "Bad Girl",
-        "Rating": "6.5",
+        "Rating": "6.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjI2NDAwNDAyM15BMl5BanBnXkFtZTcwNjM1MjQxMw@@._V1_SX300.jpg",
         "Runtime": "90 min",
         "Genre": "Drama, Romance",
@@ -277,7 +277,7 @@
     },
     {
         "Title": "One Hour with You",
-        "Rating": "7.2",
+        "Rating": "7.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMmM0M2VmZGYtZjJhNy00MGYwLWFkYzMtMzcxMjVjN2FjMzVmXkEyXkFqcGdeQXVyMjUxODE0MDY@._V1_SX300.jpg",
         "Runtime": "78 min",
         "Genre": "Comedy, Musical, Romance",
@@ -421,7 +421,7 @@
     },
     {
         "Title": "State Fair",
-        "Rating": "6.8",
+        "Rating": "6.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYWEwOWI5M2YtNmQwYi00MzI5LTllYjgtNTFiZDcwNGIwOGM3XkEyXkFqcGdeQXVyNjc0MzMzNjA@._V1_SX300.jpg",
         "Runtime": "99 min",
         "Genre": "Comedy, Drama, Romance",
@@ -445,7 +445,7 @@
     },
     {
         "Title": "The Barretts of Wimpole Street",
-        "Rating": "7.0",
+        "Rating": "6.9",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BY2Q4ZDBkMzEtNWM4ZC00MDRjLWIwNDItZTNkYWZjOGE5MjYwXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
         "Runtime": "109 min",
         "Genre": "Biography, Drama, Romance",
@@ -505,7 +505,7 @@
     },
     {
         "Title": "The House of Rothschild",
-        "Rating": "6.6",
+        "Rating": "6.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzY3Mjc1MWEtOTJlMi00NDJjLTg0OTItYjg2ZTg2MjM5YjllXkEyXkFqcGdeQXVyMjUxODE0MDY@._V1_SX300.jpg",
         "Runtime": "88 min",
         "Genre": "Biography, Drama, History, War",
@@ -529,7 +529,7 @@
     },
     {
         "Title": "One Night of Love",
-        "Rating": "5.7",
+        "Rating": "5.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzk5NDg0NTY4NF5BMl5BanBnXkFtZTgwODQxODgwMzE@._V1_SX300.jpg",
         "Runtime": "84 min",
         "Genre": "Music, Romance",
@@ -553,7 +553,7 @@
     },
     {
         "Title": "Viva Villa!",
-        "Rating": "6.4",
+        "Rating": "6.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZjMwZWMxZDctNTlkNC00YTE4LWIzZGEtYWZkNzFhZWU3ZDBjXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
         "Runtime": "115 min",
         "Genre": "Biography, Western",
@@ -565,7 +565,7 @@
     },
     {
         "Title": "The White Parade",
-        "Rating": "7.0",
+        "Rating": "6.9",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTc1MzEwODkzMV5BMl5BanBnXkFtZTgwMjUzOTU0MjE@._V1_SX300.jpg",
         "Runtime": "80 min",
         "Genre": "Drama",
@@ -661,7 +661,7 @@
     },
     {
         "Title": "A Midsummer Night's Dream",
-        "Rating": "6.9",
+        "Rating": "6.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNmM4NTI0ZTktMTY5ZC00ZDgyLWJjNjUtN2JhYjhkNDlmMDE2XkEyXkFqcGdeQXVyNTc2NzQ3Njk@._V1_SX300.jpg",
         "Runtime": "133 min",
         "Genre": "Comedy, Fantasy, Romance",
@@ -673,7 +673,7 @@
     },
     {
         "Title": "Les Misérables",
-        "Rating": "8.4",
+        "Rating": "8.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjc0ZjZiODItZmViYS00NTA0LWJjZWYtZWJhY2ZiNTFjNjg2XkEyXkFqcGdeQXVyNTc1NTI3ODk@._V1_SX300.jpg",
         "Runtime": "281 min",
         "Genre": "Drama",
@@ -721,7 +721,7 @@
     },
     {
         "Title": "The Great Ziegfeld",
-        "Rating": "6.7",
+        "Rating": "6.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTEzMTZjNjQtMDdiOC00YzU3LTgwODItYjEyYjRiNWFiNmZkXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
         "Runtime": "176 min",
         "Genre": "Biography, Drama, Musical, Romance",
@@ -985,7 +985,7 @@
     },
     {
         "Title": "Alexander's Ragtime Band",
-        "Rating": "6.9",
+        "Rating": "6.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZWI4NzQ1N2UtNTgzYi00Zjg3LTg2NWItNTVlZDlkMGRiMWQ3XkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_SX300.jpg",
         "Runtime": "106 min",
         "Genre": "Drama, Music, Musical, Romance",
@@ -997,7 +997,7 @@
     },
     {
         "Title": "Boys Town",
-        "Rating": "7.3",
+        "Rating": "7.2",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMWUwMWRmYTYtY2Q2MS00ZTRlLTljNjQtNzlkMmRjNjllNjNlXkEyXkFqcGdeQXVyMjUxODE0MDY@._V1_SX300.jpg",
         "Runtime": "96 min",
         "Genre": "Biography, Drama",
@@ -1093,7 +1093,7 @@
     },
     {
         "Title": "Dark Victory",
-        "Rating": "7.5",
+        "Rating": "7.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYmRlOWMxNGEtMDJmZS00YTkyLTg2MzItNjA4ODM2MmQzZDljXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
         "Runtime": "104 min",
         "Genre": "Drama, Romance",
@@ -1153,7 +1153,7 @@
     },
     {
         "Title": "Of Mice and Men",
-        "Rating": "7.9",
+        "Rating": "7.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzFmZGMzMzgtNWZjNy00ZDc5LTg0ZjctYjM5Mjg5NWI3OWMxXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_SX300.jpg",
         "Runtime": "106 min",
         "Genre": "Drama",
@@ -1225,7 +1225,7 @@
     },
     {
         "Title": "Foreign Correspondent",
-        "Rating": "7.5",
+        "Rating": "7.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNmM3ZGE4Y2EtNGFlMS00YjE5LWExYzYtYzQyYTQxYTZlMWRmXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_SX300.jpg",
         "Runtime": "120 min",
         "Genre": "Action, Romance, Thriller, War",
@@ -1273,7 +1273,7 @@
     },
     {
         "Title": "The Letter",
-        "Rating": "7.6",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGI1Mjk4ZDgtMDc5ZS00MGI4LWJmZDctNTZkNmQ0NGU0M2JlXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
         "Runtime": "95 min",
         "Genre": "Crime, Drama, Film-Noir, Mystery, Romance",
@@ -1537,7 +1537,7 @@
     },
     {
         "Title": "Wake Island",
-        "Rating": "6.7",
+        "Rating": "6.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTQxZGJlMDYtN2M3Yy00Njc1LTg2ZmItNDhiMzg2ODY2MGM5XkEyXkFqcGdeQXVyMDMxMjQwMw@@._V1_SX300.jpg",
         "Runtime": "88 min",
         "Genre": "Action, Drama, War",
@@ -1633,7 +1633,7 @@
     },
     {
         "Title": "The More the Merrier",
-        "Rating": "7.7",
+        "Rating": "7.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjc0NTI2MjctYjU4OS00ZTliLTg2ZDgtODY2Mjc3MWYxMTE3XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
         "Runtime": "104 min",
         "Genre": "Comedy, Romance, War",
@@ -2077,7 +2077,7 @@
     },
     {
         "Title": "King Solomon's Mines",
-        "Rating": "6.8",
+        "Rating": "6.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjZlOWFjNzktMDQ3OC00ODQxLWEzZjMtN2E0Y2MwM2FkMzE0XkEyXkFqcGdeQXVyNTEwNDcxNDc@._V1_SX300.jpg",
         "Runtime": "103 min",
         "Genre": "Action, Adventure, Romance",
@@ -2161,7 +2161,7 @@
     },
     {
         "Title": "The Greatest Show on Earth",
-        "Rating": "6.6",
+        "Rating": "6.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzg5MWIyMjItYWMyYS00YTFjLWFlZGMtZTJkNzgyY2VmY2U2XkEyXkFqcGdeQXVyNzE2NDk3NTY@._V1_SX300.jpg",
         "Runtime": "152 min",
         "Genre": "Drama, Family, Romance",
@@ -2305,7 +2305,7 @@
     },
     {
         "Title": "The Country Girl",
-        "Rating": "7.3",
+        "Rating": "7.2",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTdjODFiZTItOGRkMS00YzNkLWJhNzMtMzBmZTQzMmNmYTJjXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
         "Runtime": "104 min",
         "Genre": "Drama, Music",
@@ -2461,7 +2461,7 @@
     },
     {
         "Title": "The Bridge on the River Kwai",
-        "Rating": "8.2",
+        "Rating": "8.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMGVhNjhjODktODgxYS00MDdhLTlkZjktYTkyNzQxMTU0ZDYxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
         "Runtime": "161 min",
         "Genre": "Adventure, Drama, War",
@@ -2629,7 +2629,7 @@
     },
     {
         "Title": "Room at the Top",
-        "Rating": "7.6",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzQ3NDNkZTMtYzJlMC00MzRjLTk5ZGEtYzI2OTZmNTQ4NmUzXkEyXkFqcGdeQXVyMTAwMjAxOTU@._V1_SX300.jpg",
         "Runtime": "115 min",
         "Genre": "Drama, Romance",
@@ -2785,7 +2785,7 @@
     },
     {
         "Title": "The Music Man",
-        "Rating": "7.8",
+        "Rating": "7.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTU4YWE5NzMtZmFlYS00MjQwLTk0YzctZjJhMGZmZGYwNTA3XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
         "Runtime": "151 min",
         "Genre": "Comedy, Family, Musical, Romance",
@@ -2881,7 +2881,7 @@
     },
     {
         "Title": "My Fair Lady",
-        "Rating": "7.8",
+        "Rating": "7.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGM0ZTU3NmItZmRmMy00YWNjLWEzMWItYzg3MzcwZmM5NjdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
         "Runtime": "170 min",
         "Genre": "Drama, Family, Musical, Romance",
@@ -2977,7 +2977,7 @@
     },
     {
         "Title": "Ship of Fools",
-        "Rating": "7.0",
+        "Rating": "7.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzM0Y2M3MzktYjQ4Yy00ZDYyLWIxMzktMzRjMzZiYTFhOGJhXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
         "Runtime": "149 min",
         "Genre": "Drama, Romance, War",
@@ -3037,7 +3037,7 @@
     },
     {
         "Title": "The Sand Pebbles",
-        "Rating": "7.6",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzM4NWQzNzAtNjc0Yy00NjFiLWFiMjUtMTczNWYwMGY1YjUyXkEyXkFqcGdeQXVyMjI4MjA5MzA@._V1_SX300.jpg",
         "Runtime": "182 min",
         "Genre": "Adventure, Drama, Romance, War",
@@ -3085,7 +3085,7 @@
     },
     {
         "Title": "Doctor Dolittle",
-        "Rating": "6.2",
+        "Rating": "6.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjMxOTM3NzU4M15BMl5BanBnXkFtZTgwNDU0MDUxMDE@._V1_SX300.jpg",
         "Runtime": "152 min",
         "Genre": "Adventure, Comedy, Family, Fantasy, Musical, Romance",
@@ -3133,7 +3133,7 @@
     },
     {
         "Title": "Funny Girl",
-        "Rating": "7.3",
+        "Rating": "7.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTAxZTA2OTAtYzY1OC00NGZlLWJlZDItOWZhMjU4YTc3YWRmL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
         "Runtime": "151 min",
         "Genre": "Biography, Comedy, Drama, Musical, Romance",
@@ -3493,7 +3493,7 @@
     },
     {
         "Title": "Chinatown",
-        "Rating": "8.2",
+        "Rating": "8.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjJkMDZhYzItZTFhMi00ZGI4LThlNTAtZDNlYmEwNjFkNDYzXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
         "Runtime": "130 min",
         "Genre": "Drama, Mystery, Thriller",
@@ -3505,7 +3505,7 @@
     },
     {
         "Title": "The Conversation",
-        "Rating": "7.8",
+        "Rating": "7.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzZlMThlYzktMDlmZC00YTI1LThlNzktZWU0MTY4ODc2ZWY4XkEyXkFqcGdeQXVyNTA1NjYyMDk@._V1_SX300.jpg",
         "Runtime": "113 min",
         "Genre": "Drama, Mystery, Thriller",
@@ -3517,7 +3517,7 @@
     },
     {
         "Title": "Lenny",
-        "Rating": "7.6",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNjVjNjgzMTUtMmMxYy00NDQwLWI4YmYtOTFiYWZiNzRiNmExXkEyXkFqcGdeQXVyNDQzMDg4Nzk@._V1_SX300.jpg",
         "Runtime": "111 min",
         "Genre": "Biography, Drama",
@@ -3625,7 +3625,7 @@
     },
     {
         "Title": "Bound for Glory",
-        "Rating": "7.3",
+        "Rating": "7.2",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOWRlMmU0OGUtZjhjMS00YWQ2LWEzNzYtMWYxOWMwNjhkMGVkXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
         "Runtime": "147 min",
         "Genre": "Biography, Drama, Music",
@@ -3769,7 +3769,7 @@
     },
     {
         "Title": "An Unmarried Woman",
-        "Rating": "7.1",
+        "Rating": "7.2",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTNhNzU5OGItZDk5Zi00NjJlLTkzMGMtZDNmNjQ5ZjZjZjRhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
         "Runtime": "124 min",
         "Genre": "Comedy, Drama, Romance",
@@ -3805,7 +3805,7 @@
     },
     {
         "Title": "Apocalypse Now",
-        "Rating": "8.5",
+        "Rating": "8.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDdhODg0MjYtYzBiOS00ZmI5LWEwZGYtZDEyNDU4MmQyNzFkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
         "Runtime": "147 min",
         "Genre": "Drama, Mystery, War",
@@ -3877,7 +3877,7 @@
     },
     {
         "Title": "Raging Bull",
-        "Rating": "8.2",
+        "Rating": "8.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjRmODkzNDItMTNhNi00YjJlLTg0ZjAtODlhZTM0YzgzYThlXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg",
         "Runtime": "129 min",
         "Genre": "Biography, Drama, Sport",
@@ -4069,7 +4069,7 @@
     },
     {
         "Title": "Tender Mercies",
-        "Rating": "7.4",
+        "Rating": "7.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDNiOTgzNDItODI2Ni00YjAxLTk2ZWMtNjJhNDY0ZTY1ZTgzXkEyXkFqcGdeQXVyNjMwMjk0MTQ@._V1_SX300.jpg",
         "Runtime": "92 min",
         "Genre": "Drama, Music",
@@ -4309,7 +4309,7 @@
     },
     {
         "Title": "Moonstruck",
-        "Rating": "7.1",
+        "Rating": "7.2",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjIwMDY0NzYyMF5BMl5BanBnXkFtZTcwOTE5NDk0NA@@._V1_SX300.jpg",
         "Runtime": "102 min",
         "Genre": "Comedy, Drama, Romance",
@@ -4429,7 +4429,7 @@
     },
     {
         "Title": "My Left Foot",
-        "Rating": "7.9",
+        "Rating": "7.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjdkNzA4MzYtZThhOS00ZDgzLTlmMDItNmY1ZjI5YjkzZTE1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
         "Runtime": "103 min",
         "Genre": "Biography, Drama",
@@ -4741,7 +4741,7 @@
     },
     {
         "Title": "Braveheart",
-        "Rating": "8.4",
+        "Rating": "8.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzkzMmU0YTYtOWM3My00YzBmLWI0YzctOGYyNTkwMWE5MTJkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
         "Runtime": "178 min",
         "Genre": "Biography, Drama, History, War",
@@ -4981,7 +4981,7 @@
     },
     {
         "Title": "American Beauty",
-        "Rating": "8.4",
+        "Rating": "8.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
         "Runtime": "122 min",
         "Genre": "Drama",
@@ -5137,7 +5137,7 @@
     },
     {
         "Title": "The Lord of the Rings: The Fellowship of the Ring",
-        "Rating": "8.8",
+        "Rating": "8.9",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
         "Runtime": "178 min",
         "Genre": "Action, Adventure, Drama, Fantasy",
@@ -5245,7 +5245,7 @@
     },
     {
         "Title": "Master and Commander: The Far Side of the World",
-        "Rating": "7.4",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjA5NjYyMDM5NV5BMl5BanBnXkFtZTYwOTU5MDY2._V1_SX300.jpg",
         "Runtime": "138 min",
         "Genre": "Action, Adventure, Drama, History, War",
@@ -5341,7 +5341,7 @@
     },
     {
         "Title": "Crash",
-        "Rating": "7.8",
+        "Rating": "7.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTk1OTA1MjIyNV5BMl5BanBnXkFtZTcwODQxMTkyMQ@@._V1_SX300.jpg",
         "Runtime": "112 min",
         "Genre": "Crime, Drama, Thriller",
@@ -5425,7 +5425,7 @@
     },
     {
         "Title": "Letters from Iwo Jima",
-        "Rating": "7.9",
+        "Rating": "7.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjE0NzgwODI4M15BMl5BanBnXkFtZTcwNjg3OTA0MQ@@._V1_SX300.jpg",
         "Runtime": "141 min",
         "Genre": "Action, Adventure, Drama, History, War",
@@ -5641,7 +5641,7 @@
     },
     {
         "Title": "Inglourious Basterds",
-        "Rating": "8.3",
+        "Rating": "8.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
         "Runtime": "153 min",
         "Genre": "Adventure, Drama, War",
@@ -5713,7 +5713,7 @@
     },
     {
         "Title": "127 Hours",
-        "Rating": "7.6",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTc2NjMzOTE3Ml5BMl5BanBnXkFtZTcwMDE0OTc5Mw@@._V1_SX300.jpg",
         "Runtime": "94 min",
         "Genre": "Adventure, Biography, Drama",
@@ -5881,7 +5881,7 @@
     },
     {
         "Title": "Midnight in Paris",
-        "Rating": "7.7",
+        "Rating": "7.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTM4NjY1MDQwMl5BMl5BanBnXkFtZTcwNTI3Njg3NA@@._V1_SX300.jpg",
         "Runtime": "94 min",
         "Genre": "Comedy, Fantasy, Romance",
@@ -5965,7 +5965,7 @@
     },
     {
         "Title": "Django Unchained",
-        "Rating": "8.4",
+        "Rating": "8.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX300.jpg",
         "Runtime": "165 min",
         "Genre": "Drama, Western",
@@ -6493,7 +6493,7 @@
     },
     {
         "Title": "Get Out",
-        "Rating": "7.7",
+        "Rating": "7.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_SX300.jpg",
         "Runtime": "104 min",
         "Genre": "Horror, Mystery, Thriller",
@@ -6865,7 +6865,7 @@
     },
     {
         "Title": "Belfast",
-        "Rating": "7.3",
+        "Rating": "7.2",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BODMwYTYyY2ItOWQ5Yi00OTI1LTllYTQtYTdlNWM4YzJhYTM0XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
         "Runtime": "98 min",
         "Genre": "Biography, Drama, History",
@@ -6889,7 +6889,7 @@
     },
     {
         "Title": "Drive My Car",
-        "Rating": "7.6",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BY2NkNDdmZTUtYWQ2MC00MjUyLTk1MGMtNWZiZjI3ZWMzNDYwXkEyXkFqcGdeQXVyNTY4ODAxODI@._V1_SX300.jpg",
         "Runtime": "179 min",
         "Genre": "Drama",
@@ -6925,7 +6925,7 @@
     },
     {
         "Title": "Licorice Pizza",
-        "Rating": "7.2",
+        "Rating": "7.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZTgxMWJkMzItMzg1YS00NDJiLTljYjctMTc2YzQzZDZjZDAyXkEyXkFqcGdeQXVyODQ2OTIzNDU@._V1_SX300.jpg",
         "Runtime": "133 min",
         "Genre": "Comedy, Drama, Romance",
@@ -6961,7 +6961,7 @@
     },
     {
         "Title": "West Side Story",
-        "Rating": "7.2",
+        "Rating": "7.1",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzQ5ZDZhZDItZTNmZi00MWQ0LWJlNDUtZTE4ZWJmODNlM2Y3XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg",
         "Runtime": "156 min",
         "Genre": "Crime, Drama, Musical",
@@ -6973,7 +6973,7 @@
     },
     {
         "Title": "Everything Everywhere All At Once",
-        "Rating": "8.0",
+        "Rating": "7.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_SX300.jpg",
         "Runtime": "139 min",
         "Genre": "Action, Adventure, Comedy",
@@ -6985,7 +6985,7 @@
     },
     {
         "Title": "The Banshees Of Inisherin",
-        "Rating": "7.8",
+        "Rating": "7.7",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BM2NlZDI0ZDktNTg5OS00ZjQ1LWI4MDEtN2I0MDE5NWRiNzA4XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
         "Runtime": "114 min",
         "Genre": "Comedy, Drama",
@@ -6997,7 +6997,7 @@
     },
     {
         "Title": "The Fabelmans",
-        "Rating": "7.7",
+        "Rating": "7.5",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGM1MzczNmQtMjBmYS00NTRhLWI0MzctNTFkZDc4OGUyODdjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg",
         "Runtime": "151 min",
         "Genre": "Drama",
@@ -7009,7 +7009,7 @@
     },
     {
         "Title": "Triangle Of Sadness",
-        "Rating": "7.4",
+        "Rating": "7.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDRiZjc0ZDMtMjhlYi00ZjAzLTg0MDQtZDI2NGEyYTBlN2M2XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_SX300.jpg",
         "Runtime": "147 min",
         "Genre": "Comedy, Drama",
@@ -7033,7 +7033,7 @@
     },
     {
         "Title": "Women Talking",
-        "Rating": "7.5",
+        "Rating": "6.9",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTZmMmQ4OWYtM2JmNC00NzY0LWJhODUtOTRmMWMyOTU4OWQ4XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg",
         "Runtime": "104 min",
         "Genre": "Drama",
@@ -7045,7 +7045,7 @@
     },
     {
         "Title": "Elvis",
-        "Rating": "7.4",
+        "Rating": "7.3",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYzMzNTJjYmMtZTkxNS00MjI4LWI3YmQtOTQ4MDZjZDJlZjQyXkEyXkFqcGdeQXVyNjc0NzQzNTM@._V1_SX300.jpg",
         "Runtime": "159 min",
         "Genre": "Biography, Drama, Music",
@@ -7057,7 +7057,7 @@
     },
     {
         "Title": "Avatar: The Way Of Water",
-        "Rating": "7.8",
+        "Rating": "7.6",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_SX300.jpg",
         "Runtime": "192 min",
         "Genre": "Action, Adventure, Fantasy",
@@ -7069,7 +7069,7 @@
     },
     {
         "Title": "Tár",
-        "Rating": "7.6",
+        "Rating": "7.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BM2I0ZDcyYzItMGEyNi00YWVhLTlmNTQtOWVlYjE1ZGVhNWM0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
         "Runtime": "158 min",
         "Genre": "Drama, Music",
