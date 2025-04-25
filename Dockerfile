@@ -1,4 +1,4 @@
-FROM node:15.3.0
+FROM node:18
 
 ## Create React App Client
 WORKDIR /pandemic
