@@ -94,11 +94,18 @@ class UIEventListenerManager {
   addInputClickListener(e, nameOfPerson, value, movies) {
     var movieViewers = movies[e.currentTarget.getAttribute('year-index')].Movies[e.currentTarget.getAttribute('movie-index')].Viewers;
     if (value == "Rating") {
-      if (e.currentTarget.id.includes("radio-2")) {
-        movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = false;
-      } else {
-        movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = true;
+      if(e.currentTarget.checked){
+        e.currentTarget.checked = false; 
+        movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = null;
       }
+      else{
+        if (e.currentTarget.id.includes("radio-2")) {
+          movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = false;
+        } else {
+          movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = true;     
+        }
+      }
+
     } else {
       movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = e.currentTarget.checked;
     }
