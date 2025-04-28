@@ -44,23 +44,24 @@ class DataHandler {
         }
 
         return new Promise((resolve, reject) => {
-            if(localStorage.getItem('imdb') || localStorage.getItem('imdb2021')|| localStorage.getItem('imdbUpdated') || localStorage.getItem('imdbUpdated2022')|| localStorage.getItem('imdbUpdated2023')){
+            if(localStorage.getItem('imdb') || localStorage.getItem('imdb2021')|| localStorage.getItem('imdbUpdated') || localStorage.getItem('imdbUpdated2022')|| localStorage.getItem('imdbUpdated2023')|| localStorage.getItem('imdbUpdated2024')){
                 localStorage.removeItem('imdb');
                 localStorage.removeItem('imdb2021');
                 localStorage.removeItem('imdbUpdated');
                 localStorage.removeItem('imdbUpdated2022');
                 localStorage.removeItem('imdbUpdated2023');
+                localStorage.removeItem('imdbUpdated2024');
             }
             
-            if (!localStorage.getItem('imdbUpdated2024')) {
+            if (!localStorage.getItem('imdbUpdated2025')) {
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
-                        localStorage.setItem('imdbUpdated2024', JSON.stringify(data));
+                        localStorage.setItem('imdbUpdated2025', JSON.stringify(data));
                         resolve(data);
                     });
             } else {
-                resolve(JSON.parse(localStorage.getItem('imdbUpdated2024')));
+                resolve(JSON.parse(localStorage.getItem('imdbUpdated2025')));
             }
         });
     }
