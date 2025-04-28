@@ -94,15 +94,16 @@ class UIEventListenerManager {
   addInputClickListener(e, nameOfPerson, value, movies) {
     var movieViewers = movies[e.currentTarget.getAttribute('year-index')].Movies[e.currentTarget.getAttribute('movie-index')].Viewers;
     if (value == "Rating") {
-      if(e.currentTarget.checked){
-        e.currentTarget.checked = false; 
+      if ((e.currentTarget.id.includes("radio-2") && movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] == false) ||
+        (e.currentTarget.id.includes("radio-1") && movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] == true)) {
+        e.currentTarget.checked = false;
         movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = null;
       }
-      else{
+      else {
         if (e.currentTarget.id.includes("radio-2")) {
           movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = false;
         } else {
-          movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = true;     
+          movieViewers.find((viewer) => viewer.Name == nameOfPerson)[value] = true;
         }
       }
 
@@ -196,7 +197,7 @@ class UIEventListenerManager {
     document.querySelector('#maxSlider').nextElementSibling.value = filterCookie.maxSliderFilter;
 
     document.querySelector('input[id="winnersOnly"]').checked = filterCookie.winnersOnlyFilter;
-   
+
     var matchingSeenByFilter = [...document.querySelectorAll('input[name="seenByFilter"]')].find(x => x.value == filterCookie.seenByFilter);
     if (matchingSeenByFilter) {
       matchingSeenByFilter.checked = true;
