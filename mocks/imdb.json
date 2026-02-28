@@ -85,7 +85,7 @@
     },
     {
         "Title": "The Patriot",
-        "Rating": "",
+        "Rating": "N/A",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZTJlNmMyNDQtODE1MS00ZDQ3LTliNDgtNjk0MDU5ZWUzMjU3XkEyXkFqcGc@._V1_QL75_UX190_CR0,11,190,281_.jpg",
         "Runtime": "113 min",
         "Genre": "Drama, History, Thriller",
@@ -266,7 +266,7 @@
     {
         "Title": "Five Star Final",
         "Rating": "7.3",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BN2Q3ZTg2MGUtYmNmYy00YjgxLThlYTMtZjkyM2I5YWNlNzhhXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDk2YzM3MzEtMDRiOC00ZTY0LTgwZTUtYjNhNzQ1YjlmOWU5XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "89 min",
         "Genre": "Crime, Drama",
         "Director": "Mervyn LeRoy",
@@ -410,7 +410,7 @@
     {
         "Title": "Smilin' Through",
         "Rating": "6.9",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDg4YzE3MmItYmI4Zi00YjY2LWI4YjMtOTc3OTRiMjE4ZGMyXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMGExOTNkYjAtZTI3NC00ZTZhLWJiOGQtNzU1NDJlZjkyMDk4XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "98 min",
         "Genre": "Drama, Romance",
         "Director": "Sidney Franklin",
@@ -1058,13 +1058,13 @@
     {
         "Title": "Pygmalion",
         "Rating": "7.4",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTk0YTdiMTItOWM4NC00OGE4LWFlOTMtYzU0OGM0OTBlMmRjXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDJjOGE2YjItOWNlYi00MjgzLTllYjYtNzRlOTdlZTIyNmVkXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "95 min",
         "Genre": "Comedy",
         "Director": "Ludwig Berger",
         "Actors": "Lily Bouwmeester, Johan De Meester, Eduard Verkade, Emma Morel",
         "Plot": "Prof. Henry Higgins takes a wager on turning a low-class flower seller named Liesje Doeluttel into a presentable lady.",
-        "ImdbID": "tt0029451",
+        "ImdbID": "tt0030637",
         "OscarYear": 1938
     },
     {
@@ -1154,7 +1154,7 @@
     {
         "Title": "Of Mice and Men",
         "Rating": "7.8",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGQ4ZTg2YTUtOGE2Yy00ZTE0LWExOTgtOGFkZjhkYzJkOGUyXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTI3YTQ0ZTUtMzIzOC00OGNjLTg2OTEtZGJlMjJlNDIyYzk0XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "106 min",
         "Genre": "Drama",
         "Director": "Lewis Milestone",
@@ -1202,7 +1202,7 @@
     {
         "Title": "Rebecca",
         "Rating": "8.1",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTcxYWExOTMtMWFmYy00ZjgzLWI0YjktNWEzYzJkZTg0NDdmL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTI0MjUyODAtZTBkNC00MmIwLWFlNmYtMWE3ZmJlOWJjM2QyXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "130 min",
         "Genre": "Drama, Mystery, Romance, Thriller",
         "Director": "Alfred Hitchcock",
@@ -2558,7 +2558,7 @@
     {
         "Title": "The Defiant Ones",
         "Rating": "7.6",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDc3M2E4YTktNjU2ZC00OWVkLWJmNTAtNWQ5MDNmMjRjYWQ1XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BY2RlOTA0MGQtNTg3Yi00NmRkLTgxNDAtYTFlMzQ3MzZmMTBlXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "96 min",
         "Genre": "Crime, Drama",
         "Director": "Stanley Kramer",
@@ -3158,7 +3158,7 @@
     {
         "Title": "Rachel, Rachel",
         "Rating": "7.1",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDBhYmJiNjAtZmZlYi00N2NiLWE5ODgtYWU4NGQ2Y2YzMDQ5XkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYWQ0N2QyNDMtODU3NS00MzZiLWFiNGEtYzZmMjA0NWJmMWMwXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "101 min",
         "Genre": "Drama, Romance",
         "Director": "Paul Newman",
@@ -3854,7 +3854,7 @@
     {
         "Title": "Coal Miner's Daughter",
         "Rating": "7.5",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMWNlNDM4ZDYtZDA0Yy00MjQ2LWIyMjEtMzBmNTM5NzA2ZWY3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYzM4YTY2ZWUtOTAzZS00OWE0LTg3NzctOWMzMTljOTJjMGQ2XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "124 min",
         "Genre": "Biography, Drama, Music",
         "Director": "Michael Apted",
@@ -4118,7 +4118,7 @@
     {
         "Title": "Places in the Heart",
         "Rating": "7.4",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGQwODc1NTctYTAzMS00M2YyLTgwNzMtNGY1MDE4MjE4YzY5XkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDcxNjk4NzUtMzgyOC00YzliLWEzMTctZmE5ZWVkN2ExNzU2XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "111 min",
         "Genre": "Drama",
         "Director": "Robert Benton",
@@ -4850,7 +4850,7 @@
     {
         "Title": "Shine",
         "Rating": "7.6",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTNlZDhkNTMtYTExYS00NGRiLTlhZTItM2JlOWQ3MzE4YzdhXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BODZlMjRmN2UtZmY1Yi00YjhjLTg4OTAtZmQxNWMwZTY5YjI4XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "105 min",
         "Genre": "Biography, Drama, Music, Romance",
         "Director": "Scott Hicks",
@@ -6218,13 +6218,13 @@
     {
         "Title": "The Theory of Everything",
         "Rating": "7.0",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOGYzZDY4MjktYTllZS00ZjdjLTlmOTgtMjNhZDNkZWE0NTg2XkEyXkFqcGdeQXVyNjQzODczMjk@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMTAwMTU4MDA3NDNeQTJeQWpwZ15BbWU4MDk4NTMxNTIx._V1_SX300.jpg",
         "Runtime": "170 min",
         "Genre": "Documentary",
         "Director": "Trey Smith",
         "Actors": "Trey Smith",
         "Plot": "The Theory of Everything: \"Michio Kaku & Steven Hawking have interesting ideas, however, this video veers less to the direction of Darwin & the \"extremely\" improbable -- more in the ...",
-        "ImdbID": "tt5124130",
+        "ImdbID": "tt2980516",
         "OscarYear": 2014
     },
     {
@@ -6518,7 +6518,7 @@
     {
         "Title": "Phantom Thread",
         "Rating": "7.4",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMWJkNzBkM2UtYWFlMC00NmEwLTgxOGUtMjVmMzYyZjgyMmEzXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTMzNWNhNDctMTM2MC00N2EwLThjYTEtMmQ2ZDAyNDVlNzgyXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "130 min",
         "Genre": "Drama, Romance",
         "Director": "Paul Thomas Anderson",
@@ -6878,7 +6878,7 @@
     {
         "Title": "Don't Look Up",
         "Rating": "7.2",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNjZjNDE1NTYtYTgwZS00M2VmLWEyODktM2FlNjhiYTk3OGU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMjhhNWFjNzctYTJjOS00MDc0LThiNjItZmM0ZDVmMWViY2UzXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "138 min",
         "Genre": "Comedy, Drama, Sci-Fi",
         "Director": "Adam McKay",
@@ -7118,7 +7118,7 @@
     {
         "Title": "Poor Things",
         "Rating": "8.3",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGIyYWMzNjktNDE3MC00YWQyLWEyMmEtN2ZmNzZhZDk3NGJlXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYWU2MjRjZTYtMjVkMS00MTBjLWFiMTAtYmZlYTk1YjkyMWFkXkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "141 min",
         "Genre": "Comedy, Drama, Romance",
         "Director": "Yorgos Lanthimos",
@@ -7130,7 +7130,7 @@
     {
         "Title": "Maestro",
         "Rating": "6.6",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOGI2MzQ1NzQtMmVkOC00ZGI0LWI3YjQtN2FjMzQ1NmRhNzFhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BY2M1MWUyYzctMzk1Zi00M2RkLTkwY2YtMzE4MDhiZGQwZmU5XkEyXkFqcGc@._V1_SX300.jpg",
         "Runtime": "129 min",
         "Genre": "Biography, Drama, History",
         "Director": "Bradley Cooper",
@@ -7210,5 +7210,245 @@
         "Plot": "Auschwitz commandant Rudolf Höss and his wife Hedwig strive to build a dream life for their family in a house and garden beside the camp.",
         "ImdbID": "tt7160372",
         "OscarYear": 2023
+    },
+    {
+        "Title": "Anora",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYThiN2M0NTItODRmNC00NDhlLWFiYTgtMWM2YTEyYzI3ZTY1XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "139 min",
+        "Genre": "Comedy, Drama, Romance",
+        "Director": "Sean Baker",
+        "Actors": "Mikey Madison, Paul Weissman, Lindsey Normington",
+        "Plot": "A young stripper from Brooklyn meets and impulsively marries the son of a Russian oligarch. Once the news reaches Russia, her fairy tale is threatened as his parents set out for New York to get the marriage annulled.",
+        "ImdbID": "tt28607951",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "The Brutalist",
+        "Rating": "7.3",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "216 min",
+        "Genre": "Drama",
+        "Director": "Brady Corbet",
+        "Actors": "Adrien Brody, Felicity Jones, Guy Pearce",
+        "Plot": "A visionary architect flees post-war Europe in 1947 for a brighter future in the United States and finds his life forever changed by a wealthy client.",
+        "ImdbID": "tt8999762",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "A Complete Unknown",
+        "Rating": "7.3",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYTA2NTA5NDYtMzlkOC00MTQxLWI0NDQtMzk2M2YzMGE4MTkxXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "141 min",
+        "Genre": "Biography, Drama, Music",
+        "Director": "James Mangold",
+        "Actors": "Timothée Chalamet, Edward Norton, Elle Fanning",
+        "Plot": "In 1961, an unknown 19-year-old Bob Dylan arrives in New York City with his guitar and forges relationships with musical icons on his meteoric rise, culminating in a groundbreaking performance that reverberates around the world.",
+        "ImdbID": "tt11563598",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "Conclave",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYjgxMDI5NmMtNTU3OS00ZDQxLTgxZmEtNzY1ZTBmMDY4NDRkXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "120 min",
+        "Genre": "Drama, Thriller",
+        "Director": "Edward Berger",
+        "Actors": "Ralph Fiennes, Stanley Tucci, John Lithgow",
+        "Plot": "When Cardinal Lawrence is tasked with leading the selection of a new Pope, he finds himself in a web of conspiracy and intrigue that could shake the very foundations of the Catholic Church.",
+        "ImdbID": "tt20215234",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "Dune: Part Two",
+        "Rating": "8.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "166 min",
+        "Genre": "Action, Adventure, Drama",
+        "Director": "Denis Villeneuve",
+        "Actors": "Timothée Chalamet, Zendaya, Rebecca Ferguson",
+        "Plot": "Paul Atreides unites with the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the universe, he endeavors to prevent a terrible fu...",
+        "ImdbID": "tt15239678",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "Emilia Pérez",
+        "Rating": "5.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNjBhMWVmYjQtYmI2NC00NjdiLTliMjQtODliYjI5OTZmMzczXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "132 min",
+        "Genre": "Crime, Drama, Musical",
+        "Director": "Jacques Audiard",
+        "Actors": "Zoe Saldaña, Karla Sofía Gascón, Selena Gomez",
+        "Plot": "It follows three remarkable women in Mexico, each pursuing their own happiness. Cartel leader Emilia enlists unappreciated lawyer Rita to help fake her death so that she can finally live authentically as her true self.",
+        "ImdbID": "tt20221436",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "I'm Still Here",
+        "Rating": "8.2",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BM2FjMjBiZjgtZDkyYy00YTRlLTk5N2QtODE2ZWIyYWE0Yzg0XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "137 min",
+        "Genre": "Biography, Drama, History",
+        "Director": "Walter Salles",
+        "Actors": "Fernanda Torres, Fernanda Montenegro, Selton Mello",
+        "Plot": "A woman married to a former politician during the military dictatorship in Brazil is forced to reinvent herself and chart a new course for her family after a violent and arbitrary act.",
+        "ImdbID": "tt14961016",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "Nickel Boys",
+        "Rating": "6.9",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMGRkMzIyY2QtMjc5My00NGRjLWE5ZGUtYjRiMDNjMzAwOTU0XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "140 min",
+        "Genre": "Drama",
+        "Director": "RaMell Ross",
+        "Actors": "Ethan Cole Sharp, Sam Malone, Najah Bradley",
+        "Plot": "A powerful friendship develops between two young Black men as they navigate the harrowing trials of reform school together.",
+        "ImdbID": "tt23055660",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "The Substance",
+        "Rating": "7.2",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "141 min",
+        "Genre": "Drama, Horror, Sci-Fi",
+        "Director": "Coralie Fargeat",
+        "Actors": "Demi Moore, Margaret Qualley, Dennis Quaid",
+        "Plot": "A fading celebrity takes a black-market drug: a cell-replicating substance that helps her create a younger, better version of herself.",
+        "ImdbID": "tt17526714",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "Wicked",
+        "Rating": "7.0",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGUzOTFjNWYtY2Q2ZC00ZDU0LWIyZWEtMzFlNmI3OTdjN2VkXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "100 min",
+        "Genre": "Comedy, Crime, Drama",
+        "Director": "Thea Sharrock",
+        "Actors": "Jessie Buckley, Olivia Colman, Timothy Spall",
+        "Plot": "When people in Littlehampton--including conservative local, Edith--begin receiving letters full of hilarious profanities, the rowdy, Irish migrant, Rose, is charged with the crime. Suspecting that something is amiss, the town's wo...",
+        "ImdbID": "tt20234774",
+        "OscarYear": 2024
+    },
+    {
+        "Title": "Avatar: Fire and Ash",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "197 min",
+        "Genre": "Animation, Action, Adventure",
+        "Director": "James Cameron",
+        "Actors": "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
+        "Plot": "Jake and Neytiri's family grapples with grief, encountering a new, aggressive Na'vi tribe, the Ash People, who are led by the fiery Varang, as the conflict on Pandora escalates and a new moral focus emerges.",
+        "ImdbID": "tt1757678",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Bugonia",
+        "Rating": "7.4",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzIzNWQxMjEtZmQ3MS00OTk2LWFlZjktZDUyYWRkM2M3NWVlXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "118 min",
+        "Genre": "Comedy, Crime, Sci-Fi",
+        "Director": "Yorgos Lanthimos",
+        "Actors": "Emma Stone, Jesse Plemons, Aidan Delbis",
+        "Plot": "Two conspiracy-obsessed young men kidnap the high-powered CEO of a major company, convinced that she is an alien intent on destroying planet Earth.",
+        "ImdbID": "tt12300742",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Dune: Messiah",
+        "Rating": "N/A",
+        "ImageUrl": "N/A",
+        "Runtime": "N/A",
+        "Genre": "N/A",
+        "Director": "N/A",
+        "Actors": "N/A",
+        "Plot": "N/A",
+        "ImdbID": null,
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Frankenstein",
+        "Rating": "7.5",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BYzYzNDYxMTQtMTU4OS00MTdlLThhMTQtZjI4NGJmMTZmNmRiXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "149 min",
+        "Genre": "Drama, Fantasy, Horror",
+        "Director": "Guillermo del Toro",
+        "Actors": "Oscar Isaac, Jacob Elordi, Christoph Waltz",
+        "Plot": "Dr. Victor Frankenstein, a brilliant but egotistical scientist, brings a creature to life in a monstrous experiment that ultimately leads to the undoing of both the creator and his tragic creation.",
+        "ImdbID": "tt1312221",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "F1",
+        "Rating": "7.6",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNGI0MDI4NjEtOWU3ZS00ODQyLWFhYTgtNGYxM2ZkM2Q2YjE3XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "155 min",
+        "Genre": "Action, Drama, Sport",
+        "Director": "Joseph Kosinski",
+        "Actors": "Brad Pitt, Damson Idris, Javier Bardem",
+        "Plot": "A Formula One driver comes out of retirement to mentor and team up with a younger driver.",
+        "ImdbID": "tt16311594",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Hamnet",
+        "Rating": "8.1",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMDQ5ZmY0OWYtOTYzZi00Mzg5LWE3N2EtMjYwZTAzZmJhYjkyXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "125 min",
+        "Genre": "Biography, Drama, History",
+        "Director": "Chloé Zhao",
+        "Actors": "Jessie Buckley, Paul Mescal, Zac Wishart",
+        "Plot": "After losing their son Hamnet to plague, Agnes and William Shakespeare grapple with grief in 16th-century England. A healer, Agnes must find strength to care for her surviving children while processing her devastating loss.",
+        "ImdbID": "tt14905854",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Marty Supreme",
+        "Rating": "8.1",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZTRhYjI1MTItMWYwMi00MjY5LWI1OTktMzQwNzA3MWJlN2QyXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "149 min",
+        "Genre": "Drama, Sport",
+        "Director": "Josh Safdie",
+        "Actors": "Timothée Chalamet, Gwyneth Paltrow, Odessa A'zion",
+        "Plot": "Marty Mauser, a young man with a dream no one respects, goes to hell and back in pursuit of greatness.",
+        "ImdbID": "tt32916440",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "The Phoenician Scheme",
+        "Rating": "6.6",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTJmODQzYmItNTZlMy00Mjg0LTk1NjctYjM4ZGI0NTM3ZTVjXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "101 min",
+        "Genre": "Action, Comedy, Crime",
+        "Director": "Wes Anderson",
+        "Actors": "Benicio Del Toro, Mia Threapleton, Michael Cera",
+        "Plot": "Wealthy businessman Zsa-zsa Korda appoints his only daughter, a nun, as sole heir to his estate. As Korda embarks on a new enterprise, they soon become the target of scheming tycoons, foreign terrorists and determined assassins.",
+        "ImdbID": "tt30840798",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Sentimental Value",
+        "Rating": "7.8",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTMwMTk0Y2QtY2VhNy00OGYwLThkMjMtZjkwMGI3MTJiMjAyXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "133 min",
+        "Genre": "Drama",
+        "Director": "Joachim Trier",
+        "Actors": "Renate Reinsve, Stellan Skarsgård, Inga Ibsdotter Lilleaas",
+        "Plot": "An intimate exploration of family, memories, and the reconciliatory power of art.",
+        "ImdbID": "tt27714581",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Sinners",
+        "Rating": "7.5",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "137 min",
+        "Genre": "Action, Drama, Horror",
+        "Director": "Ryan Coogler",
+        "Actors": "Michael B. Jordan, Jack O'Connell, Hailee Steinfeld",
+        "Plot": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+        "ImdbID": "tt31193180",
+        "OscarYear": 2025
     }
 ]
