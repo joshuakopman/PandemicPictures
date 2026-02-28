@@ -7332,18 +7332,6 @@
         "OscarYear": 2024
     },
     {
-        "Title": "Avatar: Fire and Ash",
-        "Rating": "7.4",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg",
-        "Runtime": "197 min",
-        "Genre": "Animation, Action, Adventure",
-        "Director": "James Cameron",
-        "Actors": "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
-        "Plot": "Jake and Neytiri's family grapples with grief, encountering a new, aggressive Na'vi tribe, the Ash People, who are led by the fiery Varang, as the conflict on Pandora escalates and a new moral focus emerges.",
-        "ImdbID": "tt1757678",
-        "OscarYear": 2025
-    },
-    {
         "Title": "Bugonia",
         "Rating": "7.4",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNzIzNWQxMjEtZmQ3MS00OTk2LWFlZjktZDUyYWRkM2M3NWVlXkEyXkFqcGc@._V1_SX300.jpg",
@@ -7353,18 +7341,6 @@
         "Actors": "Emma Stone, Jesse Plemons, Aidan Delbis",
         "Plot": "Two conspiracy-obsessed young men kidnap the high-powered CEO of a major company, convinced that she is an alien intent on destroying planet Earth.",
         "ImdbID": "tt12300742",
-        "OscarYear": 2025
-    },
-    {
-        "Title": "Dune: Messiah",
-        "Rating": "N/A",
-        "ImageUrl": "N/A",
-        "Runtime": "N/A",
-        "Genre": "N/A",
-        "Director": "N/A",
-        "Actors": "N/A",
-        "Plot": "N/A",
-        "ImdbID": null,
         "OscarYear": 2025
     },
     {
@@ -7416,18 +7392,6 @@
         "OscarYear": 2025
     },
     {
-        "Title": "The Phoenician Scheme",
-        "Rating": "6.6",
-        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTJmODQzYmItNTZlMy00Mjg0LTk1NjctYjM4ZGI0NTM3ZTVjXkEyXkFqcGc@._V1_SX300.jpg",
-        "Runtime": "101 min",
-        "Genre": "Action, Comedy, Crime",
-        "Director": "Wes Anderson",
-        "Actors": "Benicio Del Toro, Mia Threapleton, Michael Cera",
-        "Plot": "Wealthy businessman Zsa-zsa Korda appoints his only daughter, a nun, as sole heir to his estate. As Korda embarks on a new enterprise, they soon become the target of scheming tycoons, foreign terrorists and determined assassins.",
-        "ImdbID": "tt30840798",
-        "OscarYear": 2025
-    },
-    {
         "Title": "Sentimental Value",
         "Rating": "7.8",
         "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNTMwMTk0Y2QtY2VhNy00OGYwLThkMjMtZjkwMGI3MTJiMjAyXkEyXkFqcGc@._V1_SX300.jpg",
@@ -7449,6 +7413,42 @@
         "Actors": "Michael B. Jordan, Jack O'Connell, Hailee Steinfeld",
         "Plot": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
         "ImdbID": "tt31193180",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "One Battle After Another",
+        "Rating": "7.7",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BMzBkZmQ0NjMtNTZlMy00ZjdlLTg5ODUtYWFlNGM0YzE3MTg0XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "161 min",
+        "Genre": "Action, Crime, Drama",
+        "Director": "Paul Thomas Anderson",
+        "Actors": "Leonardo DiCaprio, Sean Penn, Benicio Del Toro",
+        "Plot": "When their enemy resurfaces after 16 years, a group of ex-revolutionaries reunite to rescue the daughter of one of their own.",
+        "ImdbID": "tt30144839",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "The Secret Agent",
+        "Rating": "7.3",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BNDlkMzNhYzgtNTk1Yi00M2I1LTlkOTMtY2RmZGU3YzVmMzE2XkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "161 min",
+        "Genre": "Crime, Drama, Mystery",
+        "Director": "Kleber Mendonça Filho",
+        "Actors": "Robson Andrade, Rubens Santos, Licínio Januário",
+        "Plot": "In 1977, a technology expert flees from a mysterious past and returns to his hometown of Recife in search of peace. He soon realizes that the city is far from being the refuge he seeks.",
+        "ImdbID": "tt27847051",
+        "OscarYear": 2025
+    },
+    {
+        "Title": "Train Dreams",
+        "Rating": "7.5",
+        "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZDkzNzkyNTktYzNhMi00YjhiLWI5YmUtZjliMTY0ZDc5NmMyXkEyXkFqcGc@._V1_SX300.jpg",
+        "Runtime": "102 min",
+        "Genre": "Drama",
+        "Director": "Clint Bentley",
+        "Actors": "Joel Edgerton, Clifton Collins Jr., Felicity Jones",
+        "Plot": "Based on Denis Johnson's beloved novella, Train Dreams is the moving portrait of Robert Grainier, a logger and railroad worker who leads a life of unexpected depth and beauty in the rapidly-changing America of the early 20th Century.",
+        "ImdbID": "tt29768334",
         "OscarYear": 2025
     }
 ]
