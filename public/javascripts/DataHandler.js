@@ -49,15 +49,16 @@ class DataHandler {
             localStorage.removeItem('imdbUpdated2025');
             localStorage.removeItem('imdbUpdated2026');
             localStorage.removeItem('imdbUpdated2027');
-            if (!localStorage.getItem('imdbUpdated2028')) {
+            localStorage.removeItem('imdbUpdated2028');
+            if (!localStorage.getItem('imdbUpdated2029')) {
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
-                        localStorage.setItem('imdbUpdated2028', JSON.stringify(data));
+                        localStorage.setItem('imdbUpdated2029', JSON.stringify(data));
                         resolve(data);
                     });
             } else {
-                resolve(JSON.parse(localStorage.getItem('imdbUpdated2028')));
+                resolve(JSON.parse(localStorage.getItem('imdbUpdated2029')));
             }
         });
     }
