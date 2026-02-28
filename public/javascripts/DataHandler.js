@@ -44,24 +44,19 @@ class DataHandler {
         }
 
         return new Promise((resolve, reject) => {
-            if(localStorage.getItem('imdb') || localStorage.getItem('imdb2021')|| localStorage.getItem('imdbUpdated') || localStorage.getItem('imdbUpdated2022')|| localStorage.getItem('imdbUpdated2023')|| localStorage.getItem('imdbUpdated2024')){
-                localStorage.removeItem('imdb');
-                localStorage.removeItem('imdb2021');
-                localStorage.removeItem('imdbUpdated');
-                localStorage.removeItem('imdbUpdated2022');
-                localStorage.removeItem('imdbUpdated2023');
-                localStorage.removeItem('imdbUpdated2024');
-            }
-            
-            if (!localStorage.getItem('imdbUpdated2025')) {
+            localStorage.removeItem('imdbUpdated2023');
+            localStorage.removeItem('imdbUpdated2024');
+            localStorage.removeItem('imdbUpdated2025');
+            localStorage.removeItem('imdbUpdated2026');
+            if (!localStorage.getItem('imdbUpdated2027')) {
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
-                        localStorage.setItem('imdbUpdated2025', JSON.stringify(data));
+                        localStorage.setItem('imdbUpdated2027', JSON.stringify(data));
                         resolve(data);
                     });
             } else {
-                resolve(JSON.parse(localStorage.getItem('imdbUpdated2025')));
+                resolve(JSON.parse(localStorage.getItem('imdbUpdated2027')));
             }
         });
     }
@@ -74,21 +69,33 @@ class DataHandler {
         if (new URLSearchParams(window.location.search).get('userTwo') != null) {
             url += "&userTwo=" + new URLSearchParams(window.location.search).get('userTwo');
         }
-
+        console.log(data);
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
             });
-
-            let jsonResp = await response.json();
-
-            return jsonResp;
+    
+            if (response.ok && response.status !== 204) {
+                try {
+                    const jsonResp = await response.json();
+                    return jsonResp;  // return the parsed response
+                } catch (jsonError) {
+                    // Catch JSON parse error if response isn't valid JSON
+                    console.error('Error parsing JSON from response:', jsonError);
+                    return null;
+                }
+            } else {
+                // Handle empty responses with status 204 or invalid responses
+                console.error('Error: Received empty or invalid response with status', response.status);
+                return null;
+            }
         } catch (e) {
+            console.error('POST request failed:', e);
             return e;
         }
     }
