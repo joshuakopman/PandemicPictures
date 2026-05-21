@@ -65,6 +65,16 @@ app.use('/reactMovies', (req, res, next) => {
 app.use('/imdb', imdbRouter);
 app.use('/admin', adminRouter);
 
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
 
 const server = app.listen(port);
 server.on('upgrade', (request, socket, head) => {
