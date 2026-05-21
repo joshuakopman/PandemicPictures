@@ -20,9 +20,24 @@ const app = express();
 const port = 3000;
 const wsServer = new ws.Server({ noServer: true });
 const ddos = new Ddos({ burst: 50, limit: 500, maxexpiry: 300, trustProxy: false, includeUserAgent: false })
+const canonicalHost = 'pandemicpictures.info';
 
 app.use(compression());
 app.use(ddos.express);
+app.use((req, res, next) => {
+    const hostname = (req.hostname || '').toLowerCase();
+    const shouldRedirectHost = hostname === `www.${canonicalHost}`;
+    const shouldRedirectPath = req.path === '/index.html';
+
+    if (!shouldRedirectHost && !shouldRedirectPath) {
+        next();
+        return;
+    }
+
+    const query = req.originalUrl.slice(req.path.length);
+    const canonicalPath = shouldRedirectPath ? '/' : req.originalUrl;
+    res.redirect(301, `https://${canonicalHost}${canonicalPath}${shouldRedirectPath ? query : ''}`);
+});
 app.engine('hbs', exphbs(
     {
         extname: '.hbs',
