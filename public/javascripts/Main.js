@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const ws = new WebSocket('ws://' + location.host);
+  const websocketProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const ws = new WebSocket(websocketProtocol + '//' + location.host);
   ws.onopen = () => {
     var dataHandler = new DataHandler();
     var uiHelper = new UIHelper();
