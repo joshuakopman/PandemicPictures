@@ -90,6 +90,11 @@ app.get('/sitemap.xml', (req, res) => {
     res.sendFile(path.join(__dirname, 'sitemap.xml'));
 });
 
+app.get('/sitemap.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(path.join(__dirname, 'sitemap.txt'));
+});
+
 
 const server = app.listen(port);
 server.on('upgrade', (request, socket, head) => {

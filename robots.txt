@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pandemicpictures.info/sitemap.xml
+Sitemap: https://pandemicpictures.info/sitemap.txt
